@@ -1,0 +1,171 @@
+name: Publish a TEDI release
+
+# Builds the Claude Design System artifact's files from a TEDI-Design-System/react release
+# and pushes them to this repository (see build/NOTES.md):
+# - a release candidate (react-<version> with a prerelease suffix) becomes the release
+#   commit at the tip of rc: it replaces the previous one when that is still the tip, and
+#   goes on top when someone has committed to build/ since, so candidates don't accumulate
+#   history in a repository every user clones;
+# - a stable release becomes a commit on main, tagged react-<version>, but only after a
+#   reviewer approves the `claude-design-system-main` environment, having looked at the
+#   Storybook comparison sheets the compare job uploads.
+# The build fails on any card whose stories pull a library component in unstyled, and the
+# render check fails on script errors and empty cards; neither replaces looking at the sheets.
+#
+# React's release workflow sends the `react-release` dispatch with { "tag": "react-<version>" }
+# once semantic-release has tagged a release. Run it by hand to rebuild any release.
+
+on:
+  repository_dispatch:
+    types: [react-release]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: React release tag to build (react-<version>)
+        required: true
+        type: string
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.event.client_payload.tag }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ env.TAG }}
+      version: ${{ steps.release.outputs.version }}
+      line: ${{ steps.release.outputs.line }}
+      commit: ${{ steps.release.outputs.commit }}
+    steps:
+      - name: Checkout the build
+        uses: actions/checkout@v4
+
+      - name: Checkout the React release
+        uses: actions/checkout@v4
+        with:
+          repository: TEDI-Design-System/react
+          ref: ${{ env.TAG }}
+          path: react
+
+      - name: Read the release
+        id: release
+        run: |
+          case "$TAG" in
+            react-*) ;;
+            *) echo "::error::Not a react-<version> tag: $TAG"; exit 1 ;;
+          esac
+          version=${TAG#react-}
+          case "$version" in
+            *-*) line=rc ;;
+            *) line=main ;;
+          esac
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "line=$line" >> "$GITHUB_OUTPUT"
+          echo "commit=$(git -C react rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Build the library
+        working-directory: react
+        run: |
+          npm ci
+          npm run build
+
+      - name: Build the artifact files
+        env:
+          LINE: ${{ steps.release.outputs.line }}
+        run: |
+          npm ci --prefix build
+          (cd build && npx playwright install --with-deps chromium)
+          node build/scripts/build.mjs --react react --branch "$LINE" --out release-tree --release
+
+      - name: Render check
+        run: node build/scripts/check.mjs --out release-tree
+
+      - name: Upload the release tree
+        uses: actions/upload-artifact@v4
+        with:
+          name: claude-design-system
+          path: release-tree
+          include-hidden-files: false
+          retention-days: 7
+
+  compare:
+    needs: build
+    if: needs.build.outputs.line == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: TEDI-Design-System/react
+          ref: ${{ needs.build.outputs.tag }}
+          path: react
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+      - name: Build the library and the reference Storybook
+        working-directory: react
+        run: |
+          npm ci
+          npm run build
+          STORYBOOK_EXCLUDE_COMMUNITY=true npx storybook build -c .storybook -o ../build/sb-reference --quiet
+      - name: Build the cards
+        run: |
+          npm ci --prefix build
+          (cd build && npx playwright install --with-deps chromium)
+          node build/scripts/build.mjs --react react --out compare
+      - name: Compare every card with Storybook
+        run: node build/scripts/check.mjs --out compare --compare --storybook build/sb-reference
+      - name: Upload the comparison sheets
+        uses: actions/upload-artifact@v4
+        with:
+          name: storybook-comparison
+          path: compare/check/*.png
+          retention-days: 14
+
+  publish-rc:
+    needs: build
+    if: needs.build.outputs.line == 'rc'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/actions/publish
+      - uses: ./.github/actions/publish
+        with:
+          line: rc
+          tag: ${{ needs.build.outputs.tag }}
+          version: ${{ needs.build.outputs.version }}
+          commit: ${{ needs.build.outputs.commit }}
+
+  publish-main:
+    needs: [build, compare]
+    if: needs.build.outputs.line == 'main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    # Waits for a reviewer: approve once the storybook-comparison sheets look right.
+    environment: claude-design-system-main
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/actions/publish
+      - uses: ./.github/actions/publish
+        with:
+          line: main
+          tag: ${{ needs.build.outputs.tag }}
+          version: ${{ needs.build.outputs.version }}
+          commit: ${{ needs.build.outputs.commit }}

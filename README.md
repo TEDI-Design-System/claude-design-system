@@ -6,16 +6,19 @@ the real TEDI React components: the compiled library, live previews of every com
 contracts, usage docs and the `@tedi-design-system/core` tokens. `release.json` says which
 version a branch or tag holds.
 
-The files are generated from the React repository on every release. Don't edit them here;
-changes go into [TEDI-Design-System/react](https://github.com/TEDI-Design-System/react).
+The files are generated on every React release by the build in `build/` (on `rc` only).
+Don't edit them: component changes go into
+[TEDI-Design-System/react](https://github.com/TEDI-Design-System/react), and the overview,
+usage docs and build into `build/` (see [build/README.md](build/README.md)). Publishing
+never needs `build/`.
 
 ## Versions
 
 | Branch / tag | Contents |
 |---|---|
-| `main` | the latest stable release; one commit per release |
+| `main` | the latest stable release; one commit per release, generated files only |
 | `react-<version>` | one tag per stable release, matching `@tedi-design-system/react` on npm |
-| `rc` | the latest release candidate only: the branch is a single commit, replaced on every candidate |
+| `rc` (default) | the latest release candidate, plus the build in `build/`; each candidate replaces the previous release commit |
 
 Use the version your applications are on, so designs match what engineers can ship. A shallow
 clone (`--depth 1`) is all you need.

@@ -4,7 +4,9 @@ This repository is the TEDI Design System as the files of a Claude **Design Syst
 artifact**. `release.json` names the version (`version`, below `<version>`), the
 `@tedi-design-system/core` version and the source commit. It is generated from
 [TEDI-Design-System/react](https://github.com/TEDI-Design-System/react) on every release; do
-not edit anything here except as the steps below say.
+not edit anything here except as the steps below say. `build/` (present on `rc`) is the
+build that generates these files: publishing never reads it, so leave it alone unless the
+user asks to change the build (then start from `build/README.md`).
 
 When the user asks to publish, install, set up or update the TEDI design system in Claude,
 work through this file in order: check, publish (new or update), verify, report. You need the

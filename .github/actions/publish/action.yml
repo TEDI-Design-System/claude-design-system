@@ -1,0 +1,88 @@
+name: Publish a release line
+description: >
+  Replaces the generated files on a release line of this repository with the release tree
+  the build job uploaded. main holds only generated files and gets a new commit tagged with
+  the release. rc also holds the build (build/, .github/, .gitignore), which is kept: when
+  rc's tip is the previous release commit it is replaced (force push), otherwise the new
+  release commit goes on top. Needs contents write on the calling job.
+
+inputs:
+  line:
+    description: main or rc
+    required: true
+  tag:
+    description: The react-<version> release tag
+    required: true
+  version:
+    description: The release version
+    required: true
+  commit:
+    description: The React repository commit the files were built from
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout the release lines
+      uses: actions/checkout@v4
+      with:
+        path: target
+        fetch-depth: 0
+
+    - name: Clear the generated files
+      shell: bash
+      working-directory: target
+      env:
+        LINE: ${{ inputs.line }}
+      run: |
+        if [ "$LINE" = rc ]; then
+          git checkout rc
+          tip=$(git rev-parse HEAD)
+          echo "TIP=$tip" >> "$GITHUB_ENV"
+          # The previous release commit: made by this action, nothing else since.
+          author=$(git log -1 --format=%ae)
+          subject=$(git log -1 --format=%s)
+          if [ "$author" = "41898282+github-actions[bot]@users.noreply.github.com" ] \
+            && [[ "$subject" == "TEDI "* ]] && git rev-parse -q --verify HEAD~1 > /dev/null; then
+            echo "Replacing the previous release commit $(git rev-parse --short HEAD) ($subject)."
+            git reset -q --hard HEAD~1
+          fi
+          git rm -rq --ignore-unmatch -- . ':!build' ':!.github' ':!.gitignore'
+        elif git ls-remote --exit-code --heads origin main > /dev/null; then
+          git checkout main
+          git rm -rq --ignore-unmatch .
+        else
+          git checkout --orphan publish-main
+          git rm -rq --ignore-unmatch .
+        fi
+
+    - name: Download the release tree
+      uses: actions/download-artifact@v4
+      with:
+        name: claude-design-system
+        path: target
+
+    - name: Commit and push
+      shell: bash
+      working-directory: target
+      env:
+        LINE: ${{ inputs.line }}
+        TAG: ${{ inputs.tag }}
+        VERSION: ${{ inputs.version }}
+        COMMIT: ${{ inputs.commit }}
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add -A
+        if git diff --cached --quiet; then
+          echo "The release tree matches $LINE already; nothing to publish."
+          exit 0
+        fi
+        git commit -q -m "TEDI $VERSION" -m "From TEDI-Design-System/react@${COMMIT::8} ($TAG)."
+        if [ "$LINE" = main ]; then
+          git tag "$TAG"
+          git push origin HEAD:main "$TAG"
+        else
+          # Refuses if someone pushed to rc while this ran; rerun the workflow then.
+          git push --force-with-lease="rc:$TIP" origin HEAD:rc
+        fi

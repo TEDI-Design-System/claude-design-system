@@ -1,0 +1,15 @@
+{
+  "name": "tedi-claude-design-system-source",
+  "private": true,
+  "type": "module",
+  "description": "Builds the TEDI Claude Design System artifact from a TEDI-Design-System/react checkout",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.1",
+    "playwright": "1.61.1",
+    "typescript": "5.9.2"
+  }
+}
