@@ -16,11 +16,11 @@ export interface TextareaProps {
   height?: string | number;
   /** Maximum height of the textarea. - When `autoGrow` is enabled, this limits how tall the textarea can grow. - When `autoGrow` is disabled, this limits the fixed height. */
   maxHeight?: string | number;
-  sm?: Partial<{ size?: "default" | "small" | "large"; icon?: string | import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").IconWithoutBackgroundProps; isTextArea?: boolean; placeholder?: string; isClearable?: boolean; showClearOnInteraction?: boolean; className?: string; }>;
-  md?: Partial<{ size?: "default" | "small" | "large"; icon?: string | import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").IconWithoutBackgroundProps; isTextArea?: boolean; placeholder?: string; isClearable?: boolean; showClearOnInteraction?: boolean; className?: string; }>;
-  lg?: Partial<{ size?: "default" | "small" | "large"; icon?: string | import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").IconWithoutBackgroundProps; isTextArea?: boolean; placeholder?: string; isClearable?: boolean; showClearOnInteraction?: boolean; className?: string; }>;
-  xl?: Partial<{ size?: "default" | "small" | "large"; icon?: string | import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").IconWithoutBackgroundProps; isTextArea?: boolean; placeholder?: string; isClearable?: boolean; showClearOnInteraction?: boolean; className?: string; }>;
-  xxl?: Partial<{ size?: "default" | "small" | "large"; icon?: string | import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").IconWithoutBackgroundProps; isTextArea?: boolean; placeholder?: string; isClearable?: boolean; showClearOnInteraction?: boolean; className?: string; }>;
+  sm?: Partial<{ size?: "default" | "small" | "large"; icon?: string | IconWithoutBackgroundProps; isTextArea?: boolean; placeholder?: string; isClearable?: boolean; showClearOnInteraction?: boolean; className?: string; }>;
+  md?: Partial<{ size?: "default" | "small" | "large"; icon?: string | IconWithoutBackgroundProps; isTextArea?: boolean; placeholder?: string; isClearable?: boolean; showClearOnInteraction?: boolean; className?: string; }>;
+  lg?: Partial<{ size?: "default" | "small" | "large"; icon?: string | IconWithoutBackgroundProps; isTextArea?: boolean; placeholder?: string; isClearable?: boolean; showClearOnInteraction?: boolean; className?: string; }>;
+  xl?: Partial<{ size?: "default" | "small" | "large"; icon?: string | IconWithoutBackgroundProps; isTextArea?: boolean; placeholder?: string; isClearable?: boolean; showClearOnInteraction?: boolean; className?: string; }>;
+  xxl?: Partial<{ size?: "default" | "small" | "large"; icon?: string | IconWithoutBackgroundProps; isTextArea?: boolean; placeholder?: string; isClearable?: boolean; showClearOnInteraction?: boolean; className?: string; }>;
   /** Unique identifier for the text field. Required for accessibility (associates label, helper text, and input). Also used to generate `aria-describedby` and helper IDs automatically. */
   id?: string;
   /** Additional CSS class name applied to the root container (`<div>`). Use this for layout adjustments, custom spacing, or theming the entire text field wrapper. */

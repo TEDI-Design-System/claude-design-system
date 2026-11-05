@@ -9,11 +9,11 @@ export interface InfoButtonProps {
   /** Children elements to be rendered inside the InfoButton */
   children?: React.ReactNode;
   color?: 'default' | 'inverted';
-  sm?: Partial<import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/components/buttons/button-content/button-content").ButtonContentProps<"button", IInternalButtonProps, "button">>;
-  md?: Partial<import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/components/buttons/button-content/button-content").ButtonContentProps<"button", IInternalButtonProps, "button">>;
-  lg?: Partial<import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/components/buttons/button-content/button-content").ButtonContentProps<"button", IInternalButtonProps, "button">>;
-  xl?: Partial<import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/components/buttons/button-content/button-content").ButtonContentProps<"button", IInternalButtonProps, "button">>;
-  xxl?: Partial<import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/components/buttons/button-content/button-content").ButtonContentProps<"button", IInternalButtonProps, "button">>;
+  sm?: Partial<ButtonContentProps<"button", IInternalButtonProps, "button">>;
+  md?: Partial<ButtonContentProps<"button", IInternalButtonProps, "button">>;
+  lg?: Partial<ButtonContentProps<"button", IInternalButtonProps, "button">>;
+  xl?: Partial<ButtonContentProps<"button", IInternalButtonProps, "button">>;
+  xxl?: Partial<ButtonContentProps<"button", IInternalButtonProps, "button">>;
   /** Additional custom class name. */
   className?: string;
   /** Default breakpoint for SSR, the component is rendered with this breakpoint props on the server-side. */

@@ -21,11 +21,11 @@ export interface HeadingWithIconProps {
   iconColor?: IconColor;
   /** Semantic heading tag h1-h6 are allowed values */
   element?: Extract<TextProps['element'], HeadingModifiers>;
-  sm?: Partial<{ className?: string; element?: import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").TextElement; modifiers?: import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").TextModifiers[] | import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").TextModifiers; color?: TextColor; }>;
-  md?: Partial<{ className?: string; element?: import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").TextElement; modifiers?: import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").TextModifiers[] | import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").TextModifiers; color?: TextColor; }>;
-  lg?: Partial<{ className?: string; element?: import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").TextElement; modifiers?: import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").TextModifiers[] | import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").TextModifiers; color?: TextColor; }>;
-  xl?: Partial<{ className?: string; element?: import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").TextElement; modifiers?: import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").TextModifiers[] | import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").TextModifiers; color?: TextColor; }>;
-  xxl?: Partial<{ className?: string; element?: import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").TextElement; modifiers?: import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").TextModifiers[] | import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/index").TextModifiers; color?: TextColor; }>;
+  sm?: Partial<{ className?: string; element?: TextElement; modifiers?: TextModifiers[] | TextModifiers; color?: TextColor; }>;
+  md?: Partial<{ className?: string; element?: TextElement; modifiers?: TextModifiers[] | TextModifiers; color?: TextColor; }>;
+  lg?: Partial<{ className?: string; element?: TextElement; modifiers?: TextModifiers[] | TextModifiers; color?: TextColor; }>;
+  xl?: Partial<{ className?: string; element?: TextElement; modifiers?: TextModifiers[] | TextModifiers; color?: TextColor; }>;
+  xxl?: Partial<{ className?: string; element?: TextElement; modifiers?: TextModifiers[] | TextModifiers; color?: TextColor; }>;
   /** ID attribute */
   id?: string;
   /** Allows to focus the element */
