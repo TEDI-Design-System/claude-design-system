@@ -90,8 +90,11 @@ export function createTypeReader(entryDts) {
         continue;
       }
       const doc = ts.displayPartsToString(prop.getDocumentationComment(checker)).replace(/\s+/g, ' ').trim();
-      const text =
-        decl?.type?.getText() ?? checker.typeToString(checker.getTypeOfSymbolAtLocation(prop, node), node, PRINT);
+      // Printed types qualify library types with the absolute path of the declaration file
+      // (`import("/…/dist/src/tedi/index").ButtonType`); the bare name is what the artifact exports.
+      const text = (
+        decl?.type?.getText() ?? checker.typeToString(checker.getTypeOfSymbolAtLocation(prop, node), node, PRINT)
+      ).replace(/import\("[^"]*"\)\./g, '');
       if (doc) lines.push(`  /** ${doc.replace(/\*\//g, '*\\/')} */`);
       lines.push(
         `  ${/^[A-Za-z_$][\w$]*$/.test(prop.name) ? prop.name : JSON.stringify(prop.name)}${
