@@ -1,0 +1,40 @@
+<!-- @dsCard group="layout" -->
+<!doctype html>
+<html><head><meta charset="utf-8">
+  <script src="../preview-theme.js"></script>
+  <style>
+    body{margin:0;padding:24px;background:var(--general-surface-primary)}
+    .ds-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;align-items:start}
+    .ds-grid.ds-col{grid-template-columns:1fr}
+    .ds-cell{border:1px solid var(--general-border-primary);border-radius:8px;padding:12px;min-width:0;overflow:hidden;transform:translateZ(0)}
+    .ds-cell>h4{margin:0 0 8px;font:600 12px system-ui;color:var(--general-text-tertiary);text-transform:uppercase;letter-spacing:.04em}
+    .ds-single{transform:translateZ(0)}
+  </style>
+</head><body>
+  <div class="ds-grid" id="g"></div>
+  <script src="../../_preview/ShowAt.js"></script>
+  <script>
+    // One cell per story; ?story=<Export> renders just that story (used for grading).
+    var h=React.createElement, g=document.getElementById('g');
+    var E=Object.keys(window.__dsPreview||{}).filter(function(k){return typeof window.__dsPreview[k]==='function'&&/^[A-Z]/.test(k)});
+    var MODE="grid", PRIMARY="";
+    var q=null; try{q=new URLSearchParams(location.search).get('story')}catch(e){}
+    if(MODE==='column'){g.className+=' ds-col'; var i0=E.indexOf(PRIMARY); if(i0>0){E.splice(i0,1);E.unshift(PRIMARY)}}
+    function mount(id,key){try{ReactDOM.createRoot(document.getElementById(id)).render(h(window.Tedi.ThemeProvider,{"theme":"default"},h(window.Tedi.PrintingProvider,{},h(window.Tedi.LabelProvider,{"locale":"et"},h(window.__dsPreview[key])))))}catch(e){document.getElementById(id).textContent='⚠ '+(e&&e.message||e)}}
+    var pick=null;
+    if(q){pick=E.filter(function(k){return k.toLowerCase()===q.toLowerCase()})[0]||null}
+    else if(MODE==='single'&&E.length){pick=E.indexOf(PRIMARY)>=0?PRIMARY:E[0]}
+    if(q&&!pick){g.textContent='⚠ no story named '+q}
+    else if(pick){
+      var s=document.createElement('div'); s.className='ds-single'; s.id='r0';
+      if(!q)document.body.style.padding='0';
+      g.parentNode.replaceChild(s,g); mount('r0',pick);
+    } else {
+      E.forEach(function(key,i){
+        var cell=document.createElement('section'); cell.className='ds-cell';
+        cell.innerHTML='<h4>'+key+'</h4><div id="r'+i+'"></div>'; g.appendChild(cell); mount('r'+i,key);
+      });
+      if(!E.length){g.textContent='⚠ no stories'}
+    }
+  </script>
+</body></html>

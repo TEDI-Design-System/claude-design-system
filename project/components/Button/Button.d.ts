@@ -1,0 +1,153 @@
+import * as React from 'react';
+
+/**
+ * Button from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/button/button.stories.tsx).
+ */
+export interface ButtonProps<C extends React.ElementType = 'button'> {
+  /** Button children */
+  children: React.ReactNode;
+  /** Additional custom class name. */
+  className?: string;
+  /** Button visual type */
+  visualType?: ButtonType;
+  /** If button should take all the space it has */
+  fullWidth?: boolean;
+  /** Color scheme of the button. The 'text' value is only supported when visualType is 'link'. */
+  color?: ButtonColor;
+  /** Button size */
+  size?: 'default' | 'small' | 'large';
+  /** Name of the icon when button only has an icon in it. */
+  icon?: string | IconWithoutBackgroundProps;
+  /** Name of the icon we want to show on the left. */
+  iconLeft?: string | IconWithoutBackgroundProps;
+  /** Name of the icon we want to show on the right. */
+  iconRight?: string | IconWithoutBackgroundProps;
+  /** Underline the button text */
+  underline?: boolean;
+  /** If button is active and should keep its hover state. */
+  isHovered?: boolean;
+  /** If button is active and should keep it's active state. */
+  isActive?: boolean;
+  /** If button is in loading state and should show spinner. When isLoading is true, button does not trigger onClick event. */
+  isLoading?: boolean;
+  /** Skip applying button/link styles Useful when you just want to use Button or Link logic without the styles In this case icon, iconLeft and iconRight are ignored */
+  noStyle?: boolean;
+  /** Internal use only */
+  renderWrapperElement?: unknown;
+  /** Automatically show tooltip for icon-only buttons. */
+  showTooltip?: boolean;
+  /** Button type */
+  type?: 'submit' | 'button' | 'reset';
+  /** Skips form's browser validation */
+  formNoValidate?: boolean;
+  /** Render as custom component */
+  as?: C;
+  ref?: PolymorphicRef<C>;
+  /** Default breakpoint for SSR, the component is rendered with this breakpoint props on the server-side. */
+  defaultServerBreakpoint?: Breakpoint;
+  sm?: Partial<ButtonContentProps<C, IInternalButtonProps, "button">>;
+  md?: Partial<ButtonContentProps<C, IInternalButtonProps, "button">>;
+  lg?: Partial<ButtonContentProps<C, IInternalButtonProps, "button">>;
+  xl?: Partial<ButtonContentProps<C, IInternalButtonProps, "button">>;
+  xxl?: Partial<ButtonContentProps<C, IInternalButtonProps, "button">>;
+}
+// Also accepts 269 standard React / HTML attributes of its root element.
+
+// Referenced types, resolved one level deep (see the story source for the rest).
+type ButtonType = 'primary' | 'secondary' | 'neutral' | 'link';
+type ButtonColor = 'default' | 'danger' | 'success' | 'inverted' | 'text';
+interface IconWithoutBackgroundProps extends IconSharedProps {
+    background?: undefined;
+    /**
+     * Type of display
+     * @default block
+     */
+    display?: 'block' | 'inline';
+}
+type PolymorphicRef<C extends React.ElementType> = React.ComponentPropsWithRef<C>['ref'];
+type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+type ButtonContentProps<C extends React.ElementType, P extends Record<string, UnknownType>, A> = PolymorphicComponentPropWithRef<AllowedHTMLTags<C, A>, {
+    /**
+     * Button children
+     */
+    children: React.ReactNode;
+    /**
+     * Additional custom class name.
+     */
+    className?: string;
+    /**
+     * Button visual type
+     * @default primary
+     */
+    visualType?: ButtonType;
+    /**
+     * If button should take all the space it has
+     */
+    fullWidth?: boolean;
+    /**
+     * Color scheme of the button. The 'text' value is only supported when visualType is 'link'.
+     * @default default
+     */
+    color?: ButtonColor;
+    /**
+     * Button size
+     */
+    size?: 'default' | 'small' | 'large';
+    /**
+     * Name of the icon when button only has an icon in it.
+     */
+    icon?: string | IconWithoutBackgroundProps;
+    /**
+     * Name of the icon we want to show on the left.
+     */
+    iconLeft?: string | IconWithoutBackgroundProps;
+    /**
+     * Name of the icon we want to show on the right.
+     */
+    iconRight?: string | IconWithoutBackgroundProps;
+    /**
+     * Underline the button text
+     */
+    underline?: boolean;
+    /**
+     * If button is active and should keep its hover state.
+     */
+    isHovered?: boolean;
+    /**
+     * If button is active and should keep it's active state.
+     */
+    isActive?: boolean;
+    /**
+     * If button is in loading state and should show spinner.
+     * When isLoading is true, button does not trigger onClick event.
+     * @default false
+     */
+    isLoading?: boolean;
+    /**
+     * Skip applying button/link styles
+     * Useful when you just want to use Button or Link logic without the styles
+     * In this case icon, iconLeft and iconRight are ignored
+     */
+    noStyle?: boolean;
+    /**
+     * Internal use only
+     */
+    renderWrapperElement?: unknown;
+    /**
+     * Automatically show tooltip for icon-only buttons.
+     * @default true
+     */
+    showTooltip?: boolean;
+} & P>;
+interface IInternalButtonProps {
+    /**
+     * Button type
+     * @default button
+     */
+    type?: 'submit' | 'button' | 'reset';
+    /**
+     * Skips form's browser validation
+     * @default true when type="submit"
+     */
+    formNoValidate?: boolean;
+}
