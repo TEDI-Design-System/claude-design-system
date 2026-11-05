@@ -107,7 +107,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -118,7 +118,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var text_default = ns["Text"] ?? ns;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/layout/show-at/show-at.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/show-at/show-at.tsx
   var show_at_exports = {};
   __export(show_at_exports, {
     default: () => show_at_default
@@ -179,11 +179,11 @@ var __dsPreview = (() => {
     render: BreakpointOverviewTemplate
   };
 
-  // .design-sync/artifact/compose.tsx
+  // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
-  var React = __toESM(require_react(), 1);
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
+  var React = __toESM(require_react());
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];

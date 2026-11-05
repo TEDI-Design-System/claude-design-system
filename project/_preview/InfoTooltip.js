@@ -105,7 +105,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/content/label/label.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/label/label.tsx
   var label_exports = {};
   __export(label_exports, {
     default: () => label_default
@@ -116,7 +116,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var label_default = ns["Label"] ?? ns;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/overlays/tooltip/info-tooltip.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/overlays/tooltip/info-tooltip.tsx
   var info_tooltip_exports = {};
   __export(info_tooltip_exports, {
     default: () => info_tooltip_default
@@ -151,11 +151,11 @@ var __dsPreview = (() => {
     render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(label_exports.Label, { htmlFor: "city", required: true, tooltip: "Sisestage linn, kus te praegu elate.", children: "Linn" })
   };
 
-  // .design-sync/artifact/compose.tsx
+  // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
-  var React = __toESM(require_react(), 1);
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
+  var React = __toESM(require_react());
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];

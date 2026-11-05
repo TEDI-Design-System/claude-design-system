@@ -211,7 +211,7 @@ var __dsPreview = (() => {
     return props;
   };
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/base/icon/icon.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/icon/icon.tsx
   var icon_exports = {};
   __export(icon_exports, {
     default: () => icon_default
@@ -222,7 +222,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var icon_default = ns["Icon"] ?? ns;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -238,7 +238,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -252,7 +252,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -266,7 +266,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -277,7 +277,7 @@ var __dsPreview = (() => {
   var ns5 = window.Tedi;
   var vertical_spacing_default = ns5["VerticalSpacing"] ?? ns5;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/misc/separator/separator.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/separator/separator.tsx
   var separator_exports = {};
   __export(separator_exports, {
     default: () => separator_default
@@ -288,7 +288,7 @@ var __dsPreview = (() => {
   var ns6 = window.Tedi;
   var separator_default = ns6["Separator"] ?? ns6;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/form/textfield/textfield.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/textfield/textfield.tsx
   var textfield_exports = {};
   __export(textfield_exports, {
     default: () => textfield_default
@@ -299,7 +299,7 @@ var __dsPreview = (() => {
   var ns7 = window.Tedi;
   var textfield_default = ns7["TextField"] ?? ns7;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/form/choice-group/choice-group.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/choice-group/choice-group.tsx
   var choice_group_exports = {};
   __export(choice_group_exports, {
     default: () => choice_group_default
@@ -763,11 +763,11 @@ var __dsPreview = (() => {
     }
   };
 
-  // .design-sync/artifact/compose.tsx
+  // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
-  var React = __toESM(require_react(), 1);
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
+  var React = __toESM(require_react());
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];

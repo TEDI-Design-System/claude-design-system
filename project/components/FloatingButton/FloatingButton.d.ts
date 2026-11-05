@@ -18,11 +18,11 @@ export interface FloatingButtonProps {
   offset?: FloatingButtonOffset;
   /** Button z-index */
   zIndex?: number;
-  sm?: Partial<import("/Users/m2rt/Bitweb/TEHIK/TEDI/react/dist/src/tedi/components/buttons/button-content/button-content").ButtonContentProps<"button", IInternalButtonProps, "button">>;
-  md?: Partial<import("/Users/m2rt/Bitweb/TEHIK/TEDI/react/dist/src/tedi/components/buttons/button-content/button-content").ButtonContentProps<"button", IInternalButtonProps, "button">>;
-  lg?: Partial<import("/Users/m2rt/Bitweb/TEHIK/TEDI/react/dist/src/tedi/components/buttons/button-content/button-content").ButtonContentProps<"button", IInternalButtonProps, "button">>;
-  xl?: Partial<import("/Users/m2rt/Bitweb/TEHIK/TEDI/react/dist/src/tedi/components/buttons/button-content/button-content").ButtonContentProps<"button", IInternalButtonProps, "button">>;
-  xxl?: Partial<import("/Users/m2rt/Bitweb/TEHIK/TEDI/react/dist/src/tedi/components/buttons/button-content/button-content").ButtonContentProps<"button", IInternalButtonProps, "button">>;
+  sm?: Partial<import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/components/buttons/button-content/button-content").ButtonContentProps<"button", IInternalButtonProps, "button">>;
+  md?: Partial<import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/components/buttons/button-content/button-content").ButtonContentProps<"button", IInternalButtonProps, "button">>;
+  lg?: Partial<import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/components/buttons/button-content/button-content").ButtonContentProps<"button", IInternalButtonProps, "button">>;
+  xl?: Partial<import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/components/buttons/button-content/button-content").ButtonContentProps<"button", IInternalButtonProps, "button">>;
+  xxl?: Partial<import("/home/runner/work/claude-design-system/claude-design-system/react/dist/src/tedi/components/buttons/button-content/button-content").ButtonContentProps<"button", IInternalButtonProps, "button">>;
   /** Button children */
   children: React.ReactNode;
   /** Additional custom class name. */

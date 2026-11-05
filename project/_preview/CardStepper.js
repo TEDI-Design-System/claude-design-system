@@ -128,7 +128,7 @@ var __dsPreview = (() => {
   init_define_process_env();
   var import_react = __toESM(require_react(), 1);
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/base/icon/icon.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/icon/icon.tsx
   var icon_exports = {};
   __export(icon_exports, {
     default: () => icon_default
@@ -139,7 +139,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var icon_default = ns["Icon"] ?? ns;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -150,7 +150,7 @@ var __dsPreview = (() => {
   var ns2 = window.Tedi;
   var text_default = ns2["Text"] ?? ns2;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -161,7 +161,7 @@ var __dsPreview = (() => {
   var ns3 = window.Tedi;
   var button_default = ns3["Button"] ?? ns3;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/buttons/card-button/card-button.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/card-button/card-button.tsx
   var card_button_exports = {};
   __export(card_button_exports, {
     default: () => card_button_default
@@ -172,7 +172,7 @@ var __dsPreview = (() => {
   var ns4 = window.Tedi;
   var card_button_default = ns4["CardButton"] ?? ns4;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/content/card/index.ts
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/card/index.ts
   var card_exports = {};
   __export(card_exports, {
     default: () => card_default
@@ -183,7 +183,7 @@ var __dsPreview = (() => {
   var ns5 = window.Tedi;
   var card_default = ns5["Card"] ?? ns5;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/content/collapse/collapse.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/collapse/collapse.tsx
   var collapse_exports = {};
   __export(collapse_exports, {
     default: () => collapse_default
@@ -199,7 +199,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -213,7 +213,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -227,7 +227,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -238,7 +238,7 @@ var __dsPreview = (() => {
   var ns9 = window.Tedi;
   var vertical_spacing_default = ns9["VerticalSpacing"] ?? ns9;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/notifications/alert/alert.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/notifications/alert/alert.tsx
   var alert_exports = {};
   __export(alert_exports, {
     default: () => alert_default
@@ -249,7 +249,7 @@ var __dsPreview = (() => {
   var ns10 = window.Tedi;
   var alert_default = ns10["Alert"] ?? ns10;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/navigation/card-stepper/card-stepper.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/card-stepper/card-stepper.tsx
   var card_stepper_exports = {};
   __export(card_stepper_exports, {
     default: () => card_stepper_default
@@ -260,7 +260,7 @@ var __dsPreview = (() => {
   var ns11 = window.Tedi;
   var card_stepper_default = ns11["CardStepper"] ?? ns11;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/navigation/card-stepper/card-stepper-step.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/card-stepper/card-stepper-step.tsx
   var card_stepper_step_exports = {};
   __export(card_stepper_step_exports, {
     default: () => card_stepper_step_default
@@ -753,11 +753,11 @@ var __dsPreview = (() => {
     ] }) }, column.key)) })
   };
 
-  // .design-sync/artifact/compose.tsx
+  // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
-  var React = __toESM(require_react(), 1);
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
+  var React = __toESM(require_react());
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];

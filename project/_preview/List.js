@@ -113,7 +113,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/content/list/list.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/list/list.tsx
   var list_exports = {};
   __export(list_exports, {
     default: () => list_default
@@ -263,11 +263,11 @@ var __dsPreview = (() => {
     }
   };
 
-  // .design-sync/artifact/compose.tsx
+  // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
-  var React = __toESM(require_react(), 1);
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
+  var React = __toESM(require_react());
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];

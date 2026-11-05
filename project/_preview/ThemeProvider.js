@@ -489,7 +489,7 @@ var __dsPreview = (() => {
   var import_dayjs = __toESM(require_dayjs_min(), 1);
   var import_weekday = __toESM(require_weekday(), 1);
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/providers/accessibility-provider/accessibility-provider.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/providers/accessibility-provider/accessibility-provider.tsx
   var accessibility_provider_exports = {};
   __export(accessibility_provider_exports, {
     default: () => accessibility_provider_default
@@ -500,7 +500,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var accessibility_provider_default = ns["AccessibilityProvider"] ?? ns;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/providers/label-provider/index.ts
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/providers/label-provider/index.ts
   var label_provider_exports = {};
   __export(label_provider_exports, {
     default: () => label_provider_default
@@ -518,7 +518,7 @@ var __dsPreview = (() => {
   var StorybookDecorator = ({ children, locale = "et", ...rest }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(label_provider_exports.LabelProvider, { locale, ...rest, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(accessibility_provider_exports.AccessibilityProvider, { children }) });
   var storybook_decorator_default = StorybookDecorator;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -529,7 +529,7 @@ var __dsPreview = (() => {
   var ns3 = window.Tedi;
   var text_default = ns3["Text"] ?? ns3;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -540,7 +540,7 @@ var __dsPreview = (() => {
   var ns4 = window.Tedi;
   var button_default = ns4["Button"] ?? ns4;
 
-  // tedi:/Users/m2rt/Bitweb/TEHIK/TEDI/react/src/tedi/providers/theme-provider/theme-provider.tsx
+  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/providers/theme-provider/theme-provider.tsx
   var theme_provider_exports = {};
   __export(theme_provider_exports, {
     default: () => theme_provider_default
@@ -596,11 +596,11 @@ var __dsPreview = (() => {
     }
   };
 
-  // .design-sync/artifact/compose.tsx
+  // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
-  var React = __toESM(require_react(), 1);
-  var import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
+  var React = __toESM(require_react());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta = stories.default ?? {};
     const story = stories[key];
