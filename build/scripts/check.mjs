@@ -79,14 +79,26 @@ async function renderCheck(browser, port) {
     page.on('pageerror', (e) => errors.push(e.message));
     await page.goto(`http://localhost:${port}/project/components/${name}/preview.html?theme=${opts.theme}`);
     await page.waitForTimeout(800);
-    const state = await page.evaluate(() => ({
-      warnings: [...document.querySelectorAll('body *')]
-        .filter((el) => el.childElementCount === 0 && el.textContent.startsWith('⚠'))
-        .map((el) => el.textContent),
-      height: document.body.scrollHeight,
-      text: document.body.innerText.trim().length,
-      media: document.querySelectorAll('img,svg,canvas,input,button,select,textarea').length,
-    }));
+    const state = await page.evaluate(() => {
+      // What the stories rendered: their roots (r0, r1, ...) and anything portalled to <body>.
+      // The theme toolbar (.tps) and the grid's <h4> labels don't count.
+      const roots = [...document.querySelectorAll('[id]')].filter((el) => /^r\d+$/.test(el.id));
+      const portals = [...document.body.children].filter(
+        (el) => !el.matches('script, style, .tps, #g, .ds-single') && !roots.includes(el)
+      );
+      const rendered = [...roots, ...portals];
+      return {
+        warnings: [...document.querySelectorAll('body *')]
+          .filter((el) => el.childElementCount === 0 && el.textContent.startsWith('⚠'))
+          .map((el) => el.textContent),
+        height: document.body.scrollHeight,
+        text: rendered.reduce((n, el) => n + el.innerText.trim().length, 0),
+        media: rendered.reduce(
+          (n, el) => n + el.querySelectorAll('img,svg,canvas,input,button,select,textarea').length,
+          0
+        ),
+      };
+    });
     const empty = state.text === 0 && state.media === 0;
     if (errors.length || state.warnings.length || empty) {
       problems.push({

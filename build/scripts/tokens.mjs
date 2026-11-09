@@ -1,6 +1,7 @@
 // tokens.json for the Design System artifact, refreshed from the compiled stylesheet, and
 // the tokens.css the artifact page would compile from it. A refresh keeps every token's
-// usage note and order: values that changed are updated, tokens the build adds are
+// usage note and order (a note that names the default and dark aliases is kept in step with
+// them): values that changed are updated, tokens the build adds are
 // appended, and tokens the build no longer defines are reported and left in place.
 
 const FAMILIES = ['spacing', 'radius', 'borders', 'containers', 'zIndex'];
@@ -63,6 +64,12 @@ export function refreshTokens(tokens, css) {
       report.changed.push({ name: token.name, from: token.value, to: value });
       token.value = value;
     }
+    // Usage notes that name the aliased values ("Default: `x`; dark: `y`.") follow the value.
+    if (typeof value === 'object' && token.usage) {
+      const name = (v) => /^\{(.+)\}$/.exec(v)?.[1];
+      const [l, d] = [name(value.default), name(value.dark)];
+      if (l && d) token.usage = token.usage.replace(/Default: `[^`]+`; dark: `[^`]+`/, `Default: \`${l}\`; dark: \`${d}\``);
+    }
   }
   for (const [name, value] of Object.entries(light)) {
     if (COLOR_PREFIX.test(name) && !seen.has(name) && isColor(value)) {
@@ -111,7 +118,7 @@ export function tokensCss(t) {
     out.push(`  --${name}: ${cssValue(typeof value === 'object' ? value[first] : value)};`);
   out.push('}');
   for (const theme of rest) {
-    out.push(`[data-theme="${theme}"] {`);
+    out.push(`[data-theme="${theme}"], .tedi-theme--${theme} {`);
     for (const { name, value } of t.color.tokens) {
       if (typeof value === 'object') out.push(`  --${name}: ${cssValue(value[theme] ?? value[first])};`);
       else if (value.startsWith('{')) out.push(`  --${name}: ${cssValue(value)};`);

@@ -261,7 +261,7 @@ function source() {
   const git = (...args) => execFileSync('git', args, { cwd: REACT, encoding: 'utf8' }).trim();
   const branch = opts.branch ?? git('rev-parse', '--abbrev-ref', 'HEAD');
   const date = new Date(git('log', '-1', '--format=%cI')).toISOString().replace(/\.\d+Z$/, 'Z');
-  return { commit: git('rev-parse', 'HEAD'), ref: `${branch}@${git('rev-parse', '--short', 'HEAD')}`, date };
+  return { commit: git('rev-parse', 'HEAD'), ref: `${branch}@${git('rev-parse', '--short=8', 'HEAD')}`, date };
 }
 
 function buildTokens(css, version) {
@@ -410,7 +410,8 @@ function previewPlugin(exported, globalDefaults, unstyled) {
         });
         if (resolved.errors.length) return undefined;
         const name = shimTarget(resolved.path, exported);
-        return name ? { path: resolved.path, namespace: 'tedi', pluginData: { name } } : undefined;
+        // Relative to the checkout: the path lands in a bundle comment, which mustn't depend on the machine.
+        return name ? { path: path.relative(REACT, resolved.path), namespace: 'tedi', pluginData: { name } } : undefined;
       });
       build.onResolve({ filter: /^tedi-namespace$/ }, () => ({ path: 'tedi-namespace', namespace: 'tedi-namespace' }));
       build.onLoad({ filter: /.*/, namespace: 'tedi-namespace' }, () => ({
@@ -554,7 +555,7 @@ function previewHtml(component) {
   <script>
     // One cell per story; ?story=<Export> renders just that story (used for grading).
     var h=React.createElement, g=document.getElementById('g');
-    var E=Object.keys(window.__dsPreview||{}).filter(function(k){return typeof window.__dsPreview[k]==='function'&&/^[A-Z]/.test(k)});
+    var P=window.__dsPreview||{}, E=${JSON.stringify(component.stories)}.filter(function(k){return typeof P[k]==='function'});
     var MODE=${JSON.stringify(component.cardMode)}, PRIMARY=${JSON.stringify(component.primaryStory)};
     var q=null; try{q=new URLSearchParams(location.search).get('story')}catch(e){}
     if(MODE==='column'){g.className+=' ds-col'; var i0=E.indexOf(PRIMARY); if(i0>0){E.splice(i0,1);E.unshift(PRIMARY)}}

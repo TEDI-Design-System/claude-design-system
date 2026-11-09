@@ -64,8 +64,9 @@ Other values worth knowing:
 - `VerticalSpacing` `size`: `0 0.25 0.5 0.75 1 1.25 1.5 1.75 2 2.5 3 4 5` (rem)
 - `Card` `borderRadius` is not a keyword: it is `false` or `{ top?, bottom?, ... }`
 
-**Most components take per-breakpoint props** instead of media queries: pass a partial props
-object under a breakpoint key (`sm md lg xl xxl`), plus `defaultServerBreakpoint` for SSR.
+**Most components take per-breakpoint props** instead of media queries: the direct props are the
+`xs` (smallest) values, and a partial props object under a breakpoint key (`sm md lg xl xxl`; there
+is no `xs` key) overrides them from that width up. Add `defaultServerBreakpoint` for SSR.
 
 ```jsx
 <Button fullWidth lg={{ fullWidth: false, size: 'small' }} defaultServerBreakpoint="lg">Salvesta</Button>
