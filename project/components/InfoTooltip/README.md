@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, In Label Row.
 import * as React from 'react';
 
 /**
- * InfoTooltip from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/overlays/tooltip/info-tooltip.stories.tsx).
+ * InfoTooltip from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/overlays/tooltip/info-tooltip.stories.tsx).
  */
 export interface InfoTooltipProps {
   /** Tooltip content shown when the info button is hovered or focused. */
@@ -84,6 +84,7 @@ interface InfoTooltipBreakpointProps {
      */
     ariaLabel?: string;
 }
+// From @floating-ui/utils (see its documentation): Placement.
 ```
 
 ## Examples

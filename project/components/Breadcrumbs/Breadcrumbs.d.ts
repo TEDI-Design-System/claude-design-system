@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Breadcrumbs from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/breadcrumbs/breadcrumbs.stories.tsx).
+ * Breadcrumbs from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/breadcrumbs/breadcrumbs.stories.tsx).
  */
 export interface BreadcrumbsProps {
   /** Crumbs in order from the root page to the current page. Each child becomes one crumb; chevron separators are inserted between them. Use a `Link` (or any anchor) for navigable crumbs and a plain element (e.g. `<span>`) for the current page — add `aria-current="page"` to it yourself. */

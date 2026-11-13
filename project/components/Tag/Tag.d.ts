@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Tag from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/tags/tag/tag.stories.tsx).
+ * Tag from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/tags/tag/tag.stories.tsx).
  */
 export interface TagProps {
   /** The content inside the Tag. Typically this will be text or any JSX elements to be displayed. */

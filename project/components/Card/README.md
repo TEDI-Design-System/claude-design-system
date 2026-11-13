@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, Header Types, Default Card, Card Info, A
 import * as React from 'react';
 
 /**
- * Card from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/card/card.stories.tsx).
+ * Card from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/card/card.stories.tsx).
  */
 export interface CardProps {
   children?: React.ReactNode;

@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, With Initial Value, Predefined Slots, Co
 import * as React from 'react';
 
 /**
- * TimePicker from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/time-picker/time-picker.stories.tsx).
+ * TimePicker from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/time-picker/time-picker.stories.tsx).
  */
 export interface TimePickerProps {
   /** Currently selected time in "HH:mm" format (24-hour). */

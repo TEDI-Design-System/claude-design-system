@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Horizontal Spacings, Horizontal Thicknes
 import * as React from 'react';
 
 /**
- * Separator from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/separator/separator.stories.tsx).
+ * Separator from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/separator/separator.stories.tsx).
  */
 export interface SeparatorProps {
   /** Must be set to 'horizontal' or left undefined (defaults to horizontal) Must be set to 'vertical' */

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Checkbox from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/checkbox/checkbox.stories.tsx).
+ * Checkbox from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/checkbox/checkbox.stories.tsx).
  */
 export interface CheckboxProps {
   /** Visual variant. - `default` — standard indicator + label. - `card` — the whole control renders as a selectable card (indicator, label, optional icon/description). */
@@ -58,6 +58,8 @@ export interface CheckboxProps {
 }
 
 // Referenced types, resolved one level deep (see the story source for the rest).
+type ChoiceInputVariant = 'default' | 'card';
+type ChoiceInputCardVariant = 'primary' | 'secondary';
 interface FeedbackTextProps {
     /**
      * Helper text
@@ -82,6 +84,56 @@ interface FeedbackTextProps {
      * @default left
      */
     position?: FeedbackTextPosition;
+}
+interface FormLabelProps {
+    /**
+     * The unique identifier for the input element that this label is associated with.
+     * This ID should match the input element's `id` attribute to ensure accessibility.
+     */
+    id: string;
+    /**
+     * The text content of the label that describes the input field.
+     */
+    label: React.ReactNode;
+    /**
+     * Controls the visibility of the label.
+     * Use `true` to hide the label visually while maintaining its space in the layout,
+     * or use 'keep-space' to hide it without collapsing the space it occupies.
+     */
+    hideLabel?: boolean | 'keep-space';
+    /**
+     * Indicates whether the input field is required.
+     * If set to `true`, the required indicator (if provided) will be displayed next to the label.
+     */
+    required?: boolean;
+    /**
+     * Additional className.
+     */
+    className?: string;
+    /**
+     * Renders the label as a `<span>` instead of a `<label>` element.
+     * This is useful when the `Form` component already handles labels internally.
+     */
+    renderWithoutLabel?: boolean;
+    /**
+     * Specifies the size of the label text.
+     * Options include 'small' for a smaller label size or 'default' for the standard size.
+     * @default default
+     */
+    size?: 'small' | 'default';
+    /**
+     * Tooltip content to display when hovering over the info button.
+     * If provided, an info button with a tooltip will be rendered.
+     */
+    tooltip?: React.ReactNode;
+    /**
+     * Additional props forwarded to the underlying `Label` component.
+     * Use `modifiers` to control how the label text wraps or breaks
+     * (e.g. `{ modifiers: 'nowrap' }`) so long labels don't distort the form layout.
+     * Breakpoint keys are supported for responsive wrapping
+     * (e.g. `{ modifiers: 'nowrap', sm: { modifiers: 'break-word' } }`).
+     */
+    labelProps?: LabelModifierProps;
 }
 type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 type CheckboxBaseProps = ChoiceInputProps & {

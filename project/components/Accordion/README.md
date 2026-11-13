@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, Variants, Action Types, With Icon Card, 
 import * as React from 'react';
 
 /**
- * Accordion from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/accordion/accordion.stories.tsx).
+ * Accordion from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/accordion/accordion.stories.tsx).
  */
 export interface AccordionProps {
   /** Accordion content. Should be one or more `AccordionItem` components. */

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * TopNav from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/top-nav/top-nav.stories.tsx).
+ * TopNav from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/layout/top-nav/top-nav.stories.tsx).
  */
 export interface TopNavProps {
   /** `TopNav.Item` and `TopNav.Separator` children. Any other React node is ignored. Fragments are flattened, so `<>…</>` wrappers work transparently. */

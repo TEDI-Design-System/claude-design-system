@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Affix from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/affix/affix.stories.tsx).
+ * Affix from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/affix/affix.stories.tsx).
  */
 export interface AffixProps {
   /** Affix children */

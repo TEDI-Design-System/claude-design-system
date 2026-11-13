@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * TableCard from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/table-card/table-card.stories.tsx).
+ * TableCard from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/table-card/table-card.stories.tsx).
  */
 export interface TableCardProps {
   /** Label / value pairs (one per column) rendered as the card body - a single `<dl>`. */

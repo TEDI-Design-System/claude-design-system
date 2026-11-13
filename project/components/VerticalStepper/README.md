@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, With Descriptions, With Status Badges, W
 import * as React from 'react';
 
 /**
- * VerticalStepper from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/vertical-stepper/vertical-stepper.stories.tsx).
+ * VerticalStepper from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/vertical-stepper/vertical-stepper.stories.tsx).
  */
 export interface VerticalStepperProps {
   /** `VerticalStepper.Item` elements (and optional `Separator`s between them). Items are auto-numbered in source order. */

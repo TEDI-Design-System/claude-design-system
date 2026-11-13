@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Responsive Example, Leading Start, Respo
 import * as React from 'react';
 
 /**
- * Ellipsis from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/ellipsis/ellipsis.stories.tsx).
+ * Ellipsis from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/ellipsis/ellipsis.stories.tsx).
  */
 export interface EllipsisProps {
   /** The content to be displayed inside the ellipsis container. */

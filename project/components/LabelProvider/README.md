@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default.
 import * as React from 'react';
 
 /**
- * LabelProvider from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/providers/label-provider/label-provider.stories.tsx).
+ * LabelProvider from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/providers/label-provider/label-provider.stories.tsx).
  */
 export interface LabelProviderProps<TRecord extends TediLabelEntryRecord<TRecord> = Record<string, never>> {
   /** Global labels that are use in components. If omitted then default labels are used based on `locale` prop. If both props are omitted then Estonian translations are used by default */

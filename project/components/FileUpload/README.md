@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Sizes, With Hint, Disabled, Validation F
 import * as React from 'react';
 
 /**
- * FileUpload from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/file-upload/file-upload.stories.tsx).
+ * FileUpload from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/file-upload/file-upload.stories.tsx).
  */
 export interface FileUploadProps {
   /** Unique HTML id for the file input, also used to associate the label and helper/error text for accessibility. When omitted, falls back to the surrounding `InputGroup`'s id or a generated one. */

@@ -131,7 +131,75 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/icon/icon.tsx
+  // .storybook/subcomponent-controls.ts
+  init_define_import_meta_env();
+  init_define_process_env();
+  var SEP = "__";
+  var ALWAYS_EXCLUDE = ["style", "ref", "key", "defaultServerBreakpoint", "xs", "sm", "md", "lg", "xl", "xxl"];
+  var stripQuotes = (value) => value.replace(/^['"]|['"]$/g, "");
+  var isNumericLiteral = (value) => /^-?\d+(?:\.\d+)?$/.test(value);
+  var inferControl = (type) => {
+    switch (type?.name) {
+      case "boolean":
+        return { control: "boolean" };
+      case "number":
+        return { control: "number" };
+      case "string":
+        return { control: "text" };
+      case "enum": {
+        const literals = (type.value ?? []).map((entry) => stripQuotes(entry.value)).filter((value) => value !== "undefined" && value !== "null");
+        if (literals.length === 0) return { control: "text" };
+        if (literals.every((value) => value === "true" || value === "false")) return { control: "boolean" };
+        if (literals.every(isNumericLiteral)) return { control: "select", options: literals.map(Number) };
+        return { control: "select", options: literals };
+      }
+      default:
+        return { control: "object" };
+    }
+  };
+  var subcomponentArgTypes = (component, options) => {
+    const { category, prefix, include, exclude = [] } = options;
+    const docgen = component;
+    const props = docgen.__docgenInfo?.props;
+    if (!props) {
+      console.warn(
+        `[subcomponentArgTypes] No __docgenInfo for "${docgen.displayName ?? category}". Controls will not be generated. Check the react-docgen-typescript config in .storybook/main.ts.`
+      );
+      return {};
+    }
+    const skip = /* @__PURE__ */ new Set([...ALWAYS_EXCLUDE, ...exclude]);
+    const argTypes = {};
+    for (const [name, prop] of Object.entries(props)) {
+      if (include && !include.includes(name)) continue;
+      if (skip.has(name)) continue;
+      const { control, options: controlOptions } = inferControl(prop.type);
+      const defaultValue = prop.defaultValue?.value;
+      argTypes[`${prefix}${SEP}${name}`] = {
+        name,
+        description: prop.description || void 0,
+        control,
+        options: controlOptions,
+        table: {
+          category,
+          type: prop.type ? { summary: prop.type.raw ?? prop.type.name } : void 0,
+          defaultValue: defaultValue !== void 0 && defaultValue !== null ? { summary: String(defaultValue) } : void 0
+        }
+      };
+    }
+    return argTypes;
+  };
+  var getSubcomponentProps = (args, prefix) => {
+    const head = `${prefix}${SEP}`;
+    const props = {};
+    for (const [key, value] of Object.entries(args)) {
+      if (key.startsWith(head) && value !== void 0 && value !== "") {
+        props[key.slice(head.length)] = value;
+      }
+    }
+    return props;
+  };
+
+  // tedi:src/tedi/components/base/icon/icon.tsx
   var icon_exports = {};
   __export(icon_exports, {
     default: () => icon_default
@@ -142,7 +210,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var icon_default = ns["Icon"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -153,7 +221,7 @@ var __dsPreview = (() => {
   var ns2 = window.Tedi;
   var text_default = ns2["Text"] ?? ns2;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/floating-button/floating-button.tsx
+  // tedi:src/tedi/components/buttons/floating-button/floating-button.tsx
   var floating_button_exports = {};
   __export(floating_button_exports, {
     default: () => floating_button_default
@@ -164,7 +232,7 @@ var __dsPreview = (() => {
   var ns3 = window.Tedi;
   var floating_button_default = ns3["FloatingButton"] ?? ns3;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/card/card.tsx
+  // tedi:src/tedi/components/content/card/card.tsx
   var card_exports = {};
   __export(card_exports, {
     default: () => card_default
@@ -175,7 +243,7 @@ var __dsPreview = (() => {
   var ns4 = window.Tedi;
   var card_default = ns4["Card"] ?? ns4;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/hide-at/hide-at.tsx
+  // tedi:src/tedi/components/layout/hide-at/hide-at.tsx
   var hide_at_exports = {};
   __export(hide_at_exports, {
     default: () => hide_at_default
@@ -186,7 +254,7 @@ var __dsPreview = (() => {
   var ns5 = window.Tedi;
   var hide_at_default = ns5["HideAt"] ?? ns5;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/show-at/show-at.tsx
+  // tedi:src/tedi/components/layout/show-at/show-at.tsx
   var show_at_exports = {};
   __export(show_at_exports, {
     default: () => show_at_default
@@ -197,7 +265,7 @@ var __dsPreview = (() => {
   var ns6 = window.Tedi;
   var show_at_default = ns6["ShowAt"] ?? ns6;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -208,7 +276,7 @@ var __dsPreview = (() => {
   var ns7 = window.Tedi;
   var vertical_spacing_default = ns7["VerticalSpacing"] ?? ns7;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/stretch-content/stretch-content.tsx
+  // tedi:src/tedi/components/misc/stretch-content/stretch-content.tsx
   var stretch_content_exports = {};
   __export(stretch_content_exports, {
     default: () => stretch_content_default
@@ -219,7 +287,7 @@ var __dsPreview = (() => {
   var ns8 = window.Tedi;
   var stretch_content_default = ns8["StretchContent"] ?? ns8;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/link/link.tsx
+  // tedi:src/tedi/components/navigation/link/link.tsx
   var link_exports = {};
   __export(link_exports, {
     default: () => link_default
@@ -230,7 +298,7 @@ var __dsPreview = (() => {
   var ns9 = window.Tedi;
   var link_default = ns9["Link"] ?? ns9;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/tags/status-badge/status-badge.tsx
+  // tedi:src/tedi/components/tags/status-badge/status-badge.tsx
   var status_badge_exports = {};
   __export(status_badge_exports, {
     default: () => status_badge_default
@@ -241,7 +309,7 @@ var __dsPreview = (() => {
   var ns10 = window.Tedi;
   var status_badge_default = ns10["StatusBadge"] ?? ns10;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/carousel/carousel.tsx
+  // tedi:src/tedi/components/content/carousel/carousel.tsx
   var carousel_exports = {};
   __export(carousel_exports, {
     default: () => carousel_default
@@ -549,12 +617,19 @@ var __dsPreview = (() => {
     /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { marginTop: "auto" }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", iconRight: "arrow_forward", children: "Loe edasi" }) })
   ] }) });
   var Default = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(carousel_exports.Carousel, { children: [
+    argTypes: {
+      ...subcomponentArgTypes(carousel_exports.Carousel.Content, {
+        category: "Carousel.Content",
+        prefix: "content",
+        include: ["fade", "transitionMs", "loop", "centered", "swipeThreshold"]
+      })
+    },
+    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(carousel_exports.Carousel, { children: [
       /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(carousel_exports.Carousel.Header, { children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "h2", modifiers: "h1", children: "Pealkiri" }) }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(carousel_exports.Carousel.Navigation, {})
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(carousel_exports.Carousel.Content, { slidesPerView: RESPONSIVE_SLIDES, children: slides(5) }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(carousel_exports.Carousel.Content, { slidesPerView: RESPONSIVE_SLIDES, ...getSubcomponentProps(args, "content"), children: slides(5) }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(carousel_exports.Carousel.Footer, { style: { justifyContent: "center" }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(carousel_exports.Carousel.Indicators, {}) })
     ] })
   };

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * NumberField from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/number-field/number-field.stories.tsx).
+ * NumberField from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/number-field/number-field.stories.tsx).
  */
 export interface NumberFieldProps {
   /** Initial value of the input field. */

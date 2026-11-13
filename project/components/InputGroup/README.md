@@ -10,7 +10,7 @@ Variants (see `preview.html`): Start Static, Start Dynamic, End Static, End Dyna
 import * as React from 'react';
 
 /**
- * InputGroup from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/input-group/input-group.stories.tsx).
+ * InputGroup from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/input-group/input-group.stories.tsx).
  */
 export interface InputGroupProps {
   /** Additional class name(s) applied to the root element of the InputGroup. Useful for custom styling or layout overrides. */

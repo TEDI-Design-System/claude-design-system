@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Header from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/header/header.stories.tsx).
+ * Header from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/layout/header/header.stories.tsx).
  */
 export interface HeaderProps {
   /** Content rendered inside the header, typically Header.Logo, Header.Center, and Header.Actions subcomponents. */

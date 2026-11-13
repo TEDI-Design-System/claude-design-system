@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Colors.
 import * as React from 'react';
 
 /**
- * HeadingWithIcon from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/heading-with-icon/heading-with-icon.stories.tsx).
+ * HeadingWithIcon from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/heading-with-icon/heading-with-icon.stories.tsx).
  */
 export interface HeadingWithIconProps {
   /** Heading text */

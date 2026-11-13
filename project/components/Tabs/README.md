@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, With Icons, With Status Badge, States, C
 import * as React from 'react';
 
 /**
- * Tabs from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/tabs/tabs.stories.tsx).
+ * Tabs from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/tabs/tabs.stories.tsx).
  */
 export interface TabsProps {
   /** Tabs content — should include Tabs.List and Tabs.Content elements */

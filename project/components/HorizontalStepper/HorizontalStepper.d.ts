@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * HorizontalStepper from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/horizontal-stepper/horizontal-stepper.stories.tsx).
+ * HorizontalStepper from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/horizontal-stepper/horizontal-stepper.stories.tsx).
  */
 export interface HorizontalStepperProps {
   /** `HorizontalStepper.Item` elements, one per step. */

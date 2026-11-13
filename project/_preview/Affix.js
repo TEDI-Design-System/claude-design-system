@@ -107,7 +107,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/affix/affix.tsx
+  // tedi:src/tedi/components/misc/affix/affix.tsx
   var affix_exports = {};
   __export(affix_exports, {
     default: () => affix_default

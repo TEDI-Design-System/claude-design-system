@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * FloatingButton from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/floating-button/floating-button.stories.tsx).
+ * FloatingButton from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/buttons/floating-button/floating-button.stories.tsx).
  */
 export interface FloatingButtonProps {
   /** Button axis */

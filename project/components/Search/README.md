@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Sizes, States, Placeholder, Clearable, C
 import * as React from 'react';
 
 /**
- * Search from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/search/search.stories.tsx).
+ * Search from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/search/search.stories.tsx).
  */
 export interface SearchProps {
   /** Callback triggered when the search is executed (Enter key pressed or button clicked). In autocomplete mode it fires on Enter only when no suggestion is active — a free-text submit. */

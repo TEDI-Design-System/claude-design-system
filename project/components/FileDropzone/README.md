@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, With Hint, Multiple, Validation Discardi
 import * as React from 'react';
 
 /**
- * FileDropzone from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/file-dropzone/file-dropzone.stories.tsx).
+ * FileDropzone from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/file-dropzone/file-dropzone.stories.tsx).
  */
 export interface FileDropzoneProps {
   /** Unique identifier for the underlying file input. Auto-generated when omitted. */

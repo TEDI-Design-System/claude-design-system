@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, With Active Item, With Action, With Icon
 import * as React from 'react';
 
 /**
- * Dropdown from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/overlays/dropdown/dropdown.stories.tsx).
+ * Dropdown from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/overlays/dropdown/dropdown.stories.tsx).
  */
 export interface DropdownProps {
   /** Child elements — must include exactly one `Dropdown.Trigger` and one `Dropdown.Content` */
@@ -91,6 +91,7 @@ type DropdownBreakpointProps = {
      */
     maxHeight?: number | string;
 };
+// From @floating-ui/utils (see its documentation): Placement.
 ```
 
 ## Examples

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * DateTimeField from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/date-time-field/date-time-field.stories.tsx).
+ * DateTimeField from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/date-time-field/date-time-field.stories.tsx).
  */
 export interface DateTimeFieldProps {
   /** Unique identifier for the input field. */
@@ -326,3 +326,4 @@ type DateTimeFieldBreakpointProps = {
      */
     timeHeading?: React.ReactNode;
 };
+// From react-day-picker (see its documentation): Matcher, Locale.

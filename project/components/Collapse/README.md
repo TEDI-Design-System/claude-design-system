@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Icon Only, Secondary Arrow, Inverted, Wi
 import * as React from 'react';
 
 /**
- * Collapse from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/collapse/collapse.stories.tsx).
+ * Collapse from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/collapse/collapse.stories.tsx).
  */
 export interface CollapseProps {
   /** Unique identifier for the collapse content. Used for ARIA attributes like `aria-controls`. */

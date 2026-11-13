@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Body Text, Subtitles, General Text, Stat
 import * as React from 'react';
 
 /**
- * Text from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/base/typography/text/text.stories.tsx).
+ * Text from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/base/typography/text/text.stories.tsx).
  */
 export interface TextProps {
   /** Children of the text */

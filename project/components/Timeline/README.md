@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, Position, Title Only, With Description, 
 import * as React from 'react';
 
 /**
- * Timeline from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/timeline/timeline.stories.tsx).
+ * Timeline from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/timeline/timeline.stories.tsx).
  */
 export interface TimelineProps {
   /** `Timeline.Item` elements. */

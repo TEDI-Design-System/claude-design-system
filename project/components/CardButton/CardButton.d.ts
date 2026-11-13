@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * CardButton from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/card-button/card-button.stories.tsx).
+ * CardButton from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/buttons/card-button/card-button.stories.tsx).
  */
 export interface CardButtonProps<C extends React.ElementType = 'button'> {
   /** A single `<Card>` to render as the interactive surface. The host element provides the interaction semantics and applies the hover / active / focus / disabled states to the card and its blocks. Keep it to one card and avoid nested interactive elements. */

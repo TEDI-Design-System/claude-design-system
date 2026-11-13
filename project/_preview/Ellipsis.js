@@ -109,7 +109,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/overlays/popover/popover.tsx
+  // tedi:src/tedi/components/overlays/popover/popover.tsx
   var popover_exports = {};
   __export(popover_exports, {
     default: () => popover_default
@@ -120,7 +120,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var popover_default = ns["Popover"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/ellipsis/ellipsis.tsx
+  // tedi:src/tedi/components/misc/ellipsis/ellipsis.tsx
   var ellipsis_exports = {};
   __export(ellipsis_exports, {
     default: () => ellipsis_default

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Section from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/section/section.stories.tsx).
+ * Section from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/section/section.stories.tsx).
  */
 export interface SectionProps {
   /** Section content */

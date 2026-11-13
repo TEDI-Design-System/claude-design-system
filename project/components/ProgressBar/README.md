@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Sizes, Position, With Label, Regular, Wi
 import * as React from 'react';
 
 /**
- * ProgressBar from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/loaders/progress-bar/progress-bar.stories.tsx).
+ * ProgressBar from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/loaders/progress-bar/progress-bar.stories.tsx).
  */
 export interface ProgressBarProps {
   /** Id forwarded to the bar element so external `<label htmlFor>` can target it. */

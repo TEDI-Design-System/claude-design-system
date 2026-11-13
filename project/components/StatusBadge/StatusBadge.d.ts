@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * StatusBadge from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/tags/status-badge/status-badge.stories.tsx).
+ * StatusBadge from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/tags/status-badge/status-badge.stories.tsx).
  */
 export interface StatusBadgeProps {
   /** The content to be displayed inside the StatusBadge. If not provided and `icon` is set, the badge will display the icon only. */

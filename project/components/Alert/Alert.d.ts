@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Alert from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/notifications/alert/alert.stories.tsx).
+ * Alert from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/notifications/alert/alert.stories.tsx).
  */
 export interface AlertProps {
   /** The primary content displayed within the alert. This can include text, links, or other elements. */

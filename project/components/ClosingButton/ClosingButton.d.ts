@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * ClosingButton from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/closing-button/closing-button.stories.tsx).
+ * ClosingButton from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/buttons/closing-button/closing-button.stories.tsx).
  */
 export interface ClosingButtonProps {
   /** Additional classes to apply custom styles to the ClosingButton. */

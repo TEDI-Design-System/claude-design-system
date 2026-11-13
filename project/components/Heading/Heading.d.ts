@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Heading from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/base/typography/heading/heading.stories.tsx).
+ * Heading from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/base/typography/heading/heading.stories.tsx).
  */
 export interface HeadingProps {
   sm?: Partial<{ className?: string; element?: TextElement; modifiers?: TextModifiers[] | TextModifiers; color?: TextColor; }>;

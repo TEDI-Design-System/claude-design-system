@@ -104,7 +104,7 @@ Variants (see `preview.html`): Default, Sizes, Simple, Merged Cells, Grouped Row
 import * as React from 'react';
 
 /**
- * Table from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/table/table.stories.tsx).
+ * Table from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/table/table.stories.tsx).
  */
 export interface TableProps<TData> {
   /** Unique identifier for the table. Used for accessibility and as the default persistence key namespace. */
@@ -265,6 +265,7 @@ interface TableRowDropEvent {
     fromIndex: number;
     toIndex: number;
 }
+// From @tanstack/table-core (see its documentation): Row, ColumnDef.
 ```
 
 ## Examples

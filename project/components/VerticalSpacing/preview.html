@@ -16,7 +16,7 @@
   <script>
     // One cell per story; ?story=<Export> renders just that story (used for grading).
     var h=React.createElement, g=document.getElementById('g');
-    var E=Object.keys(window.__dsPreview||{}).filter(function(k){return typeof window.__dsPreview[k]==='function'&&/^[A-Z]/.test(k)});
+    var P=window.__dsPreview||{}, E=["Default","Sizes","AsSection","WithCustomClassName","NestedSpacing","MixedContent","OverwriteItemSpacing"].filter(function(k){return typeof P[k]==='function'});
     var MODE="grid", PRIMARY="";
     var q=null; try{q=new URLSearchParams(location.search).get('story')}catch(e){}
     if(MODE==='column'){g.className+=' ds-col'; var i0=E.indexOf(PRIMARY); if(i0>0){E.splice(i0,1);E.unshift(PRIMARY)}}

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Footer from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/footer/footer.stories.tsx).
+ * Footer from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/layout/footer/footer.stories.tsx).
  */
 export interface FooterProps {
   /** `<Footer.Side>`, `<Footer.Body>` (with `<Footer.Section>` children), and `<Footer.Bottom>` slots. Recognised arrangement: 1. Zero or more `<Footer.Side placement="start">` elements (logos on the left). 2. Exactly one `<Footer.Body>`. 3. Zero or more `<Footer.Side placement="end">` elements (logos on the right). 4. Optional `<Footer.Bottom>` rendered below the main row as a strip with separator dots. Other nodes are rendered verbatim where the consumer placed them. */

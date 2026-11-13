@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, Top Pagination Arrows Only, Separated Bo
 import * as React from 'react';
 
 /**
- * Carousel from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/carousel/carousel.stories.tsx).
+ * Carousel from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/carousel/carousel.stories.tsx).
  */
 export interface CarouselProps {
   /** Carousel composition — `Carousel.Header`, `Carousel.Content` and `Carousel.Footer`. */
@@ -27,8 +27,15 @@ export interface CarouselProps {
 ### Default
 
 ```tsx
-export const Default: Story = {
-  render: () => (
+export const Default: StoryObj = {
+  argTypes: {
+    ...subcomponentArgTypes(Carousel.Content, {
+      category: 'Carousel.Content',
+      prefix: 'content',
+      include: ['fade', 'transitionMs', 'loop', 'centered', 'swipeThreshold'],
+    }),
+  },
+  render: (args: Record<string, unknown>) => (
     <Carousel>
       <Carousel.Header>
         <div>
@@ -38,7 +45,9 @@ export const Default: Story = {
         </div>
         <Carousel.Navigation />
       </Carousel.Header>
-      <Carousel.Content slidesPerView={RESPONSIVE_SLIDES}>{slides(5)}</Carousel.Content>
+      <Carousel.Content slidesPerView={RESPONSIVE_SLIDES} {...getSubcomponentProps(args, 'content')}>
+        {slides(5)}
+      </Carousel.Content>
       <Carousel.Footer style={{ justifyContent: 'center' }}>
         <Carousel.Indicators />
       </Carousel.Footer>

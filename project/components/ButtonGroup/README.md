@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Sizes, Types, With Icon, Icon Only, Prim
 import * as React from 'react';
 
 /**
- * ButtonGroup from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/button-group/button-group.stories.tsx).
+ * ButtonGroup from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/buttons/button-group/button-group.stories.tsx).
  */
 export interface ButtonGroupProps {
   /** The child components to render inside the ButtonGroup. Typically, these should be `<Button>` components. */

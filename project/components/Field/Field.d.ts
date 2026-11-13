@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Field from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/field/field.stories.tsx).
+ * Field from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/field/field.stories.tsx).
  */
 export interface FieldProps {
   /** Unique identifier for the field element. */

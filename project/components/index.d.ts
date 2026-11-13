@@ -1,10 +1,10 @@
-// Tedi (@tedi-design-system/react@21.0.0-rc.1): component prop types, one section per component.
+// Tedi (@tedi-design-system/react@21.0.0-rc.9): component prop types, one section per component.
 
 // ---- Icon (components/Icon/Icon.d.ts) ----
 import * as React from 'react';
 
 /**
- * Icon from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/base/icon/icon.stories.tsx).
+ * Icon from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/base/icon/icon.stories.tsx).
  */
 export interface IconProps {
   /** Name of material icon https://fonts.google.com/icons */
@@ -37,7 +37,7 @@ type IconBackgroundColor = 'primary' | 'secondary' | 'brand-primary' | 'brand-se
 import * as React from 'react';
 
 /**
- * Heading from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/base/typography/heading/heading.stories.tsx).
+ * Heading from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/base/typography/heading/heading.stories.tsx).
  */
 export interface HeadingProps {
   sm?: Partial<{ className?: string; element?: TextElement; modifiers?: TextModifiers[] | TextModifiers; color?: TextColor; }>;
@@ -88,7 +88,7 @@ type HeadingModifiers = `h${HeadingLevel}`;
 import * as React from 'react';
 
 /**
- * Text from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/base/typography/text/text.stories.tsx).
+ * Text from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/base/typography/text/text.stories.tsx).
  */
 export interface TextProps {
   /** Children of the text */
@@ -145,7 +145,7 @@ type TextBreakpointProps = {
 import * as React from 'react';
 
 /**
- * ButtonGroup from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/button-group/button-group.stories.tsx).
+ * ButtonGroup from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/buttons/button-group/button-group.stories.tsx).
  */
 export interface ButtonGroupProps {
   /** The child components to render inside the ButtonGroup. Typically, these should be `<Button>` components. */
@@ -178,7 +178,7 @@ type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 import * as React from 'react';
 
 /**
- * Button from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/button/button.stories.tsx).
+ * Button from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/buttons/button/button.stories.tsx).
  */
 export interface ButtonProps<C extends React.ElementType = 'button'> {
   /** Button children */
@@ -333,7 +333,7 @@ interface IInternalButtonProps {
 import * as React from 'react';
 
 /**
- * CardButton from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/card-button/card-button.stories.tsx).
+ * CardButton from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/buttons/card-button/card-button.stories.tsx).
  */
 export interface CardButtonProps<C extends React.ElementType = 'button'> {
   /** A single `<Card>` to render as the interactive surface. The host element provides the interaction semantics and applies the hover / active / focus / disabled states to the card and its blocks. Keep it to one card and avoid nested interactive elements. */
@@ -352,7 +352,7 @@ type PolymorphicRef<C extends React.ElementType> = React.ComponentPropsWithRef<C
 import * as React from 'react';
 
 /**
- * ClosingButton from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/closing-button/closing-button.stories.tsx).
+ * ClosingButton from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/buttons/closing-button/closing-button.stories.tsx).
  */
 export interface ClosingButtonProps {
   /** Additional classes to apply custom styles to the ClosingButton. */
@@ -376,7 +376,7 @@ type ClosingButtonIconSize = 18 | 24;
 import * as React from 'react';
 
 /**
- * CollapseButton from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/collapse-button/collapse-button.stories.tsx).
+ * CollapseButton from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/buttons/collapse-button/collapse-button.stories.tsx).
  */
 export interface CollapseButtonProps {
   /** Current open state. Bind alongside `onOpenChange` to keep in sync. */
@@ -410,7 +410,7 @@ type CollapseButtonSize = 'default' | 'small';
 import * as React from 'react';
 
 /**
- * FloatingButton from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/floating-button/floating-button.stories.tsx).
+ * FloatingButton from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/buttons/floating-button/floating-button.stories.tsx).
  */
 export interface FloatingButtonProps {
   /** Button axis */
@@ -491,7 +491,7 @@ type PolymorphicRef<C extends React.ElementType> = React.ComponentPropsWithRef<C
 import * as React from 'react';
 
 /**
- * InfoButton from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/info-button/info-button.stories.tsx).
+ * InfoButton from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/buttons/info-button/info-button.stories.tsx).
  */
 export interface InfoButtonProps {
   /** If true, applies a small size to the InfoButton */
@@ -559,7 +559,7 @@ type PolymorphicRef<C extends React.ElementType> = React.ComponentPropsWithRef<C
 import * as React from 'react';
 
 /**
- * Accordion from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/accordion/accordion.stories.tsx).
+ * Accordion from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/accordion/accordion.stories.tsx).
  */
 export interface AccordionProps {
   /** Accordion content. Should be one or more `AccordionItem` components. */
@@ -622,7 +622,7 @@ type AccordionBreakpointProps = {
 import * as React from 'react';
 
 /**
- * Calendar from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/calendar/calendar.stories.tsx).
+ * Calendar from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/calendar/calendar.stories.tsx).
  */
 export interface CalendarProps {
   /** Current view of the calendar. Can be `'days'`, `'months'`, or `'years'`. Controls which calendar grid is displayed. */
@@ -675,6 +675,135 @@ export interface CalendarProps {
   bordered?: boolean;
   /** Grow to fill the container's width instead of a fixed width; cells keep a square aspect ratio. Wrap in a sized container to control the scale. */
   fullWidth?: boolean;
+  /** A unique id to add to the root element. */
+  id?: string;
+  /** Add modifiers to the matching days. */
+  modifiers?: Record<string, Matcher | Matcher[] | undefined> | undefined;
+  /** Apply the `disabled` modifier to the matching days. Disabled days cannot be selected when in a selection mode is set. */
+  disabled?: Matcher | Matcher[] | undefined;
+  /** Style to apply to the root element. */
+  style?: React.CSSProperties;
+  /** Add a `title` attribute to the container element. */
+  title?: HTMLDivElement["title"];
+  /** Animate navigating between months. */
+  animate?: boolean;
+  /** When a selection mode is set, DayPicker will focus the first selected day (if set) or today's date (if not disabled). Use this prop when you need to focus DayPicker after a user action, for improved accessibility. */
+  autoFocus?: boolean;
+  /** The text direction of the calendar. Use `ltr` for left-to-right (default) or `rtl` for right-to-left. */
+  dir?: HTMLDivElement["dir"];
+  /** Apply the `hidden` modifier to the matching days. Will hide them from the calendar. */
+  hidden?: Matcher | Matcher[] | undefined;
+  /** Add the language tag to the container element. When omitted, DayPicker uses the active locale code (`locale.code`). Set this prop to override the language tag. */
+  lang?: HTMLDivElement["lang"];
+  /** A cryptographic nonce ("number used once") which can be used by Content Security Policy for the inline `style` attributes. */
+  nonce?: HTMLDivElement["nonce"];
+  /** The role attribute to add to the container element. */
+  role?: "application" | "dialog" | undefined;
+  /** The aria-label attribute to add to the container element. */
+  "aria-label"?: string;
+  /** The aria-labelledby attribute to add to the container element. */
+  "aria-labelledby"?: string;
+  /** Change the class names used by DayPicker. Use this prop when you need to change the default class names — for example, when importing the style via CSS modules or when using a CSS framework. */
+  classNames?: Partial<ClassNames> & Partial<DeprecatedUI<string>>;
+  /** Change the class name for the day matching the `modifiers`. */
+  modifiersClassNames?: ModifiersClassNames;
+  /** Change the inline styles of the HTML elements. */
+  styles?: Partial<Styles> & Partial<DeprecatedUI<React.CSSProperties>>;
+  /** Change the class name for the day matching the {@link modifiers}. */
+  modifiersStyles?: ModifiersStyles;
+  /** The initial month to show in the calendar. Use this prop to let DayPicker control the current month. If you need to set the month programmatically, use {@link month} and {@link onMonthChange}. */
+  defaultMonth?: Date;
+  /** The month displayed in the calendar. As opposed to `defaultMonth`, use this prop with `onMonthChange` to change the month programmatically. */
+  month?: Date;
+  /** The number of displayed months. */
+  numberOfMonths?: number;
+  /** The earliest month to start the month navigation. */
+  startMonth?: Date | undefined;
+  fromDate?: Date | undefined;
+  fromMonth?: Date | undefined;
+  fromYear?: number | undefined;
+  /** The latest month to end the month navigation. */
+  endMonth?: Date;
+  toDate?: Date;
+  toMonth?: Date;
+  toYear?: number;
+  /** Paginate the month navigation displaying the `numberOfMonths` at a time. */
+  pagedNavigation?: boolean;
+  /** Render the months in reversed order (when {@link numberOfMonths} is set) to display the most recent month first. */
+  reverseMonths?: boolean;
+  /** Hide the navigation buttons. This prop won't disable the navigation: to disable the navigation, use {@link disableNavigation}. */
+  hideNavigation?: boolean;
+  /** Disable the navigation between months. This prop won't hide the navigation: to hide the navigation, use {@link hideNavigation}. */
+  disableNavigation?: boolean;
+  /** Show dropdowns to navigate between months or years. - `label`: Displays the month and year as a label. Default value. - `dropdown`: Displays dropdowns for both month and year navigation. - `dropdown-months`: Displays a dropdown only for the month navigation. - `dropdown-years`: Displays a dropdown only for the year navigation. **Note:** By default, showing the dropdown will set the {@link startMonth} to 100 years ago and {@link endMonth} to the end of the current year. You can override this behavior by explicitly setting `startMonth` and `endMonth`. */
+  captionLayout?: "label" | "dropdown" | "dropdown-months" | "dropdown-years";
+  /** Reverse the order of years in the dropdown when using `captionLayout="dropdown"` or `captionLayout="dropdown-years"`. */
+  reverseYears?: boolean;
+  /** Adjust the positioning of the navigation buttons. - `around`: Displays the buttons on either side of the caption. - `after`: Displays the buttons after the caption. This ensures the tab order matches the visual order. If not set, the buttons default to being displayed after the caption, but the tab order may not align with the visual order. */
+  navLayout?: "around" | "after" | undefined;
+  /** Display always 6 weeks per each month, regardless of the month’s number of weeks. Weeks will be filled with the days from the next month. */
+  fixedWeeks?: boolean;
+  /** Hide the row displaying the weekday row header. */
+  hideWeekdays?: boolean;
+  /** Show the week numbers column. Weeks are numbered according to the local week index. */
+  showWeekNumber?: boolean;
+  /** Display the weeks in the month following the broadcast calendar. Setting this prop will ignore {@link weekStartsOn} (always Monday) and {@link showOutsideDays} will default to true. */
+  broadcastCalendar?: boolean;
+  /** Use ISO week dates instead of the locale setting. Setting this prop will ignore `weekStartsOn` and `firstWeekContainsDate`. */
+  ISOWeek?: boolean;
+  /** The time zone (IANA or UTC offset) to use in the calendar (experimental). See [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for the possible values. */
+  timeZone?: string | undefined;
+  /** Keep calendar math at noon in the configured {@link timeZone} to avoid historical second-level offsets drifting dates across midnight. This prop sets the time of the dates to noon (12:00). */
+  noonSafe?: boolean | undefined;
+  /** Change the components used for rendering the calendar elements. */
+  components?: Partial<CustomComponents>;
+  initialFocus?: boolean;
+  /** The today’s date. Default is the current date. This date will get the `today` modifier to style the day. */
+  today?: Date;
+  /** Labels creators to override the defaults. Use this prop to customize the aria-label attributes in DayPicker. */
+  labels?: Partial<Labels>;
+  /** Formatters used to format dates to strings. Use this prop to override the default functions. */
+  formatters?: Partial<Formatters>;
+  /** The numeral system to use when formatting dates. - `latn`: Latin (Western Arabic) - `arab`: Arabic-Indic - `arabext`: Eastern Arabic-Indic (Persian) - `deva`: Devanagari - `beng`: Bengali - `guru`: Gurmukhi - `gujr`: Gujarati - `orya`: Oriya - `tamldec`: Tamil - `telu`: Telugu - `knda`: Kannada - `mlym`: Malayalam */
+  numerals?: Numerals | undefined;
+  /** The index of the first day of the week (0 - Sunday). Overrides the locale's default. */
+  weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | undefined;
+  /** The day of January that is always in the first week of the year. */
+  firstWeekContainsDate?: 1 | 4;
+  /** Enable `DD` and `DDDD` for week year tokens when formatting or parsing dates. */
+  useAdditionalWeekYearTokens?: boolean | undefined;
+  /** Enable `YY` and `YYYY` for day of year tokens when formatting or parsing dates. */
+  useAdditionalDayOfYearTokens?: boolean | undefined;
+  /** Event fired when the user navigates between months. */
+  onMonthChange?: MonthChangeEventHandler;
+  /** Event handler when the next month button is clicked. */
+  onNextClick?: MonthChangeEventHandler;
+  /** Event handler when the previous month button is clicked. */
+  onPrevClick?: MonthChangeEventHandler;
+  /** Event handler when a week number is clicked. */
+  onWeekNumberClick?: any;
+  /** Event handler when a day is clicked. */
+  onDayClick?: DayEventHandler<React.MouseEvent>;
+  /** Event handler when a day is focused. */
+  onDayFocus?: DayEventHandler<React.FocusEvent>;
+  /** Event handler when a day is blurred. */
+  onDayBlur?: DayEventHandler<React.FocusEvent>;
+  /** Event handler when a key is pressed on a day. */
+  onDayKeyDown?: DayEventHandler<React.KeyboardEvent>;
+  /** Event handler when the mouse enters a day. */
+  onDayMouseEnter?: DayEventHandler<React.MouseEvent>;
+  /** Event handler when the mouse leaves a day. */
+  onDayMouseLeave?: DayEventHandler<React.MouseEvent>;
+  /** Replace the default date library with a custom one. Experimental: not guaranteed to be stable (may not respect semver). */
+  dateLib?: Partial<typeof DateLib.prototype> | undefined;
+  onDayKeyUp?: DayEventHandler<React.KeyboardEvent>;
+  onDayKeyPress?: DayEventHandler<React.KeyboardEvent>;
+  onDayPointerEnter?: DayEventHandler<React.PointerEvent>;
+  onDayPointerLeave?: DayEventHandler<React.PointerEvent>;
+  onDayTouchCancel?: DayEventHandler<React.TouchEvent>;
+  onDayTouchEnd?: DayEventHandler<React.TouchEvent>;
+  onDayTouchMove?: DayEventHandler<React.TouchEvent>;
+  onDayTouchStart?: DayEventHandler<React.TouchEvent>;
   /** Default breakpoint for SSR, the component is rendered with this breakpoint props on the server-side. */
   defaultServerBreakpoint?: Breakpoint;
   sm?: Partial<CalendarBreakpointProps>;
@@ -683,7 +812,6 @@ export interface CalendarProps {
   xl?: Partial<CalendarBreakpointProps>;
   xxl?: Partial<CalendarBreakpointProps>;
 }
-// Also accepts 72 standard React / HTML attributes of its root element.
 
 // Referenced types, resolved one level deep (see the story source for the rest).
 type CalendarView = 'days' | 'months' | 'years';
@@ -834,12 +962,13 @@ interface CalendarBreakpointProps extends Omit<DayPickerProps, 'mode' | 'selecte
      */
     fullWidth?: boolean;
 }
+// From react-day-picker (see its documentation): DateRange, Locale, Matcher, OnSelectHandler, ClassNames, DeprecatedUI, ModifiersClassNames, Styles, ModifiersStyles, CustomComponents, Labels, Formatters, Numerals, MonthChangeEventHandler, DayEventHandler, DateLib.
 
 // ---- Card (components/Card/Card.d.ts) ----
 import * as React from 'react';
 
 /**
- * Card from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/card/card.stories.tsx).
+ * Card from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/card/card.stories.tsx).
  */
 export interface CardProps {
   children?: React.ReactNode;
@@ -924,7 +1053,7 @@ type CardBreakpointProps = {
 import * as React from 'react';
 
 /**
- * Carousel from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/carousel/carousel.stories.tsx).
+ * Carousel from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/carousel/carousel.stories.tsx).
  */
 export interface CarouselProps {
   /** Carousel composition — `Carousel.Header`, `Carousel.Content` and `Carousel.Footer`. */
@@ -939,7 +1068,7 @@ export interface CarouselProps {
 import * as React from 'react';
 
 /**
- * Collapse from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/collapse/collapse.stories.tsx).
+ * Collapse from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/collapse/collapse.stories.tsx).
  */
 export interface CollapseProps {
   /** Unique identifier for the collapse content. Used for ARIA attributes like `aria-controls`. */
@@ -1108,7 +1237,7 @@ type CollapseBreakpointProps = {
 import * as React from 'react';
 
 /**
- * EmptyState from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/empty-state/empty-state.stories.tsx).
+ * EmptyState from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/empty-state/empty-state.stories.tsx).
  */
 export interface EmptyStateProps {
   /** Container variant — matches the Figma "Types" section. - `'separate'` (default) — full border + radius, stands on its own. - `'attached'` — top border omitted so the block sits flush beneath a preceding card or table (same width + same bottom-radius). - `'inside'` — no border, no radius; intended to be placed inside another container such as a `<Card>` or `<Table>`. */
@@ -1143,7 +1272,7 @@ interface IconWithoutBackgroundProps extends IconSharedProps {
 import * as React from 'react';
 
 /**
- * HeadingWithIcon from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/heading-with-icon/heading-with-icon.stories.tsx).
+ * HeadingWithIcon from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/heading-with-icon/heading-with-icon.stories.tsx).
  */
 export interface HeadingWithIconProps {
   /** Heading text */
@@ -1212,7 +1341,7 @@ type IconType = 'outlined' | 'sharp' | 'rounded';
 import * as React from 'react';
 
 /**
- * Label from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/label/label.stories.tsx).
+ * Label from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/label/label.stories.tsx).
  */
 export interface LabelProps {
   /** The element type to render. This can be any valid HTML element, allowing flexibility in how the label is used. Defaults to 'label'. */
@@ -1264,7 +1393,7 @@ type LabelBreakpointProps = {
 import * as React from 'react';
 
 /**
- * List from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/list/list.stories.tsx).
+ * List from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/list/list.stories.tsx).
  */
 export interface ListProps {
   /** List children should be ListItem components */
@@ -1340,7 +1469,7 @@ type ListBreakpointProps = {
 import * as React from 'react';
 
 /**
- * Section from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/section/section.stories.tsx).
+ * Section from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/section/section.stories.tsx).
  */
 export interface SectionProps {
   /** Section content */
@@ -1359,7 +1488,7 @@ export interface SectionProps {
 import * as React from 'react';
 
 /**
- * TableCard from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/table-card/table-card.stories.tsx).
+ * TableCard from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/table-card/table-card.stories.tsx).
  */
 export interface TableCardProps {
   /** Label / value pairs (one per column) rendered as the card body - a single `<dl>`. */
@@ -1505,7 +1634,7 @@ type TableCardBreakpointProps = {
 import * as React from 'react';
 
 /**
- * Table from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/table/table.stories.tsx).
+ * Table from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/table/table.stories.tsx).
  */
 export interface TableProps<TData> {
   /** Unique identifier for the table. Used for accessibility and as the default persistence key namespace. */
@@ -1666,12 +1795,13 @@ interface TableRowDropEvent {
     fromIndex: number;
     toIndex: number;
 }
+// From @tanstack/table-core (see its documentation): Row, ColumnDef.
 
 // ---- TextGroup (components/TextGroup/TextGroup.d.ts) ----
 import * as React from 'react';
 
 /**
- * TextGroup from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/text-group/text-group.stories.tsx).
+ * TextGroup from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/text-group/text-group.stories.tsx).
  */
 export interface TextGroupProps {
   /** Type of text group layout */
@@ -1746,7 +1876,7 @@ type TextGroupBreakpointProps = {
 import * as React from 'react';
 
 /**
- * Truncate from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/truncate/truncate.stories.tsx).
+ * Truncate from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/truncate/truncate.stories.tsx).
  */
 export interface TruncateProps {
   /** Text that will be truncated */
@@ -1789,7 +1919,7 @@ type TruncateBreakpointProps = {
 import * as React from 'react';
 
 /**
- * Filter from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/filter/filter/filter.stories.tsx).
+ * Filter from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/filter/filter/filter.stories.tsx).
  */
 export interface FilterProps {
   /** Trigger label. In single-select mode it's replaced by the picked option (or prefixed when `preserveLabel`). */
@@ -1893,7 +2023,7 @@ type FilterBreakpointProps = {
 import * as React from 'react';
 
 /**
- * Checkbox from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/checkbox/checkbox.stories.tsx).
+ * Checkbox from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/checkbox/checkbox.stories.tsx).
  */
 export interface CheckboxProps {
   /** Visual variant. - `default` — standard indicator + label. - `card` — the whole control renders as a selectable card (indicator, label, optional icon/description). */
@@ -1950,6 +2080,8 @@ export interface CheckboxProps {
 }
 
 // Referenced types, resolved one level deep (see the story source for the rest).
+type ChoiceInputVariant = 'default' | 'card';
+type ChoiceInputCardVariant = 'primary' | 'secondary';
 interface FeedbackTextProps {
     /**
      * Helper text
@@ -1975,6 +2107,56 @@ interface FeedbackTextProps {
      */
     position?: FeedbackTextPosition;
 }
+interface FormLabelProps {
+    /**
+     * The unique identifier for the input element that this label is associated with.
+     * This ID should match the input element's `id` attribute to ensure accessibility.
+     */
+    id: string;
+    /**
+     * The text content of the label that describes the input field.
+     */
+    label: React.ReactNode;
+    /**
+     * Controls the visibility of the label.
+     * Use `true` to hide the label visually while maintaining its space in the layout,
+     * or use 'keep-space' to hide it without collapsing the space it occupies.
+     */
+    hideLabel?: boolean | 'keep-space';
+    /**
+     * Indicates whether the input field is required.
+     * If set to `true`, the required indicator (if provided) will be displayed next to the label.
+     */
+    required?: boolean;
+    /**
+     * Additional className.
+     */
+    className?: string;
+    /**
+     * Renders the label as a `<span>` instead of a `<label>` element.
+     * This is useful when the `Form` component already handles labels internally.
+     */
+    renderWithoutLabel?: boolean;
+    /**
+     * Specifies the size of the label text.
+     * Options include 'small' for a smaller label size or 'default' for the standard size.
+     * @default default
+     */
+    size?: 'small' | 'default';
+    /**
+     * Tooltip content to display when hovering over the info button.
+     * If provided, an info button with a tooltip will be rendered.
+     */
+    tooltip?: React.ReactNode;
+    /**
+     * Additional props forwarded to the underlying `Label` component.
+     * Use `modifiers` to control how the label text wraps or breaks
+     * (e.g. `{ modifiers: 'nowrap' }`) so long labels don't distort the form layout.
+     * Breakpoint keys are supported for responsive wrapping
+     * (e.g. `{ modifiers: 'nowrap', sm: { modifiers: 'break-word' } }`).
+     */
+    labelProps?: LabelModifierProps;
+}
 type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 type CheckboxBaseProps = ChoiceInputProps & {
     /**
@@ -1988,7 +2170,7 @@ type CheckboxBaseProps = ChoiceInputProps & {
 import * as React from 'react';
 
 /**
- * ChoiceGroup from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/choice-group/choice-group.stories.tsx).
+ * ChoiceGroup from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/choice-group/choice-group.stories.tsx).
  */
 export interface ChoiceGroupProps {
   id: string;
@@ -2146,7 +2328,7 @@ interface ChoiceGroupAllProps extends Omit<FormLabelProps, 'id' | 'label'> {
 import * as React from 'react';
 
 /**
- * DateField from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/date-field/date-field.stories.tsx).
+ * DateField from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/date-field/date-field.stories.tsx).
  */
 export interface DateFieldProps {
   /** Unique identifier for the date field. */
@@ -2250,8 +2432,130 @@ export interface DateFieldProps {
   lg?: Partial<DateFieldBreakpointProps>;
   xl?: Partial<DateFieldBreakpointProps>;
   xxl?: Partial<DateFieldBreakpointProps>;
+  /** Add modifiers to the matching days. */
+  modifiers?: Record<string, Matcher | Matcher[] | undefined> | undefined;
+  /** Style to apply to the root element. */
+  style?: React.CSSProperties;
+  /** Add a `title` attribute to the container element. */
+  title?: HTMLDivElement["title"];
+  /** Animate navigating between months. */
+  animate?: boolean;
+  /** When a selection mode is set, DayPicker will focus the first selected day (if set) or today's date (if not disabled). Use this prop when you need to focus DayPicker after a user action, for improved accessibility. */
+  autoFocus?: boolean;
+  /** The text direction of the calendar. Use `ltr` for left-to-right (default) or `rtl` for right-to-left. */
+  dir?: HTMLDivElement["dir"];
+  /** Apply the `hidden` modifier to the matching days. Will hide them from the calendar. */
+  hidden?: Matcher | Matcher[] | undefined;
+  /** Add the language tag to the container element. When omitted, DayPicker uses the active locale code (`locale.code`). Set this prop to override the language tag. */
+  lang?: HTMLDivElement["lang"];
+  /** A cryptographic nonce ("number used once") which can be used by Content Security Policy for the inline `style` attributes. */
+  nonce?: HTMLDivElement["nonce"];
+  /** The role attribute to add to the container element. */
+  role?: "application" | "dialog" | undefined;
+  /** The aria-label attribute to add to the container element. */
+  "aria-label"?: string;
+  /** The aria-labelledby attribute to add to the container element. */
+  "aria-labelledby"?: string;
+  /** Change the class names used by DayPicker. Use this prop when you need to change the default class names — for example, when importing the style via CSS modules or when using a CSS framework. */
+  classNames?: Partial<ClassNames> & Partial<DeprecatedUI<string>>;
+  /** Change the class name for the day matching the `modifiers`. */
+  modifiersClassNames?: ModifiersClassNames;
+  /** Change the inline styles of the HTML elements. */
+  styles?: Partial<Styles> & Partial<DeprecatedUI<React.CSSProperties>>;
+  /** Change the class name for the day matching the {@link modifiers}. */
+  modifiersStyles?: ModifiersStyles;
+  /** The initial month to show in the calendar. Use this prop to let DayPicker control the current month. If you need to set the month programmatically, use {@link month} and {@link onMonthChange}. */
+  defaultMonth?: Date;
+  /** The month displayed in the calendar. As opposed to `defaultMonth`, use this prop with `onMonthChange` to change the month programmatically. */
+  month?: Date;
+  /** The earliest month to start the month navigation. */
+  startMonth?: Date | undefined;
+  fromDate?: Date | undefined;
+  fromMonth?: Date | undefined;
+  fromYear?: number | undefined;
+  /** The latest month to end the month navigation. */
+  endMonth?: Date;
+  toDate?: Date;
+  toMonth?: Date;
+  toYear?: number;
+  /** Paginate the month navigation displaying the `numberOfMonths` at a time. */
+  pagedNavigation?: boolean;
+  /** Render the months in reversed order (when {@link numberOfMonths} is set) to display the most recent month first. */
+  reverseMonths?: boolean;
+  /** Hide the navigation buttons. This prop won't disable the navigation: to disable the navigation, use {@link disableNavigation}. */
+  hideNavigation?: boolean;
+  /** Disable the navigation between months. This prop won't hide the navigation: to hide the navigation, use {@link hideNavigation}. */
+  disableNavigation?: boolean;
+  /** Show dropdowns to navigate between months or years. - `label`: Displays the month and year as a label. Default value. - `dropdown`: Displays dropdowns for both month and year navigation. - `dropdown-months`: Displays a dropdown only for the month navigation. - `dropdown-years`: Displays a dropdown only for the year navigation. **Note:** By default, showing the dropdown will set the {@link startMonth} to 100 years ago and {@link endMonth} to the end of the current year. You can override this behavior by explicitly setting `startMonth` and `endMonth`. */
+  captionLayout?: "label" | "dropdown" | "dropdown-months" | "dropdown-years";
+  /** Reverse the order of years in the dropdown when using `captionLayout="dropdown"` or `captionLayout="dropdown-years"`. */
+  reverseYears?: boolean;
+  /** Adjust the positioning of the navigation buttons. - `around`: Displays the buttons on either side of the caption. - `after`: Displays the buttons after the caption. This ensures the tab order matches the visual order. If not set, the buttons default to being displayed after the caption, but the tab order may not align with the visual order. */
+  navLayout?: "around" | "after" | undefined;
+  /** Display always 6 weeks per each month, regardless of the month’s number of weeks. Weeks will be filled with the days from the next month. */
+  fixedWeeks?: boolean;
+  /** Hide the row displaying the weekday row header. */
+  hideWeekdays?: boolean;
+  /** Show the week numbers column. Weeks are numbered according to the local week index. */
+  showWeekNumber?: boolean;
+  /** Display the weeks in the month following the broadcast calendar. Setting this prop will ignore {@link weekStartsOn} (always Monday) and {@link showOutsideDays} will default to true. */
+  broadcastCalendar?: boolean;
+  /** Use ISO week dates instead of the locale setting. Setting this prop will ignore `weekStartsOn` and `firstWeekContainsDate`. */
+  ISOWeek?: boolean;
+  /** The time zone (IANA or UTC offset) to use in the calendar (experimental). See [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for the possible values. */
+  timeZone?: string | undefined;
+  /** Keep calendar math at noon in the configured {@link timeZone} to avoid historical second-level offsets drifting dates across midnight. This prop sets the time of the dates to noon (12:00). */
+  noonSafe?: boolean | undefined;
+  /** Change the components used for rendering the calendar elements. */
+  components?: Partial<CustomComponents>;
+  initialFocus?: boolean;
+  /** The today’s date. Default is the current date. This date will get the `today` modifier to style the day. */
+  today?: Date;
+  /** Labels creators to override the defaults. Use this prop to customize the aria-label attributes in DayPicker. */
+  labels?: Partial<Labels>;
+  /** Formatters used to format dates to strings. Use this prop to override the default functions. */
+  formatters?: Partial<Formatters>;
+  /** The numeral system to use when formatting dates. - `latn`: Latin (Western Arabic) - `arab`: Arabic-Indic - `arabext`: Eastern Arabic-Indic (Persian) - `deva`: Devanagari - `beng`: Bengali - `guru`: Gurmukhi - `gujr`: Gujarati - `orya`: Oriya - `tamldec`: Tamil - `telu`: Telugu - `knda`: Kannada - `mlym`: Malayalam */
+  numerals?: Numerals | undefined;
+  /** The index of the first day of the week (0 - Sunday). Overrides the locale's default. */
+  weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | undefined;
+  /** The day of January that is always in the first week of the year. */
+  firstWeekContainsDate?: 1 | 4;
+  /** Enable `DD` and `DDDD` for week year tokens when formatting or parsing dates. */
+  useAdditionalWeekYearTokens?: boolean | undefined;
+  /** Enable `YY` and `YYYY` for day of year tokens when formatting or parsing dates. */
+  useAdditionalDayOfYearTokens?: boolean | undefined;
+  /** Event fired when the user navigates between months. */
+  onMonthChange?: MonthChangeEventHandler;
+  /** Event handler when the next month button is clicked. */
+  onNextClick?: MonthChangeEventHandler;
+  /** Event handler when the previous month button is clicked. */
+  onPrevClick?: MonthChangeEventHandler;
+  /** Event handler when a week number is clicked. */
+  onWeekNumberClick?: any;
+  /** Event handler when a day is clicked. */
+  onDayClick?: DayEventHandler<React.MouseEvent>;
+  /** Event handler when a day is focused. */
+  onDayFocus?: DayEventHandler<React.FocusEvent>;
+  /** Event handler when a day is blurred. */
+  onDayBlur?: DayEventHandler<React.FocusEvent>;
+  /** Event handler when a key is pressed on a day. */
+  onDayKeyDown?: DayEventHandler<React.KeyboardEvent>;
+  /** Event handler when the mouse enters a day. */
+  onDayMouseEnter?: DayEventHandler<React.MouseEvent>;
+  /** Event handler when the mouse leaves a day. */
+  onDayMouseLeave?: DayEventHandler<React.MouseEvent>;
+  /** Replace the default date library with a custom one. Experimental: not guaranteed to be stable (may not respect semver). */
+  dateLib?: Partial<typeof DateLib.prototype> | undefined;
+  onDayKeyUp?: DayEventHandler<React.KeyboardEvent>;
+  onDayKeyPress?: DayEventHandler<React.KeyboardEvent>;
+  onDayPointerEnter?: DayEventHandler<React.PointerEvent>;
+  onDayPointerLeave?: DayEventHandler<React.PointerEvent>;
+  onDayTouchCancel?: DayEventHandler<React.TouchEvent>;
+  onDayTouchEnd?: DayEventHandler<React.TouchEvent>;
+  onDayTouchMove?: DayEventHandler<React.TouchEvent>;
+  onDayTouchStart?: DayEventHandler<React.TouchEvent>;
 }
-// Also accepts 69 standard React / HTML attributes of its root element.
 
 // Referenced types, resolved one level deep (see the story source for the rest).
 interface TextFieldProps extends BreakpointSupport<TextFieldBreakpointProps>, Omit<FormLabelProps, 'size' | 'id' | 'label'> {
@@ -2532,12 +2836,13 @@ type DateFieldBreakpointProps = {
      */
     clearable?: boolean;
 };
+// From react-day-picker (see its documentation): DateRange, OnSelectHandler, Matcher, Locale, ClassNames, DeprecatedUI, ModifiersClassNames, Styles, ModifiersStyles, CustomComponents, Labels, Formatters, Numerals, MonthChangeEventHandler, DayEventHandler, DateLib.
 
 // ---- DateTimeField (components/DateTimeField/DateTimeField.d.ts) ----
 import * as React from 'react';
 
 /**
- * DateTimeField from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/date-time-field/date-time-field.stories.tsx).
+ * DateTimeField from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/date-time-field/date-time-field.stories.tsx).
  */
 export interface DateTimeFieldProps {
   /** Unique identifier for the input field. */
@@ -2862,12 +3167,13 @@ type DateTimeFieldBreakpointProps = {
      */
     timeHeading?: React.ReactNode;
 };
+// From react-day-picker (see its documentation): Matcher, Locale.
 
 // ---- FeedbackText (components/FeedbackText/FeedbackText.d.ts) ----
 import * as React from 'react';
 
 /**
- * FeedbackText from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/feedback-text/feedback-text.stories.tsx).
+ * FeedbackText from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/feedback-text/feedback-text.stories.tsx).
  */
 export interface FeedbackTextProps {
   /** Helper text */
@@ -2890,7 +3196,7 @@ type FeedbackTextPosition = 'left' | 'right';
 import * as React from 'react';
 
 /**
- * Field from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/field/field.stories.tsx).
+ * Field from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/field/field.stories.tsx).
  */
 export interface FieldProps {
   /** Unique identifier for the field element. */
@@ -2942,7 +3248,7 @@ type FieldElement = HTMLInputElement | HTMLTextAreaElement;
 import * as React from 'react';
 
 /**
- * FileDropzone from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/file-dropzone/file-dropzone.stories.tsx).
+ * FileDropzone from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/file-dropzone/file-dropzone.stories.tsx).
  */
 export interface FileDropzoneProps {
   /** Unique identifier for the underlying file input. Auto-generated when omitted. */
@@ -3029,7 +3335,7 @@ interface FileUploadFile extends Partial<File> {
 import * as React from 'react';
 
 /**
- * FileUpload from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/file-upload/file-upload.stories.tsx).
+ * FileUpload from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/file-upload/file-upload.stories.tsx).
  */
 export interface FileUploadProps {
   /** Unique HTML id for the file input, also used to associate the label and helper/error text for accessibility. When omitted, falls back to the surrounding `InputGroup`'s id or a generated one. */
@@ -3130,7 +3436,7 @@ type LabelModifierProps = BreakpointSupport<{
 import * as React from 'react';
 
 /**
- * InputGroup from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/input-group/input-group.stories.tsx).
+ * InputGroup from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/input-group/input-group.stories.tsx).
  */
 export interface InputGroupProps {
   /** Additional class name(s) applied to the root element of the InputGroup. Useful for custom styling or layout overrides. */
@@ -3197,7 +3503,7 @@ type LabelModifierProps = BreakpointSupport<{
 import * as React from 'react';
 
 /**
- * NumberField from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/number-field/number-field.stories.tsx).
+ * NumberField from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/number-field/number-field.stories.tsx).
  */
 export interface NumberFieldProps {
   /** Initial value of the input field. */
@@ -3316,7 +3622,7 @@ type LabelModifierProps = BreakpointSupport<{
 import * as React from 'react';
 
 /**
- * Radio from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/radio/radio.stories.tsx).
+ * Radio from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/radio/radio.stories.tsx).
  */
 export interface RadioProps {
   /** Visual variant. - `default` — standard indicator + label. - `card` — the whole control renders as a selectable card (indicator, label, optional icon/description). */
@@ -3373,6 +3679,8 @@ export interface RadioProps {
 }
 
 // Referenced types, resolved one level deep (see the story source for the rest).
+type ChoiceInputVariant = 'default' | 'card';
+type ChoiceInputCardVariant = 'primary' | 'secondary';
 interface FeedbackTextProps {
     /**
      * Helper text
@@ -3398,6 +3706,56 @@ interface FeedbackTextProps {
      */
     position?: FeedbackTextPosition;
 }
+interface FormLabelProps {
+    /**
+     * The unique identifier for the input element that this label is associated with.
+     * This ID should match the input element's `id` attribute to ensure accessibility.
+     */
+    id: string;
+    /**
+     * The text content of the label that describes the input field.
+     */
+    label: React.ReactNode;
+    /**
+     * Controls the visibility of the label.
+     * Use `true` to hide the label visually while maintaining its space in the layout,
+     * or use 'keep-space' to hide it without collapsing the space it occupies.
+     */
+    hideLabel?: boolean | 'keep-space';
+    /**
+     * Indicates whether the input field is required.
+     * If set to `true`, the required indicator (if provided) will be displayed next to the label.
+     */
+    required?: boolean;
+    /**
+     * Additional className.
+     */
+    className?: string;
+    /**
+     * Renders the label as a `<span>` instead of a `<label>` element.
+     * This is useful when the `Form` component already handles labels internally.
+     */
+    renderWithoutLabel?: boolean;
+    /**
+     * Specifies the size of the label text.
+     * Options include 'small' for a smaller label size or 'default' for the standard size.
+     * @default default
+     */
+    size?: 'small' | 'default';
+    /**
+     * Tooltip content to display when hovering over the info button.
+     * If provided, an info button with a tooltip will be rendered.
+     */
+    tooltip?: React.ReactNode;
+    /**
+     * Additional props forwarded to the underlying `Label` component.
+     * Use `modifiers` to control how the label text wraps or breaks
+     * (e.g. `{ modifiers: 'nowrap' }`) so long labels don't distort the form layout.
+     * Breakpoint keys are supported for responsive wrapping
+     * (e.g. `{ modifiers: 'nowrap', sm: { modifiers: 'break-word' } }`).
+     */
+    labelProps?: LabelModifierProps;
+}
 type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 type RadioBreakpointProps = ChoiceInputProps & {
     /**
@@ -3413,7 +3771,7 @@ type RadioBreakpointProps = ChoiceInputProps & {
 import * as React from 'react';
 
 /**
- * Search from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/search/search.stories.tsx).
+ * Search from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/search/search.stories.tsx).
  */
 export interface SearchProps {
   /** Callback triggered when the search is executed (Enter key pressed or button clicked). In autocomplete mode it fires on Enter only when no suggestion is active — a free-text submit. */
@@ -3578,7 +3936,7 @@ interface FeedbackTextProps {
 import * as React from 'react';
 
 /**
- * Select from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/select/select.stories.tsx).
+ * Select from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/select/select.stories.tsx).
  */
 export interface SelectProps {
   /** Unique HTML id for the input. Also used as react-select's `instanceId` for SSR-stable internal IDs. When omitted, falls back to the surrounding `InputGroup`'s id or a generated `useId()`. */
@@ -3759,12 +4117,13 @@ interface TextProps extends BreakpointSupport<TextBreakpointProps> {
 type LabelModifierProps = BreakpointSupport<{
     modifiers?: LabelModifiers[] | LabelModifiers;
 }>;
+// From react-select (see its documentation): OptionsOrGroups, InputActionMeta, OptionProps, MenuListProps.
 
 // ---- Slider (components/Slider/Slider.d.ts) ----
 import * as React from 'react';
 
 /**
- * Slider from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/slider/slider.stories.tsx).
+ * Slider from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/slider/slider.stories.tsx).
  */
 export interface SliderProps {
   /** Unique identifier for the underlying input element. Generated automatically if not provided. */
@@ -3947,7 +4306,7 @@ type SliderBreakpointProps = {
 import * as React from 'react';
 
 /**
- * Textarea from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/textarea/textarea.stories.tsx).
+ * Textarea from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/textarea/textarea.stories.tsx).
  */
 export interface TextareaProps {
   /** Maximum number of characters allowed in the textarea. */
@@ -4087,7 +4446,7 @@ interface FeedbackTextProps {
 import * as React from 'react';
 
 /**
- * TextField from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/textfield/textfield.stories.tsx).
+ * TextField from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/textfield/textfield.stories.tsx).
  */
 export interface TextFieldProps {
   /** Unique identifier for the text field. Required for accessibility (associates label, helper text, and input). Also used to generate `aria-describedby` and helper IDs automatically. */
@@ -4278,7 +4637,7 @@ type LabelModifierProps = BreakpointSupport<{
 import * as React from 'react';
 
 /**
- * TimeField from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/time-field/time-field.stories.tsx).
+ * TimeField from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/time-field/time-field.stories.tsx).
  */
 export interface TimeFieldProps {
   /** Unique identifier for the input field. */
@@ -4615,7 +4974,7 @@ type TimeFieldBreakpointProps = {
 import * as React from 'react';
 
 /**
- * TimePicker from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/time-picker/time-picker.stories.tsx).
+ * TimePicker from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/time-picker/time-picker.stories.tsx).
  */
 export interface TimePickerProps {
   /** Currently selected time in "HH:mm" format (24-hour). */
@@ -4640,7 +4999,7 @@ export interface TimePickerProps {
 import * as React from 'react';
 
 /**
- * Toggle from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/toggle/toggle.stories.tsx).
+ * Toggle from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/toggle/toggle.stories.tsx).
  */
 export interface ToggleProps {
   /** Unique identifier for the toggle input. Required for accessibility and to link the label with the input. */
@@ -4760,7 +5119,7 @@ interface FormLabelProps {
 import * as React from 'react';
 
 /**
- * Footer from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/footer/footer.stories.tsx).
+ * Footer from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/layout/footer/footer.stories.tsx).
  */
 export interface FooterProps {
   /** `<Footer.Side>`, `<Footer.Body>` (with `<Footer.Section>` children), and `<Footer.Bottom>` slots. Recognised arrangement: 1. Zero or more `<Footer.Side placement="start">` elements (logos on the left). 2. Exactly one `<Footer.Body>`. 3. Zero or more `<Footer.Side placement="end">` elements (logos on the right). 4. Optional `<Footer.Bottom>` rendered below the main row as a strip with separator dots. Other nodes are rendered verbatim where the consumer placed them. */
@@ -4780,7 +5139,7 @@ type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 import * as React from 'react';
 
 /**
- * Col from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/grid/col.stories.tsx).
+ * Col from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/layout/grid/col.stories.tsx).
  */
 export interface ColProps {
   /** Col children. */
@@ -4861,7 +5220,7 @@ type ColAlign = 'start' | 'center' | 'end';
 import * as React from 'react';
 
 /**
- * Row from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/grid/row.stories.tsx).
+ * Row from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/layout/grid/row.stories.tsx).
  */
 export interface RowProps {
   /** Row children. Row direct children should always be Col components */
@@ -5003,7 +5362,7 @@ type Wrap = 'wrap' | 'nowrap' | 'wrap-reverse';
 import * as React from 'react';
 
 /**
- * Header from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/header/header.stories.tsx).
+ * Header from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/layout/header/header.stories.tsx).
  */
 export interface HeaderProps {
   /** Content rendered inside the header, typically Header.Logo, Header.Center, and Header.Actions subcomponents. */
@@ -5043,7 +5402,7 @@ interface HeaderBreakpointProps {
 import * as React from 'react';
 
 /**
- * HideAt from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/hide-at/hide-at.stories.tsx).
+ * HideAt from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/layout/hide-at/hide-at.stories.tsx).
  */
 export interface HideAtProps {
   children: React.ReactNode;
@@ -5059,7 +5418,7 @@ export interface HideAtProps {
 import * as React from 'react';
 
 /**
- * ShowAt from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/show-at/show-at.stories.tsx).
+ * ShowAt from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/layout/show-at/show-at.stories.tsx).
  */
 export interface ShowAtProps {
   children: React.ReactNode;
@@ -5075,7 +5434,7 @@ export interface ShowAtProps {
 import * as React from 'react';
 
 /**
- * SideNav from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/sidenav/sidenav.stories.tsx).
+ * SideNav from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/layout/sidenav/sidenav.stories.tsx).
  */
 export interface SideNavProps<C extends React.ElementType = 'a'> {
   /** Render all anchors (except logoLink and skipLink) as this component */
@@ -5145,7 +5504,7 @@ type SideNavItemSize = 'default' | 'medium' | 'small';
 import * as React from 'react';
 
 /**
- * TopNav from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/top-nav/top-nav.stories.tsx).
+ * TopNav from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/layout/top-nav/top-nav.stories.tsx).
  */
 export interface TopNavProps {
   /** `TopNav.Item` and `TopNav.Separator` children. Any other React node is ignored. Fragments are flattened, so `<>…</>` wrappers work transparently. */
@@ -5178,7 +5537,7 @@ type TopNavMaxWidth = number | BreakpointWidthName | (string & {});
 import * as React from 'react';
 
 /**
- * VerticalSpacing from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/vertical-spacing/vertical-spacing.stories.tsx).
+ * VerticalSpacing from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/layout/vertical-spacing/vertical-spacing.stories.tsx).
  */
 export interface VerticalSpacingProps {
   /** Any content to be rendered within the spacing component */
@@ -5216,7 +5575,7 @@ type VerticalSpacingBreakpointProps = {
 import * as React from 'react';
 
 /**
- * ProgressBar from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/loaders/progress-bar/progress-bar.stories.tsx).
+ * ProgressBar from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/loaders/progress-bar/progress-bar.stories.tsx).
  */
 export interface ProgressBarProps {
   /** Id forwarded to the bar element so external `<label htmlFor>` can target it. */
@@ -5318,7 +5677,7 @@ type ProgressBarBreakpointProps = {
 import * as React from 'react';
 
 /**
- * Skeleton from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/loaders/skeleton/skeleton.stories.tsx).
+ * Skeleton from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/loaders/skeleton/skeleton.stories.tsx).
  */
 export interface SkeletonProps {
   /** The content to be rendered inside the skeleton placeholder. */
@@ -5337,7 +5696,7 @@ export interface SkeletonProps {
 import * as React from 'react';
 
 /**
- * Spinner from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/loaders/spinner/spinner.stories.tsx).
+ * Spinner from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/loaders/spinner/spinner.stories.tsx).
  */
 export interface SpinnerProps {
   /** Adds a custom CSS class to the spinner element for additional styling or theming purposes. */
@@ -5392,7 +5751,7 @@ type SpinnerBreakpointProps = {
 import * as React from 'react';
 
 /**
- * Affix from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/affix/affix.stories.tsx).
+ * Affix from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/affix/affix.stories.tsx).
  */
 export interface AffixProps {
   /** Affix children */
@@ -5420,7 +5779,7 @@ type AffixPosition = 0 | 0.5 | 1 | 1.5 | 2 | 'unset';
 import * as React from 'react';
 
 /**
- * Attachment from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/attachment/attachment.stories.tsx).
+ * Attachment from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/attachment/attachment.stories.tsx).
  */
 export interface AttachmentProps {
   /** File name (required). */
@@ -5483,7 +5842,7 @@ type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 import * as React from 'react';
 
 /**
- * Ellipsis from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/ellipsis/ellipsis.stories.tsx).
+ * Ellipsis from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/ellipsis/ellipsis.stories.tsx).
  */
 export interface EllipsisProps {
   /** The content to be displayed inside the ellipsis container. */
@@ -5505,7 +5864,7 @@ type EllipsisPosition = 'start' | 'end';
 import * as React from 'react';
 
 /**
- * OptionContent from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/option-content/option-content.stories.tsx).
+ * OptionContent from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/option-content/option-content.stories.tsx).
  */
 export interface OptionContentProps {
   /** Content of the value row — typically `OptionContent.Label` and optionally `OptionContent.Meta`, but any node is allowed. */
@@ -5537,7 +5896,7 @@ type IconProps = IconSharedProps & (IconWithBackgroundProps | IconWithoutBackgro
 import * as React from 'react';
 
 /**
- * Print from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/print/print.stories.tsx).
+ * Print from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/print/print.stories.tsx).
  */
 export interface PrintProps {
   /** The content to be rendered within the `Print` component. This can be a single element or an array of elements. */
@@ -5559,7 +5918,7 @@ type BreakTypes = 'auto' | 'avoid' | 'avoid-column' | 'avoid-page' | 'avoid-regi
 import * as React from 'react';
 
 /**
- * ScrollFade from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/scroll-fade/scroll-fade.stories.tsx).
+ * ScrollFade from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/scroll-fade/scroll-fade.stories.tsx).
  */
 export interface ScrollFadeProps {
   /** ScrollFade content */
@@ -5582,7 +5941,7 @@ export interface ScrollFadeProps {
 import * as React from 'react';
 
 /**
- * ScrollVisibility from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/scroll-visibility/scroll-visibility.stories.tsx).
+ * ScrollVisibility from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/scroll-visibility/scroll-visibility.stories.tsx).
  */
 export interface ScrollVisibilityProps {
   /** Content to hide/show */
@@ -5612,7 +5971,7 @@ type AnimationDirection = 'left' | 'right' | 'down' | 'up' | 'center';
 import * as React from 'react';
 
 /**
- * Separator from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/separator/separator.stories.tsx).
+ * Separator from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/separator/separator.stories.tsx).
  */
 export interface SeparatorProps {
   /** Must be set to 'horizontal' or left undefined (defaults to horizontal) Must be set to 'vertical' */
@@ -5710,7 +6069,7 @@ interface SeparatorVerticalProps extends SeparatorSharedProps {
 import * as React from 'react';
 
 /**
- * StretchContent from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/stretch-content/stretch-content.stories.tsx).
+ * StretchContent from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/stretch-content/stretch-content.stories.tsx).
  */
 export interface StretchContentProps {
   /** Element that will be stretched within the container. */
@@ -5753,7 +6112,7 @@ interface StretchContentBreakpointProps {
 import * as React from 'react';
 
 /**
- * Timeline from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/timeline/timeline.stories.tsx).
+ * Timeline from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/timeline/timeline.stories.tsx).
  */
 export interface TimelineProps {
   /** `Timeline.Item` elements. */
@@ -5775,7 +6134,7 @@ type TimelineVariant = 'default' | 'card';
 import * as React from 'react';
 
 /**
- * Breadcrumbs from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/breadcrumbs/breadcrumbs.stories.tsx).
+ * Breadcrumbs from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/breadcrumbs/breadcrumbs.stories.tsx).
  */
 export interface BreadcrumbsProps {
   /** Crumbs in order from the root page to the current page. Each child becomes one crumb; chevron separators are inserted between them. Use a `Link` (or any anchor) for navigable crumbs and a plain element (e.g. `<span>`) for the current page — add `aria-current="page"` to it yourself. */
@@ -5840,7 +6199,7 @@ type BreadcrumbsBreakpointProps = {
 import * as React from 'react';
 
 /**
- * CardStepper from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/card-stepper/card-stepper.stories.tsx).
+ * CardStepper from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/card-stepper/card-stepper.stories.tsx).
  */
 export interface CardStepperProps {
   /** `CardStepper.Step` elements (compound API) — the active step shows on the card, all steps in the modal. Alternative to the `steps` data prop. */
@@ -5943,7 +6302,7 @@ interface CardStepperLabels {
 import * as React from 'react';
 
 /**
- * HashTrigger from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/hash-trigger/hash-trigger.stories.tsx).
+ * HashTrigger from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/hash-trigger/hash-trigger.stories.tsx).
  */
 export interface HashTriggerProps {
   /** HashTrigger content. */
@@ -5960,7 +6319,7 @@ export interface HashTriggerProps {
 import * as React from 'react';
 
 /**
- * HorizontalStepper from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/horizontal-stepper/horizontal-stepper.stories.tsx).
+ * HorizontalStepper from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/horizontal-stepper/horizontal-stepper.stories.tsx).
  */
 export interface HorizontalStepperProps {
   /** `HorizontalStepper.Item` elements, one per step. */
@@ -5983,7 +6342,7 @@ type HorizontalStepperCompact = boolean | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 import * as React from 'react';
 
 /**
- * Link from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/link/link.stories.tsx).
+ * Link from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/link/link.stories.tsx).
  */
 export interface LinkProps<C extends React.ElementType = 'a'> {
   /** Button children */
@@ -6058,7 +6417,7 @@ type AllowedTags = 'a' | React.ComponentType<UnknownType>;
 import * as React from 'react';
 
 /**
- * Pagination from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/pagination/pagination.stories.tsx).
+ * Pagination from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/pagination/pagination.stories.tsx).
  */
 export interface PaginationProps {
   /** Total number of pages. */
@@ -6248,7 +6607,7 @@ type PaginationBreakpointProps = {
 import * as React from 'react';
 
 /**
- * TableOfContents from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/table-of-contents/table-of-contents.stories.tsx).
+ * TableOfContents from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/table-of-contents/table-of-contents.stories.tsx).
  */
 export interface TableOfContentsProps {
   /** `TableOfContents.Item` elements. An item's non-`Item` children are its link / label; nested `TableOfContents.Item` children become its sub-items. */
@@ -6262,7 +6621,7 @@ export interface TableOfContentsProps {
   /** Id of the currently active item. The active item gets the left accent bar and active link colour. When `defaultOpen` is `false`, the branch leading to it is the only one kept expanded. */
   activeId?: string;
   /** Draws a divider between items so the list reads as a set of separated rows. The last item has no divider — the card border closes the list. */
-  bordered?: boolean;
+  divided?: boolean;
   /** Whether every item's sub-items are expanded by default. Set `false` to make the list behave like an accordion: only the branch leading to `activeId` keeps its nested children visible. */
   defaultOpen?: boolean;
   /** Render the list as an ordered list with auto-generated hierarchical numbers (`1.`, `2.`, `2.1`, …) shown before each item. */
@@ -6318,7 +6677,7 @@ type TableOfContentsBreakpointProps = {
 import * as React from 'react';
 
 /**
- * Tabs from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/tabs/tabs.stories.tsx).
+ * Tabs from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/tabs/tabs.stories.tsx).
  */
 export interface TabsProps {
   /** Tabs content — should include Tabs.List and Tabs.Content elements */
@@ -6337,7 +6696,7 @@ export interface TabsProps {
 import * as React from 'react';
 
 /**
- * VerticalStepper from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/vertical-stepper/vertical-stepper.stories.tsx).
+ * VerticalStepper from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/vertical-stepper/vertical-stepper.stories.tsx).
  */
 export interface VerticalStepperProps {
   /** `VerticalStepper.Item` elements (and optional `Separator`s between them). Items are auto-numbered in source order. */
@@ -6354,7 +6713,7 @@ export interface VerticalStepperProps {
 import * as React from 'react';
 
 /**
- * Alert from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/notifications/alert/alert.stories.tsx).
+ * Alert from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/notifications/alert/alert.stories.tsx).
  */
 export interface AlertProps {
   /** The primary content displayed within the alert. This can include text, links, or other elements. */
@@ -6432,7 +6791,7 @@ type AlertBreakpointProps = {
 import * as React from 'react';
 
 /**
- * Dropdown from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/overlays/dropdown/dropdown.stories.tsx).
+ * Dropdown from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/overlays/dropdown/dropdown.stories.tsx).
  */
 export interface DropdownProps {
   /** Child elements — must include exactly one `Dropdown.Trigger` and one `Dropdown.Content` */
@@ -6513,12 +6872,13 @@ type DropdownBreakpointProps = {
      */
     maxHeight?: number | string;
 };
+// From @floating-ui/utils (see its documentation): Placement.
 
 // ---- Modal (components/Modal/Modal.d.ts) ----
 import * as React from 'react';
 
 /**
- * Modal from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/overlays/modal/modal.stories.tsx).
+ * Modal from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/overlays/modal/modal.stories.tsx).
  */
 export interface ModalProps {
   /** `<Modal.Trigger>` and `<Modal.Content>` children. */
@@ -6544,7 +6904,7 @@ type ModalRole = 'dialog' | 'alertdialog';
 import * as React from 'react';
 
 /**
- * Popover from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/overlays/popover/popover.stories.tsx).
+ * Popover from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/overlays/popover/popover.stories.tsx).
  */
 export interface PopoverProps {
   /** Adds correct event listeners that change the open state. */
@@ -6561,6 +6921,8 @@ export interface PopoverProps {
   role?: UseRoleProps['role'];
   /** Props passed to FloatingFocusManager */
   focusManager?: Omit<ComponentProps<typeof FloatingFocusManager>, 'context' | 'children'>;
+  /** Time in ms the pointer has to stay over the trigger before the content opens on hover. */
+  delay?: OverlayDelay;
   /** Is open by default?<br /> Does not work with open and onToggle props. */
   defaultOpen?: boolean;
   /** Is open?<br /> Use this with onToggle prop for controlled component. */
@@ -6581,12 +6943,16 @@ export interface PopoverProps {
 
 // Referenced types, resolved one level deep (see the story source for the rest).
 type OverlayOpenWith = 'click' | 'hover';
+type OverlayDelay = 0 | 100 | 200 | 300;
+// From @floating-ui/dom (see its documentation): OffsetOptions.
+// From @floating-ui/react (see its documentation): UseRoleProps.
+// From @floating-ui/utils (see its documentation): Placement.
 
 // ---- Sheet (components/Sheet/Sheet.d.ts) ----
 import * as React from 'react';
 
 /**
- * Sheet from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/overlays/sheet/sheet.stories.tsx).
+ * Sheet from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/overlays/sheet/sheet.stories.tsx).
  */
 export interface SheetProps {
   /** `Sheet.Trigger`, `Sheet.Content` and any other content. */
@@ -6618,7 +6984,7 @@ type SheetRole = 'dialog' | 'alertdialog';
 import * as React from 'react';
 
 /**
- * InfoTooltip from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/overlays/tooltip/info-tooltip.stories.tsx).
+ * InfoTooltip from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/overlays/tooltip/info-tooltip.stories.tsx).
  */
 export interface InfoTooltipProps {
   /** Tooltip content shown when the info button is hovered or focused. */
@@ -6694,12 +7060,13 @@ interface InfoTooltipBreakpointProps {
      */
     ariaLabel?: string;
 }
+// From @floating-ui/utils (see its documentation): Placement.
 
 // ---- Tooltip (components/Tooltip/Tooltip.d.ts) ----
 import * as React from 'react';
 
 /**
- * Tooltip from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/overlays/tooltip/tooltip.stories.tsx).
+ * Tooltip from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/overlays/tooltip/tooltip.stories.tsx).
  */
 export interface TooltipProps {
   /** Adds correct event listeners that change the open state. */
@@ -6714,6 +7081,8 @@ export interface TooltipProps {
   arrowPadding?: number;
   /** Props passed to FloatingFocusManager */
   focusManager?: Omit<ComponentProps<typeof FloatingFocusManager>, 'context' | 'children'>;
+  /** Time in ms the pointer has to stay over the trigger before the content opens on hover. */
+  delay?: OverlayDelay;
   /** Is open by default?<br /> Does not work with open and onToggle props. */
   defaultOpen?: boolean;
   /** Is open?<br /> Use this with onToggle prop for controlled component. */
@@ -6730,12 +7099,16 @@ export interface TooltipProps {
 
 // Referenced types, resolved one level deep (see the story source for the rest).
 type OverlayOpenWith = 'click' | 'hover';
+type OverlayDelay = 0 | 100 | 200 | 300;
+// From @floating-ui/dom (see its documentation): OffsetOptions.
+// From @floating-ui/react (see its documentation): UseRoleProps.
+// From @floating-ui/utils (see its documentation): Placement.
 
 // ---- StatusBadge (components/StatusBadge/StatusBadge.d.ts) ----
 import * as React from 'react';
 
 /**
- * StatusBadge from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/tags/status-badge/status-badge.stories.tsx).
+ * StatusBadge from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/tags/status-badge/status-badge.stories.tsx).
  */
 export interface StatusBadgeProps {
   /** The content to be displayed inside the StatusBadge. If not provided and `icon` is set, the badge will display the icon only. */
@@ -6803,7 +7176,7 @@ type StatusBadgePropsBreakpointProps = {
 import * as React from 'react';
 
 /**
- * StatusIndicator from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/tags/status-indicator/status-indicator.stories.tsx).
+ * StatusIndicator from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/tags/status-indicator/status-indicator.stories.tsx).
  */
 export interface StatusIndicatorProps {
   /** The status type, which determines the indicator color. */
@@ -6827,7 +7200,7 @@ type StatusIndicatorPosition = 'default' | 'top-right';
 import * as React from 'react';
 
 /**
- * Tag from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/tags/tag/tag.stories.tsx).
+ * Tag from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/tags/tag/tag.stories.tsx).
  */
 export interface TagProps {
   /** The content inside the Tag. Typically this will be text or any JSX elements to be displayed. */
@@ -6903,7 +7276,7 @@ type TagBreakpointProps = {
 import * as React from 'react';
 
 /**
- * LabelProvider from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/providers/label-provider/label-provider.stories.tsx).
+ * LabelProvider from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/providers/label-provider/label-provider.stories.tsx).
  */
 export interface LabelProviderProps<TRecord extends TediLabelEntryRecord<TRecord> = Record<string, never>> {
   /** Global labels that are use in components. If omitted then default labels are used based on `locale` prop. If both props are omitted then Estonian translations are used by default */
@@ -6926,7 +7299,7 @@ type TediLanguage = 'et' | 'en' | 'ru';
 import * as React from 'react';
 
 /**
- * ThemeProvider from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/providers/theme-provider/theme-provider.stories.tsx).
+ * ThemeProvider from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/providers/theme-provider/theme-provider.stories.tsx).
  */
 export interface ThemeProviderProps {
   theme?: Theme;

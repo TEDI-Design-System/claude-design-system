@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * CollapseButton from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/collapse-button/collapse-button.stories.tsx).
+ * CollapseButton from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/buttons/collapse-button/collapse-button.stories.tsx).
  */
 export interface CollapseButtonProps {
   /** Current open state. Bind alongside `onOpenChange` to keep in sync. */

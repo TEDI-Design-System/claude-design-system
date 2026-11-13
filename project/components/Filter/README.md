@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Size, Single Value Filter, Multi Value F
 import * as React from 'react';
 
 /**
- * Filter from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/filter/filter/filter.stories.tsx).
+ * Filter from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/filter/filter/filter.stories.tsx).
  */
 export interface FilterProps {
   /** Trigger label. In single-select mode it's replaced by the picked option (or prefixed when `preserveLabel`). */

@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Required, Default Bold, Required Bold, I
 import * as React from 'react';
 
 /**
- * Label from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/label/label.stories.tsx).
+ * Label from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/label/label.stories.tsx).
  */
 export interface LabelProps {
   /** The element type to render. This can be any valid HTML element, allowing flexibility in how the label is used. Defaults to 'label'. */

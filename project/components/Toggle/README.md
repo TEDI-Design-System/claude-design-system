@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Size, Type, Label Position, States, Prim
 import * as React from 'react';
 
 /**
- * Toggle from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/toggle/toggle.stories.tsx).
+ * Toggle from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/toggle/toggle.stories.tsx).
  */
 export interface ToggleProps {
   /** Unique identifier for the toggle input. Required for accessibility and to link the label with the input. */

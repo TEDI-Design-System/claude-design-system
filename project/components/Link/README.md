@@ -76,7 +76,7 @@ Variants (see `preview.html`): Default, Sizes, Colors, Default Underlined, Defau
 import * as React from 'react';
 
 /**
- * Link from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/link/link.stories.tsx).
+ * Link from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/link/link.stories.tsx).
  */
 export interface LinkProps<C extends React.ElementType = 'a'> {
   /** Button children */

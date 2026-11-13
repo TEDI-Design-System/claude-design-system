@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * TableOfContents from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/table-of-contents/table-of-contents.stories.tsx).
+ * TableOfContents from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/table-of-contents/table-of-contents.stories.tsx).
  */
 export interface TableOfContentsProps {
   /** `TableOfContents.Item` elements. An item's non-`Item` children are its link / label; nested `TableOfContents.Item` children become its sub-items. */
@@ -15,7 +15,7 @@ export interface TableOfContentsProps {
   /** Id of the currently active item. The active item gets the left accent bar and active link colour. When `defaultOpen` is `false`, the branch leading to it is the only one kept expanded. */
   activeId?: string;
   /** Draws a divider between items so the list reads as a set of separated rows. The last item has no divider — the card border closes the list. */
-  bordered?: boolean;
+  divided?: boolean;
   /** Whether every item's sub-items are expanded by default. Set `false` to make the list behave like an accordion: only the branch leading to `activeId` keeps its nested children visible. */
   defaultOpen?: boolean;
   /** Render the list as an ordered list with auto-generated hierarchical numbers (`1.`, `2.`, `2.1`, …) shown before each item. */

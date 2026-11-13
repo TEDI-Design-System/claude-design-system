@@ -25,7 +25,7 @@
     d.classList.add('tedi-theme--' + t);
     busy = false;
     try { localStorage.setItem('tedi-theme', t); } catch (e) {}
-    document.cookie = 'tedi-theme=' + t + '; path=/; max-age=31536000; SameSite=Lax';
+    try { document.cookie = 'tedi-theme=' + t + '; path=/; max-age=31536000; SameSite=Lax'; } catch (e) {}
     paint();
   }
 
@@ -60,7 +60,7 @@
       'border:1px solid var(--general-border-primary);border-radius:var(--tedi-radius-08);' +
       'background:var(--general-surface-primary);font:500 12px/1 system-ui,sans-serif}' +
       '.tps button{all:unset;cursor:pointer;padding:5px 10px;border-radius:var(--tedi-radius-08);color:var(--general-text-secondary)}' +
-      '.tps button:hover{background:var(--general-surface-hover)}' +
+      '.tps button:hover{background:var(--general-state-hover)}' +
       '.tps button[aria-pressed="true"]{background:var(--general-surface-brand-primary);color:var(--general-text-white)}' +
       '.tps button:focus-visible{outline:2px solid var(--general-border-brand);outline-offset:1px}' +
       '@media print{.tps{display:none}}';

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Pagination from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/pagination/pagination.stories.tsx).
+ * Pagination from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/pagination/pagination.stories.tsx).
  */
 export interface PaginationProps {
   /** Total number of pages. */

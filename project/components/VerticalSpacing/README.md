@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, Sizes, As Section, With Custom Class Nam
 import * as React from 'react';
 
 /**
- * VerticalSpacing from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/vertical-spacing/vertical-spacing.stories.tsx).
+ * VerticalSpacing from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/layout/vertical-spacing/vertical-spacing.stories.tsx).
  */
 export interface VerticalSpacingProps {
   /** Any content to be rendered within the spacing component */

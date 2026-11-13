@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Primary, Primary Inverted, Secondary, Se
 import * as React from 'react';
 
 /**
- * Button from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/button/button.stories.tsx).
+ * Button from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/buttons/button/button.stories.tsx).
  */
 export interface ButtonProps<C extends React.ElementType = 'button'> {
   /** Button children */

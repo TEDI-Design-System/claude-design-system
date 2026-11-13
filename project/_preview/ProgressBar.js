@@ -127,7 +127,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-is-mounted.ts
+  // tedi:src/tedi/helpers/hooks/use-is-mounted.ts
   var use_is_mounted_exports = {};
   __export(use_is_mounted_exports, {
     default: () => use_is_mounted_default
@@ -141,7 +141,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_is_mounted_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-safe-id.ts
+  // tedi:src/tedi/helpers/hooks/use-safe-id.ts
   var use_safe_id_exports = {};
   __export(use_safe_id_exports, {
     default: () => use_safe_id_default
@@ -155,7 +155,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_safe_id_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-breakpoint.ts
+  // tedi:src/tedi/helpers/hooks/use-breakpoint.ts
   var use_breakpoint_exports = {};
   __export(use_breakpoint_exports, {
     default: () => use_breakpoint_default
@@ -169,7 +169,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_breakpoint_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-breakpoint-props.ts
+  // tedi:src/tedi/helpers/hooks/use-breakpoint-props.ts
   var use_breakpoint_props_exports = {};
   __export(use_breakpoint_props_exports, {
     default: () => use_breakpoint_props_default
@@ -183,7 +183,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_breakpoint_props_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-element-size.ts
+  // tedi:src/tedi/helpers/hooks/use-element-size.ts
   var use_element_size_exports = {};
   __export(use_element_size_exports, {
     default: () => use_element_size_default
@@ -197,7 +197,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_element_size_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-scroll.ts
+  // tedi:src/tedi/helpers/hooks/use-scroll.ts
   var use_scroll_exports = {};
   __export(use_scroll_exports, {
     default: () => use_scroll_default
@@ -211,7 +211,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_scroll_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-is-touch-device.ts
+  // tedi:src/tedi/helpers/hooks/use-is-touch-device.ts
   var use_is_touch_device_exports = {};
   __export(use_is_touch_device_exports, {
     default: () => use_is_touch_device_default
@@ -225,7 +225,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_is_touch_device_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-file-upload.ts
+  // tedi:src/tedi/helpers/hooks/use-file-upload.ts
   var use_file_upload_exports = {};
   __export(use_file_upload_exports, {
     default: () => use_file_upload_default
@@ -239,7 +239,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_file_upload_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-what-input.ts
+  // tedi:src/tedi/helpers/hooks/use-what-input.ts
   var use_what_input_exports = {};
   __export(use_what_input_exports, {
     default: () => use_what_input_default
@@ -253,7 +253,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_what_input_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-scroll-fade.ts
+  // tedi:src/tedi/helpers/hooks/use-scroll-fade.ts
   var use_scroll_fade_exports = {};
   __export(use_scroll_fade_exports, {
     default: () => use_scroll_fade_default
@@ -267,7 +267,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_scroll_fade_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/polymorphic/types.ts
+  // tedi:src/tedi/helpers/polymorphic/types.ts
   var types_exports = {};
   __export(types_exports, {
     default: () => types_default
@@ -281,7 +281,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, types_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -292,7 +292,7 @@ var __dsPreview = (() => {
   var ns12 = window.Tedi;
   var text_default = ns12["Text"] ?? ns12;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/loaders/progress-bar/progress-bar.tsx
+  // tedi:src/tedi/components/loaders/progress-bar/progress-bar.tsx
   var progress_bar_exports = {};
   __export(progress_bar_exports, {
     default: () => progress_bar_default

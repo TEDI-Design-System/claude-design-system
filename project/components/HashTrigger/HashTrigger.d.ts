@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * HashTrigger from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/hash-trigger/hash-trigger.stories.tsx).
+ * HashTrigger from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/hash-trigger/hash-trigger.stories.tsx).
  */
 export interface HashTriggerProps {
   /** HashTrigger content. */

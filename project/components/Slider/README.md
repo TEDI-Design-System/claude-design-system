@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, With Input Group, Min And Max Values, Wi
 import * as React from 'react';
 
 /**
- * Slider from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/slider/slider.stories.tsx).
+ * Slider from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/slider/slider.stories.tsx).
  */
 export interface SliderProps {
   /** Unique identifier for the underlying input element. Generated automatically if not provided. */

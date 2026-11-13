@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default.
 import * as React from 'react';
 
 /**
- * Col from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/grid/col.stories.tsx).
+ * Col from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/layout/grid/col.stories.tsx).
  */
 export interface ColProps {
   /** Col children. */

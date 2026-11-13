@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * EmptyState from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/empty-state/empty-state.stories.tsx).
+ * EmptyState from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/empty-state/empty-state.stories.tsx).
  */
 export interface EmptyStateProps {
   /** Container variant — matches the Figma "Types" section. - `'separate'` (default) — full border + radius, stands on its own. - `'attached'` — top border omitted so the block sits flush beneath a preceding card or table (same width + same bottom-radius). - `'inside'` — no border, no radius; intended to be placed inside another container such as a `<Card>` or `<Table>`. */

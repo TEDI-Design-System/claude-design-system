@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Sizes, States, With Hint, Hint Text And 
 import * as React from 'react';
 
 /**
- * Textarea from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/textarea/textarea.stories.tsx).
+ * Textarea from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/textarea/textarea.stories.tsx).
  */
 export interface TextareaProps {
   /** Maximum number of characters allowed in the textarea. */

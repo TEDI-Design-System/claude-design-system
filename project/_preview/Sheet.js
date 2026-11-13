@@ -258,7 +258,7 @@ var __dsPreview = (() => {
     return props;
   };
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/icon/icon.tsx
+  // tedi:src/tedi/components/base/icon/icon.tsx
   var icon_exports = {};
   __export(icon_exports, {
     default: () => icon_default
@@ -269,7 +269,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var icon_default = ns["Icon"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -280,7 +280,7 @@ var __dsPreview = (() => {
   var ns2 = window.Tedi;
   var text_default = ns2["Text"] ?? ns2;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -291,7 +291,7 @@ var __dsPreview = (() => {
   var ns3 = window.Tedi;
   var button_default = ns3["Button"] ?? ns3;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/accordion/accordion.tsx
+  // tedi:src/tedi/components/content/accordion/accordion.tsx
   var accordion_exports = {};
   __export(accordion_exports, {
     default: () => accordion_default
@@ -302,7 +302,7 @@ var __dsPreview = (() => {
   var ns4 = window.Tedi;
   var accordion_default = ns4["Accordion"] ?? ns4;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/text-group/text-group.tsx
+  // tedi:src/tedi/components/content/text-group/text-group.tsx
   var text_group_exports = {};
   __export(text_group_exports, {
     default: () => text_group_default
@@ -313,7 +313,7 @@ var __dsPreview = (() => {
   var ns5 = window.Tedi;
   var text_group_default = ns5["TextGroup"] ?? ns5;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/checkbox/checkbox.tsx
+  // tedi:src/tedi/components/form/checkbox/checkbox.tsx
   var checkbox_exports = {};
   __export(checkbox_exports, {
     default: () => checkbox_default
@@ -324,7 +324,7 @@ var __dsPreview = (() => {
   var ns6 = window.Tedi;
   var checkbox_default = ns6["Checkbox"] ?? ns6;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/choice-group/choice-group.tsx
+  // tedi:src/tedi/components/form/choice-group/choice-group.tsx
   var choice_group_exports = {};
   __export(choice_group_exports, {
     default: () => choice_group_default
@@ -335,7 +335,7 @@ var __dsPreview = (() => {
   var ns7 = window.Tedi;
   var choice_group_default = ns7["ChoiceGroup"] ?? ns7;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/date-field/date-field.tsx
+  // tedi:src/tedi/components/form/date-field/date-field.tsx
   var date_field_exports = {};
   __export(date_field_exports, {
     default: () => date_field_default
@@ -346,7 +346,7 @@ var __dsPreview = (() => {
   var ns8 = window.Tedi;
   var date_field_default = ns8["DateField"] ?? ns8;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/search/search.tsx
+  // tedi:src/tedi/components/form/search/search.tsx
   var search_exports = {};
   __export(search_exports, {
     default: () => search_default
@@ -357,7 +357,7 @@ var __dsPreview = (() => {
   var ns9 = window.Tedi;
   var search_default = ns9["Search"] ?? ns9;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/textfield/textfield.tsx
+  // tedi:src/tedi/components/form/textfield/textfield.tsx
   var textfield_exports = {};
   __export(textfield_exports, {
     default: () => textfield_default
@@ -368,7 +368,7 @@ var __dsPreview = (() => {
   var ns10 = window.Tedi;
   var textfield_default = ns10["TextField"] ?? ns10;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/time-field/time-field.tsx
+  // tedi:src/tedi/components/form/time-field/time-field.tsx
   var time_field_exports = {};
   __export(time_field_exports, {
     default: () => time_field_default
@@ -379,7 +379,7 @@ var __dsPreview = (() => {
   var ns11 = window.Tedi;
   var time_field_default = ns11["TimeField"] ?? ns11;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -390,7 +390,7 @@ var __dsPreview = (() => {
   var ns12 = window.Tedi;
   var vertical_spacing_default = ns12["VerticalSpacing"] ?? ns12;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/separator/separator.tsx
+  // tedi:src/tedi/components/misc/separator/separator.tsx
   var separator_exports = {};
   __export(separator_exports, {
     default: () => separator_default
@@ -401,7 +401,7 @@ var __dsPreview = (() => {
   var ns13 = window.Tedi;
   var separator_default = ns13["Separator"] ?? ns13;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/tags/tag/tag.tsx
+  // tedi:src/tedi/components/tags/tag/tag.tsx
   var tag_exports = {};
   __export(tag_exports, {
     default: () => tag_default
@@ -412,7 +412,7 @@ var __dsPreview = (() => {
   var ns14 = window.Tedi;
   var tag_default = ns14["Tag"] ?? ns14;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/overlays/sheet/sheet.tsx
+  // tedi:src/tedi/components/overlays/sheet/sheet.tsx
   var sheet_exports = {};
   __export(sheet_exports, {
     default: () => sheet_default

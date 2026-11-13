@@ -197,7 +197,7 @@ var __dsPreview = (() => {
     return props;
   };
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/community/components/form/toggle/toggle.tsx
+  // tedi:src/community/components/form/toggle/toggle.tsx
   var toggle_exports = {};
   __export(toggle_exports, {
     default: () => toggle_default
@@ -208,7 +208,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var toggle_default = ns["Toggle"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -219,7 +219,7 @@ var __dsPreview = (() => {
   var ns2 = window.Tedi;
   var button_default = ns2["Button"] ?? ns2;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/info-button/info-button.tsx
+  // tedi:src/tedi/components/buttons/info-button/info-button.tsx
   var info_button_exports = {};
   __export(info_button_exports, {
     default: () => info_button_default
@@ -235,7 +235,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -249,7 +249,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -263,7 +263,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/overlays/tooltip/tooltip.tsx
+  // tedi:src/tedi/components/overlays/tooltip/tooltip.tsx
   var tooltip_exports = {};
   __export(tooltip_exports, {
     default: () => tooltip_default

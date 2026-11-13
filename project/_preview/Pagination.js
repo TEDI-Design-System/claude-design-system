@@ -146,7 +146,7 @@ var __dsPreview = (() => {
   init_define_process_env();
   var import_react = __toESM(require_react(), 1);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/pagination/pagination.tsx
+  // tedi:src/tedi/components/navigation/pagination/pagination.tsx
   var pagination_exports = {};
   __export(pagination_exports, {
     default: () => pagination_default

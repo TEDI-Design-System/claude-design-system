@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Scrollbar, Fade Size, Fade Position, No 
 import * as React from 'react';
 
 /**
- * ScrollFade from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/scroll-fade/scroll-fade.stories.tsx).
+ * ScrollFade from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/scroll-fade/scroll-fade.stories.tsx).
  */
 export interface ScrollFadeProps {
   /** ScrollFade content */

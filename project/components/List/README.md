@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, Unordered List, Ordered List, Ordered Li
 import * as React from 'react';
 
 /**
- * List from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/list/list.stories.tsx).
+ * List from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/list/list.stories.tsx).
  */
 export interface ListProps {
   /** List children should be ListItem components */

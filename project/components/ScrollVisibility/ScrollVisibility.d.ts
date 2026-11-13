@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * ScrollVisibility from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/scroll-visibility/scroll-visibility.stories.tsx).
+ * ScrollVisibility from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/scroll-visibility/scroll-visibility.stories.tsx).
  */
 export interface ScrollVisibilityProps {
   /** Content to hide/show */

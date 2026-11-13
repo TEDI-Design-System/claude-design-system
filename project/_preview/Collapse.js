@@ -115,7 +115,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/heading/heading.tsx
+  // tedi:src/tedi/components/base/typography/heading/heading.tsx
   var heading_exports = {};
   __export(heading_exports, {
     default: () => heading_default
@@ -126,7 +126,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var heading_default = ns["Heading"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -137,7 +137,7 @@ var __dsPreview = (() => {
   var ns2 = window.Tedi;
   var text_default = ns2["Text"] ?? ns2;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -148,7 +148,7 @@ var __dsPreview = (() => {
   var ns3 = window.Tedi;
   var vertical_spacing_default = ns3["VerticalSpacing"] ?? ns3;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/collapse/collapse.tsx
+  // tedi:src/tedi/components/content/collapse/collapse.tsx
   var collapse_exports = {};
   __export(collapse_exports, {
     default: () => collapse_default

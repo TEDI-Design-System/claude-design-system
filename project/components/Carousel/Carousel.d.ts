@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Carousel from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/carousel/carousel.stories.tsx).
+ * Carousel from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/carousel/carousel.stories.tsx).
  */
 export interface CarouselProps {
   /** Carousel composition — `Carousel.Header`, `Carousel.Content` and `Carousel.Footer`. */

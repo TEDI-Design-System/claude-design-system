@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, States, Inverted, Usage With Tooltip And
 import * as React from 'react';
 
 /**
- * InfoButton from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/info-button/info-button.stories.tsx).
+ * InfoButton from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/buttons/info-button/info-button.stories.tsx).
  */
 export interface InfoButtonProps {
   /** If true, applies a small size to the InfoButton */

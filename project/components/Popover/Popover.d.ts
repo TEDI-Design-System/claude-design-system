@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Popover from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/overlays/popover/popover.stories.tsx).
+ * Popover from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/overlays/popover/popover.stories.tsx).
  */
 export interface PopoverProps {
   /** Adds correct event listeners that change the open state. */
@@ -18,6 +18,8 @@ export interface PopoverProps {
   role?: UseRoleProps['role'];
   /** Props passed to FloatingFocusManager */
   focusManager?: Omit<ComponentProps<typeof FloatingFocusManager>, 'context' | 'children'>;
+  /** Time in ms the pointer has to stay over the trigger before the content opens on hover. */
+  delay?: OverlayDelay;
   /** Is open by default?<br /> Does not work with open and onToggle props. */
   defaultOpen?: boolean;
   /** Is open?<br /> Use this with onToggle prop for controlled component. */
@@ -38,3 +40,7 @@ export interface PopoverProps {
 
 // Referenced types, resolved one level deep (see the story source for the rest).
 type OverlayOpenWith = 'click' | 'hover';
+type OverlayDelay = 0 | 100 | 200 | 300;
+// From @floating-ui/dom (see its documentation): OffsetOptions.
+// From @floating-ui/react (see its documentation): UseRoleProps.
+// From @floating-ui/utils (see its documentation): Placement.

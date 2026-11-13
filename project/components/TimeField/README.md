@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Sizes, States, Field Options, Value Type
 import * as React from 'react';
 
 /**
- * TimeField from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/time-field/time-field.stories.tsx).
+ * TimeField from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/time-field/time-field.stories.tsx).
  */
 export interface TimeFieldProps {
   /** Unique identifier for the input field. */

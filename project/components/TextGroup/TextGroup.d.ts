@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * TextGroup from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/text-group/text-group.stories.tsx).
+ * TextGroup from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/text-group/text-group.stories.tsx).
  */
 export interface TextGroupProps {
   /** Type of text group layout */

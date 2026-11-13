@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, Items, With Checkbox, With Radio, With I
 import * as React from 'react';
 
 /**
- * OptionContent from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/option-content/option-content.stories.tsx).
+ * OptionContent from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/option-content/option-content.stories.tsx).
  */
 export interface OptionContentProps {
   /** Content of the value row — typically `OptionContent.Label` and optionally `OptionContent.Meta`, but any node is allowed. */

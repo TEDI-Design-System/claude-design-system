@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Sizes, Sizes With Background, Colors, Ba
 import * as React from 'react';
 
 /**
- * Icon from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/base/icon/icon.stories.tsx).
+ * Icon from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/base/icon/icon.stories.tsx).
  */
 export interface IconProps {
   /** Name of material icon https://fonts.google.com/icons */

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * FeedbackText from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/feedback-text/feedback-text.stories.tsx).
+ * FeedbackText from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/feedback-text/feedback-text.stories.tsx).
  */
 export interface FeedbackTextProps {
   /** Helper text */

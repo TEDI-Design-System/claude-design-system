@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, Actions Slot, Corner Radius, Header Vari
 import * as React from 'react';
 
 /**
- * Sheet from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/overlays/sheet/sheet.stories.tsx).
+ * Sheet from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/overlays/sheet/sheet.stories.tsx).
  */
 export interface SheetProps {
   /** `Sheet.Trigger`, `Sheet.Content` and any other content. */

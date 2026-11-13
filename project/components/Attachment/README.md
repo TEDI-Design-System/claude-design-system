@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Read Only, With Progress, With File Size
 import * as React from 'react';
 
 /**
- * Attachment from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/attachment/attachment.stories.tsx).
+ * Attachment from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/attachment/attachment.stories.tsx).
  */
 export interface AttachmentProps {
   /** File name (required). */

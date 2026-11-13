@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Print from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/print/print.stories.tsx).
+ * Print from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/print/print.stories.tsx).
  */
 export interface PrintProps {
   /** The content to be rendered within the `Print` component. This can be a single element or an array of elements. */

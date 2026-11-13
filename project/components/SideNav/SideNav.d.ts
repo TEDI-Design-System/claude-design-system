@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * SideNav from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/sidenav/sidenav.stories.tsx).
+ * SideNav from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/layout/sidenav/sidenav.stories.tsx).
  */
 export interface SideNavProps<C extends React.ElementType = 'a'> {
   /** Render all anchors (except logoLink and skipLink) as this component */

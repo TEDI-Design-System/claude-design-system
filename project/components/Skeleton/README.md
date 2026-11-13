@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, Skeleton Height, Skeleton Width, Accessi
 import * as React from 'react';
 
 /**
- * Skeleton from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/loaders/skeleton/skeleton.stories.tsx).
+ * Skeleton from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/loaders/skeleton/skeleton.stories.tsx).
  */
 export interface SkeletonProps {
   /** The content to be rendered inside the skeleton placeholder. */

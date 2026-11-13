@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * StretchContent from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/stretch-content/stretch-content.stories.tsx).
+ * StretchContent from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/misc/stretch-content/stretch-content.stories.tsx).
  */
 export interface StretchContentProps {
   /** Element that will be stretched within the container. */

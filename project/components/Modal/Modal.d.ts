@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Modal from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/overlays/modal/modal.stories.tsx).
+ * Modal from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/overlays/modal/modal.stories.tsx).
  */
 export interface ModalProps {
   /** `<Modal.Trigger>` and `<Modal.Content>` children. */

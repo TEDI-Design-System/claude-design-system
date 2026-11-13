@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default.
 import * as React from 'react';
 
 /**
- * Row from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/grid/row.stories.tsx).
+ * Row from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/layout/grid/row.stories.tsx).
  */
 export interface RowProps {
   /** Row children. Row direct children should always be Col components */

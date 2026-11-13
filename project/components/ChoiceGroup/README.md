@@ -10,7 +10,7 @@ Variants (see `preview.html`): Radio, Radio Row, Checkbox, Checkbox Row, Radio C
 import * as React from 'react';
 
 /**
- * ChoiceGroup from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/choice-group/choice-group.stories.tsx).
+ * ChoiceGroup from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/choice-group/choice-group.stories.tsx).
  */
 export interface ChoiceGroupProps {
   id: string;

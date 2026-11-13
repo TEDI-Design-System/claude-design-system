@@ -1,4 +1,4 @@
-TEDI is the Estonian health-and-social-services design system. This is `@tedi-design-system/react` 21.0.0-rc.1 (core 6.12.0): 87 TEDI-Ready components, the real compiled code, on `window.Tedi`. Build with these components and tokens; each component has its own README under `components/<Name>/`.
+TEDI is the Estonian health-and-social-services design system. This is `@tedi-design-system/react` 21.0.0-rc.9 (core 6.12.0): 87 TEDI-Ready components, the real compiled code, on `window.Tedi`. Build with these components and tokens; each component has its own README under `components/<Name>/`.
 
 ## Start here: wrap everything in the providers
 
@@ -66,8 +66,9 @@ Other values worth knowing:
 - `VerticalSpacing` `size`: `0 0.25 0.5 0.75 1 1.25 1.5 1.75 2 2.5 3 4 5` (rem)
 - `Card` `borderRadius` is not a keyword: it is `false` or `{ top?, bottom?, ... }`
 
-**Most components take per-breakpoint props** instead of media queries: pass a partial props
-object under a breakpoint key (`sm md lg xl xxl`), plus `defaultServerBreakpoint` for SSR.
+**Most components take per-breakpoint props** instead of media queries: the direct props are the
+`xs` (smallest) values, and a partial props object under a breakpoint key (`sm md lg xl xxl`; there
+is no `xs` key) overrides them from that width up. Add `defaultServerBreakpoint` for SSR.
 
 ```jsx
 <Button fullWidth lg={{ fullWidth: false, size: 'small' }} defaultServerBreakpoint="lg">Salvesta</Button>
@@ -292,7 +293,7 @@ Still exported, but use the replacement in new designs:
 
 | | |
 |---|---|
-| Package | [`@tedi-design-system/react`](https://www.npmjs.com/package/@tedi-design-system/react) 21.0.0-rc.1, the `/tedi` entry (`/community` is not included) |
+| Package | [`@tedi-design-system/react`](https://www.npmjs.com/package/@tedi-design-system/react) 21.0.0-rc.9, the `/tedi` entry (`/community` is not included) |
 | Tokens | `@tedi-design-system/core` 6.12.0: color 165, spacing 27, radius 10, borders 4, containers 13, zIndex 9; component-level tokens are in `components/bundle.css` |
 | Source | https://github.com/TEDI-Design-System/react |
 | Storybook | https://storybook.tedi.ee/react/rc (for people: it is client-rendered, so fetching it returns an empty page) |

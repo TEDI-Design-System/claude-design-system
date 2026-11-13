@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Spinner from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/loaders/spinner/spinner.stories.tsx).
+ * Spinner from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/loaders/spinner/spinner.stories.tsx).
  */
 export interface SpinnerProps {
   /** Adds a custom CSS class to the spinner element for additional styling or theming purposes. */

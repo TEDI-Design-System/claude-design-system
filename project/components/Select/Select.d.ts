@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Select from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/select/select.stories.tsx).
+ * Select from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/form/select/select.stories.tsx).
  */
 export interface SelectProps {
   /** Unique HTML id for the input. Also used as react-select's `instanceId` for SSR-stable internal IDs. When omitted, falls back to the surrounding `InputGroup`'s id or a generated `useId()`. */
@@ -182,3 +182,4 @@ interface TextProps extends BreakpointSupport<TextBreakpointProps> {
 type LabelModifierProps = BreakpointSupport<{
     modifiers?: LabelModifiers[] | LabelModifiers;
 }>;
+// From react-select (see its documentation): OptionsOrGroups, InputActionMeta, OptionProps, MenuListProps.

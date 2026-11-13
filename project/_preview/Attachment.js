@@ -121,7 +121,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -132,7 +132,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var button_default = ns["Button"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/hide-at/hide-at.tsx
+  // tedi:src/tedi/components/layout/hide-at/hide-at.tsx
   var hide_at_exports = {};
   __export(hide_at_exports, {
     default: () => hide_at_default
@@ -143,7 +143,7 @@ var __dsPreview = (() => {
   var ns2 = window.Tedi;
   var hide_at_default = ns2["HideAt"] ?? ns2;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/show-at/show-at.tsx
+  // tedi:src/tedi/components/layout/show-at/show-at.tsx
   var show_at_exports = {};
   __export(show_at_exports, {
     default: () => show_at_default
@@ -154,7 +154,7 @@ var __dsPreview = (() => {
   var ns3 = window.Tedi;
   var show_at_default = ns3["ShowAt"] ?? ns3;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -165,7 +165,7 @@ var __dsPreview = (() => {
   var ns4 = window.Tedi;
   var vertical_spacing_default = ns4["VerticalSpacing"] ?? ns4;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/overlays/dropdown/index.ts
+  // tedi:src/tedi/components/overlays/dropdown/index.ts
   var dropdown_exports = {};
   __export(dropdown_exports, {
     default: () => dropdown_default
@@ -176,7 +176,7 @@ var __dsPreview = (() => {
   var ns5 = window.Tedi;
   var dropdown_default = ns5["Dropdown"] ?? ns5;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/overlays/tooltip/index.ts
+  // tedi:src/tedi/components/overlays/tooltip/index.ts
   var tooltip_exports = {};
   __export(tooltip_exports, {
     default: () => tooltip_default
@@ -187,7 +187,7 @@ var __dsPreview = (() => {
   var ns6 = window.Tedi;
   var tooltip_default = ns6["Tooltip"] ?? ns6;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/attachment/attachment.tsx
+  // tedi:src/tedi/components/misc/attachment/attachment.tsx
   var attachment_exports = {};
   __export(attachment_exports, {
     default: () => attachment_default

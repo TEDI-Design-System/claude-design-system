@@ -260,7 +260,7 @@ var __dsPreview = (() => {
     return props;
   };
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/toggle/toggle.tsx
+  // tedi:src/tedi/components/form/toggle/toggle.tsx
   var toggle_exports = {};
   __export(toggle_exports, {
     default: () => toggle_default
@@ -271,7 +271,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var toggle_default = ns["Toggle"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/separator/separator.tsx
+  // tedi:src/tedi/components/misc/separator/separator.tsx
   var separator_exports = {};
   __export(separator_exports, {
     default: () => separator_default
@@ -287,7 +287,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-is-mounted.ts
+  // tedi:src/tedi/helpers/hooks/use-is-mounted.ts
   var use_is_mounted_exports = {};
   __export(use_is_mounted_exports, {
     default: () => use_is_mounted_default
@@ -301,7 +301,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_is_mounted_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-safe-id.ts
+  // tedi:src/tedi/helpers/hooks/use-safe-id.ts
   var use_safe_id_exports = {};
   __export(use_safe_id_exports, {
     default: () => use_safe_id_default
@@ -315,7 +315,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_safe_id_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-breakpoint.ts
+  // tedi:src/tedi/helpers/hooks/use-breakpoint.ts
   var use_breakpoint_exports = {};
   __export(use_breakpoint_exports, {
     default: () => use_breakpoint_default
@@ -329,7 +329,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_breakpoint_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-breakpoint-props.ts
+  // tedi:src/tedi/helpers/hooks/use-breakpoint-props.ts
   var use_breakpoint_props_exports = {};
   __export(use_breakpoint_props_exports, {
     default: () => use_breakpoint_props_default
@@ -343,7 +343,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_breakpoint_props_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-element-size.ts
+  // tedi:src/tedi/helpers/hooks/use-element-size.ts
   var use_element_size_exports = {};
   __export(use_element_size_exports, {
     default: () => use_element_size_default
@@ -357,7 +357,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_element_size_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-scroll.ts
+  // tedi:src/tedi/helpers/hooks/use-scroll.ts
   var use_scroll_exports = {};
   __export(use_scroll_exports, {
     default: () => use_scroll_default
@@ -371,7 +371,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_scroll_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-is-touch-device.ts
+  // tedi:src/tedi/helpers/hooks/use-is-touch-device.ts
   var use_is_touch_device_exports = {};
   __export(use_is_touch_device_exports, {
     default: () => use_is_touch_device_default
@@ -385,7 +385,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_is_touch_device_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-file-upload.ts
+  // tedi:src/tedi/helpers/hooks/use-file-upload.ts
   var use_file_upload_exports = {};
   __export(use_file_upload_exports, {
     default: () => use_file_upload_default
@@ -399,7 +399,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_file_upload_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-what-input.ts
+  // tedi:src/tedi/helpers/hooks/use-what-input.ts
   var use_what_input_exports = {};
   __export(use_what_input_exports, {
     default: () => use_what_input_default
@@ -413,7 +413,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_what_input_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-scroll-fade.ts
+  // tedi:src/tedi/helpers/hooks/use-scroll-fade.ts
   var use_scroll_fade_exports = {};
   __export(use_scroll_fade_exports, {
     default: () => use_scroll_fade_default
@@ -427,7 +427,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_scroll_fade_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/polymorphic/types.ts
+  // tedi:src/tedi/helpers/polymorphic/types.ts
   var types_exports = {};
   __export(types_exports, {
     default: () => types_default
@@ -441,7 +441,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, types_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/providers/label-provider/index.ts
+  // tedi:src/tedi/providers/label-provider/index.ts
   var label_provider_exports = {};
   __export(label_provider_exports, {
     default: () => label_provider_default
@@ -452,7 +452,7 @@ var __dsPreview = (() => {
   var ns14 = window.Tedi;
   var label_provider_default = ns14["LabelProvider"] ?? ns14;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/providers/theme-provider/theme-provider.tsx
+  // tedi:src/tedi/providers/theme-provider/theme-provider.tsx
   var theme_provider_exports = {};
   __export(theme_provider_exports, {
     default: () => theme_provider_default
@@ -463,7 +463,7 @@ var __dsPreview = (() => {
   var ns15 = window.Tedi;
   var theme_provider_default = ns15["ThemeProvider"] ?? ns15;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/icon/icon.tsx
+  // tedi:src/tedi/components/base/icon/icon.tsx
   var icon_exports = {};
   __export(icon_exports, {
     default: () => icon_default
@@ -474,7 +474,7 @@ var __dsPreview = (() => {
   var ns16 = window.Tedi;
   var icon_default = ns16["Icon"] ?? ns16;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -485,7 +485,7 @@ var __dsPreview = (() => {
   var ns17 = window.Tedi;
   var text_default = ns17["Text"] ?? ns17;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -496,7 +496,7 @@ var __dsPreview = (() => {
   var ns18 = window.Tedi;
   var button_default = ns18["Button"] ?? ns18;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/empty-state/empty-state.tsx
+  // tedi:src/tedi/components/content/empty-state/empty-state.tsx
   var empty_state_exports = {};
   __export(empty_state_exports, {
     default: () => empty_state_default
@@ -507,7 +507,7 @@ var __dsPreview = (() => {
   var ns19 = window.Tedi;
   var empty_state_default = ns19["EmptyState"] ?? ns19;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/search/search.tsx
+  // tedi:src/tedi/components/form/search/search.tsx
   var search_exports = {};
   __export(search_exports, {
     default: () => search_default
@@ -518,7 +518,7 @@ var __dsPreview = (() => {
   var ns20 = window.Tedi;
   var search_default = ns20["Search"] ?? ns20;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/link/link.tsx
+  // tedi:src/tedi/components/navigation/link/link.tsx
   var link_exports = {};
   __export(link_exports, {
     default: () => link_default
@@ -529,7 +529,7 @@ var __dsPreview = (() => {
   var ns21 = window.Tedi;
   var link_default = ns21["Link"] ?? ns21;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/tags/tag/tag.tsx
+  // tedi:src/tedi/components/tags/tag/tag.tsx
   var tag_exports = {};
   __export(tag_exports, {
     default: () => tag_default
@@ -540,7 +540,7 @@ var __dsPreview = (() => {
   var ns22 = window.Tedi;
   var tag_default = ns22["Tag"] ?? ns22;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/hide-at/hide-at.tsx
+  // tedi:src/tedi/components/layout/hide-at/hide-at.tsx
   var hide_at_exports = {};
   __export(hide_at_exports, {
     default: () => hide_at_default
@@ -551,7 +551,7 @@ var __dsPreview = (() => {
   var ns23 = window.Tedi;
   var hide_at_default = ns23["HideAt"] ?? ns23;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/show-at/show-at.tsx
+  // tedi:src/tedi/components/layout/show-at/show-at.tsx
   var show_at_exports = {};
   __export(show_at_exports, {
     default: () => show_at_default
@@ -562,7 +562,7 @@ var __dsPreview = (() => {
   var ns24 = window.Tedi;
   var show_at_default = ns24["ShowAt"] ?? ns24;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/sidenav/index.ts
+  // tedi:src/tedi/components/layout/sidenav/index.ts
   var sidenav_exports = {};
   __export(sidenav_exports, {
     default: () => sidenav_default
@@ -573,7 +573,7 @@ var __dsPreview = (() => {
   var ns25 = window.Tedi;
   var sidenav_default = ns25["SideNav"] ?? ns25;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/header/header.tsx
+  // tedi:src/tedi/components/layout/header/header.tsx
   var header_exports = {};
   __export(header_exports, {
     default: () => header_default

@@ -118,7 +118,7 @@ var __dsPreview = (() => {
   init_define_process_env();
   var import_react = __toESM(require_react(), 1);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/heading/heading.tsx
+  // tedi:src/tedi/components/base/typography/heading/heading.tsx
   var heading_exports = {};
   __export(heading_exports, {
     default: () => heading_default
@@ -129,7 +129,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var heading_default = ns["Heading"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -140,7 +140,7 @@ var __dsPreview = (() => {
   var ns2 = window.Tedi;
   var text_default = ns2["Text"] ?? ns2;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -156,7 +156,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -170,7 +170,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -184,7 +184,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/hide-at/hide-at.tsx
+  // tedi:src/tedi/components/layout/hide-at/hide-at.tsx
   var hide_at_exports = {};
   __export(hide_at_exports, {
     default: () => hide_at_default
@@ -195,7 +195,7 @@ var __dsPreview = (() => {
   var ns6 = window.Tedi;
   var hide_at_default = ns6["HideAt"] ?? ns6;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/show-at/show-at.tsx
+  // tedi:src/tedi/components/layout/show-at/show-at.tsx
   var show_at_exports = {};
   __export(show_at_exports, {
     default: () => show_at_default
@@ -206,7 +206,7 @@ var __dsPreview = (() => {
   var ns7 = window.Tedi;
   var show_at_default = ns7["ShowAt"] ?? ns7;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -217,7 +217,7 @@ var __dsPreview = (() => {
   var ns8 = window.Tedi;
   var vertical_spacing_default = ns8["VerticalSpacing"] ?? ns8;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/separator/separator.tsx
+  // tedi:src/tedi/components/misc/separator/separator.tsx
   var separator_exports = {};
   __export(separator_exports, {
     default: () => separator_default
@@ -228,7 +228,7 @@ var __dsPreview = (() => {
   var ns9 = window.Tedi;
   var separator_default = ns9["Separator"] ?? ns9;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/tags/status-badge/status-badge.tsx
+  // tedi:src/tedi/components/tags/status-badge/status-badge.tsx
   var status_badge_exports = {};
   __export(status_badge_exports, {
     default: () => status_badge_default
@@ -239,7 +239,7 @@ var __dsPreview = (() => {
   var ns10 = window.Tedi;
   var status_badge_default = ns10["StatusBadge"] ?? ns10;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/card-stepper/index.ts
+  // tedi:src/tedi/components/navigation/card-stepper/index.ts
   var card_stepper_exports = {};
   __export(card_stepper_exports, {
     default: () => card_stepper_default
@@ -250,7 +250,7 @@ var __dsPreview = (() => {
   var ns11 = window.Tedi;
   var card_stepper_default = ns11["CardStepper"] ?? ns11;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/link/link.tsx
+  // tedi:src/tedi/components/navigation/link/link.tsx
   var link_exports = {};
   __export(link_exports, {
     default: () => link_default
@@ -261,7 +261,7 @@ var __dsPreview = (() => {
   var ns12 = window.Tedi;
   var link_default = ns12["Link"] ?? ns12;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/vertical-stepper/vertical-stepper.tsx
+  // tedi:src/tedi/components/navigation/vertical-stepper/vertical-stepper.tsx
   var vertical_stepper_exports = {};
   __export(vertical_stepper_exports, {
     default: () => vertical_stepper_default
@@ -272,7 +272,7 @@ var __dsPreview = (() => {
   var ns13 = window.Tedi;
   var vertical_stepper_default = ns13["VerticalStepper"] ?? ns13;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/vertical-stepper/vertical-stepper-item.tsx
+  // tedi:src/tedi/components/navigation/vertical-stepper/vertical-stepper-item.tsx
   var vertical_stepper_item_exports = {};
   __export(vertical_stepper_item_exports, {
     default: () => vertical_stepper_item_default
@@ -283,7 +283,7 @@ var __dsPreview = (() => {
   var ns14 = window.Tedi;
   var vertical_stepper_item_default = ns14["VerticalStepperItem"] ?? ns14;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/vertical-stepper/vertical-stepper-sub-item.tsx
+  // tedi:src/tedi/components/navigation/vertical-stepper/vertical-stepper-sub-item.tsx
   var vertical_stepper_sub_item_exports = {};
   __export(vertical_stepper_sub_item_exports, {
     default: () => vertical_stepper_sub_item_default

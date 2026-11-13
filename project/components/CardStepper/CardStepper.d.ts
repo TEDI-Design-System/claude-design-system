@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * CardStepper from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/card-stepper/card-stepper.stories.tsx).
+ * CardStepper from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/navigation/card-stepper/card-stepper.stories.tsx).
  */
 export interface CardStepperProps {
   /** `CardStepper.Step` elements (compound API) — the active step shows on the card, all steps in the modal. Alternative to the `steps` data prop. */

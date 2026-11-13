@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Truncate from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/truncate/truncate.stories.tsx).
+ * Truncate from @tedi-design-system/react@21.0.0-rc.9 (stories: ./src/tedi/components/content/truncate/truncate.stories.tsx).
  */
 export interface TruncateProps {
   /** Text that will be truncated */
