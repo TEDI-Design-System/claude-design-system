@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, With Icons, With Status Badge, States, C
 import * as React from 'react';
 
 /**
- * Tabs from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/tabs/tabs.stories.tsx).
+ * Tabs from @tedi-design-system/react@21.0.0-rc.24 (stories: ./src/tedi/components/navigation/tabs/tabs.stories.tsx).
  */
 export interface TabsProps {
   /** Tabs content — should include Tabs.List and Tabs.Content elements */
@@ -34,7 +34,7 @@ export interface TabsProps {
 export const Default: Story = {
   render: () => (
     <Tabs defaultValue="tab-1">
-      <Tabs.List aria-label="Tervise sakid">
+      <Tabs.List aria-label="Terviseandmed">
         <Tabs.Trigger id="tab-1">Terviseteekond</Tabs.Trigger>
         <Tabs.Trigger id="tab-2">Haiguste kulg</Tabs.Trigger>
         <Tabs.Trigger id="tab-3">Ravimite ajalugu</Tabs.Trigger>
@@ -65,7 +65,7 @@ export const Default: Story = {
 export const WithIcons: Story = {
   render: () => (
     <Tabs defaultValue="tab-1">
-      <Tabs.List aria-label="Ikoonidega sakid">
+      <Tabs.List aria-label="Vaade">
         <Tabs.Trigger id="tab-1" icon="table_chart">
           Tabel
         </Tabs.Trigger>
@@ -94,7 +94,7 @@ export const WithIcons: Story = {
 export const WithStatusBadge: Story = {
   render: () => (
     <Tabs defaultValue="tab-1">
-      <Tabs.List aria-label="Olekumärgisega sakid">
+      <Tabs.List aria-label="Terviseandmed">
         <Tabs.Trigger id="tab-1">
           <Ellipsis lineClamp={1} popover={true}>
             Terviseteekond
@@ -162,7 +162,7 @@ export const Controlled: Story = {
           Current tab: <strong>{currentTab}</strong>
         </p>
         <Tabs value={currentTab} onChange={setCurrentTab}>
-          <Tabs.List aria-label="Juhitavad sakid">
+          <Tabs.List aria-label="Terviseandmed">
             <Tabs.Trigger id="tab-1">Terviseteekond</Tabs.Trigger>
             <Tabs.Trigger id="tab-2">Haiguste kulg</Tabs.Trigger>
             <Tabs.Trigger id="tab-3">Ravimite ajalugu</Tabs.Trigger>
@@ -189,7 +189,7 @@ export const Controlled: Story = {
 export const WithDisabledTab: Story = {
   render: () => (
     <Tabs defaultValue="tab-1">
-      <Tabs.List aria-label="Keelatud sakiga sakid">
+      <Tabs.List aria-label="Terviseandmed">
         <Tabs.Trigger id="tab-1">Terviseteekond</Tabs.Trigger>
         <Tabs.Trigger id="tab-2">Haiguste kulg</Tabs.Trigger>
         <Tabs.Trigger id="tab-3" disabled>

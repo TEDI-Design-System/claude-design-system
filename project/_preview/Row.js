@@ -103,7 +103,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -114,7 +114,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var col_default = ns["Col"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default

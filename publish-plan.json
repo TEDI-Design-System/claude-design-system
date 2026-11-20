@@ -54,6 +54,7 @@
    "project/_preview/Print.js": "project/_preview/Print.js",
    "project/_preview/ProgressBar.js": "project/_preview/ProgressBar.js",
    "project/_preview/Radio.js": "project/_preview/Radio.js",
+   "project/_preview/Rating.js": "project/_preview/Rating.js",
    "project/_preview/Row.js": "project/_preview/Row.js",
    "project/_preview/ScrollFade.js": "project/_preview/ScrollFade.js",
    "project/_preview/ScrollVisibility.js": "project/_preview/ScrollVisibility.js",
@@ -402,23 +403,29 @@
     "contentType": "text/plain"
    },
    "project/components/Radio/preview.html": "project/components/Radio/preview.html",
-   "project/components/Row/README.md": "project/components/Row/README.md",
+   "project/components/Rating/README.md": "project/components/Rating/README.md",
+   "project/components/Rating/Rating.d.ts": {
+    "from": "project/components/Rating/Rating.d.ts",
+    "contentType": "text/plain"
+   },
+   "project/components/Rating/preview.html": "project/components/Rating/preview.html",
+   "project/components/Row/README.md": "project/components/Row/README.md"
+  }
+ },
+ {
+  "file_path": "project/components/ScrollFade/README.md",
+  "files": {
    "project/components/Row/Row.d.ts": {
     "from": "project/components/Row/Row.d.ts",
     "contentType": "text/plain"
    },
    "project/components/Row/preview.html": "project/components/Row/preview.html",
-   "project/components/ScrollFade/README.md": "project/components/ScrollFade/README.md",
    "project/components/ScrollFade/ScrollFade.d.ts": {
     "from": "project/components/ScrollFade/ScrollFade.d.ts",
     "contentType": "text/plain"
-   }
-  }
- },
- {
-  "file_path": "project/components/ScrollVisibility/README.md",
-  "files": {
+   },
    "project/components/ScrollFade/preview.html": "project/components/ScrollFade/preview.html",
+   "project/components/ScrollVisibility/README.md": "project/components/ScrollVisibility/README.md",
    "project/components/ScrollVisibility/ScrollVisibility.d.ts": {
     "from": "project/components/ScrollVisibility/ScrollVisibility.d.ts",
     "contentType": "text/plain"

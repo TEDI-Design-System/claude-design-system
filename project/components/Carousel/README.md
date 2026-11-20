@@ -10,15 +10,17 @@ Variants (see `preview.html`): Default, Top Pagination Arrows Only, Separated Bo
 import * as React from 'react';
 
 /**
- * Carousel from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/carousel/carousel.stories.tsx).
+ * Carousel from @tedi-design-system/react@21.0.0-rc.24 (stories: ./src/tedi/components/content/carousel/carousel.stories.tsx).
  */
 export interface CarouselProps {
   /** Carousel composition — `Carousel.Header`, `Carousel.Content` and `Carousel.Footer`. */
   children?: React.ReactNode;
   /** Additional class name applied to the carousel root. */
   className?: string;
-  /** Accessible name for the carousel region. Set a distinct label per carousel when a page has several. Defaults to the localized `carousel` label. */
+  /** Accessible name for the carousel. Without it or `ariaLabelledBy`, the name defaults to the `carousel.label` label. */
   ariaLabel?: string;
+  /** Id of the element that names the carousel, typically its heading. */
+  ariaLabelledBy?: string;
 }
 ```
 
@@ -27,18 +29,30 @@ export interface CarouselProps {
 ### Default
 
 ```tsx
-export const Default: Story = {
-  render: () => (
-    <Carousel>
+export const Default: StoryObj = {
+  args: { ariaLabelledBy: 'carousel-default-title' },
+  argTypes: {
+    ariaLabel: { control: 'text' },
+    ariaLabelledBy: { control: 'text' },
+    ...subcomponentArgTypes(Carousel.Content, {
+      category: 'Carousel.Content',
+      prefix: 'content',
+      include: ['fade', 'transitionMs', 'loop', 'centered', 'swipeThreshold'],
+    }),
+  },
+  render: (args: Record<string, unknown>) => (
+    <Carousel ariaLabel={args.ariaLabel as string} ariaLabelledBy={args.ariaLabelledBy as string}>
       <Carousel.Header>
         <div>
-          <Text element="h2" modifiers="h1">
+          <Text element="h2" modifiers="h1" id="carousel-default-title">
             Pealkiri
           </Text>
         </div>
         <Carousel.Navigation />
       </Carousel.Header>
-      <Carousel.Content slidesPerView={RESPONSIVE_SLIDES}>{slides(5)}</Carousel.Content>
+      <Carousel.Content slidesPerView={RESPONSIVE_SLIDES} {...getSubcomponentProps(args, 'content')}>
+        {slides(5)}
+      </Carousel.Content>
       <Carousel.Footer style={{ justifyContent: 'center' }}>
         <Carousel.Indicators />
       </Carousel.Footer>
@@ -53,7 +67,7 @@ export const Default: Story = {
 export const TopPaginationArrowsOnly: Story = {
   name: 'Top pagination - arrows only',
   render: () => (
-    <Carousel>
+    <Carousel ariaLabel="Pealkiri">
       <Carousel.Header>
         <Text element="h2" modifiers="h1">
           Pealkiri
@@ -72,7 +86,7 @@ export const TopPaginationArrowsOnly: Story = {
 export const SeparatedBottomPaginationHasDots: Story = {
   name: 'Separated bottom pagination - has dots',
   render: () => (
-    <Carousel>
+    <Carousel ariaLabel="Pealkiri">
       <Carousel.Header>
         <Text element="h2" modifiers="h1">
           Pealkiri
@@ -99,7 +113,7 @@ export const SeparatedBottomPaginationHasDots: Story = {
 export const SeparatedBottomPaginationHasNumbers: Story = {
   name: 'Separated bottom pagination - has numbers',
   render: () => (
-    <Carousel>
+    <Carousel ariaLabel="Pealkiri">
       <Carousel.Header>
         <Text element="h2" modifiers="h1">
           Pealkiri
@@ -121,7 +135,7 @@ export const SeparatedBottomPaginationHasNumbers: Story = {
 export const CenteredBottomPaginationHasDots: Story = {
   name: 'Centered bottom pagination - has dots',
   render: () => (
-    <Carousel>
+    <Carousel ariaLabel="Pealkiri">
       <Carousel.Header>
         <Text element="h2" modifiers="h1">
           Pealkiri
@@ -147,7 +161,7 @@ export const CenteredBottomPaginationHasDots: Story = {
 export const CenteredBottomPaginationHasNumbers: Story = {
   name: 'Centered bottom pagination - has numbers',
   render: () => (
-    <Carousel>
+    <Carousel ariaLabel="Pealkiri">
       <Carousel.Header>
         <Text element="h2" modifiers="h1">
           Pealkiri

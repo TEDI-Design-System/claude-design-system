@@ -146,7 +146,7 @@ var __dsPreview = (() => {
   init_define_process_env();
   var import_react = __toESM(require_react(), 1);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/pagination/pagination.tsx
+  // tedi:src/tedi/components/navigation/pagination/pagination.tsx
   var pagination_exports = {};
   __export(pagination_exports, {
     default: () => pagination_default
@@ -365,7 +365,7 @@ var __dsPreview = (() => {
             totalItems: 97,
             pageSize: 10,
             pageSizeOptions: [10, 25, 50],
-            labels: { ariaLabel: "Pagination (borders: top)" }
+            labels: { ariaLabel: "Lehed: \xFClemine eraldusjoon" }
           }
         )
       ] }),
@@ -380,7 +380,7 @@ var __dsPreview = (() => {
             pageSize: 10,
             pageSizeOptions: [10, 25, 50],
             borders: "bottom",
-            labels: { ariaLabel: "Pagination (borders: bottom)" }
+            labels: { ariaLabel: "Lehed: alumine eraldusjoon" }
           }
         )
       ] }),
@@ -395,7 +395,7 @@ var __dsPreview = (() => {
             pageSize: 10,
             pageSizeOptions: [10, 25, 50],
             borders: "both",
-            labels: { ariaLabel: "Pagination (borders: both)" }
+            labels: { ariaLabel: "Lehed: m\xF5lemad eraldusjooned" }
           }
         )
       ] }),
@@ -410,7 +410,7 @@ var __dsPreview = (() => {
             pageSize: 10,
             pageSizeOptions: [10, 25, 50],
             borders: "none",
-            labels: { ariaLabel: "Pagination (borders: none)" }
+            labels: { ariaLabel: "Lehed: eraldusjooneta" }
           }
         )
       ] })

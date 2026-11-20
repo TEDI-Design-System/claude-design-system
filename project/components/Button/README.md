@@ -1,6 +1,6 @@
 Button from @tedi-design-system/react. Use via `window.Tedi.Button` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Primary, Primary Inverted, Secondary, Secondary Inverted, Neutral, Neutral Inverted, Success, Danger, Danger Neutral, No Style Template, Full Width, Responsive Button, Long Text Button That Wraps Into Multiple Lines, Visual Type Link.
+Variants (see `preview.html`): Default, Primary, Primary Inverted, Secondary, Secondary Inverted, Neutral, Neutral Inverted, Success, Danger, Danger Neutral, Extra Small Icon Only, No Style Template, Full Width, Responsive Button, Long Text Button That Wraps Into Multiple Lines, Visual Type Link.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Primary, Primary Inverted, Secondary, Se
 import * as React from 'react';
 
 /**
- * Button from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/button/button.stories.tsx).
+ * Button from @tedi-design-system/react@21.0.0-rc.24 (stories: ./src/tedi/components/buttons/button/button.stories.tsx).
  */
 export interface ButtonProps<C extends React.ElementType = 'button'> {
   /** Button children */
@@ -21,8 +21,8 @@ export interface ButtonProps<C extends React.ElementType = 'button'> {
   fullWidth?: boolean;
   /** Color scheme of the button. The 'text' value is only supported when visualType is 'link'. */
   color?: ButtonColor;
-  /** Button size */
-  size?: 'default' | 'small' | 'large';
+  /** Button size. The 'extra-small' size is only intended for icon-only buttons (use with the `icon` prop). */
+  size?: 'default' | 'small' | 'extra-small';
   /** Name of the icon when button only has an icon in it. */
   icon?: string | IconWithoutBackgroundProps;
   /** Name of the icon we want to show on the left. */
@@ -97,9 +97,9 @@ type ButtonContentProps<C extends React.ElementType, P extends Record<string, Un
      */
     color?: ButtonColor;
     /**
-     * Button size
+     * Button size. The 'extra-small' size is only intended for icon-only buttons (use with the `icon` prop).
      */
-    size?: 'default' | 'small' | 'large';
+    size?: 'default' | 'small' | 'extra-small';
     /**
      * Name of the icon when button only has an icon in it.
      */

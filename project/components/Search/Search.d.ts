@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Search from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/search/search.stories.tsx).
+ * Search from @tedi-design-system/react@21.0.0-rc.24 (stories: ./src/tedi/components/form/search/search.stories.tsx).
  */
 export interface SearchProps {
   /** Callback triggered when the search is executed (Enter key pressed or button clicked). In autocomplete mode it fires on Enter only when no suggestion is active — a free-text submit. */
@@ -9,8 +9,8 @@ export interface SearchProps {
   /** Custom icon for the search input. */
   searchIcon?: string | IconWithoutBackgroundProps;
   /** Optional button properties. */
-  button?: Partial<ButtonProps>;
-  /** For accessibility: search field name (accessible name). Recommended to always set. E.g., "Search products" or "Search site". */
+  button?: Partial<SearchButtonProps>;
+  /** Accessible name for the search landmark. Unnamed by default; set it when the page has more than one search. It does not name the field, which keeps its own `label`. */
   ariaLabel?: string;
   /** Suggestions rendered in the popup. Providing this array (even empty) turns the field into an accessible combobox; leave it `undefined` for a plain search field. Filter / fetch these yourself in response to `onChange`; the component renders exactly what it is given. */
   suggestions?: SearchSuggestion[];
@@ -108,7 +108,7 @@ interface IconWithoutBackgroundProps extends IconSharedProps {
      */
     display?: 'block' | 'inline';
 }
-type ButtonProps<C extends React.ElementType = 'button'> = BreakpointSupport<ButtonContentProps<C, IInternalButtonProps, AllowedTags>>;
+type SearchButtonProps = BreakpointSupport<SearchButtonContentProps>;
 interface SearchSuggestion {
     /**
      * Stable value returned to `onSuggestionSelect` and used as the React key. For

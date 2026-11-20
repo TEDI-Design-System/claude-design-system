@@ -105,7 +105,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -116,7 +116,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var vertical_spacing_default = ns["VerticalSpacing"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/heading-with-icon/heading-with-icon.tsx
+  // tedi:src/tedi/components/content/heading-with-icon/heading-with-icon.tsx
   var heading_with_icon_exports = {};
   __export(heading_with_icon_exports, {
     default: () => heading_with_icon_default

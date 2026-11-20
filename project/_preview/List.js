@@ -113,7 +113,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/list/list.tsx
+  // tedi:src/tedi/components/content/list/list.tsx
   var list_exports = {};
   __export(list_exports, {
     default: () => list_default

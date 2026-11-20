@@ -121,7 +121,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -137,7 +137,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -151,7 +151,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -165,7 +165,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -176,7 +176,7 @@ var __dsPreview = (() => {
   var ns4 = window.Tedi;
   var vertical_spacing_default = ns4["VerticalSpacing"] ?? ns4;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/toggle/toggle.tsx
+  // tedi:src/tedi/components/form/toggle/toggle.tsx
   var toggle_exports = {};
   __export(toggle_exports, {
     default: () => toggle_default
@@ -303,16 +303,16 @@ var __dsPreview = (() => {
   };
   var Type = () => {
     return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(toggle_default, { id: "toggle-1", defaultChecked: true, label: "Toggle button" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(toggle_default, { id: "toggle-2", defaultChecked: true, label: "Toggle button", tooltip: "Tooltip content" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(toggle_default, { id: "toggle-3", defaultChecked: true, label: "Toggle button", size: "large" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(toggle_default, { id: "toggle-4", defaultChecked: true, label: "Toggle button", size: "large", icon: true }) })
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(toggle_default, { id: "toggle-1", defaultChecked: true, label: "Notifications" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(toggle_default, { id: "toggle-2", defaultChecked: true, label: "Notifications", tooltip: "Tooltip content" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(toggle_default, { id: "toggle-3", defaultChecked: true, label: "Notifications", size: "large" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(toggle_default, { id: "toggle-4", defaultChecked: true, label: "Notifications", size: "large", icon: true }) })
     ] });
   };
   var LabelPosition = () => {
     return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(toggle_default, { id: "toggle-label-1", defaultChecked: true, label: "Toggle button", labelPosition: "left" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(toggle_default, { id: "toggle-label-2", defaultChecked: true, label: "Toggle button", labelPosition: "right" })
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(toggle_default, { id: "toggle-label-1", defaultChecked: true, label: "Notifications", labelPosition: "left" }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(toggle_default, { id: "toggle-label-2", defaultChecked: true, label: "Notifications", labelPosition: "right" })
     ] }) }) });
   };
   var States = () => {

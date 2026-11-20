@@ -92,6 +92,7 @@ var __dsPreview = (() => {
     Danger: () => Danger2,
     DangerNeutral: () => DangerNeutral2,
     Default: () => Default2,
+    ExtraSmallIconOnly: () => ExtraSmallIconOnly2,
     FullWidth: () => FullWidth2,
     LongTextButtonThatWrapsIntoMultipleLines: () => LongTextButtonThatWrapsIntoMultipleLines2,
     Neutral: () => Neutral2,
@@ -114,6 +115,7 @@ var __dsPreview = (() => {
     Danger: () => Danger,
     DangerNeutral: () => DangerNeutral,
     Default: () => Default,
+    ExtraSmallIconOnly: () => ExtraSmallIconOnly,
     FullWidth: () => FullWidth,
     LongTextButtonThatWrapsIntoMultipleLines: () => LongTextButtonThatWrapsIntoMultipleLines,
     Neutral: () => Neutral,
@@ -131,7 +133,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -147,7 +149,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -161,7 +163,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -175,7 +177,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -186,7 +188,7 @@ var __dsPreview = (() => {
   var ns4 = window.Tedi;
   var vertical_spacing_default = ns4["VerticalSpacing"] ?? ns4;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/notifications/alert/alert.tsx
+  // tedi:src/tedi/components/notifications/alert/alert.tsx
   var alert_exports = {};
   __export(alert_exports, {
     default: () => alert_default
@@ -197,7 +199,7 @@ var __dsPreview = (() => {
   var ns5 = window.Tedi;
   var alert_default = ns5["Alert"] ?? ns5;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -485,6 +487,14 @@ var __dsPreview = (() => {
       }
     }
   };
+  var ExtraSmallIconOnly = {
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "flex align-items-center gap-3", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { size: "extra-small", icon: "close", showTooltip: true, children: "Close" }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { size: "extra-small", icon: "edit", visualType: "secondary", showTooltip: true, children: "Edit" }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { size: "extra-small", icon: "more_vert", visualType: "neutral", showTooltip: true, children: "More" }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { size: "extra-small", icon: "close", disabled: true, showTooltip: true, children: "Close" })
+    ] })
+  };
   var NoStyleTemplate = (args) => {
     return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { ...args, noStyle: true, children: "Button without styles" });
   };
@@ -598,6 +608,7 @@ var __dsPreview = (() => {
   var Success2 = compose(button_stories_exports, "Success", G, B);
   var Danger2 = compose(button_stories_exports, "Danger", G, B);
   var DangerNeutral2 = compose(button_stories_exports, "DangerNeutral", G, B);
+  var ExtraSmallIconOnly2 = compose(button_stories_exports, "ExtraSmallIconOnly", G, B);
   var NoStyleTemplate2 = compose(button_stories_exports, "NoStyleTemplate", G, B);
   var FullWidth2 = compose(button_stories_exports, "FullWidth", G, B);
   var ResponsiveButton2 = compose(button_stories_exports, "ResponsiveButton", G, B);

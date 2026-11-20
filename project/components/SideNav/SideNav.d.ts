@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * SideNav from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/sidenav/sidenav.stories.tsx).
+ * SideNav from @tedi-design-system/react@21.0.0-rc.24 (stories: ./src/tedi/components/layout/sidenav/sidenav.stories.tsx).
  */
 export interface SideNavProps<C extends React.ElementType = 'a'> {
   /** Render all anchors (except logoLink and skipLink) as this component */
@@ -22,7 +22,7 @@ export interface SideNavProps<C extends React.ElementType = 'a'> {
   showMobileOverlay?: boolean;
   /** Callback when the mobile menu is toggled */
   onMenuToggle?: (isOpen: boolean) => void;
-  /** Controls the open state of the mobile sidenav. When provided, the mobile menu becomes a controlled component. To control the menu externally (e.g. from a toggle button), pair this prop with `SideNav.Toggle`: ```tsx const [isOpen, setIsOpen] = useState(true); <SideNav.Toggle menuOpen={isOpen} toggleMenu={() => setIsOpen(!isOpen)} /> <SideNav isMobileOpen={isOpen} ariaLabel="Mobile menu" navItems={...} /> ``` If not provided, the mobile menu manages its open state internally based on viewport size. */
+  /** Controls the open state of the mobile sidenav. When provided, the mobile menu becomes a controlled component. To control the menu externally (e.g. from a toggle button), pair this prop with `SideNav.Toggle`: ```tsx const [isOpen, setIsOpen] = useState(true); <SideNav.Toggle menuOpen={isOpen} toggleMenu={() => setIsOpen(!isOpen)} /> <SideNav isMobileOpen={isOpen} onMenuToggle={setIsOpen} ariaLabel="Main" navItems={...} /> ``` Always pass `onMenuToggle` as well: the open overlay closes itself (Escape, choosing a link) through it. If not provided, the mobile menu manages its open state internally based on viewport size. */
   isMobileOpen?: boolean;
   /** Whether the sidenav is collapsed (showing only icons/shortened text) */
   isCollapsed?: boolean;

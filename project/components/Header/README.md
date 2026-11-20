@@ -125,7 +125,7 @@ Variants (see `preview.html`): Default, Logged Out, Logged Out With Search, Logg
 import * as React from 'react';
 
 /**
- * Header from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/header/header.stories.tsx).
+ * Header from @tedi-design-system/react@21.0.0-rc.24 (stories: ./src/tedi/components/layout/header/header.stories.tsx).
  */
 export interface HeaderProps {
   /** Content rendered inside the header, typically Header.Logo, Header.Center, and Header.Actions subcomponents. */
@@ -251,7 +251,7 @@ export const LoggedOut: Story = {
           <HideAt lg>
             <div style={{ flex: 1 }}>
               <SideNav
-                ariaLabel="Main navigation"
+                ariaLabel="Main"
                 linkAs="a"
 // …
 ```
@@ -408,4 +408,4 @@ Full story source: `src/tedi/components/layout/header/header.stories.tsx`.
 
 ## Related
 
-`LabelProvider`, `Icon`, `Text`, `EmptyState`, `Search`, `Tag`, `HideAt`, `ShowAt`, `SideNav`
+`Icon`, `Text`, `EmptyState`, `Search`, `Tag`, `HideAt`, `ShowAt`, `SideNav`

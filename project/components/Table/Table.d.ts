@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Table from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/table/table.stories.tsx).
+ * Table from @tedi-design-system/react@21.0.0-rc.24 (stories: ./src/tedi/components/content/table/table.stories.tsx).
  */
 export interface TableProps<TData> {
   /** Unique identifier for the table. Used for accessibility and as the default persistence key namespace. */
@@ -40,9 +40,14 @@ export interface TableProps<TData> {
   enableRowSelection?: boolean | ((row: Row<TData>) => boolean);
   /** How rows are selected when `enableRowSelection` is on: - `'multiple'` (default) — checkbox per row + select-all in the header. `rowSelection` can hold any number of row ids. - `'single'` — radio per row, no select-all. Selecting a row clears any previous selection, so `rowSelection` holds at most one row id. In both modes the controlled `state.rowSelection` / `onStateChange` API is unchanged — only the indicator and TanStack's underlying multi-select behavior change. */
   selectionMode?: TableSelectionMode;
+  /** Accessible name of each row's selection checkbox or radio, e.g. `(row) => row.original.name`. */
+  rowSelectionLabel?: (row: Row<TData>) => string;
   /** Paints the `--table-active` background tint on every selected row. Turn off when checkboxes are used purely for "pick some rows for a bulk action" and the row-level highlight would be visually noisy. The checkbox itself still reflects the selected state. */
   highlightSelectedRows?: boolean;
-  /** Enables per-column filter inputs rendered below the header row. Only columns whose `columnDef.enableColumnFilter !== false` render an input. */
+  /** Footer buttons of the column filter popovers, in display order. */
+  filterActions?: TableFilterAction[];
+  /** Width of the column filter popovers. */
+  filterPopoverWidth?: TableFilterPopoverWidth;
   enableColumnFilters?: boolean;
   /** Render function for the expanded content of a row. When provided, Table prepends an expand/collapse toggle column and renders this node in a full- width row below every expanded parent row. */
   renderSubComponent?: (row: Row<TData>) => ReactNode;
@@ -105,6 +110,8 @@ export interface TableProps<TData> {
 // Referenced types, resolved one level deep (see the story source for the rest).
 type TableSize = 'medium' | 'small';
 type TableSelectionMode = 'multiple' | 'single';
+type TableFilterAction = 'apply' | 'clear' | 'cancel';
+type TableFilterPopoverWidth = 'small' | 'medium' | 'large' | 'none';
 interface TablePaginationOptions {
     /**
      * Rows per page.
@@ -162,3 +169,4 @@ interface TableRowDropEvent {
     fromIndex: number;
     toIndex: number;
 }
+// From @tanstack/table-core (see its documentation): Row, ColumnDef.

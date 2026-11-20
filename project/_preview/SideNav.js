@@ -124,7 +124,7 @@ var __dsPreview = (() => {
   init_define_process_env();
   var import_react = __toESM(require_react(), 1);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -140,7 +140,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -154,7 +154,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -168,7 +168,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/header/index.ts
+  // tedi:src/tedi/components/layout/header/index.ts
   var header_exports = {};
   __export(header_exports, {
     default: () => header_default
@@ -179,7 +179,7 @@ var __dsPreview = (() => {
   var ns4 = window.Tedi;
   var header_default = ns4["Header"] ?? ns4;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/hide-at/hide-at.tsx
+  // tedi:src/tedi/components/layout/hide-at/hide-at.tsx
   var hide_at_exports = {};
   __export(hide_at_exports, {
     default: () => hide_at_default
@@ -190,7 +190,7 @@ var __dsPreview = (() => {
   var ns5 = window.Tedi;
   var hide_at_default = ns5["HideAt"] ?? ns5;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/sidenav/components/sidenav-item/sidenav-item.tsx
+  // tedi:src/tedi/components/layout/sidenav/components/sidenav-item/sidenav-item.tsx
   var sidenav_item_exports = {};
   __export(sidenav_item_exports, {
     default: () => sidenav_item_default
@@ -205,7 +205,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/info-button/info-button.tsx
+  // tedi:src/tedi/components/buttons/info-button/info-button.tsx
   var info_button_exports = {};
   __export(info_button_exports, {
     default: () => info_button_default
@@ -519,7 +519,7 @@ var __dsPreview = (() => {
     { href: "#", children: "Billing & Finance", icon: "payments" }
   ];
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/sidenav/sidenav.tsx
+  // tedi:src/tedi/components/layout/sidenav/sidenav.tsx
   var sidenav_exports = {};
   __export(sidenav_exports, {
     default: () => sidenav_default
@@ -569,7 +569,7 @@ var __dsPreview = (() => {
     render: Template,
     args: {
       navItems: exampleNavItems,
-      ariaLabel: "Menu title"
+      ariaLabel: "Main"
     },
     decorators: [mobileViewportDecorator]
   };
@@ -649,7 +649,7 @@ var __dsPreview = (() => {
     render: Template,
     args: {
       navItems: exampleNavCollapsibleItems,
-      ariaLabel: "Menu title"
+      ariaLabel: "Main"
     },
     decorators: [mobileViewportDecorator]
   };
@@ -657,7 +657,7 @@ var __dsPreview = (() => {
     render: Template,
     args: {
       navItems: exampleNavCollapsibleItemsWithLinks,
-      ariaLabel: "Menu title"
+      ariaLabel: "Main"
     },
     decorators: [mobileViewportDecorator]
   };
@@ -665,7 +665,7 @@ var __dsPreview = (() => {
     render: Template,
     args: {
       navItems: exampleThirdLevelMenuItems,
-      ariaLabel: "Menu title"
+      ariaLabel: "Main"
     },
     decorators: [mobileViewportDecorator]
   };
@@ -673,7 +673,7 @@ var __dsPreview = (() => {
     render: Template,
     args: {
       navItems: exampleThirdLevelMenuItemsLinks,
-      ariaLabel: "Menu title"
+      ariaLabel: "Main"
     },
     decorators: [mobileViewportDecorator]
   };
@@ -684,7 +684,7 @@ var __dsPreview = (() => {
       /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
         sidenav_exports.SideNav,
         {
-          ariaLabel: "Collapsible menu",
+          ariaLabel: "Main",
           navItems: exampleThirdLevelMenuItems,
           isCollapsed: true,
           isMobileOpen: isOpen,
@@ -698,7 +698,7 @@ var __dsPreview = (() => {
     render: Template,
     args: {
       navItems: exampleDefaultOpen,
-      ariaLabel: "Default open menu",
+      ariaLabel: "Main",
       isMobileOpen: true
     },
     decorators: [mobileViewportDecorator]
@@ -707,7 +707,7 @@ var __dsPreview = (() => {
     render: Template,
     args: {
       navItems: exampleThirdLevelMenuItems,
-      ariaLabel: "Default open menu",
+      ariaLabel: "Main",
       sideNavItemSize: "medium"
     },
     decorators: [mobileViewportDecorator]
@@ -716,7 +716,7 @@ var __dsPreview = (() => {
     render: Template,
     args: {
       navItems: exampleThirdLevelMenuItems,
-      ariaLabel: "Default open menu",
+      ariaLabel: "Main",
       sideNavItemSize: "small"
     },
     decorators: [mobileViewportDecorator]

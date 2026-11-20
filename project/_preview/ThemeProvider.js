@@ -409,6 +409,15 @@ var __dsPreview = (() => {
     }
   });
 
+  // react-global:react
+  var require_react = __commonJS({
+    "react-global:react"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      module.exports = window.React;
+    }
+  });
+
   // tedi-namespace:tedi-namespace
   var require_tedi_namespace = __commonJS({
     "tedi-namespace:tedi-namespace"(exports, module) {
@@ -456,15 +465,6 @@ var __dsPreview = (() => {
     }
   });
 
-  // react-global:react
-  var require_react = __commonJS({
-    "react-global:react"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      module.exports = window.React;
-    }
-  });
-
   // ThemeProvider.preview.tsx
   var ThemeProvider_preview_exports = {};
   __export(ThemeProvider_preview_exports, {
@@ -488,8 +488,9 @@ var __dsPreview = (() => {
   init_define_process_env();
   var import_dayjs = __toESM(require_dayjs_min(), 1);
   var import_weekday = __toESM(require_weekday(), 1);
+  var import_react = __toESM(require_react(), 1);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/providers/accessibility-provider/accessibility-provider.tsx
+  // tedi:src/tedi/providers/accessibility-provider/accessibility-provider.tsx
   var accessibility_provider_exports = {};
   __export(accessibility_provider_exports, {
     default: () => accessibility_provider_default
@@ -500,7 +501,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var accessibility_provider_default = ns["AccessibilityProvider"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/providers/label-provider/index.ts
+  // tedi:src/tedi/providers/label-provider/index.ts
   var label_provider_exports = {};
   __export(label_provider_exports, {
     default: () => label_provider_default
@@ -515,10 +516,20 @@ var __dsPreview = (() => {
   var import_et = __toESM(require_et(), 1);
   var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
   import_dayjs.default.extend(import_weekday.default);
-  var StorybookDecorator = ({ children, locale = "et", ...rest }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(label_provider_exports.LabelProvider, { locale, ...rest, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(accessibility_provider_exports.AccessibilityProvider, { children }) });
+  var HtmlLang = () => {
+    const { locale } = (0, label_provider_exports.useLabels)();
+    (0, import_react.useEffect)(() => {
+      document.documentElement.lang = locale;
+    }, [locale]);
+    return null;
+  };
+  var StorybookDecorator = ({ children, locale = "et", ...rest }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(label_provider_exports.LabelProvider, { locale, ...rest, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HtmlLang, {}),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(accessibility_provider_exports.AccessibilityProvider, { children })
+  ] });
   var storybook_decorator_default = StorybookDecorator;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -529,7 +540,7 @@ var __dsPreview = (() => {
   var ns3 = window.Tedi;
   var text_default = ns3["Text"] ?? ns3;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -540,7 +551,7 @@ var __dsPreview = (() => {
   var ns4 = window.Tedi;
   var button_default = ns4["Button"] ?? ns4;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/providers/theme-provider/theme-provider.tsx
+  // tedi:src/tedi/providers/theme-provider/theme-provider.tsx
   var theme_provider_exports = {};
   __export(theme_provider_exports, {
     default: () => theme_provider_default
@@ -599,7 +610,7 @@ var __dsPreview = (() => {
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
-  var React = __toESM(require_react());
+  var React2 = __toESM(require_react());
   var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta = stories.default ?? {};
@@ -628,7 +639,7 @@ var __dsPreview = (() => {
     else if (typeof meta.render === "function") render = () => meta.render(args, context);
     else {
       const Component = story?.component ?? meta.component;
-      if (Component) render = () => React.createElement(Component, args);
+      if (Component) render = () => React2.createElement(Component, args);
     }
     if (!render) return () => null;
     const decorators = [].concat(story?.decorators ?? []).concat(meta.decorators ?? []);

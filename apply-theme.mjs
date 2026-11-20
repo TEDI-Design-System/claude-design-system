@@ -126,11 +126,16 @@ for (const d of decls) {
   if (!groups.has(key)) groups.set(key, new Map());
   groups.get(key).set(d.name, d.value);
 }
-// Unconditional rules first, then each media query; light before dark within each.
+// Unconditional rules first, then each media query in the order the export first declares it
+// (a text sort would put `1200px` before `576px` and let the smaller breakpoint win); light
+// before dark within each.
+const mediaOrder = [...new Set(decls.map((d) => d.media))];
 const order = [...groups.keys()].sort((a, b) => {
   const [ma, sa] = a.split('\0');
   const [mb, sb] = b.split('\0');
-  return (ma !== '') - (mb !== '') || ma.localeCompare(mb) || (sa === 'dark') - (sb === 'dark');
+  return (
+    (ma !== '') - (mb !== '') || mediaOrder.indexOf(ma) - mediaOrder.indexOf(mb) || (sa === 'dark') - (sb === 'dark')
+  );
 });
 let css = `\n/* Theme "${theme}": the TEDI Variables Exporter's export (sha256 ${sha}), applied by apply-theme.mjs */\n`;
 for (const key of order) {
@@ -172,7 +177,9 @@ for (const [name, token] of colorTokens) {
   if (!Object.keys(set).length) continue;
   const before = typeof token.value === 'string' ? { default: token.value } : { ...token.value };
   const after = { ...before, ...set };
-  if (after.dark === undefined) after.dark = before.default;
+  // The export's light rule (:root:root) outranks TEDI's dark one, so a token the export
+  // declares only for light renders that value in dark mode too.
+  if (set.dark === undefined) after.dark = set.default;
   token.value = after;
   changed++;
 }

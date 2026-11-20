@@ -103,7 +103,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/field/field.tsx
+  // tedi:src/tedi/components/form/field/field.tsx
   var field_exports = {};
   __export(field_exports, {
     default: () => field_default

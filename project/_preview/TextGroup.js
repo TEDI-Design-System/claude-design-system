@@ -121,7 +121,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/icon/icon.tsx
+  // tedi:src/tedi/components/base/icon/icon.tsx
   var icon_exports = {};
   __export(icon_exports, {
     default: () => icon_default
@@ -132,7 +132,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var icon_default = ns["Icon"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -143,7 +143,7 @@ var __dsPreview = (() => {
   var ns2 = window.Tedi;
   var text_default = ns2["Text"] ?? ns2;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/info-button/info-button.tsx
+  // tedi:src/tedi/components/buttons/info-button/info-button.tsx
   var info_button_exports = {};
   __export(info_button_exports, {
     default: () => info_button_default
@@ -159,7 +159,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -173,7 +173,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -187,7 +187,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -198,7 +198,7 @@ var __dsPreview = (() => {
   var ns6 = window.Tedi;
   var vertical_spacing_default = ns6["VerticalSpacing"] ?? ns6;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/link/link.tsx
+  // tedi:src/tedi/components/navigation/link/link.tsx
   var link_exports = {};
   __export(link_exports, {
     default: () => link_default
@@ -209,7 +209,7 @@ var __dsPreview = (() => {
   var ns7 = window.Tedi;
   var link_default = ns7["Link"] ?? ns7;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/tags/status-badge/status-badge.tsx
+  // tedi:src/tedi/components/tags/status-badge/status-badge.tsx
   var status_badge_exports = {};
   __export(status_badge_exports, {
     default: () => status_badge_default
@@ -220,7 +220,7 @@ var __dsPreview = (() => {
   var ns8 = window.Tedi;
   var status_badge_default = ns8["StatusBadge"] ?? ns8;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/label/label.tsx
+  // tedi:src/tedi/components/content/label/label.tsx
   var label_exports = {};
   __export(label_exports, {
     default: () => label_default
@@ -231,7 +231,7 @@ var __dsPreview = (() => {
   var ns9 = window.Tedi;
   var label_default = ns9["Label"] ?? ns9;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/text-group/text-group.tsx
+  // tedi:src/tedi/components/content/text-group/text-group.tsx
   var text_group_exports = {};
   __export(text_group_exports, {
     default: () => text_group_default

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Pagination from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/pagination/pagination.stories.tsx).
+ * Pagination from @tedi-design-system/react@21.0.0-rc.24 (stories: ./src/tedi/components/navigation/pagination/pagination.stories.tsx).
  */
 export interface PaginationProps {
   /** Total number of pages. */
@@ -65,7 +65,7 @@ interface PaginationPageSizeOption {
 interface PaginationLabels {
     /**
      * Accessible label for the nav wrapper.
-     * @default 'Pagination'
+     * @default 'Pages'
      */
     ariaLabel: string;
     /**
@@ -79,13 +79,14 @@ interface PaginationLabels {
      */
     next: string;
     /**
-     * Function that builds the aria-label for a numeric page button.
-     * @default (page) => `Go to page ${page}`
+     * Function that builds the aria-label for a numeric page button. The current page also gets `aria-current="page"`.
+     * @default (page) => `Page ${page}`
      */
     pageAriaLabel: (page: number) => string;
     /**
-     * Function that builds the aria-label for the currently active page.
-     * @default (page) => `Current page, page ${page}`
+     * Function that builds the aria-label for the current page.
+     * @default pageAriaLabel
+     * @deprecated The current page is conveyed by `aria-current="page"`; a different label makes screen readers announce it twice. Use `pageAriaLabel`.
      */
     currentPageAriaLabel: (page: number) => string;
     /**

@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Sizes, Type, States, Value Type, Ellipsi
 import * as React from 'react';
 
 /**
- * Select from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/select/select.stories.tsx).
+ * Select from @tedi-design-system/react@21.0.0-rc.24 (stories: ./src/tedi/components/form/select/select.stories.tsx).
  */
 export interface SelectProps {
   /** Unique HTML id for the input. Also used as react-select's `instanceId` for SSR-stable internal IDs. When omitted, falls back to the surrounding `InputGroup`'s id or a generated `useId()`. */
@@ -49,6 +49,8 @@ export interface SelectProps {
   valid?: boolean;
   /** Helper / feedback text rendered below the field. Set `type` to `'hint'`, `'error'`, or `'valid'` — the latter two also drive the field's invalid / valid visual state. */
   helper?: FeedbackTextProps;
+  /** Space-separated ids of elements rendered outside the select (for example the application's own error message) that describe the combobox. Listed before the helper id. */
+  "aria-describedby"?: string;
   /** Visual size variant. - omit — default (40px tall). - `"small"` — compact (32px tall) for dense layouts. */
   size?: 'small';
   /** Switches the underlying component to `react-select`'s `AsyncSelect`. Pair with `loadOptions` (and optionally `defaultOptions`) to fetch options on the fly. */
@@ -189,6 +191,7 @@ interface TextProps extends BreakpointSupport<TextBreakpointProps> {
 type LabelModifierProps = BreakpointSupport<{
     modifiers?: LabelModifiers[] | LabelModifiers;
 }>;
+// From react-select (see its documentation): OptionsOrGroups, InputActionMeta, OptionProps, MenuListProps.
 ```
 
 ## Examples

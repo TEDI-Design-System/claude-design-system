@@ -120,7 +120,7 @@ var __dsPreview = (() => {
   init_define_process_env();
   var import_react = __toESM(require_react(), 1);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -136,7 +136,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -150,7 +150,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -164,7 +164,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -175,7 +175,7 @@ var __dsPreview = (() => {
   var ns4 = window.Tedi;
   var vertical_spacing_default = ns4["VerticalSpacing"] ?? ns4;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -186,7 +186,7 @@ var __dsPreview = (() => {
   var ns5 = window.Tedi;
   var button_default = ns5["Button"] ?? ns5;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button-group/button-group.tsx
+  // tedi:src/tedi/components/buttons/button-group/button-group.tsx
   var button_group_exports = {};
   __export(button_group_exports, {
     default: () => button_group_default
@@ -206,7 +206,7 @@ var __dsPreview = (() => {
   var button_group_stories_default = meta;
   var buttonStates = ["Default", "Hover", "Active", "Focus", "Disabled"];
   var sizeArray = ["default", "small"];
-  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(button_group_default, { ...args, ariaLabel: "Button group example", children: [
+  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(button_group_default, { ...args, ariaLabel: "Sections", children: [
     /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "1", children: "Details" }),
     /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "2", isActive: true, children: "Updates" }),
     /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "3", children: "Settings" })
@@ -226,7 +226,7 @@ var __dsPreview = (() => {
   };
   var TemplateTypes = (args) => {
     return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { gutterY: 2, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(button_group_default, { type: "primary", stretch: false, ariaLabel: "Button group example", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(button_group_default, { type: "primary", stretch: false, ariaLabel: "Sections", children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "1", ...args, children: "Tab 1" }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "2", isActive: true, ...args, children: "Tab 2" }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "3", ...args, children: "Tab 3" })
@@ -291,7 +291,7 @@ var __dsPreview = (() => {
     const [selectedId, setSelectedId] = (0, import_react.useState)(null);
     return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: args.states.map((state, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { lg: 1, md: 2, sm: 2, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: state }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { lg: 6, md: 10, sm: 10, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(button_group_default, { type: args.type, onSelectionChange: setSelectedId, ariaLabel: "Button group example", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { lg: 6, md: 10, sm: 10, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(button_group_default, { type: args.type, onSelectionChange: setSelectedId, ariaLabel: "Sections", children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
           button_exports.Button,
           {
@@ -342,7 +342,7 @@ var __dsPreview = (() => {
           ...args,
           stretch: false,
           onSelectionChange: setSelectedId,
-          ariaLabel: "Button group example",
+          ariaLabel: "Sections",
           enableMobileDropdown: true,
           children: [
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "1", isActive: selectedId === "1", onClick: () => setSelectedId("1"), children: "Text" }),

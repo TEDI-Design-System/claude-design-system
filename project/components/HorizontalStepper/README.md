@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, Second Step, Third Step, With Errors, Wi
 import * as React from 'react';
 
 /**
- * HorizontalStepper from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/horizontal-stepper/horizontal-stepper.stories.tsx).
+ * HorizontalStepper from @tedi-design-system/react@21.0.0-rc.24 (stories: ./src/tedi/components/navigation/horizontal-stepper/horizontal-stepper.stories.tsx).
  */
 export interface HorizontalStepperProps {
   /** `HorizontalStepper.Item` elements, one per step. */
@@ -129,25 +129,25 @@ export const WithErrors: Story = {
 export const WithDescriptions: Story = {
   render: () => (
     <VerticalSpacing size={1}>
-      <HorizontalStepper aria-label="Sammud kirjeldustega – Kutse aktiivne" compact="lg">
+      <HorizontalStepper aria-label="Sammud kirjeldustega (samm 1)" compact="lg">
         <HorizontalStepper.Item label="Kutse" selected />
         <HorizontalStepper.Item label="Tahteavaldus" />
         <HorizontalStepper.Item label="Geenianalüüs" description="Ametnik täidab" />
         <HorizontalStepper.Item label="Vastus" description="Ametnik täidab" />
       </HorizontalStepper>
-      <HorizontalStepper aria-label="Sammud kirjeldustega – Tahteavaldus aktiivne" compact="lg">
+      <HorizontalStepper aria-label="Sammud kirjeldustega (samm 2)" compact="lg">
         <HorizontalStepper.Item label="Kutse" completed />
         <HorizontalStepper.Item label="Tahteavaldus" selected />
         <HorizontalStepper.Item label="Geenianalüüs" description="Ametnik täidab" />
         <HorizontalStepper.Item label="Vastus" description="Ametnik täidab" />
       </HorizontalStepper>
-      <HorizontalStepper aria-label="Sammud kirjeldustega – Geenianalüüs aktiivne" compact="lg">
+      <HorizontalStepper aria-label="Sammud kirjeldustega (samm 3)" compact="lg">
         <HorizontalStepper.Item label="Kutse" completed />
         <HorizontalStepper.Item label="Tahteavaldus" completed />
         <HorizontalStepper.Item label="Geenianalüüs" selected description="Ametnik täidab" />
         <HorizontalStepper.Item label="Vastus" description="Ametnik täidab" />
       </HorizontalStepper>
-      <HorizontalStepper aria-label="Sammud kirjeldustega – Vastus aktiivne" compact="lg">
+      <HorizontalStepper aria-label="Sammud kirjeldustega (samm 4)" compact="lg">
         <HorizontalStepper.Item label="Kutse" completed />
         <HorizontalStepper.Item label="Tahteavaldus" completed />
         <HorizontalStepper.Item label="Geenianalüüs" completed description="Ametnik täidab" />

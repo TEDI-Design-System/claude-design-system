@@ -107,7 +107,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -118,7 +118,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var text_default = ns["Text"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/hide-at/hide-at.tsx
+  // tedi:src/tedi/components/layout/hide-at/hide-at.tsx
   var hide_at_exports = {};
   __export(hide_at_exports, {
     default: () => hide_at_default

@@ -89,10 +89,10 @@ var __dsPreview = (() => {
   // TableOfContents.preview.tsx
   var TableOfContents_preview_exports = {};
   __export(TableOfContents_preview_exports, {
-    Bordered: () => Bordered2,
     Collapsible: () => Collapsible2,
     CollapsibleHideOnScroll: () => CollapsibleHideOnScroll2,
     Default: () => Default2,
+    Divided: () => Divided2,
     Headless: () => Headless2,
     ItemStates: () => ItemStates2,
     Numbered: () => Numbered2,
@@ -108,10 +108,10 @@ var __dsPreview = (() => {
   // src/tedi/components/navigation/table-of-contents/table-of-contents.stories.tsx
   var table_of_contents_stories_exports = {};
   __export(table_of_contents_stories_exports, {
-    Bordered: () => Bordered,
     Collapsible: () => Collapsible,
     CollapsibleHideOnScroll: () => CollapsibleHideOnScroll,
     Default: () => Default,
+    Divided: () => Divided,
     Headless: () => Headless,
     ItemStates: () => ItemStates,
     Numbered: () => Numbered,
@@ -131,7 +131,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-is-mounted.ts
+  // tedi:src/tedi/helpers/hooks/use-is-mounted.ts
   var use_is_mounted_exports = {};
   __export(use_is_mounted_exports, {
     default: () => use_is_mounted_default
@@ -145,7 +145,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_is_mounted_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-safe-id.ts
+  // tedi:src/tedi/helpers/hooks/use-safe-id.ts
   var use_safe_id_exports = {};
   __export(use_safe_id_exports, {
     default: () => use_safe_id_default
@@ -159,7 +159,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_safe_id_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-breakpoint.ts
+  // tedi:src/tedi/helpers/hooks/use-breakpoint.ts
   var use_breakpoint_exports = {};
   __export(use_breakpoint_exports, {
     default: () => use_breakpoint_default
@@ -173,7 +173,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_breakpoint_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-breakpoint-props.ts
+  // tedi:src/tedi/helpers/hooks/use-breakpoint-props.ts
   var use_breakpoint_props_exports = {};
   __export(use_breakpoint_props_exports, {
     default: () => use_breakpoint_props_default
@@ -187,7 +187,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_breakpoint_props_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-element-size.ts
+  // tedi:src/tedi/helpers/hooks/use-element-size.ts
   var use_element_size_exports = {};
   __export(use_element_size_exports, {
     default: () => use_element_size_default
@@ -201,7 +201,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_element_size_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-scroll.ts
+  // tedi:src/tedi/helpers/hooks/use-scroll.ts
   var use_scroll_exports = {};
   __export(use_scroll_exports, {
     default: () => use_scroll_default
@@ -215,7 +215,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_scroll_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-is-touch-device.ts
+  // tedi:src/tedi/helpers/hooks/use-is-touch-device.ts
   var use_is_touch_device_exports = {};
   __export(use_is_touch_device_exports, {
     default: () => use_is_touch_device_default
@@ -229,7 +229,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_is_touch_device_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-file-upload.ts
+  // tedi:src/tedi/helpers/hooks/use-file-upload.ts
   var use_file_upload_exports = {};
   __export(use_file_upload_exports, {
     default: () => use_file_upload_default
@@ -243,7 +243,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_file_upload_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-what-input.ts
+  // tedi:src/tedi/helpers/hooks/use-what-input.ts
   var use_what_input_exports = {};
   __export(use_what_input_exports, {
     default: () => use_what_input_default
@@ -257,7 +257,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_what_input_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-scroll-fade.ts
+  // tedi:src/tedi/helpers/hooks/use-scroll-fade.ts
   var use_scroll_fade_exports = {};
   __export(use_scroll_fade_exports, {
     default: () => use_scroll_fade_default
@@ -271,7 +271,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_scroll_fade_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/polymorphic/types.ts
+  // tedi:src/tedi/helpers/polymorphic/types.ts
   var types_exports = {};
   __export(types_exports, {
     default: () => types_default
@@ -285,7 +285,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, types_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/heading/heading.tsx
+  // tedi:src/tedi/components/base/typography/heading/heading.tsx
   var heading_exports = {};
   __export(heading_exports, {
     default: () => heading_default
@@ -296,7 +296,7 @@ var __dsPreview = (() => {
   var ns12 = window.Tedi;
   var heading_default = ns12["Heading"] ?? ns12;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -312,7 +312,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -326,7 +326,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -340,7 +340,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/hide-at/hide-at.tsx
+  // tedi:src/tedi/components/layout/hide-at/hide-at.tsx
   var hide_at_exports = {};
   __export(hide_at_exports, {
     default: () => hide_at_default
@@ -351,7 +351,7 @@ var __dsPreview = (() => {
   var ns16 = window.Tedi;
   var hide_at_default = ns16["HideAt"] ?? ns16;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/show-at/show-at.tsx
+  // tedi:src/tedi/components/layout/show-at/show-at.tsx
   var show_at_exports = {};
   __export(show_at_exports, {
     default: () => show_at_default
@@ -362,7 +362,7 @@ var __dsPreview = (() => {
   var ns17 = window.Tedi;
   var show_at_default = ns17["ShowAt"] ?? ns17;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -373,7 +373,7 @@ var __dsPreview = (() => {
   var ns18 = window.Tedi;
   var vertical_spacing_default = ns18["VerticalSpacing"] ?? ns18;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/tags/tag/tag.tsx
+  // tedi:src/tedi/components/tags/tag/tag.tsx
   var tag_exports = {};
   __export(tag_exports, {
     default: () => tag_default
@@ -384,7 +384,7 @@ var __dsPreview = (() => {
   var ns19 = window.Tedi;
   var tag_default = ns19["Tag"] ?? ns19;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/link/link.tsx
+  // tedi:src/tedi/components/navigation/link/link.tsx
   var link_exports = {};
   __export(link_exports, {
     default: () => link_default
@@ -395,7 +395,7 @@ var __dsPreview = (() => {
   var ns20 = window.Tedi;
   var link_default = ns20["Link"] ?? ns20;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/table-of-contents/table-of-contents.tsx
+  // tedi:src/tedi/components/navigation/table-of-contents/table-of-contents.tsx
   var table_of_contents_exports = {};
   __export(table_of_contents_exports, {
     default: () => table_of_contents_default
@@ -465,7 +465,7 @@ var __dsPreview = (() => {
       headingLevel: "h3",
       sticky: false,
       numbered: false,
-      bordered: false,
+      divided: false,
       defaultOpen: true
     },
     render: (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(table_of_contents_exports.TableOfContents, { ...args, children: sectionItems() })
@@ -492,7 +492,7 @@ var __dsPreview = (() => {
         { header: "With number", numbered: true },
         { header: "With icon", options: { icon: true } },
         { header: "With separator", options: { separator: true } },
-        { header: "With border", bordered: true }
+        { header: "Divided", divided: true }
       ];
       return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { display: "flex", flexWrap: "wrap", gap: "1.5rem", alignItems: "flex-start" }, children: columns.map((column) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { flex: "1 1 12rem", minWidth: "11rem" }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: column.header }),
@@ -503,9 +503,9 @@ var __dsPreview = (() => {
             ariaLabel: `${column.header} item states`,
             sticky: false,
             numbered: column.numbered,
-            bordered: column.bordered,
+            divided: column.divided,
             activeId: "selected",
-            children: stateItems(column.options, column.bordered)
+            children: stateItems(column.options, column.divided)
           }
         )
       ] }) }, column.header)) });
@@ -560,8 +560,8 @@ var __dsPreview = (() => {
   var WithSeparator = {
     render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(table_of_contents_exports.TableOfContents, { heading: "Sisukord", sticky: false, activeId: "section-3", children: sectionItems("description", true) })
   };
-  var Bordered = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(table_of_contents_exports.TableOfContents, { heading: "Sisukord", sticky: false, activeId: "section-3", bordered: true, children: sectionItems("description") })
+  var Divided = {
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(table_of_contents_exports.TableOfContents, { heading: "Sisukord", sticky: false, activeId: "section-3", divided: true, children: sectionItems("description") })
   };
   var LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.";
   var layoutTree = [
@@ -923,7 +923,7 @@ var __dsPreview = (() => {
   var WithIcon2 = compose(table_of_contents_stories_exports, "WithIcon", G, B);
   var Headless2 = compose(table_of_contents_stories_exports, "Headless", G, B);
   var WithSeparator2 = compose(table_of_contents_stories_exports, "WithSeparator", G, B);
-  var Bordered2 = compose(table_of_contents_stories_exports, "Bordered", G, B);
+  var Divided2 = compose(table_of_contents_stories_exports, "Divided", G, B);
   var StickyInLayout3 = compose(table_of_contents_stories_exports, "StickyInLayout", G, B);
   var Collapsible2 = compose(table_of_contents_stories_exports, "Collapsible", G, B);
   var CollapsibleHideOnScroll2 = compose(table_of_contents_stories_exports, "CollapsibleHideOnScroll", G, B);
