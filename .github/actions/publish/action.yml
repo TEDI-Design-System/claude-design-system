@@ -27,6 +27,7 @@ runs:
       uses: actions/checkout@v4
       with:
         path: target
+        ref: rc
         fetch-depth: 0
 
     - name: Clear the generated files
@@ -53,7 +54,7 @@ runs:
           git rm -rq --ignore-unmatch .
         else
           git checkout --orphan publish-main
-          git rm -rq --ignore-unmatch .
+          git rm -rqf --ignore-unmatch .
         fi
 
     - name: Download the release tree
