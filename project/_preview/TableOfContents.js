@@ -1,0 +1,990 @@
+var __dsPreview = (() => {
+  var __create = Object.create;
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getProtoOf = Object.getPrototypeOf;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __esm = (fn, res, err) => function __init() {
+    if (err) throw err[0];
+    try {
+      return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
+    } catch (e) {
+      throw err = [e], e;
+    }
+  };
+  var __commonJS = (cb, mod) => function __require() {
+    try {
+      return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+    } catch (e) {
+      throw mod = 0, e;
+    }
+  };
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __reExport = (target, mod, secondTarget) => (__copyProps(target, mod, "default"), secondTarget && __copyProps(secondTarget, mod, "default"));
+  var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+    // If the importer is in node compatibility mode or this is not an ESM
+    // file that has been converted to a CommonJS file using a Babel-
+    // compatible transform (i.e. "__esModule" has not been set), then set
+    // "default" to the CommonJS "module.exports" for node compatibility.
+    isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+    mod
+  ));
+  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+  // <define:import.meta.env>
+  var init_define_import_meta_env = __esm({
+    "<define:import.meta.env>"() {
+    }
+  });
+
+  // <define:process.env>
+  var init_define_process_env = __esm({
+    "<define:process.env>"() {
+    }
+  });
+
+  // react-global:react
+  var require_react = __commonJS({
+    "react-global:react"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      module.exports = window.React;
+    }
+  });
+
+  // react-global:react/jsx-runtime
+  var require_jsx_runtime = __commonJS({
+    "react-global:react/jsx-runtime"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      var R = window.React;
+      function jsx4(type, props, key) {
+        return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
+      }
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
+    }
+  });
+
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      module.exports = window.Tedi;
+    }
+  });
+
+  // TableOfContents.preview.tsx
+  var TableOfContents_preview_exports = {};
+  __export(TableOfContents_preview_exports, {
+    Collapsible: () => Collapsible2,
+    CollapsibleHideOnScroll: () => CollapsibleHideOnScroll2,
+    Default: () => Default2,
+    Divided: () => Divided2,
+    Headless: () => Headless2,
+    InPopover: () => InPopover3,
+    ItemStates: () => ItemStates2,
+    Numbered: () => Numbered2,
+    StickyInLayout: () => StickyInLayout3,
+    Transparent: () => Transparent2,
+    VisualTest: () => VisualTest2,
+    WithIcon: () => WithIcon2,
+    WithSeparator: () => WithSeparator2,
+    WithSlot: () => WithSlot2
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+
+  // src/tedi/components/navigation/table-of-contents/table-of-contents.stories.tsx
+  var table_of_contents_stories_exports = {};
+  __export(table_of_contents_stories_exports, {
+    Collapsible: () => Collapsible,
+    CollapsibleHideOnScroll: () => CollapsibleHideOnScroll,
+    Default: () => Default,
+    Divided: () => Divided,
+    Headless: () => Headless,
+    InPopover: () => InPopover,
+    ItemStates: () => ItemStates,
+    Numbered: () => Numbered,
+    StickyInLayout: () => StickyInLayout,
+    Transparent: () => Transparent,
+    VisualTest: () => VisualTest,
+    WithIcon: () => WithIcon,
+    WithSeparator: () => WithSeparator,
+    WithSlot: () => WithSlot,
+    default: () => table_of_contents_stories_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react2 = __toESM(require_react(), 1);
+
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // src/tedi/helpers/index.ts
+  var helpers_exports = {};
+  init_define_import_meta_env();
+  init_define_process_env();
+
+  // tedi:src/tedi/helpers/hooks/use-is-mounted.ts
+  var use_is_mounted_exports = {};
+  __export(use_is_mounted_exports, {
+    default: () => use_is_mounted_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(use_is_mounted_exports, __toESM(require_tedi_namespace()));
+  var ns = window.Tedi;
+  var use_is_mounted_default = ns["useIsMounted"] ?? ns;
+
+  // src/tedi/helpers/index.ts
+  __reExport(helpers_exports, use_is_mounted_exports);
+
+  // tedi:src/tedi/helpers/hooks/use-safe-id.ts
+  var use_safe_id_exports = {};
+  __export(use_safe_id_exports, {
+    default: () => use_safe_id_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(use_safe_id_exports, __toESM(require_tedi_namespace()));
+  var ns2 = window.Tedi;
+  var use_safe_id_default = ns2["useSafeId"] ?? ns2;
+
+  // src/tedi/helpers/index.ts
+  __reExport(helpers_exports, use_safe_id_exports);
+
+  // tedi:src/tedi/helpers/hooks/use-breakpoint.ts
+  var use_breakpoint_exports = {};
+  __export(use_breakpoint_exports, {
+    default: () => use_breakpoint_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(use_breakpoint_exports, __toESM(require_tedi_namespace()));
+  var ns3 = window.Tedi;
+  var use_breakpoint_default = ns3["useBreakpoint"] ?? ns3;
+
+  // src/tedi/helpers/index.ts
+  __reExport(helpers_exports, use_breakpoint_exports);
+
+  // tedi:src/tedi/helpers/hooks/use-breakpoint-props.ts
+  var use_breakpoint_props_exports = {};
+  __export(use_breakpoint_props_exports, {
+    default: () => use_breakpoint_props_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(use_breakpoint_props_exports, __toESM(require_tedi_namespace()));
+  var ns4 = window.Tedi;
+  var use_breakpoint_props_default = ns4["useBreakpointProps"] ?? ns4;
+
+  // src/tedi/helpers/index.ts
+  __reExport(helpers_exports, use_breakpoint_props_exports);
+
+  // tedi:src/tedi/helpers/hooks/use-element-size.ts
+  var use_element_size_exports = {};
+  __export(use_element_size_exports, {
+    default: () => use_element_size_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(use_element_size_exports, __toESM(require_tedi_namespace()));
+  var ns5 = window.Tedi;
+  var use_element_size_default = ns5["useElementSize"] ?? ns5;
+
+  // src/tedi/helpers/index.ts
+  __reExport(helpers_exports, use_element_size_exports);
+
+  // tedi:src/tedi/helpers/hooks/use-scroll.ts
+  var use_scroll_exports = {};
+  __export(use_scroll_exports, {
+    default: () => use_scroll_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(use_scroll_exports, __toESM(require_tedi_namespace()));
+  var ns6 = window.Tedi;
+  var use_scroll_default = ns6["useScroll"] ?? ns6;
+
+  // src/tedi/helpers/index.ts
+  __reExport(helpers_exports, use_scroll_exports);
+
+  // tedi:src/tedi/helpers/hooks/use-is-touch-device.ts
+  var use_is_touch_device_exports = {};
+  __export(use_is_touch_device_exports, {
+    default: () => use_is_touch_device_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(use_is_touch_device_exports, __toESM(require_tedi_namespace()));
+  var ns7 = window.Tedi;
+  var use_is_touch_device_default = ns7["useIsTouchDevice"] ?? ns7;
+
+  // src/tedi/helpers/index.ts
+  __reExport(helpers_exports, use_is_touch_device_exports);
+
+  // tedi:src/tedi/helpers/hooks/use-file-upload.ts
+  var use_file_upload_exports = {};
+  __export(use_file_upload_exports, {
+    default: () => use_file_upload_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(use_file_upload_exports, __toESM(require_tedi_namespace()));
+  var ns8 = window.Tedi;
+  var use_file_upload_default = ns8["useFileUpload"] ?? ns8;
+
+  // src/tedi/helpers/index.ts
+  __reExport(helpers_exports, use_file_upload_exports);
+
+  // tedi:src/tedi/helpers/hooks/use-what-input.ts
+  var use_what_input_exports = {};
+  __export(use_what_input_exports, {
+    default: () => use_what_input_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(use_what_input_exports, __toESM(require_tedi_namespace()));
+  var ns9 = window.Tedi;
+  var use_what_input_default = ns9["useWhatInput"] ?? ns9;
+
+  // src/tedi/helpers/index.ts
+  __reExport(helpers_exports, use_what_input_exports);
+
+  // tedi:src/tedi/helpers/hooks/use-scroll-fade.ts
+  var use_scroll_fade_exports = {};
+  __export(use_scroll_fade_exports, {
+    default: () => use_scroll_fade_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(use_scroll_fade_exports, __toESM(require_tedi_namespace()));
+  var ns10 = window.Tedi;
+  var use_scroll_fade_default = ns10["useScrollFade"] ?? ns10;
+
+  // src/tedi/helpers/index.ts
+  __reExport(helpers_exports, use_scroll_fade_exports);
+
+  // tedi:src/tedi/helpers/polymorphic/types.ts
+  var types_exports = {};
+  __export(types_exports, {
+    default: () => types_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(types_exports, __toESM(require_tedi_namespace()));
+  var ns11 = window.Tedi;
+  var types_default = ns11["types.ts"] ?? ns11;
+
+  // src/tedi/helpers/index.ts
+  __reExport(helpers_exports, types_exports);
+
+  // tedi:src/tedi/components/base/typography/heading/heading.tsx
+  var heading_exports = {};
+  __export(heading_exports, {
+    default: () => heading_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(heading_exports, __toESM(require_tedi_namespace()));
+  var ns12 = window.Tedi;
+  var heading_default = ns12["Heading"] ?? ns12;
+
+  // tedi:src/tedi/components/base/typography/text/text.tsx
+  var text_exports = {};
+  __export(text_exports, {
+    default: () => text_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(text_exports, __toESM(require_tedi_namespace()));
+  var ns13 = window.Tedi;
+  var text_default = ns13["Text"] ?? ns13;
+
+  // tedi:src/tedi/components/buttons/button/button.tsx
+  var button_exports = {};
+  __export(button_exports, {
+    default: () => button_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(button_exports, __toESM(require_tedi_namespace()));
+  var ns14 = window.Tedi;
+  var button_default = ns14["Button"] ?? ns14;
+
+  // src/tedi/components/layout/grid/index.ts
+  var grid_exports = {};
+  init_define_import_meta_env();
+  init_define_process_env();
+
+  // tedi:src/tedi/components/layout/grid/row.tsx
+  var row_exports = {};
+  __export(row_exports, {
+    default: () => row_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(row_exports, __toESM(require_tedi_namespace()));
+  var ns15 = window.Tedi;
+  var row_default = ns15["Row"] ?? ns15;
+
+  // src/tedi/components/layout/grid/index.ts
+  __reExport(grid_exports, row_exports);
+
+  // tedi:src/tedi/components/layout/grid/col.tsx
+  var col_exports = {};
+  __export(col_exports, {
+    default: () => col_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(col_exports, __toESM(require_tedi_namespace()));
+  var ns16 = window.Tedi;
+  var col_default = ns16["Col"] ?? ns16;
+
+  // src/tedi/components/layout/grid/index.ts
+  __reExport(grid_exports, col_exports);
+
+  // tedi:src/tedi/components/layout/hide-at/hide-at.tsx
+  var hide_at_exports = {};
+  __export(hide_at_exports, {
+    default: () => hide_at_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(hide_at_exports, __toESM(require_tedi_namespace()));
+  var ns17 = window.Tedi;
+  var hide_at_default = ns17["HideAt"] ?? ns17;
+
+  // tedi:src/tedi/components/layout/show-at/show-at.tsx
+  var show_at_exports = {};
+  __export(show_at_exports, {
+    default: () => show_at_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(show_at_exports, __toESM(require_tedi_namespace()));
+  var ns18 = window.Tedi;
+  var show_at_default = ns18["ShowAt"] ?? ns18;
+
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
+  var vertical_spacing_exports = {};
+  __export(vertical_spacing_exports, {
+    default: () => vertical_spacing_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(vertical_spacing_exports, __toESM(require_tedi_namespace()));
+  var ns19 = window.Tedi;
+  var vertical_spacing_default = ns19["VerticalSpacing"] ?? ns19;
+
+  // tedi:src/tedi/components/overlays/popover/popover.tsx
+  var popover_exports = {};
+  __export(popover_exports, {
+    default: () => popover_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(popover_exports, __toESM(require_tedi_namespace()));
+  var ns20 = window.Tedi;
+  var popover_default = ns20["Popover"] ?? ns20;
+
+  // tedi:src/tedi/components/tags/tag/tag.tsx
+  var tag_exports = {};
+  __export(tag_exports, {
+    default: () => tag_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(tag_exports, __toESM(require_tedi_namespace()));
+  var ns21 = window.Tedi;
+  var tag_default = ns21["Tag"] ?? ns21;
+
+  // tedi:src/tedi/components/navigation/link/link.tsx
+  var link_exports = {};
+  __export(link_exports, {
+    default: () => link_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(link_exports, __toESM(require_tedi_namespace()));
+  var ns22 = window.Tedi;
+  var link_default = ns22["Link"] ?? ns22;
+
+  // tedi:src/tedi/components/navigation/table-of-contents/table-of-contents.tsx
+  var table_of_contents_exports = {};
+  __export(table_of_contents_exports, {
+    default: () => table_of_contents_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(table_of_contents_exports, __toESM(require_tedi_namespace()));
+  var ns23 = window.Tedi;
+  var table_of_contents_default = ns23["TableOfContents"] ?? ns23;
+
+  // src/tedi/components/navigation/table-of-contents/table-of-contents.stories.tsx
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
+  var meta = {
+    component: table_of_contents_exports.TableOfContents,
+    subcomponents: {
+      "TableOfContents.Item": table_of_contents_exports.TableOfContents.Item,
+      "TableOfContents.Collapsible": table_of_contents_exports.TableOfContents.Collapsible
+    },
+    title: "TEDI-Ready/Components/Navigation/TableOfContents",
+    parameters: {
+      layout: "padded",
+      status: {
+        type: [{ name: "breakpointSupport", url: "?path=/docs/helpers-usebreakpointprops--usebreakpointprops" }]
+      },
+      controls: { exclude: ["children", "sm", "md", "lg", "xl", "xxl", "defaultServerBreakpoint"] },
+      docs: {
+        source: {
+          transform: (code) => code.replaceAll("TableOfContentsItem", "TableOfContents.Item").replaceAll("TableOfContentsCollapsible", "TableOfContents.Collapsible")
+        }
+      },
+      design: {
+        type: "figma",
+        url: "https://www.figma.com/design/jWiRIXhHRxwVdMSimKX2FF/TEDI-READY-2.108.103?m=dev&node-id=8826-63667"
+      },
+      chromatic: { disableSnapshot: true }
+    },
+    decorators: [
+      (Story, context) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { maxWidth: context.parameters.fullWidth ? void 0 : 320 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) })
+    ]
+  };
+  var table_of_contents_stories_default = meta;
+  var renderedSource = { docs: { source: { type: "dynamic" } } };
+  var tocItems = ({ icon = false, separator = false, slot = false } = {}) => [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents.Item, { id: "intro", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#intro", underline: false, children: "Sissejuhatus" }) }, "intro"),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(table_of_contents_exports.TableOfContents.Item, { id: "methods", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#methods", underline: false, children: "Meetodid" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents.Item, { id: "methods-1", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#methods-1", underline: false, children: "Andmete kogumine" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents.Item, { id: "methods-2", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#methods-2", underline: false, children: "Anal\xFC\xFCs" }) })
+    ] }, "methods"),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents.Item, { id: "results", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#results", underline: false, children: "Tulemused" }) }, "results"),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents.Item, { id: "discussion", separator: separator || void 0, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#discussion", underline: false, children: "Arutelu" }) }, "discussion"),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents.Item, { id: "conclusion", slot: slot ? /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tag_exports.Tag, { children: "43 tulemust" }) : void 0, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+      link_exports.Link,
+      {
+        href: "#conclusion",
+        underline: false,
+        iconLeft: icon ? "description" : void 0,
+        iconStandalone: icon || void 0,
+        children: "Kokkuv\xF5te"
+      }
+    ) }, "conclusion")
+  ];
+  var Default = {
+    args: {
+      heading: "Sisukord",
+      activeId: "methods",
+      variant: "default",
+      headingLevel: "h3",
+      sticky: false,
+      numbered: false,
+      divided: false,
+      defaultOpen: true
+    },
+    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents, { ...args, children: tocItems() })
+  };
+  var ItemStates = {
+    parameters: { fullWidth: true },
+    render: () => {
+      const rows = [
+        { id: "default", label: "Default", linkProps: {} },
+        // "Hover" forces the hover state via `isHovered`; "Selected" is the active item (via activeId).
+        { id: "hover", label: "Hover", linkProps: { isHovered: true } },
+        { id: "selected", label: "Selected", linkProps: {} }
+      ];
+      const stateItems = (options, withFiller = false) => {
+        const iconProps = options?.icon ? { iconLeft: "mail", iconStandalone: true } : {};
+        const items = rows.map((row) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents.Item, { id: row.id, separator: options?.separator, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: `#${row.id}`, underline: false, ...iconProps, ...row.linkProps, children: row.label }) }, row.id));
+        if (withFiller) {
+          items.push(/* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents.Item, { id: "filler" }, "filler"));
+        }
+        return items;
+      };
+      const columns = [
+        { header: "Default" },
+        { header: "With number", numbered: true },
+        { header: "With icon", options: { icon: true } },
+        { header: "With separator", options: { separator: true } },
+        { header: "Divided", divided: true }
+      ];
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { display: "flex", flexWrap: "wrap", gap: "1.5rem", alignItems: "flex-start" }, children: columns.map((column) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { flex: "1 1 12rem", minWidth: "11rem" }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: column.header }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+          table_of_contents_exports.TableOfContents,
+          {
+            heading: null,
+            ariaLabel: `${column.header} item states`,
+            sticky: false,
+            numbered: column.numbered,
+            divided: column.divided,
+            activeId: "selected",
+            children: stateItems(column.options, column.divided)
+          }
+        )
+      ] }) }, column.header)) });
+    }
+  };
+  var Transparent = {
+    parameters: renderedSource,
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents, { heading: "Sisukord", variant: "transparent", sticky: false, activeId: "methods", children: tocItems() })
+  };
+  var WithSlot = {
+    parameters: renderedSource,
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents, { heading: "Sisukord", sticky: false, activeId: "methods", children: tocItems({ slot: true }) })
+  };
+  var Numbered = {
+    parameters: renderedSource,
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents, { heading: "Sisukord", sticky: false, numbered: true, activeId: "methods", children: tocItems() })
+  };
+  var WithIcon = {
+    parameters: renderedSource,
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents, { heading: "Sisukord", sticky: false, activeId: "methods", children: tocItems({ icon: true }) })
+  };
+  var Headless = {
+    parameters: renderedSource,
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents, { heading: null, sticky: false, numbered: true, activeId: "methods", children: tocItems() })
+  };
+  var WithSeparator = {
+    parameters: renderedSource,
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents, { heading: "Sisukord", sticky: false, activeId: "methods", children: tocItems({ icon: true, separator: true }) })
+  };
+  var Divided = {
+    parameters: renderedSource,
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents, { heading: "Sisukord", sticky: false, activeId: "methods", divided: true, children: tocItems({ icon: true }) })
+  };
+  var InPopover = {
+    parameters: { visualTest: false },
+    render: function InPopover2() {
+      const [open, setOpen] = (0, import_react2.useState)(false);
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(popover_exports.Popover, { open, onToggle: setOpen, placement: "bottom-start", withArrow: false, offset: 4, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(popover_exports.Popover.Trigger, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { visualType: "neutral", iconLeft: "list", children: open ? "Sulge sisukord" : "Ava sisukord" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(popover_exports.Popover.Content, { padding: { top: 0, right: 1, bottom: 1, left: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents, { variant: "transparent", sticky: false, activeId: "methods", children: tocItems() }) })
+      ] });
+    }
+  };
+  var LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+  var layoutTree = Array.from({ length: 30 }, (_, i) => ({
+    id: `chapter-${i + 1}`,
+    label: `Peat\xFCkk ${i + 1}`,
+    ...i === 2 && {
+      children: [
+        { id: "chapter-3-1", label: "Peat\xFCkk 3.1" },
+        { id: "chapter-3-2", label: "Peat\xFCkk 3.2" }
+      ]
+    }
+  }));
+  var layoutFlat = layoutTree.flatMap((node) => [
+    { id: node.id, label: node.label, depth: 0 },
+    ...(node.children ?? []).map((child) => ({ id: child.id, label: child.label, depth: 1 }))
+  ]);
+  var layoutIds = layoutFlat.map((node) => node.id);
+  var StickyInLayout = {
+    parameters: {
+      layout: "fullscreen",
+      fullWidth: true,
+      chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS },
+      // Own iframe, so the window scrolls and the default 100dvh max height applies.
+      docs: { story: { inline: false, height: "30rem" } }
+    },
+    render: function StickyInLayout2() {
+      const scrollRef = (0, import_react2.useRef)(null);
+      const [activeId, setActiveId] = (0, import_react2.useState)(layoutIds[0]);
+      const isMobile = (0, helpers_exports.isBreakpointBelow)((0, helpers_exports.useBreakpoint)(), "lg");
+      (0, import_react2.useEffect)(() => {
+        if (typeof IntersectionObserver === "undefined") return void 0;
+        const container = isMobile ? scrollRef.current : null;
+        if (isMobile && !container) return void 0;
+        const ids = layoutIds;
+        const visibility = /* @__PURE__ */ new Map();
+        const atBottom = () => container ? container.scrollTop + container.clientHeight >= container.scrollHeight - 2 : window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+        const pickActive = () => {
+          if (atBottom()) {
+            setActiveId(ids[ids.length - 1]);
+            return;
+          }
+          const active = ids.find((id) => visibility.get(id));
+          if (active) setActiveId(active);
+        };
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => visibility.set(entry.target.id, entry.isIntersecting));
+            pickActive();
+          },
+          { root: container, rootMargin: "0px 0px -55% 0px" }
+        );
+        ids.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) observer.observe(el);
+        });
+        const scroller = container ?? window;
+        scroller.addEventListener("scroll", pickActive, { passive: true });
+        return () => {
+          observer.disconnect();
+          scroller.removeEventListener("scroll", pickActive);
+        };
+      }, [isMobile]);
+      const selectSection = (id) => (event) => {
+        event.preventDefault();
+        const target = document.getElementById(id);
+        if (!target) return;
+        const container = scrollRef.current;
+        const offset = target.getBoundingClientRect().top;
+        if (isMobile && container) {
+          const paddingTop = parseFloat(getComputedStyle(container).paddingTop) || 0;
+          container.scrollTo({ top: container.scrollTop + offset - container.getBoundingClientRect().top - paddingTop });
+        } else {
+          window.scrollTo({ top: window.scrollY + offset });
+        }
+        setActiveId(id);
+      };
+      const renderItems = (nodes) => nodes.map((node) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(table_of_contents_exports.TableOfContents.Item, { id: node.id, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: `#${node.id}`, underline: false, onClick: selectSection(node.id), children: node.label }),
+        node.children && renderItems(node.children)
+      ] }, node.id));
+      const items = renderItems(layoutTree);
+      const content = /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { marginBottom: "1rem" }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_exports.Heading, { element: "h1", modifiers: "h1", children: "Pealkiri" }) }),
+        layoutFlat.map(({ id, label, depth }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+          "section",
+          {
+            id,
+            tabIndex: -1,
+            style: { display: "flex", flexDirection: "column", gap: "0.25rem", marginBottom: "2rem" },
+            children: [
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_exports.Heading, { element: depth === 0 ? "h2" : "h3", modifiers: depth === 0 ? "h3" : "h4", children: label }),
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: LOREM }),
+              depth === 0 && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: LOREM })
+            ]
+          },
+          id
+        ))
+      ] });
+      if (isMobile) {
+        return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { display: "flex", flexDirection: "column", height: "100vh" }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+            "div",
+            {
+              ref: scrollRef,
+              style: { flex: "1 1 auto", minHeight: 0, overflowY: "auto", padding: "2rem" },
+              tabIndex: 0,
+              role: "region",
+              "aria-label": "Artikli sisu",
+              children: content
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents.Collapsible, { heading: "Sisukord", activeId, sticky: false, children: items })
+        ] });
+      }
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { display: "grid", gridTemplateColumns: "1fr 16rem", gap: "2rem", padding: "2rem" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { children: content }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents, { heading: "Sisukord", activeId, scrollActiveIntoView: true, children: items }) })
+      ] });
+    }
+  };
+  var Collapsible = {
+    parameters: {
+      chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS },
+      layout: "fullscreen",
+      fullWidth: true
+    },
+    render: () => {
+      const items = tocItems();
+      const intro = /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_exports.Heading, { element: "h2", modifiers: "h1", children: "Tervisedeklaratsioon" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "secondary", children: "Tervisedeklaratsioon koosneb 22 kohustuslikust k\xFCsimusest. Alusta v\xF5i j\xE4tka selle koostamisega allpool." })
+      ] });
+      const placeholder = (extraStyle) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+        "div",
+        {
+          style: {
+            background: "var(--general-surface-primary)",
+            border: "1px solid var(--general-border-primary)",
+            borderRadius: "var(--card-radius-rounded)",
+            ...extraStyle
+          }
+        }
+      );
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(show_at_exports.ShowAt, { lg: true, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { background: "var(--general-surface-primary)", padding: "2rem" }, children: [
+          intro,
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+            "div",
+            {
+              style: {
+                display: "grid",
+                gridTemplateColumns: "minmax(0, 1fr) 340px",
+                gap: "1.5rem",
+                alignItems: "start",
+                marginTop: "1.5rem"
+              },
+              children: [
+                placeholder({ minHeight: "35rem" }),
+                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents, { heading: "Sisukord", sticky: false, activeId: "methods", children: items })
+              ]
+            }
+          )
+        ] }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(hide_at_exports.HideAt, { lg: true, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+          "div",
+          {
+            style: {
+              display: "flex",
+              flexDirection: "column",
+              minHeight: "100vh",
+              gap: "3px",
+              background: "var(--general-surface-tertiary)"
+            },
+            children: [
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+                "div",
+                {
+                  style: {
+                    display: "flex",
+                    flex: "1 1 auto",
+                    flexDirection: "column",
+                    padding: "var(--layout-page-spacing-top) var(--layout-page-spacing-x) 0 var(--layout-page-spacing-x)"
+                  },
+                  children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", underline: false, iconLeft: "arrow_back", children: "Terviset\xF5endid ja -deklaratsioonid" }),
+                      intro
+                    ] }),
+                    placeholder({ flex: "1 1 auto", marginTop: "1rem" })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents.Collapsible, { heading: "Sisukord", activeId: "methods", sticky: false, children: items })
+            ]
+          }
+        ) })
+      ] });
+    }
+  };
+  var CollapsibleHideOnScroll = {
+    name: "Collapsible: hide on scroll",
+    parameters: {
+      chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS },
+      layout: "fullscreen",
+      fullWidth: true
+    },
+    render: () => {
+      const items = tocItems();
+      const intro = /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_exports.Heading, { element: "h2", modifiers: "h1", children: "Tervisedeklaratsioon" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "secondary", children: "Tervisedeklaratsioon koosneb 22 kohustuslikust k\xFCsimusest. Alusta v\xF5i j\xE4tka selle koostamisega allpool." })
+      ] });
+      const placeholder = (extraStyle) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+        "div",
+        {
+          style: {
+            background: "var(--general-surface-primary)",
+            border: "1px solid var(--general-border-primary)",
+            borderRadius: "var(--card-radius-rounded)",
+            ...extraStyle
+          }
+        }
+      );
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(show_at_exports.ShowAt, { lg: true, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { background: "var(--general-surface-primary)", padding: "2rem" }, children: [
+          intro,
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+            "div",
+            {
+              style: {
+                display: "grid",
+                gridTemplateColumns: "minmax(0, 1fr) 340px",
+                gap: "1.5rem",
+                alignItems: "start",
+                marginTop: "1.5rem"
+              },
+              children: [
+                placeholder({ minHeight: "35rem" }),
+                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents, { heading: "Sisukord", sticky: false, activeId: "methods", children: items })
+              ]
+            }
+          )
+        ] }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(hide_at_exports.HideAt, { lg: true, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+          "div",
+          {
+            style: {
+              display: "flex",
+              flexDirection: "column",
+              minHeight: "100vh",
+              gap: "3px",
+              background: "var(--general-surface-tertiary)"
+            },
+            children: [
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+                "div",
+                {
+                  style: {
+                    display: "flex",
+                    flexDirection: "column",
+                    padding: "var(--layout-page-spacing-top) var(--layout-page-spacing-x) 0 var(--layout-page-spacing-x)"
+                  },
+                  children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", underline: false, iconLeft: "arrow_back", children: "Terviset\xF5endid ja -deklaratsioonid" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "secondary", children: "Scroll down \u2014 the bar hides. Scroll up \u2014 it reappears." }),
+                      intro
+                    ] }),
+                    placeholder({ minHeight: "150vh", marginTop: "1rem" })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(table_of_contents_exports.TableOfContents.Collapsible, { heading: "Sisukord", activeId: "methods", hideOnScroll: true, children: items })
+            ]
+          }
+        ) })
+      ] });
+    }
+  };
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS }, fullWidth: true },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Item states" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: ItemStates })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { gutterY: 3, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { md: 4, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Default, props: { ariaLabel: "Sisukord: default" } })
+        ] }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { md: 4, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Transparent" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Transparent, props: { ariaLabel: "Sisukord: transparent" } })
+        ] }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { md: 4, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "With slot" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: WithSlot, props: { ariaLabel: "Sisukord: with slot" } })
+        ] }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { md: 4, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Numbered" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Numbered, props: { ariaLabel: "Sisukord: numbered" } })
+        ] }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { md: 4, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "With icon" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: WithIcon, props: { ariaLabel: "Sisukord: with icon" } })
+        ] }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { md: 4, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Headless" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Headless, props: { ariaLabel: "Sisukord: headless" } })
+        ] }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { md: 4, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "With separator" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: WithSeparator, props: { ariaLabel: "Sisukord: with separator" } })
+        ] }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { md: 4, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Divided" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Divided, props: { ariaLabel: "Sisukord: divided" } })
+        ] }) })
+      ] })
+    ] })
+  };
+
+  // tedi-compose:compose.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var React = __toESM(require_react());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
+  function compose(stories, key, globalDefaults, backgrounds) {
+    const meta2 = stories.default ?? {};
+    const story = stories[key];
+    const args = { ...meta2.args ?? {}, ...story?.args ?? {} };
+    const argTypes = { ...meta2.argTypes ?? {}, ...story?.argTypes ?? {} };
+    for (const name of Object.keys(args)) {
+      const mapping = argTypes[name]?.mapping;
+      if (mapping && typeof mapping === "object" && args[name] in mapping) args[name] = mapping[args[name]];
+    }
+    const title = typeof meta2.title === "string" ? meta2.title : "";
+    const context = {
+      args,
+      name: key,
+      title,
+      kind: title,
+      id: "",
+      componentId: "",
+      globals: { ...globalDefaults, ...meta2.globals ?? {}, ...story?.globals ?? {} },
+      viewMode: "story",
+      parameters: { ...meta2.parameters ?? {}, ...story?.parameters ?? {} }
+    };
+    let render = null;
+    if (typeof story?.render === "function") render = () => story.render(args, context);
+    else if (typeof story === "function") render = () => story(args, context);
+    else if (typeof meta2.render === "function") render = () => meta2.render(args, context);
+    else {
+      const Component = story?.component ?? meta2.component;
+      if (Component) render = () => React.createElement(Component, args);
+    }
+    if (!render) return () => null;
+    const decorators = [].concat(story?.decorators ?? []).concat(meta2.decorators ?? []);
+    const decorated = decorators.reduce(
+      (inner, decorator) => () => decorator(inner, context) ?? inner(),
+      render
+    );
+    const background = backgrounds[context.globals.backgrounds?.value];
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
+    if (!background) return Story;
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
+  }
+
+  // TableOfContents.preview.tsx
+  var G = { "theme": "default" };
+  var B = { "default": "var(--general-surface-primary)", "inverted": "var(--general-surface-inverted-primary)", "brand": "var(--general-surface-brand-primary)" };
+  var Default2 = compose(table_of_contents_stories_exports, "Default", G, B);
+  var ItemStates2 = compose(table_of_contents_stories_exports, "ItemStates", G, B);
+  var Transparent2 = compose(table_of_contents_stories_exports, "Transparent", G, B);
+  var WithSlot2 = compose(table_of_contents_stories_exports, "WithSlot", G, B);
+  var Numbered2 = compose(table_of_contents_stories_exports, "Numbered", G, B);
+  var WithIcon2 = compose(table_of_contents_stories_exports, "WithIcon", G, B);
+  var Headless2 = compose(table_of_contents_stories_exports, "Headless", G, B);
+  var WithSeparator2 = compose(table_of_contents_stories_exports, "WithSeparator", G, B);
+  var Divided2 = compose(table_of_contents_stories_exports, "Divided", G, B);
+  var InPopover3 = compose(table_of_contents_stories_exports, "InPopover", G, B);
+  var StickyInLayout3 = compose(table_of_contents_stories_exports, "StickyInLayout", G, B);
+  var Collapsible2 = compose(table_of_contents_stories_exports, "Collapsible", G, B);
+  var CollapsibleHideOnScroll2 = compose(table_of_contents_stories_exports, "CollapsibleHideOnScroll", G, B);
+  var VisualTest2 = compose(table_of_contents_stories_exports, "VisualTest", G, B);
+  return __toCommonJS(TableOfContents_preview_exports);
+})();
