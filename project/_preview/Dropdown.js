@@ -211,7 +211,7 @@ var __dsPreview = (() => {
     return props;
   };
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/icon/icon.tsx
+  // tedi:src/tedi/components/base/icon/icon.tsx
   var icon_exports = {};
   __export(icon_exports, {
     default: () => icon_default
@@ -222,7 +222,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var icon_default = ns["Icon"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -233,7 +233,7 @@ var __dsPreview = (() => {
   var ns2 = window.Tedi;
   var text_default = ns2["Text"] ?? ns2;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -244,7 +244,7 @@ var __dsPreview = (() => {
   var ns3 = window.Tedi;
   var button_default = ns3["Button"] ?? ns3;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/checkbox/checkbox.tsx
+  // tedi:src/tedi/components/form/checkbox/checkbox.tsx
   var checkbox_exports = {};
   __export(checkbox_exports, {
     default: () => checkbox_default
@@ -255,7 +255,7 @@ var __dsPreview = (() => {
   var ns4 = window.Tedi;
   var checkbox_default = ns4["Checkbox"] ?? ns4;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/radio/radio.tsx
+  // tedi:src/tedi/components/form/radio/radio.tsx
   var radio_exports = {};
   __export(radio_exports, {
     default: () => radio_default
@@ -266,7 +266,7 @@ var __dsPreview = (() => {
   var ns5 = window.Tedi;
   var radio_default = ns5["Radio"] ?? ns5;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/search/search.tsx
+  // tedi:src/tedi/components/form/search/search.tsx
   var search_exports = {};
   __export(search_exports, {
     default: () => search_default
@@ -282,7 +282,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -296,7 +296,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -310,7 +310,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/option-content/option-content.tsx
+  // tedi:src/tedi/components/misc/option-content/option-content.tsx
   var option_content_exports = {};
   __export(option_content_exports, {
     default: () => option_content_default
@@ -321,7 +321,7 @@ var __dsPreview = (() => {
   var ns9 = window.Tedi;
   var option_content_default = ns9["OptionContent"] ?? ns9;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/separator/separator.tsx
+  // tedi:src/tedi/components/misc/separator/separator.tsx
   var separator_exports = {};
   __export(separator_exports, {
     default: () => separator_default
@@ -332,7 +332,7 @@ var __dsPreview = (() => {
   var ns10 = window.Tedi;
   var separator_default = ns10["Separator"] ?? ns10;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/overlays/dropdown/dropdown.tsx
+  // tedi:src/tedi/components/overlays/dropdown/dropdown.tsx
   var dropdown_exports = {};
   __export(dropdown_exports, {
     default: () => dropdown_default
@@ -803,11 +803,7 @@ var __dsPreview = (() => {
             // `aria-hidden-focus`: @floating-ui/react wraps a non-modal floating element in two
             // `data-floating-ui-focus-guard` spans that carry tabindex="0" with aria-hidden="true"
             // by its own design. Pre-existing in every open dropdown.
-            { id: "aria-hidden-focus", enabled: false },
-            // `aria-valid-attr-value`: the open menu sets aria-activedescendant="dropdown-item-N"
-            // once an item takes focus, but no `Dropdown.Item` renders that id. A component bug,
-            // reported separately; these are the first stories that render a focused open menu.
-            { id: "aria-valid-attr-value", enabled: false }
+            { id: "aria-hidden-focus", enabled: false }
           ]
         }
       }
@@ -862,11 +858,7 @@ var __dsPreview = (() => {
             // `aria-hidden-focus`: @floating-ui/react wraps a non-modal floating element in two
             // `data-floating-ui-focus-guard` spans that carry tabindex="0" with aria-hidden="true"
             // by its own design. Pre-existing in every open dropdown.
-            { id: "aria-hidden-focus", enabled: false },
-            // `aria-valid-attr-value`: the open menu sets aria-activedescendant="dropdown-item-N"
-            // once an item takes focus, but no `Dropdown.Item` renders that id. A component bug,
-            // reported separately; these are the first stories that render a focused open menu.
-            { id: "aria-valid-attr-value", enabled: false }
+            { id: "aria-hidden-focus", enabled: false }
           ]
         }
       }
@@ -918,10 +910,6 @@ var __dsPreview = (() => {
             // `data-floating-ui-focus-guard` spans that carry tabindex="0" with aria-hidden="true"
             // by its own design. Pre-existing in every open dropdown.
             { id: "aria-hidden-focus", enabled: false },
-            // `aria-valid-attr-value`: the open menu sets aria-activedescendant="dropdown-item-N"
-            // once an item takes focus, but no `Dropdown.Item` renders that id. A component bug,
-            // reported separately; these are the first stories that render a focused open menu.
-            { id: "aria-valid-attr-value", enabled: false },
             // `aria-required-children`: with `closeOnSelect={false}` the item wraps the control in a
             // `div` without a menu item role. Moving the role and focus onto the control is #1006.
             { id: "aria-required-children", enabled: false }

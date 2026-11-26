@@ -2,7 +2,7 @@ Skeleton from @tedi-design-system/react. Use via `window.Tedi.Skeleton` (the bun
 
 Sub-components: `Skeleton.Block`.
 
-Variants (see `preview.html`): Default, Skeleton Height, Skeleton Width, Accessibility.
+Variants (see `preview.html`): Default, Skeleton Height, Skeleton Width, Accessibility, Visual Test.
 
 ## Props
 
@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, Skeleton Height, Skeleton Width, Accessi
 import * as React from 'react';
 
 /**
- * Skeleton from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/loaders/skeleton/skeleton.stories.tsx).
+ * Skeleton from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/loaders/skeleton/skeleton.stories.tsx).
  */
 export interface SkeletonProps {
   /** The content to be rendered inside the skeleton placeholder. */
@@ -80,6 +80,7 @@ export const SkeletonWidth: Story = {
 
 ```tsx
 export const Accessibility: Story = {
+  parameters: { visualTest: false },
   render: (args) => {
     const [skeletons, setSkeletons] = React.useState<AccessibilityTemplateProps[]>([]);
 
@@ -118,12 +119,36 @@ export const Accessibility: Story = {
               <Col xs={12} md={3} key={skeleton.id}>
                 <AccessibilityTemplate {...args} {...skeleton} />
               </Col>
-            ))
 // …
+```
+
+### Visual Test
+
+```tsx
+export const VisualTest: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+  render: () => (
+    <VerticalSpacing size={2}>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Default</Text>
+        <VisualTestStory story={Default} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Height</Text>
+        <VisualTestStory story={SkeletonHeight} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Width</Text>
+        <VisualTestStory story={SkeletonWidth} />
+      </VerticalSpacing>
+    </VerticalSpacing>
+  ),
+};
 ```
 
 Full story source: `src/tedi/components/loaders/skeleton/skeleton.stories.tsx`.
 
 ## Related
 
-`Button`, `Col`, `Row`, `VerticalSpacing`
+`Text`, `Button`, `Col`, `Row`, `VerticalSpacing`

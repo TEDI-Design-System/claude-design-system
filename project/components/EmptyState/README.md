@@ -1,6 +1,6 @@
 EmptyState from @tedi-design-system/react. Use via `window.Tedi.EmptyState` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, With Primary Action, With Secondary Action, With Link, With Heading, Minimal, Small Padding, Separate, Attached To Component, Inside Component, Custom Icon, Different Icon Color.
+Variants (see `preview.html`): Default, With Primary Action, With Secondary Action, With Link, With Heading, Minimal, Small Padding, Separate, Attached To Component, Inside Component, Custom Icon, Different Icon Color, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, With Primary Action, With Secondary Acti
 import * as React from 'react';
 
 /**
- * EmptyState from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/empty-state/empty-state.stories.tsx).
+ * EmptyState from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/content/empty-state/empty-state.stories.tsx).
  */
 export interface EmptyStateProps {
   /** Container variant — matches the Figma "Types" section. - `'separate'` (default) — full border + radius, stands on its own. - `'attached'` — top border omitted so the block sits flush beneath a preceding card or table (same width + same bottom-radius). - `'inside'` — no border, no radius; intended to be placed inside another container such as a `<Card>` or `<Table>`. */
@@ -125,4 +125,4 @@ Full story source: `src/tedi/components/content/empty-state/empty-state.stories.
 
 ## Related
 
-`Button`, `Card`, `Link`
+`Text`, `Button`, `Card`, `VerticalSpacing`, `Link`

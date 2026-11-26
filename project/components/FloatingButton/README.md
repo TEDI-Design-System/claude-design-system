@@ -1,6 +1,6 @@
 FloatingButton from @tedi-design-system/react. Use via `window.Tedi.FloatingButton` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Primary Horizontal, Primary Vertical, Secondary Horizontal, Secondary Vertical.
+Variants (see `preview.html`): Default, Primary Horizontal, Primary Vertical, Secondary Horizontal, Secondary Vertical, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Primary Horizontal, Primary Vertical, Se
 import * as React from 'react';
 
 /**
- * FloatingButton from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/floating-button/floating-button.stories.tsx).
+ * FloatingButton from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/buttons/floating-button/floating-button.stories.tsx).
  */
 export interface FloatingButtonProps {
   /** Button axis */
@@ -181,10 +181,58 @@ export const SecondaryVertical: StoryObj<TemplateMultipleProps> = {
     },
   },
 };
+
+/** Chromatic snapshot for FloatingButton: add every new visual variant here too. */
+```
+
+### Visual Test
+
+```tsx
+export const VisualTest: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS },
+    pseudo: {
+      hover: '[id^="vt-"][id*="-Hover-"]',
+      active: '[id^="vt-"][id*="-Active-"]',
+      focusVisible: '[id^="vt-"][id*="-Focus-"]',
+    },
+  },
+  render: () => (
+    <VerticalSpacing size={2}>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Default</Text>
+        <VisualTestStory story={Default} component={FloatingButton} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Primary horizontal</Text>
+        <VisualTestStory
+          story={{ ...PrimaryHorizontal, args: { ...PrimaryHorizontal.args, idPrefix: 'vt-primary-horizontal-' } }}
+        />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Primary vertical</Text>
+        <VisualTestStory
+          story={{ ...PrimaryVertical, args: { ...PrimaryVertical.args, idPrefix: 'vt-primary-vertical-' } }}
+        />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Secondary horizontal</Text>
+        <VisualTestStory
+          story={{
+            ...SecondaryHorizontal,
+            args: { ...SecondaryHorizontal.args, idPrefix: 'vt-secondary-horizontal-' },
+          }}
+        />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Secondary vertical</Text>
+        <VisualTestStory
+// …
 ```
 
 Full story source: `src/tedi/components/buttons/floating-button/floating-button.stories.tsx`.
 
 ## Related
 
-`Text`, `Col`, `Row`
+`Text`, `Col`, `Row`, `VerticalSpacing`

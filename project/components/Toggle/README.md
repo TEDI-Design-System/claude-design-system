@@ -1,6 +1,6 @@
 Toggle from @tedi-design-system/react. Use via `window.Tedi.Toggle` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Size, Type, Label Position, States, Primary, Primary Outlined, Colored, Colored Outlined, With Feedback Text.
+Variants (see `preview.html`): Default, Size, Type, Label Position, States, Primary, Primary Outlined, Colored, Colored Outlined, With Feedback Text, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Size, Type, Label Position, States, Prim
 import * as React from 'react';
 
 /**
- * Toggle from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/toggle/toggle.stories.tsx).
+ * Toggle from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/form/toggle/toggle.stories.tsx).
  */
 export interface ToggleProps {
   /** Unique identifier for the toggle input. Required for accessibility and to link the label with the input. */
@@ -155,16 +155,16 @@ export const Type = () => {
   return (
     <Row>
       <Col width="auto">
-        <Toggle id="toggle-1" defaultChecked label="Toggle button" />
+        <Toggle id="toggle-1" defaultChecked label="Notifications" />
       </Col>
       <Col width="auto">
-        <Toggle id="toggle-2" defaultChecked label="Toggle button" tooltip="Tooltip content" />
+        <Toggle id="toggle-2" defaultChecked label="Notifications" tooltip="Tooltip content" />
       </Col>
       <Col width="auto">
-        <Toggle id="toggle-3" defaultChecked label="Toggle button" size="large" />
+        <Toggle id="toggle-3" defaultChecked label="Notifications" size="large" />
       </Col>
       <Col width="auto">
-        <Toggle id="toggle-4" defaultChecked label="Toggle button" size="large" icon />
+        <Toggle id="toggle-4" defaultChecked label="Notifications" size="large" icon />
       </Col>
     </Row>
   );
@@ -179,8 +179,8 @@ export const LabelPosition = () => {
     <Row>
       <Col width="auto">
         <VerticalSpacing>
-          <Toggle id="toggle-label-1" defaultChecked label="Toggle button" labelPosition="left" />
-          <Toggle id="toggle-label-2" defaultChecked label="Toggle button" labelPosition="right" />
+          <Toggle id="toggle-label-1" defaultChecked label="Notifications" labelPosition="left" />
+          <Toggle id="toggle-label-2" defaultChecked label="Notifications" labelPosition="right" />
         </VerticalSpacing>
       </Col>
     </Row>

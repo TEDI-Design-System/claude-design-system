@@ -55,28 +55,6 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      module.exports = window.Tedi;
-    }
-  });
-
-  // react-global:react/jsx-runtime
-  var require_jsx_runtime = __commonJS({
-    "react-global:react/jsx-runtime"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      var R = window.React;
-      function jsx3(type, props, key) {
-        return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
-      }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
-    }
-  });
-
   // react-global:react
   var require_react = __commonJS({
     "react-global:react"(exports, module) {
@@ -86,11 +64,34 @@ var __dsPreview = (() => {
     }
   });
 
+  // react-global:react/jsx-runtime
+  var require_jsx_runtime = __commonJS({
+    "react-global:react/jsx-runtime"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      var R = window.React;
+      function jsx4(type, props, key) {
+        return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
+      }
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
+    }
+  });
+
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      module.exports = window.Tedi;
+    }
+  });
+
   // HeadingWithIcon.preview.tsx
   var HeadingWithIcon_preview_exports = {};
   __export(HeadingWithIcon_preview_exports, {
     Colors: () => Colors2,
-    Default: () => Default2
+    Default: () => Default2,
+    VisualTest: () => VisualTest2
   });
   init_define_import_meta_env();
   init_define_process_env();
@@ -100,12 +101,48 @@ var __dsPreview = (() => {
   __export(heading_with_icon_stories_exports, {
     Colors: () => Colors,
     Default: () => Default,
+    VisualTest: () => VisualTest,
     default: () => heading_with_icon_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/typography/text/text.tsx
+  var text_exports = {};
+  __export(text_exports, {
+    default: () => text_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(text_exports, __toESM(require_tedi_namespace()));
+  var ns = window.Tedi;
+  var text_default = ns["Text"] ?? ns;
+
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -113,10 +150,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(vertical_spacing_exports, __toESM(require_tedi_namespace()));
-  var ns = window.Tedi;
-  var vertical_spacing_default = ns["VerticalSpacing"] ?? ns;
+  var ns2 = window.Tedi;
+  var vertical_spacing_default = ns2["VerticalSpacing"] ?? ns2;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/heading-with-icon/heading-with-icon.tsx
+  // tedi:src/tedi/components/content/heading-with-icon/heading-with-icon.tsx
   var heading_with_icon_exports = {};
   __export(heading_with_icon_exports, {
     default: () => heading_with_icon_default
@@ -124,26 +161,27 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(heading_with_icon_exports, __toESM(require_tedi_namespace()));
-  var ns2 = window.Tedi;
-  var heading_with_icon_default = ns2["HeadingWithIcon"] ?? ns2;
+  var ns3 = window.Tedi;
+  var heading_with_icon_default = ns3["HeadingWithIcon"] ?? ns3;
 
   // src/tedi/components/content/heading-with-icon/heading-with-icon.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var heading_with_icon_stories_default = {
     title: "Tedi-Ready/Content/HeadingWithIcon",
     component: heading_with_icon_default,
     parameters: {
+      chromatic: { disableSnapshot: true },
       design: {
         type: "figma",
         url: "https://www.figma.com/file/jWiRIXhHRxwVdMSimKX2FF/TEDI-Design-System-(draft)?type=design&node-id=2137-19827&mode=dev"
       }
     }
   };
-  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(heading_with_icon_default, { ...args });
+  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_with_icon_default, { ...args });
   var TemplateColors = (args) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(heading_with_icon_default, { headingColor: "brand", iconColor: "brand", ...args, children: args.children }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(heading_with_icon_default, { ...args, children: args.children })
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_with_icon_default, { headingColor: "brand", iconColor: "brand", ...args, children: args.children }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_with_icon_default, { ...args, children: args.children })
     ] });
   };
   var Default = {
@@ -162,12 +200,26 @@ var __dsPreview = (() => {
       name: "assignment_ind"
     }
   };
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Colors" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Colors })
+      ] })
+    ] })
+  };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta = stories.default ?? {};
     const story = stories[key];
@@ -204,9 +256,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // HeadingWithIcon.preview.tsx
@@ -214,5 +266,6 @@ var __dsPreview = (() => {
   var B = { "default": "var(--general-surface-primary)", "inverted": "var(--general-surface-inverted-primary)", "brand": "var(--general-surface-brand-primary)" };
   var Default2 = compose(heading_with_icon_stories_exports, "Default", G, B);
   var Colors2 = compose(heading_with_icon_stories_exports, "Colors", G, B);
+  var VisualTest2 = compose(heading_with_icon_stories_exports, "VisualTest", G, B);
   return __toCommonJS(HeadingWithIcon_preview_exports);
 })();

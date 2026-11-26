@@ -64,25 +64,25 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      module.exports = window.Tedi;
-    }
-  });
-
   // react-global:react/jsx-runtime
   var require_jsx_runtime = __commonJS({
     "react-global:react/jsx-runtime"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
+    }
+  });
+
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      module.exports = window.Tedi;
     }
   });
 
@@ -97,6 +97,7 @@ var __dsPreview = (() => {
     Sizes: () => Sizes2,
     Stretched: () => Stretched2,
     Types: () => Types2,
+    VisualTest: () => VisualTest2,
     WithIcon: () => WithIcon2
   });
   init_define_import_meta_env();
@@ -113,14 +114,39 @@ var __dsPreview = (() => {
     Sizes: () => Sizes,
     Stretched: () => Stretched,
     Types: () => Types,
+    VisualTest: () => VisualTest,
     WithIcon: () => WithIcon,
     default: () => button_group_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
-  var import_react = __toESM(require_react(), 1);
+  var import_react2 = __toESM(require_react(), 1);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -136,7 +162,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -150,7 +176,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -164,7 +190,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -175,7 +201,7 @@ var __dsPreview = (() => {
   var ns4 = window.Tedi;
   var vertical_spacing_default = ns4["VerticalSpacing"] ?? ns4;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -186,7 +212,7 @@ var __dsPreview = (() => {
   var ns5 = window.Tedi;
   var button_default = ns5["Button"] ?? ns5;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button-group/button-group.tsx
+  // tedi:src/tedi/components/buttons/button-group/button-group.tsx
   var button_group_exports = {};
   __export(button_group_exports, {
     default: () => button_group_default
@@ -198,58 +224,67 @@ var __dsPreview = (() => {
   var button_group_default = ns6["ButtonGroup"] ?? ns6;
 
   // src/tedi/components/buttons/button-group/button-group.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     title: "TEDI-Ready/Components/Buttons/ButtonGroup",
-    component: button_group_default
+    component: button_group_default,
+    parameters: {
+      chromatic: { disableSnapshot: true }
+    }
   };
   var button_group_stories_default = meta;
   var buttonStates = ["Default", "Hover", "Active", "Focus", "Disabled"];
   var sizeArray = ["default", "small"];
-  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(button_group_default, { ...args, ariaLabel: "Button group example", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "1", children: "Details" }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "2", isActive: true, children: "Updates" }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "3", children: "Settings" })
+  var Template = ({ idPrefix = "", ...args }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(button_group_default, { ...args, ariaLabel: "Sections", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}1`, children: "Details" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}2`, isActive: true, children: "Updates" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}3`, children: "Settings" })
   ] });
   var TemplateSizes = (args) => {
-    const { array, property, ...buttonGroupProps } = args;
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "example-list", children: array.map((value, key) => {
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { className: `${key === array.length - 1 ? "" : "border-bottom"} padding-14-16`, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: 2, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: value ? value.charAt(0).toUpperCase() + value.slice(1) : "" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(button_group_default, { type: "primary", ...buttonGroupProps, ...{ [property]: value }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "01", children: "Tab 1" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "02", isActive: true, children: "Tab 2" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "03", children: "Tab 3" })
+    const { array, property, idPrefix = "", ...buttonGroupProps } = args;
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "example-list", children: array.map((value, key) => {
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { className: `${key === array.length - 1 ? "" : "border-bottom"} padding-14-16`, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: 2, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: value ? value.charAt(0).toUpperCase() + value.slice(1) : "" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(button_group_default, { type: "primary", ...buttonGroupProps, ...{ [property]: value }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}${value}-01`, children: "Tab 1" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}${value}-02`, isActive: true, children: "Tab 2" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}${value}-03`, children: "Tab 3" })
         ] }) })
       ] }, key);
     }) });
   };
-  var TemplateTypes = (args) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { gutterY: 2, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(button_group_default, { type: "primary", stretch: false, ariaLabel: "Button group example", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "1", ...args, children: "Tab 1" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "2", isActive: true, ...args, children: "Tab 2" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "3", ...args, children: "Tab 3" })
+  var TemplateTypes = ({ idPrefix = "", ...args }) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { gutterY: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(button_group_default, { type: "primary", stretch: false, ariaLabel: "Sections", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}1`, ...args, children: "Tab 1" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}2`, isActive: true, ...args, children: "Tab 2" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}3`, ...args, children: "Tab 3" })
       ] }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(button_group_default, { type: "secondary", stretch: false, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "1", ...args, children: "Tab 1" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "2", isActive: true, ...args, children: "Tab 2" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "3", ...args, children: "Tab 3" })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(button_group_default, { type: "secondary", stretch: false, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}secondary-1`, ...args, children: "Tab 1" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}secondary-2`, isActive: true, ...args, children: "Tab 2" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}secondary-3`, ...args, children: "Tab 3" })
       ] }) })
     ] });
   };
-  var TemplateWithIcons = (args) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(button_group_default, { ...args, stretch: false, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "1", iconLeft: "table", children: "Tab 1" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "2", iconLeft: "refresh", isActive: true, children: "Tab 2" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "3", iconLeft: "settings", children: "Tab 3" })
+  var TemplateWithIcons = ({
+    idPrefix = "",
+    ...args
+  }) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(button_group_default, { ...args, stretch: false, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}1`, iconLeft: "table", children: "Tab 1" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}2`, iconLeft: "refresh", isActive: true, children: "Tab 2" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}3`, iconLeft: "settings", children: "Tab 3" })
     ] });
   };
-  var TemplateIconOnly = (args) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(button_group_default, { ...args, stretch: false, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "1", icon: "table", showTooltip: true, children: "Tab 1" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "2", icon: "refresh", isActive: true, showTooltip: true, children: "Tab 2" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "3", icon: "settings", showTooltip: true, children: "Tab 3" })
+  var TemplateIconOnly = ({
+    idPrefix = "",
+    ...args
+  }) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(button_group_default, { ...args, stretch: false, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}1`, icon: "table", showTooltip: true, children: "Tab 1" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}2`, icon: "refresh", isActive: true, showTooltip: true, children: "Tab 2" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}3`, icon: "settings", showTooltip: true, children: "Tab 3" })
     ] });
   };
   var Default = {
@@ -288,11 +323,11 @@ var __dsPreview = (() => {
     }
   };
   var TemplateColumn = (args) => {
-    const [selectedId, setSelectedId] = (0, import_react.useState)(null);
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: args.states.map((state, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { lg: 1, md: 2, sm: 2, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: state }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { lg: 6, md: 10, sm: 10, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(button_group_default, { type: args.type, onSelectionChange: setSelectedId, ariaLabel: "Button group example", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    const [selectedId, setSelectedId] = (0, import_react2.useState)(null);
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: args.states.map((state, index) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { lg: 1, md: 2, sm: 2, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: state }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { lg: 6, md: 10, sm: 10, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(button_group_default, { type: args.type, onSelectionChange: setSelectedId, ariaLabel: "Sections", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
           button_exports.Button,
           {
             id: `${state}-${args.type}`,
@@ -302,13 +337,13 @@ var __dsPreview = (() => {
             children: "Details"
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: `${state}-2-${args.type}`, onClick: () => setSelectedId(`${state}-2-${args.type}`), children: "Updates" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: `${state}-3-${args.type}`, onClick: () => setSelectedId(`${state}-3-${args.type}`), children: "Settings" })
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${state}-2-${args.type}`, onClick: () => setSelectedId(`${state}-2-${args.type}`), children: "Updates" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${state}-3-${args.type}`, onClick: () => setSelectedId(`${state}-3-${args.type}`), children: "Settings" })
       ] }) })
     ] }, index)) });
   };
   var Primary = {
-    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TemplateColumn, { ...args, type: "primary" }),
+    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(TemplateColumn, { ...args, type: "primary" }),
     args: {
       states: buttonStates
     },
@@ -321,7 +356,7 @@ var __dsPreview = (() => {
     }
   };
   var Secondary = {
-    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TemplateColumn, { ...args, type: "secondary" }),
+    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(TemplateColumn, { ...args, type: "secondary" }),
     args: {
       states: buttonStates
     },
@@ -333,25 +368,37 @@ var __dsPreview = (() => {
       }
     }
   };
+  var DifferentWidthTemplate = ({
+    idPrefix = "",
+    ...args
+  }) => {
+    const [selectedId, setSelectedId] = (0, import_react2.useState)(null);
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+      button_group_default,
+      {
+        ...args,
+        stretch: false,
+        onSelectionChange: setSelectedId,
+        ariaLabel: "Sections",
+        enableMobileDropdown: true,
+        children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+            button_exports.Button,
+            {
+              id: `${idPrefix}1`,
+              isActive: selectedId === `${idPrefix}1`,
+              onClick: () => setSelectedId(`${idPrefix}1`),
+              children: "Text"
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}2`, isActive: selectedId === `${idPrefix}2`, children: "Longer text" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}3`, isActive: selectedId === `${idPrefix}3`, children: "Even longer text" })
+        ]
+      }
+    ) }) });
+  };
   var DifferentWidthButtons = {
-    render: (args) => {
-      const [selectedId, setSelectedId] = (0, import_react.useState)(null);
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
-        button_group_default,
-        {
-          ...args,
-          stretch: false,
-          onSelectionChange: setSelectedId,
-          ariaLabel: "Button group example",
-          enableMobileDropdown: true,
-          children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "1", isActive: selectedId === "1", onClick: () => setSelectedId("1"), children: "Text" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "2", isActive: selectedId === "2", children: "Longer text" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "3", isActive: selectedId === "3", children: "Even longer text" })
-          ]
-        }
-      ) }) });
-    },
+    render: DifferentWidthTemplate,
     args: {
       type: "primary"
     }
@@ -364,12 +411,66 @@ var __dsPreview = (() => {
       enableMobileDropdown: true
     }
   };
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: {
+      chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS },
+      pseudo: {
+        hover: ["#Hover-primary", "#Hover-secondary"],
+        active: ["#Active-primary", "#Active-secondary"],
+        focusVisible: ["#Focus-primary", "#Focus-secondary"]
+      }
+    },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: { ...Default, args: { ...Default.args, idPrefix: "vt-default-" } } })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Sizes" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: { ...Sizes, args: { ...Sizes.args, idPrefix: "vt-sizes-" } } })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Types" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: { ...Types, args: { ...Types.args, idPrefix: "vt-types-" } } })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "With icon" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: { ...WithIcon, args: { ...WithIcon.args, idPrefix: "vt-with-icon-" } } })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Icon only" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: { ...IconOnly, args: { ...IconOnly.args, idPrefix: "vt-icon-only-" } } })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Primary states" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Primary })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Secondary states" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Secondary })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Different width buttons" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+          VisualTestStory,
+          {
+            story: { ...DifferentWidthButtons, args: { ...DifferentWidthButtons.args, idPrefix: "vt-different-width-" } }
+          }
+        )
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Stretched" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: { ...Stretched, args: { ...Stretched.args, idPrefix: "vt-stretched-" } } })
+      ] })
+    ] })
+  };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -406,9 +507,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // ButtonGroup.preview.tsx
@@ -423,5 +524,6 @@ var __dsPreview = (() => {
   var Secondary2 = compose(button_group_stories_exports, "Secondary", G, B);
   var DifferentWidthButtons2 = compose(button_group_stories_exports, "DifferentWidthButtons", G, B);
   var Stretched2 = compose(button_group_stories_exports, "Stretched", G, B);
+  var VisualTest2 = compose(button_group_stories_exports, "VisualTest", G, B);
   return __toCommonJS(ButtonGroup_preview_exports);
 })();

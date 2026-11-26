@@ -1,6 +1,6 @@
 CollapseButton from @tedi-design-system/react. Use via `window.Tedi.CollapseButton` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, States, Icon Only, Secondary Button, With Text Inverted, Icon Only Inverted.
+Variants (see `preview.html`): Default, States, Icon Only, Secondary Button, With Text Inverted, Icon Only Inverted, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, States, Icon Only, Secondary Button, Wit
 import * as React from 'react';
 
 /**
- * CollapseButton from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/collapse-button/collapse-button.stories.tsx).
+ * CollapseButton from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/buttons/collapse-button/collapse-button.stories.tsx).
  */
 export interface CollapseButtonProps {
   /** Current open state. Bind alongside `onOpenChange` to keep in sync. */
@@ -124,4 +124,4 @@ Full story source: `src/tedi/components/buttons/collapse-button/collapse-button.
 
 ## Related
 
-`Text`, `Col`, `Row`, `VerticalSpacing`
+`Text`, `Card`, `Col`, `Row`, `VerticalSpacing`

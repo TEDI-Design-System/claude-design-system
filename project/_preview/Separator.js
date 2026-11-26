@@ -55,12 +55,12 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
+  // react-global:react
+  var require_react = __commonJS({
+    "react-global:react"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.Tedi;
+      module.exports = window.React;
     }
   });
 
@@ -70,19 +70,19 @@ var __dsPreview = (() => {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
     }
   });
 
-  // react-global:react
-  var require_react = __commonJS({
-    "react-global:react"(exports, module) {
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.React;
+      module.exports = window.Tedi;
     }
   });
 
@@ -106,7 +106,8 @@ var __dsPreview = (() => {
     VerticalDottedCardExample: () => VerticalDottedCardExample2,
     VerticalDottedSmallCardExample: () => VerticalDottedSmallCardExample2,
     VerticalSpacings: () => VerticalSpacings2,
-    VerticalThickness: () => VerticalThickness2
+    VerticalThickness: () => VerticalThickness2,
+    VisualTest: () => VisualTest2
   });
   init_define_import_meta_env();
   init_define_process_env();
@@ -132,12 +133,37 @@ var __dsPreview = (() => {
     VerticalDottedSmallCardExample: () => VerticalDottedSmallCardExample,
     VerticalSpacings: () => VerticalSpacings,
     VerticalThickness: () => VerticalThickness,
+    VisualTest: () => VisualTest,
     default: () => separator_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -148,7 +174,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var text_default = ns["Text"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/card/index.ts
+  // tedi:src/tedi/components/content/card/index.ts
   var card_exports = {};
   __export(card_exports, {
     default: () => card_default
@@ -164,7 +190,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -178,7 +204,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -192,7 +218,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -203,7 +229,7 @@ var __dsPreview = (() => {
   var ns5 = window.Tedi;
   var vertical_spacing_default = ns5["VerticalSpacing"] ?? ns5;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/separator/separator.tsx
+  // tedi:src/tedi/components/misc/separator/separator.tsx
   var separator_exports = {};
   __export(separator_exports, {
     default: () => separator_default
@@ -215,7 +241,7 @@ var __dsPreview = (() => {
   var separator_default = ns6["Separator"] ?? ns6;
 
   // src/tedi/components/misc/separator/separator.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: separator_default,
     title: "TEDI-Ready/Components/Helpers/Separator",
@@ -229,18 +255,19 @@ var __dsPreview = (() => {
       design: {
         type: "figma",
         url: "https://www.figma.com/file/jWiRIXhHRxwVdMSimKX2FF/TEDI-Design-System-(draft)?type=design&node-id=3518-32729&m=dev"
-      }
+      },
+      chromatic: { disableSnapshot: true }
     }
   };
   var separator_stories_default = meta;
   var spacingArray = [0, 0.5, 1, 1.5, 2, 2.5];
   var sizeArray = ["large", "medium"];
-  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { ...args });
+  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { ...args });
   var SizesTemplate = (args) => {
     const { array } = args;
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "example-list", children: array.map((value, key) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { className: `${key === array.length - 1 ? "" : "border-bottom"} padding-14-16`, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: 2, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: value === "large" ? "Large" : "Medium" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { className: "d-flex", width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "example-list", children: array.map((value, key) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { className: `${key === array.length - 1 ? "" : "border-bottom"} padding-14-16`, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: 2, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: value === "large" ? "Large" : "Medium" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { className: "d-flex", width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
         separator_default,
         {
           variant: "dotted",
@@ -251,7 +278,7 @@ var __dsPreview = (() => {
           dotStyle: void 0
         }
       ) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { className: "d-flex", align: "center", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { className: "d-flex", align: "center", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
         separator_default,
         {
           variant: "dotted",
@@ -263,12 +290,12 @@ var __dsPreview = (() => {
       ) })
     ] }, key)) });
   };
-  var ColorsAndThickness = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Col, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { spacing: 1, thickness: 1, ...args }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { spacing: 1, thickness: 2, ...args })
+  var ColorsAndThickness = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Col, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { spacing: 1, thickness: 1, ...args }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { spacing: 1, thickness: 2, ...args })
   ] }) });
-  var SpacingHorizontal = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: spacingArray.map((spacing, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { spacing, ...args }, index)) }) });
-  var SpacingVertical = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: spacingArray.map((spacing, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { spacing, ...args }) }, index)) });
+  var SpacingHorizontal = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: spacingArray.map((spacing, index) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { spacing, ...args }, index)) }) });
+  var SpacingVertical = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: spacingArray.map((spacing, index) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { spacing, ...args }) }, index)) });
   var Default = {
     render: Template,
     args: { spacing: 1 }
@@ -315,27 +342,27 @@ var __dsPreview = (() => {
   };
   var SpacingTopDefault = {
     render: () => {
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { axis: "vertical", variant: "dotted", height: 2, dotPosition: "center", color: "accent", dotSize: "large" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { axis: "vertical", variant: "dotted", height: 2, dotPosition: "center", color: "accent", dotSize: "medium" }) })
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { axis: "vertical", variant: "dotted", height: 2, dotPosition: "center", color: "accent", dotSize: "large" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { axis: "vertical", variant: "dotted", height: 2, dotPosition: "center", color: "accent", dotSize: "medium" }) })
       ] });
     }
   };
   var SpacingTopSmall = {
     render: () => {
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { axis: "vertical", variant: "dotted", height: 2, dotPosition: 0.5, color: "accent", dotSize: "large" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { axis: "vertical", variant: "dotted", height: 2, dotPosition: 0.75, color: "accent", dotSize: "medium" }) })
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { axis: "vertical", variant: "dotted", height: 2, dotPosition: 0.5, color: "accent", dotSize: "large" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { axis: "vertical", variant: "dotted", height: 2, dotPosition: 0.75, color: "accent", dotSize: "medium" }) })
       ] });
     }
   };
   var Position = {
     render: () => {
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Start" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { className: "text-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Start" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { className: "text-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               separator_default,
               {
                 axis: "vertical",
@@ -346,7 +373,7 @@ var __dsPreview = (() => {
                 dotSize: "large"
               }
             ) }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               separator_default,
               {
                 axis: "vertical",
@@ -359,10 +386,10 @@ var __dsPreview = (() => {
             ) })
           ] })
         ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Center" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { className: "text-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Center" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { className: "text-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               separator_default,
               {
                 axis: "vertical",
@@ -373,7 +400,7 @@ var __dsPreview = (() => {
                 dotSize: "large"
               }
             ) }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               separator_default,
               {
                 axis: "vertical",
@@ -386,10 +413,10 @@ var __dsPreview = (() => {
             ) })
           ] })
         ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "End" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { className: "text-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "End" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { className: "text-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               separator_default,
               {
                 axis: "vertical",
@@ -400,7 +427,7 @@ var __dsPreview = (() => {
                 dotSize: "large"
               }
             ) }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               separator_default,
               {
                 axis: "vertical",
@@ -416,22 +443,22 @@ var __dsPreview = (() => {
       ] }) });
     }
   };
-  var TemplateVertical = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { xs: "auto", md: 2, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { className: "text-right", children: "12.12.2012" }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: 12, lg: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { ...args }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Col, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "h6", children: "Card content title" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem rem nisi quae? Rem, amet! Veritatis laboriosam consectetur ipsum quae. Amet voluptatibus quod eaque at nostrum id provident? Cum, maiores libero!" })
+  var TemplateVertical = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { xs: "auto", md: 2, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { className: "text-right", children: "12.12.2012" }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: 12, lg: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { ...args }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Col, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "h6", children: "Card content title" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { children: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem rem nisi quae? Rem, amet! Veritatis laboriosam consectetur ipsum quae. Amet voluptatibus quod eaque at nostrum id provident? Cum, maiores libero!" })
     ] })
   ] }) }) });
   var DotFilled = {
     render: () => {
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { axis: "horizontal", variant: "dot-only", dotSize: "large", dotStyle: "filled", color: "secondary" }) });
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { axis: "horizontal", variant: "dot-only", dotSize: "large", dotStyle: "filled", color: "secondary" }) });
     }
   };
   var DotOutlined = {
     render: () => {
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { axis: "horizontal", variant: "dot-only", dotSize: "large", dotStyle: "outlined", color: "secondary" }) });
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { axis: "horizontal", variant: "dot-only", dotSize: "large", dotStyle: "outlined", color: "secondary" }) });
     }
   };
   var dotSizeToPxMap = {
@@ -442,9 +469,9 @@ var __dsPreview = (() => {
   };
   var DottedSizesTemplate = (args) => {
     const { array } = args;
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "example-list", children: array.map((value, key) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { className: `${key === array.length - 1 ? "" : "border-bottom"} padding-14-16`, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: 2, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: value !== void 0 ? dotSizeToPxMap[value] || value : "\u2014" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { className: "d-flex", width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "example-list", children: array.map((value, key) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { className: `${key === array.length - 1 ? "" : "border-bottom"} padding-14-16`, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: 2, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: value !== void 0 ? dotSizeToPxMap[value] || value : "\u2014" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { className: "d-flex", width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
         separator_default,
         {
           dotSize: value,
@@ -454,7 +481,7 @@ var __dsPreview = (() => {
           dotStyle: "filled"
         }
       ) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { className: "d-flex", align: "center", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { className: "d-flex", align: "center", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
         separator_default,
         {
           dotSize: value,
@@ -475,25 +502,25 @@ var __dsPreview = (() => {
   };
   var InlineSeparatorTemplate = (args) => {
     const { dotPosition, ...safeArgs } = args;
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(text_exports.Text, { children: [
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(text_exports.Text, { children: [
         "Lorem ipsum dolor sit, amet",
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { ...safeArgs, element: "span", color: "primary", spacing: 0.5 }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { ...safeArgs, element: "span", color: "primary", spacing: 0.5 }),
         "consectetur adipisicing elit."
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(text_exports.Text, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(text_exports.Text, { children: [
         "Lorem ipsum dolor sit, amet",
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { ...safeArgs, element: "span", color: "secondary", spacing: 1 }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { ...safeArgs, element: "span", color: "secondary", spacing: 1 }),
         "consectetur adipisicing elit."
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(text_exports.Text, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(text_exports.Text, { children: [
         "Lorem ipsum dolor sit, amet",
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { ...safeArgs, element: "span", color: "accent", spacing: 1.5 }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { ...safeArgs, element: "span", color: "accent", spacing: 1.5 }),
         "consectetur adipisicing elit."
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(text_exports.Text, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(text_exports.Text, { children: [
         "Lorem ipsum dolor sit, amet",
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { ...safeArgs, element: "span", color: "secondary", spacing: 0.5, variant: "dot-only", dotSize: "small" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { ...safeArgs, element: "span", color: "secondary", spacing: 0.5, variant: "dot-only", dotSize: "small" }),
         "consectetur adipisicing elit."
       ] })
     ] });
@@ -527,12 +554,40 @@ var __dsPreview = (() => {
       md: { axis: "vertical" }
     }
   };
+  var visualTestBlocks = [
+    { label: "Default", story: Default },
+    { label: "Horizontal spacings", story: HorizontalSpacings },
+    { label: "Horizontal thickness", story: HorizontalThickness },
+    { label: "Vertical", story: Vertical },
+    { label: "Vertical spacings", story: VerticalSpacings },
+    { label: "Vertical thickness", story: VerticalThickness },
+    { label: "Dotted line horizontal", story: DottedLineHorizontal },
+    { label: "Dotted line vertical", story: DottedLineVertical },
+    { label: "Sizes", story: Sizes },
+    { label: "Spacing top default", story: SpacingTopDefault },
+    { label: "Spacing top small", story: SpacingTopSmall },
+    { label: "Position", story: Position },
+    { label: "Dot filled", story: DotFilled },
+    { label: "Dot outlined", story: DotOutlined },
+    { label: "Dotted sizes", story: DottedSizes },
+    { label: "Inline separator usage", story: InlineSeparatorUsage },
+    { label: "Vertical dotted card example", story: VerticalDottedCardExample },
+    { label: "Vertical dotted small card example", story: VerticalDottedSmallCardExample }
+  ];
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: visualTestBlocks.map(({ label, story }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: label }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story })
+    ] }, label)) })
+  };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -569,9 +624,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // Separator.preview.tsx
@@ -595,5 +650,6 @@ var __dsPreview = (() => {
   var InlineSeparatorUsage2 = compose(separator_stories_exports, "InlineSeparatorUsage", G, B);
   var VerticalDottedCardExample2 = compose(separator_stories_exports, "VerticalDottedCardExample", G, B);
   var VerticalDottedSmallCardExample2 = compose(separator_stories_exports, "VerticalDottedSmallCardExample", G, B);
+  var VisualTest2 = compose(separator_stories_exports, "VisualTest", G, B);
   return __toCommonJS(Separator_preview_exports);
 })();

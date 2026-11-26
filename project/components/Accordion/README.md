@@ -2,7 +2,7 @@ Accordion from @tedi-design-system/react. Use via `window.Tedi.Accordion` (the b
 
 Sub-components: `Accordion.Item`.
 
-Variants (see `preview.html`): Default, Variants, Action Types, With Icon Card, Customized, Accordion Behavior, Disabled, Hash Deep Linking, Semantic Headings.
+Variants (see `preview.html`): Default, Variants, Action Types, With Icon Card, Customized, Accordion Behavior, Disabled, Hash Deep Linking, Semantic Headings, Visual Test.
 
 ## Props
 
@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, Variants, Action Types, With Icon Card, 
 import * as React from 'react';
 
 /**
- * Accordion from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/accordion/accordion.stories.tsx).
+ * Accordion from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/content/accordion/accordion.stories.tsx).
  */
 export interface AccordionProps {
   /** Accordion content. Should be one or more `AccordionItem` components. */
@@ -306,6 +306,7 @@ export const Customized: StoryObj = {
 
 ```tsx
 export const AccordionBehavior: StoryObj = {
+  parameters: { visualTest: false },
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--layout-grid-gutters-16)' }}>
       <Heading element="h4" modifiers="h4">
@@ -346,4 +347,4 @@ Full story source: `src/tedi/components/content/accordion/accordion.stories.tsx`
 
 ## Related
 
-`Icon`, `Heading`, `Text`, `Button`, `Checkbox`, `Link`, `StatusBadge`
+`Icon`, `Heading`, `Text`, `Button`, `Checkbox`, `VerticalSpacing`, `Link`, `StatusBadge`

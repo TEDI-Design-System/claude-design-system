@@ -64,25 +64,25 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      module.exports = window.Tedi;
-    }
-  });
-
   // react-global:react/jsx-runtime
   var require_jsx_runtime = __commonJS({
     "react-global:react/jsx-runtime"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
+    }
+  });
+
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      module.exports = window.Tedi;
     }
   });
 
@@ -99,6 +99,7 @@ var __dsPreview = (() => {
     Sizes: () => Sizes2,
     States: () => States2,
     TextValue: () => TextValue2,
+    VisualTest: () => VisualTest2,
     WithHint: () => WithHint2
   });
   init_define_import_meta_env();
@@ -117,14 +118,39 @@ var __dsPreview = (() => {
     Sizes: () => Sizes,
     States: () => States,
     TextValue: () => TextValue,
+    VisualTest: () => VisualTest,
     WithHint: () => WithHint,
     default: () => textarea_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
-  var import_react = __toESM(require_react(), 1);
+  var import_react2 = __toESM(require_react(), 1);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -140,7 +166,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -154,7 +180,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -168,7 +194,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -179,7 +205,7 @@ var __dsPreview = (() => {
   var ns4 = window.Tedi;
   var vertical_spacing_default = ns4["VerticalSpacing"] ?? ns4;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/textarea/textarea.tsx
+  // tedi:src/tedi/components/form/textarea/textarea.tsx
   var textarea_exports = {};
   __export(textarea_exports, {
     default: () => textarea_default
@@ -191,7 +217,7 @@ var __dsPreview = (() => {
   var textarea_default = ns5["Textarea"] ?? ns5;
 
   // src/tedi/components/form/textarea/textarea.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: textarea_default,
     title: "TEDI-Ready/Components/Form/Textarea",
@@ -205,21 +231,22 @@ var __dsPreview = (() => {
       design: {
         type: "figma",
         url: "https://www.figma.com/design/jWiRIXhHRxwVdMSimKX2FF/TEDI-READY-(work-in-progress)?node-id=3486-37618&m=dev"
-      }
+      },
+      chromatic: { disableSnapshot: true }
     }
   };
   var textarea_stories_default = meta;
   var stateArray = ["Default", "Hover", "Focus", "Active", "Disabled"];
   var TemplateColumnWithStates = (args) => {
     const { array, ...textFieldProps } = args;
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
-      array.map((state, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { lg: 2, xs: 12, className: "flex align-items-center gap-3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: state }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(textarea_default, { disabled: state === "Disabled", ...textFieldProps, id: state }) })
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
+      array.map((state, index) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { lg: 2, xs: 12, className: "flex align-items-center gap-3", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: state }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(textarea_default, { disabled: state === "Disabled", ...textFieldProps, id: state }) })
       ] }, index)),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { lg: 2, xs: 12, className: "flex align-items-center gap-3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: "Success" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { lg: 2, xs: 12, className: "flex align-items-center gap-3", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Success" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
           textarea_default,
           {
             ...textFieldProps,
@@ -231,9 +258,9 @@ var __dsPreview = (() => {
           }
         ) })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { lg: 2, xs: 12, className: "flex align-items-center gap-3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: "Error" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { lg: 2, xs: 12, className: "flex align-items-center gap-3", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Error" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
           textarea_default,
           {
             ...textFieldProps,
@@ -249,15 +276,15 @@ var __dsPreview = (() => {
   };
   var sizesArray = ["default", "small"];
   var TemplateSizes = (args) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "example-list", children: sizesArray.map((size, key) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { className: `${key === sizesArray.length - 1 ? "" : "border-bottom"} padding-14-16`, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: 12, sm: 2, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: size.charAt(0).toUpperCase() + size.slice(1) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: 12, sm: 10, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(textarea_default, { ...args, size, id: `textarea-size-${size}` }) })
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "example-list", children: sizesArray.map((size, key) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { className: `${key === sizesArray.length - 1 ? "" : "border-bottom"} padding-14-16`, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: 12, sm: 2, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: size.charAt(0).toUpperCase() + size.slice(1) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: 12, sm: 10, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(textarea_default, { ...args, size, id: `textarea-size-${size}` }) })
     ] }, key)) });
   };
   var TemplateTextValue = (args) => {
     const { value, ...props } = args;
-    const [text, setText] = (0, import_react.useState)(value ?? "");
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(textarea_default, { value: text, onChange: (t) => setText(t), ...props });
+    const [text, setText] = (0, import_react2.useState)(value ?? "");
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(textarea_default, { value: text, onChange: (t) => setText(t), ...props });
   };
   var Default = {
     args: {
@@ -372,9 +399,9 @@ var __dsPreview = (() => {
       placeholder: "Grows until 200px, then scrolls"
     }
   ];
-  var TemplateHeights = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(vertical_spacing_exports.VerticalSpacing, { children: heightExamples.map(({ title, ...example }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: title }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(textarea_default, { ...args, ...example, label: "Label" }) })
+  var TemplateHeights = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { children: heightExamples.map(({ title, ...example }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: title }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(textarea_default, { ...args, ...example, label: "Label" }) })
   ] }, example.id)) });
   var HeightExamples = {
     render: TemplateHeights,
@@ -386,12 +413,69 @@ var __dsPreview = (() => {
       }
     }
   };
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: {
+      chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS },
+      pseudo: {
+        hover: "#Hover",
+        focus: "#Focus",
+        active: "#Active"
+      }
+    },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Default, component: textarea_default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Sizes" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Sizes })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "States" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: States })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "With hint" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: WithHint, component: textarea_default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Hint text and character count" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: HintTextAndCharacterCount, component: textarea_default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Only character count" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: OnlyCharacterCount, component: textarea_default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Text value" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: TextValue })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default value" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: DefaultValue, component: textarea_default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Clear button on interaction" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: ClearButtonOnInteraction, component: textarea_default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Placeholder" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Placeholder, component: textarea_default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Height examples" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: HeightExamples })
+      ] })
+    ] })
+  };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -428,9 +512,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // Textarea.preview.tsx
@@ -447,5 +531,6 @@ var __dsPreview = (() => {
   var DefaultValue2 = compose(textarea_stories_exports, "DefaultValue", G, B);
   var ClearButtonOnInteraction2 = compose(textarea_stories_exports, "ClearButtonOnInteraction", G, B);
   var HeightExamples2 = compose(textarea_stories_exports, "HeightExamples", G, B);
+  var VisualTest2 = compose(textarea_stories_exports, "VisualTest", G, B);
   return __toCommonJS(Textarea_preview_exports);
 })();

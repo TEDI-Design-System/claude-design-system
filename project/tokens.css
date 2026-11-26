@@ -166,7 +166,7 @@
   --general-surface-disabled-selected: var(--tedi-primary-300);
   --general-surface-disabled-transparent: var(--tedi-alpha-01);
 }
-[data-theme="dark"] {
+[data-theme="dark"], .tedi-theme--dark {
   --tedi-accent-100: var(--tedi-orange-100);
   --tedi-accent-200: var(--tedi-orange-200);
   --tedi-accent-300: var(--tedi-orange-300);

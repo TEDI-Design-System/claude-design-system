@@ -1,6 +1,6 @@
 Separator from @tedi-design-system/react. Use via `window.Tedi.Separator` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Horizontal Spacings, Horizontal Thickness, Vertical, Vertical Spacings, Vertical Thickness, Dotted Line Horizontal, Dotted Line Vertical, Sizes, Spacing Top Default, Spacing Top Small, Position, Dot Filled, Dot Outlined, Dotted Sizes, Inline Separator Usage, Vertical Dotted Card Example, Vertical Dotted Small Card Example.
+Variants (see `preview.html`): Default, Horizontal Spacings, Horizontal Thickness, Vertical, Vertical Spacings, Vertical Thickness, Dotted Line Horizontal, Dotted Line Vertical, Sizes, Spacing Top Default, Spacing Top Small, Position, Dot Filled, Dot Outlined, Dotted Sizes, Inline Separator Usage, Vertical Dotted Card Example, Vertical Dotted Small Card Example, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Horizontal Spacings, Horizontal Thicknes
 import * as React from 'react';
 
 /**
- * Separator from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/separator/separator.stories.tsx).
+ * Separator from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/misc/separator/separator.stories.tsx).
  */
 export interface SeparatorProps {
   /** Must be set to 'horizontal' or left undefined (defaults to horizontal) Must be set to 'vertical' */

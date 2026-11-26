@@ -1,6 +1,6 @@
 TextField from @tedi-design-system/react. Use via `window.Tedi.TextField` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Sizes, States, With Hint, Password, Password With Toggle, Placeholder, Clear Button On Interaction.
+Variants (see `preview.html`): Default, Sizes, States, With Hint, Password, Password With Toggle, Placeholder, Clear Button On Interaction, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Sizes, States, With Hint, Password, Pass
 import * as React from 'react';
 
 /**
- * TextField from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/textfield/textfield.stories.tsx).
+ * TextField from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/form/textfield/textfield.stories.tsx).
  */
 export interface TextFieldProps {
   /** Unique identifier for the text field. Required for accessibility (associates label, helper text, and input). Also used to generate `aria-describedby` and helper IDs automatically. */
@@ -252,7 +252,7 @@ export const WithHint: Story = {
     ...Default.args,
     id: 'example-3',
     helper: {
-      id: 'example-3',
+      id: 'example-3-helper',
       text: 'Hint text',
       type: 'hint',
     },

@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, With Icons, With Separator, Custom Item 
 import * as React from 'react';
 
 /**
- * TopNav from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/layout/top-nav/top-nav.stories.tsx).
+ * TopNav from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/layout/top-nav/top-nav.stories.tsx).
  */
 export interface TopNavProps {
   /** `TopNav.Item` and `TopNav.Separator` children. Any other React node is ignored. Fragments are flattened, so `<>…</>` wrappers work transparently. */
@@ -48,7 +48,7 @@ type TopNavMaxWidth = number | BreakpointWidthName | (string & {});
 export const Default: Story = {
   render: Template,
   args: {
-    ariaLabel: 'Primary navigation',
+    ariaLabel: 'Primary',
     children: (
       <>
         <TopNav.Item href="#">Avaleht</TopNav.Item>
@@ -71,7 +71,7 @@ export const Default: Story = {
 export const WithIcons: Story = {
   render: Template,
   args: {
-    ariaLabel: 'Primary navigation',
+    ariaLabel: 'Primary',
     children: (
       <>
         <TopNav.Item href="#" icon="home" isActive>
@@ -101,7 +101,7 @@ export const WithIcons: Story = {
 export const WithSeparator: Story = {
   render: Template,
   args: {
-    ariaLabel: 'Primary navigation',
+    ariaLabel: 'Primary',
     children: (
       <>
         <TopNav.Item href="#" isActive>
@@ -126,7 +126,7 @@ export const WithSeparator: Story = {
 export const CustomItemContent: Story = {
   render: Template,
   args: {
-    ariaLabel: 'Primary navigation',
+    ariaLabel: 'Primary',
     children: (
       <>
         <TopNav.Item href="#" isActive>
@@ -151,7 +151,7 @@ export const CustomItemContent: Story = {
 export const MenuOpen: Story = {
   render: Template,
   args: {
-    ariaLabel: 'Primary navigation',
+    ariaLabel: 'Primary',
     children: (
       <>
         <TopNav.Item href="#">Avaleht</TopNav.Item>
@@ -197,7 +197,7 @@ export const MenuOpen: Story = {
 export const ConstrainedInnerWidth: Story = {
   render: Template,
   args: {
-    ariaLabel: 'Primary navigation',
+    ariaLabel: 'Primary',
     maxWidth: 'lg',
     children: (
       <>

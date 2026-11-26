@@ -117,12 +117,12 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
+  // react-global:react
+  var require_react = __commonJS({
+    "react-global:react"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.Tedi;
+      module.exports = window.React;
     }
   });
 
@@ -132,19 +132,19 @@ var __dsPreview = (() => {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
     }
   });
 
-  // react-global:react
-  var require_react = __commonJS({
-    "react-global:react"(exports, module) {
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.React;
+      module.exports = window.Tedi;
     }
   });
 
@@ -156,7 +156,8 @@ var __dsPreview = (() => {
     Default: () => Default2,
     Sizes: () => Sizes2,
     SizesWithBackground: () => SizesWithBackground2,
-    UsedInsideText: () => UsedInsideText2
+    UsedInsideText: () => UsedInsideText2,
+    VisualTest: () => VisualTest2
   });
   init_define_import_meta_env();
   init_define_process_env();
@@ -170,18 +171,43 @@ var __dsPreview = (() => {
     Sizes: () => Sizes,
     SizesWithBackground: () => SizesWithBackground,
     UsedInsideText: () => UsedInsideText,
+    VisualTest: () => VisualTest,
     default: () => icon_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
   var import_classnames = __toESM(require_classnames(), 1);
 
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
   // src/tedi/components/layout/grid/index.ts
   var grid_exports = {};
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -195,7 +221,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -209,7 +235,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -220,7 +246,7 @@ var __dsPreview = (() => {
   var ns3 = window.Tedi;
   var vertical_spacing_default = ns3["VerticalSpacing"] ?? ns3;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/heading/heading.tsx
+  // tedi:src/tedi/components/base/typography/heading/heading.tsx
   var heading_exports = {};
   __export(heading_exports, {
     default: () => heading_default
@@ -231,7 +257,18 @@ var __dsPreview = (() => {
   var ns4 = window.Tedi;
   var heading_default = ns4["Heading"] ?? ns4;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/icon/icon.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
+  var text_exports = {};
+  __export(text_exports, {
+    default: () => text_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(text_exports, __toESM(require_tedi_namespace()));
+  var ns5 = window.Tedi;
+  var text_default = ns5["Text"] ?? ns5;
+
+  // tedi:src/tedi/components/base/icon/icon.tsx
   var icon_exports = {};
   __export(icon_exports, {
     default: () => icon_default
@@ -239,15 +276,16 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(icon_exports, __toESM(require_tedi_namespace()));
-  var ns5 = window.Tedi;
-  var icon_default = ns5["Icon"] ?? ns5;
+  var ns6 = window.Tedi;
+  var icon_default = ns6["Icon"] ?? ns6;
 
   // src/tedi/components/base/icon/icon.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     title: "Tedi-Ready/Base/Icon",
     component: icon_exports.Icon,
     parameters: {
+      chromatic: { disableSnapshot: true },
       design: {
         type: "figma",
         url: "https://www.figma.com/file/jWiRIXhHRxwVdMSimKX2FF/TEDI-Design-System-(draft)?type=design&node-id=45-30752&mode=dev"
@@ -270,45 +308,45 @@ var __dsPreview = (() => {
   ];
   var TemplateRow = (args) => {
     const { array, property, ...iconProps } = args;
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: "Outlined" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { alignItems: "center", children: array.map((value, key) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { md: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: (0, import_classnames.default)({ "bg bg-primary": value === "white" }), children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { ...iconProps, ...{ [property]: value } }) }) }, key)) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: "Filled" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { alignItems: "center", children: array.map((value, key) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { md: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: (0, import_classnames.default)({ "bg bg-primary": value === "white" }), children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { ...iconProps, ...{ [property]: value }, filled: true }) }) }, key)) })
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: "Outlined" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { alignItems: "center", children: array.map((value, key) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { md: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: (0, import_classnames.default)({ "bg bg-primary": value === "white" }), children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { ...iconProps, ...{ [property]: value } }) }) }, key)) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: "Filled" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { alignItems: "center", children: array.map((value, key) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { md: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: (0, import_classnames.default)({ "bg bg-primary": value === "white" }), children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { ...iconProps, ...{ [property]: value }, filled: true }) }) }, key)) })
     ] });
   };
   var TemplateColumn = (args) => {
     const { array, property, ...iconProps } = args;
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "example-list w-50", children: array.map((value, key) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { className: `${key === array.length - 1 ? "" : "border-bottom"} padding-14-16`, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Col, { className: "w-50 flex", children: [
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "example-list w-50", children: array.map((value, key) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { className: `${key === array.length - 1 ? "" : "border-bottom"} padding-14-16`, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Col, { className: "w-50 flex", children: [
         value?.toString(),
         "\xA0",
-        value === 24 && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("small", { className: "example-text--secondary", children: "default" })
+        value === 24 && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("small", { className: "example-text--secondary", children: "default" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Col, { className: "flex", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { ...iconProps, ...{ [property]: value } }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Col, { className: "flex", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { ...iconProps, ...{ [property]: value } }),
         "\xA0",
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { ...iconProps, ...{ [property]: value }, filled: true })
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { ...iconProps, ...{ [property]: value }, filled: true })
       ] })
     ] }, key)) });
   };
   var TemplateColumnWithMultipleVariants = (args) => {
     const { items } = args;
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "example-list w-50", children: items.map((item, key) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "example-list w-50", children: items.map((item, key) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
       grid_exports.Row,
       {
         justifyContent: "start",
         className: `${key === items.length - 1 ? "" : "border-bottom"} padding-14-16`,
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Col, { className: "w-50 flex", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Col, { className: "w-50 flex", children: [
             item.size?.toString(),
             "\xA0",
-            item.size === 24 && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("small", { className: "example-text--secondary", children: "default" })
+            item.size === 24 && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("small", { className: "example-text--secondary", children: "default" })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Col, { className: "flex", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { ...{ size: item.size, background: item.background, name: item.name, color: item.color } }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Col, { className: "flex", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { ...{ size: item.size, background: item.background, name: item.name, color: item.color } }),
             "\xA0",
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               icon_exports.Icon,
               {
                 ...{ size: item.size, background: item.background, name: item.name, color: item.color },
@@ -322,22 +360,22 @@ var __dsPreview = (() => {
     )) });
   };
   var TemplateColumnWithBackgroundCircleVarians = () => {
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { alignItems: "center", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { alignItems: "center", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "Vaccines", background: "brand-primary", color: "white" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "Info", background: "brand-primary", color: "white", size: 16 }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "Vaccines", background: "brand-secondary", color: "brand" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "Info", background: "brand-secondary", color: "brand", size: 16 }) })
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { alignItems: "center", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { alignItems: "center", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "Vaccines", background: "brand-primary", color: "white" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "Info", background: "brand-primary", color: "white", size: 16 }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "Vaccines", background: "brand-secondary", color: "brand" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "Info", background: "brand-secondary", color: "brand", size: 16 }) })
       ] }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { alignItems: "center", className: "bg bg-primary", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "Vaccines", background: "primary", color: "brand" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "Info", background: "primary", color: "brand", size: 16 }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "Vaccines", background: "secondary", color: "white" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "Info", background: "secondary", color: "white", size: 16 }) })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { alignItems: "center", className: "bg bg-primary", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "Vaccines", background: "primary", color: "brand" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "Info", background: "primary", color: "brand", size: 16 }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "Vaccines", background: "secondary", color: "white" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "Info", background: "secondary", color: "white", size: 16 }) })
       ] }) })
     ] });
   };
-  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { ...args });
+  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { ...args });
   var Default = {
     render: Template,
     args: {
@@ -390,69 +428,100 @@ var __dsPreview = (() => {
     render: TemplateColumnWithBackgroundCircleVarians,
     name: "Icon background colors"
   };
+  var UsedInsideTextTemplate = (args) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.25, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(heading_exports.Heading, { element: "h1", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: args.name, display: "inline" }),
+        "This is level 1 heading with inline ",
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { color: "brand", name: args.name, display: "inline" }),
+        " icon"
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(heading_exports.Heading, { element: "h2", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: args.name, display: "inline" }),
+        "This is level 2 heading with inline ",
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { color: "brand", name: args.name, display: "inline" }),
+        " icon"
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(heading_exports.Heading, { element: "h3", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: args.name, display: "inline" }),
+        "This is level 3 heading with inline ",
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { color: "brand", name: args.name, display: "inline" }),
+        " icon"
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(heading_exports.Heading, { element: "h4", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: args.name, display: "inline" }),
+        "This is level 4 heading with inline ",
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { color: "brand", name: args.name, display: "inline" }),
+        " icon"
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(heading_exports.Heading, { element: "h5", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: args.name, display: "inline" }),
+        "This is level 5 heading with inline ",
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { color: "brand", name: args.name, display: "inline" }),
+        " icon"
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(heading_exports.Heading, { element: "h6", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: args.name, display: "inline" }),
+        "This is level 6 heading with inline ",
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { color: "brand", name: args.name, display: "inline" }),
+        " icon"
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("p", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: args.name, display: "inline" }),
+        "This is paragraph text with inline ",
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { color: "brand", name: args.name, display: "inline" }),
+        " icon"
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("small", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: args.name, display: "inline" }),
+        "This is small text with inline ",
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { color: "brand", name: args.name, display: "inline" }),
+        " icon"
+      ] })
+    ] });
+  };
   var UsedInsideText = {
-    render: (args) => {
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.25, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(heading_exports.Heading, { element: "h1", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: args.name, display: "inline" }),
-          "This is level 1 heading with inline ",
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { color: "brand", name: args.name, display: "inline" }),
-          " icon"
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(heading_exports.Heading, { element: "h2", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: args.name, display: "inline" }),
-          "This is level 2 heading with inline ",
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { color: "brand", name: args.name, display: "inline" }),
-          " icon"
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(heading_exports.Heading, { element: "h3", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: args.name, display: "inline" }),
-          "This is level 3 heading with inline ",
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { color: "brand", name: args.name, display: "inline" }),
-          " icon"
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(heading_exports.Heading, { element: "h4", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: args.name, display: "inline" }),
-          "This is level 4 heading with inline ",
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { color: "brand", name: args.name, display: "inline" }),
-          " icon"
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(heading_exports.Heading, { element: "h5", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: args.name, display: "inline" }),
-          "This is level 5 heading with inline ",
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { color: "brand", name: args.name, display: "inline" }),
-          " icon"
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(heading_exports.Heading, { element: "h6", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: args.name, display: "inline" }),
-          "This is level 6 heading with inline ",
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { color: "brand", name: args.name, display: "inline" }),
-          " icon"
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: args.name, display: "inline" }),
-          "This is paragraph text with inline ",
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { color: "brand", name: args.name, display: "inline" }),
-          " icon"
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("small", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: args.name, display: "inline" }),
-          "This is small text with inline ",
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { color: "brand", name: args.name, display: "inline" }),
-          " icon"
-        ] })
-      ] });
-    },
+    render: UsedInsideTextTemplate,
     args: {
       name: "account_circle"
     }
+  };
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Icon size" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Sizes })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Icon size inside background" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: SizesWithBackground })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Icon colors" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Colors })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Icon background colors" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Backgrounds })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Used inside text" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: UsedInsideText })
+      ] })
+    ] })
   };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -489,9 +558,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // Icon.preview.tsx
@@ -503,6 +572,7 @@ var __dsPreview = (() => {
   var Colors2 = compose(icon_stories_exports, "Colors", G, B);
   var Backgrounds2 = compose(icon_stories_exports, "Backgrounds", G, B);
   var UsedInsideText2 = compose(icon_stories_exports, "UsedInsideText", G, B);
+  var VisualTest2 = compose(icon_stories_exports, "VisualTest", G, B);
   return __toCommonJS(Icon_preview_exports);
 })();
 /*! Bundled license information:

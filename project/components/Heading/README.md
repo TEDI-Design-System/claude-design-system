@@ -1,6 +1,6 @@
 Heading from @tedi-design-system/react. Use via `window.Tedi.Heading` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Headings, Custom Modifier, Semantic Headings.
+Variants (see `preview.html`): Default, Headings, Custom Modifier, Semantic Headings, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Headings, Custom Modifier, Semantic Head
 import * as React from 'react';
 
 /**
- * Heading from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/base/typography/heading/heading.stories.tsx).
+ * Heading from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/base/typography/heading/heading.stories.tsx).
  */
 export interface HeadingProps {
   sm?: Partial<{ className?: string; element?: TextElement; modifiers?: TextModifiers[] | TextModifiers; color?: TextColor; }>;
@@ -80,19 +80,7 @@ export const Headings: Story = {
 
 ```tsx
 export const CustomModifier: Story = {
-  render: () => (
-    <>
-      <Heading element="h4" modifiers={['h1', 'bold']} color="warning">
-        H4 heading with H1 styles and warning color
-      </Heading>
-      <Heading element="h2" modifiers={['normal', 'bold']} color="brand">
-        H2 heading with normal bold text and brand color
-      </Heading>
-      <Heading element="h1" modifiers={['normal']}>
-        H1 element with normal text styles
-      </Heading>
-    </>
-  ),
+  render: CustomModifierTemplate,
 };
 ```
 
@@ -142,8 +130,37 @@ export const SemanticHeadings: Story = {
 // …
 ```
 
+### Visual Test
+
+```tsx
+export const VisualTest: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+  render: () => (
+    <VerticalSpacing size={2}>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Default</Text>
+        <VisualTestStory story={Default} component={Heading} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Headings</Text>
+        <VisualTestStory story={Headings} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Custom modifier</Text>
+        <VisualTestStory story={CustomModifier} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Semantic headings</Text>
+        <VisualTestStory story={SemanticHeadings} />
+      </VerticalSpacing>
+    </VerticalSpacing>
+  ),
+};
+```
+
 Full story source: `src/tedi/components/base/typography/heading/heading.stories.tsx`.
 
 ## Related
 
-`Col`, `Row`, `Text`
+`Col`, `Row`, `VerticalSpacing`, `Text`

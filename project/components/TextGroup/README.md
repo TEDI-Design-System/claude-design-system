@@ -2,7 +2,7 @@ TextGroup from @tedi-design-system/react. Use via `window.Tedi.TextGroup` (the b
 
 Sub-components: `TextGroup.List`.
 
-Variants (see `preview.html`): Default, Position Type, Text Weight, Types, Has Slot, Horizontal Label Length, Long Text Values, Responsive, Custom Label, With List.
+Variants (see `preview.html`): Default, Position Type, Text Weight, Types, Has Slot, Horizontal Label Length, Long Text Values, Responsive, Custom Label, With List, Visual Test.
 
 ## Props
 
@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, Position Type, Text Weight, Types, Has S
 import * as React from 'react';
 
 /**
- * TextGroup from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/text-group/text-group.stories.tsx).
+ * TextGroup from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/content/text-group/text-group.stories.tsx).
  */
 export interface TextGroupProps {
   /** Type of text group layout */

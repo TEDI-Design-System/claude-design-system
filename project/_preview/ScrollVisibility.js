@@ -2032,7 +2032,7 @@ var __dsPreview = (() => {
   // src/tedi/components/misc/scroll-visibility/scroll-visibility.stories.tsx
   var import_react = __toESM(require_react(), 1);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -2043,7 +2043,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var text_default = ns["Text"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/floating-button/floating-button.tsx
+  // tedi:src/tedi/components/buttons/floating-button/floating-button.tsx
   var floating_button_exports = {};
   __export(floating_button_exports, {
     default: () => floating_button_default
@@ -2054,7 +2054,7 @@ var __dsPreview = (() => {
   var ns2 = window.Tedi;
   var floating_button_default = ns2["FloatingButton"] ?? ns2;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/scroll-visibility/scroll-visibility.tsx
+  // tedi:src/tedi/components/misc/scroll-visibility/scroll-visibility.tsx
   var scroll_visibility_exports = {};
   __export(scroll_visibility_exports, {
     default: () => scroll_visibility_default
@@ -2112,7 +2112,7 @@ var __dsPreview = (() => {
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(scroll_visibility_default, { ...args, animationDirection: "up", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
         "nav",
         {
-          "aria-label": "\xDCleval kinnituv navigatsioon",
+          "aria-label": "\xDCleval kinnituv",
           style: {
             width: "100%",
             position: "fixed",
@@ -2130,7 +2130,7 @@ var __dsPreview = (() => {
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(scroll_visibility_default, { ...args, animationDirection: "left", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
         "nav",
         {
-          "aria-label": "Vasakul kinnituv navigatsioon",
+          "aria-label": "Vasakul kinnituv",
           style: {
             width: NAVIGATION_HEIGHT,
             position: "fixed",
@@ -2149,7 +2149,7 @@ var __dsPreview = (() => {
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(scroll_visibility_default, { ...args, animationDirection: "right", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
         "nav",
         {
-          "aria-label": "Paremal kinnituv navigatsioon",
+          "aria-label": "Paremal kinnituv",
           style: {
             width: NAVIGATION_HEIGHT,
             position: "fixed",
@@ -2168,7 +2168,7 @@ var __dsPreview = (() => {
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(scroll_visibility_default, { ...args, animationDirection: "down", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
         "nav",
         {
-          "aria-label": "All kinnituv navigatsioon",
+          "aria-label": "All kinnituv",
           style: {
             width: "100%",
             position: "fixed",

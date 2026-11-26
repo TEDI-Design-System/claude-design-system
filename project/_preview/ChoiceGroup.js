@@ -64,25 +64,25 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      module.exports = window.Tedi;
-    }
-  });
-
   // react-global:react/jsx-runtime
   var require_jsx_runtime = __commonJS({
     "react-global:react/jsx-runtime"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
+    }
+  });
+
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      module.exports = window.Tedi;
     }
   });
 
@@ -102,6 +102,7 @@ var __dsPreview = (() => {
     RadioCardWithIcon: () => RadioCardWithIcon2,
     RadioRow: () => RadioRow2,
     Responsive: () => Responsive2,
+    VisualTest: () => VisualTest2,
     WithDefaultValue: () => WithDefaultValue2,
     WithError: () => WithError2,
     WithExtraContent: () => WithExtraContent2,
@@ -126,6 +127,7 @@ var __dsPreview = (() => {
     RadioCardWithIcon: () => RadioCardWithIcon,
     RadioRow: () => RadioRow,
     Responsive: () => Responsive,
+    VisualTest: () => VisualTest,
     WithDefaultValue: () => WithDefaultValue,
     WithError: () => WithError,
     WithExtraContent: () => WithExtraContent,
@@ -134,7 +136,7 @@ var __dsPreview = (() => {
   });
   init_define_import_meta_env();
   init_define_process_env();
-  var import_react = __toESM(require_react(), 1);
+  var import_react2 = __toESM(require_react(), 1);
 
   // .storybook/subcomponent-controls.ts
   init_define_import_meta_env();
@@ -211,7 +213,31 @@ var __dsPreview = (() => {
     return props;
   };
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/icon/icon.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/icon/icon.tsx
   var icon_exports = {};
   __export(icon_exports, {
     default: () => icon_default
@@ -222,7 +248,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var icon_default = ns["Icon"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -238,7 +264,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -252,7 +278,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -266,7 +292,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -277,7 +303,7 @@ var __dsPreview = (() => {
   var ns5 = window.Tedi;
   var vertical_spacing_default = ns5["VerticalSpacing"] ?? ns5;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/separator/separator.tsx
+  // tedi:src/tedi/components/misc/separator/separator.tsx
   var separator_exports = {};
   __export(separator_exports, {
     default: () => separator_default
@@ -288,7 +314,7 @@ var __dsPreview = (() => {
   var ns6 = window.Tedi;
   var separator_default = ns6["Separator"] ?? ns6;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/textfield/textfield.tsx
+  // tedi:src/tedi/components/form/textfield/textfield.tsx
   var textfield_exports = {};
   __export(textfield_exports, {
     default: () => textfield_default
@@ -299,7 +325,7 @@ var __dsPreview = (() => {
   var ns7 = window.Tedi;
   var textfield_default = ns7["TextField"] ?? ns7;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/choice-group/choice-group.tsx
+  // tedi:src/tedi/components/form/choice-group/choice-group.tsx
   var choice_group_exports = {};
   __export(choice_group_exports, {
     default: () => choice_group_default
@@ -311,7 +337,7 @@ var __dsPreview = (() => {
   var choice_group_default = ns8["ChoiceGroup"] ?? ns8;
 
   // src/tedi/components/form/choice-group/choice-group.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: choice_group_default,
     title: "TEDI-Ready/Components/Form/ChoiceGroup/ChoiceGroup",
@@ -334,7 +360,8 @@ var __dsPreview = (() => {
         exclude: ["sm", "md", "lg", "xl", "xxl"]
       },
       // ChoiceGroup is deprecated and slated for removal — skip the a11y gate for its stories.
-      a11y: { test: "off" }
+      a11y: { test: "off" },
+      chromatic: { disableSnapshot: true }
     }
   };
   var choice_group_stories_default = meta;
@@ -357,8 +384,8 @@ var __dsPreview = (() => {
       const suffix = `${withHelper}-${withIndicator}-${layout ?? "default"}`;
       let label = "Text";
       if (withIcons) {
-        label = /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(text_exports.Text, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: icons[i - 1], color: "inherit", display: "inline" }),
+        label = /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(text_exports.Text, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: icons[i - 1], color: "inherit", display: "inline" }),
           " Text"
         ] });
       }
@@ -380,8 +407,8 @@ var __dsPreview = (() => {
       };
     });
   };
-  var renderGroup = (inputType, variant, withHelper, withIndicator, layout, index, justifyContent = "start", withIcons = false) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { lg: 6, md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+  var renderGroup = (inputType, variant, withHelper, withIndicator, layout, index, justifyContent = "start", withIcons = false) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { lg: 6, md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       choice_group_default,
       {
         color: "primary",
@@ -405,7 +432,7 @@ var __dsPreview = (() => {
         layout
       }
     ) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { lg: 6, md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { lg: 6, md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       choice_group_default,
       {
         color: "secondary",
@@ -430,10 +457,10 @@ var __dsPreview = (() => {
       }
     ) })
   ] }, `${withIcons ? "icon-" : ""}${inputType}-${variant}-${layout}-${index}`);
-  var renderChoiceGroups = (inputType, layout, withIcons = false) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { lg: 6, md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: "Primary" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { lg: 6, md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: "Secondary" }) })
+  var renderChoiceGroups = (inputType, layout, withIcons = false) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { lg: 6, md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Primary" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { lg: 6, md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Secondary" }) })
     ] }),
     renderGroup(inputType, "primary", false, true, layout, 1, "start", withIcons),
     renderGroup(inputType, "primary", true, true, layout, 2, "start", withIcons),
@@ -460,7 +487,7 @@ var __dsPreview = (() => {
     },
     render: (args) => {
       const itemProps = getSubcomponentProps(args, "item");
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
         choice_group_default,
         {
           ...getPrimaryComponentProps(args),
@@ -501,24 +528,24 @@ var __dsPreview = (() => {
       items: generateItems({ index: 33 })
     }
   };
-  var RadioCardSegmented = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(vertical_spacing_exports.VerticalSpacing, { children: renderChoiceGroups("radio", "segmented") });
-  var RadioCardSeparated = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(vertical_spacing_exports.VerticalSpacing, { children: renderChoiceGroups("radio", "separated") });
-  var CheckboxCard = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(vertical_spacing_exports.VerticalSpacing, { children: renderChoiceGroups("checkbox", "separated") });
+  var RadioCardSegmented = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { children: renderChoiceGroups("radio", "segmented") });
+  var RadioCardSeparated = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { children: renderChoiceGroups("radio", "separated") });
+  var CheckboxCard = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { children: renderChoiceGroups("checkbox", "separated") });
   var RadioCardWithIcon = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { lg: 6, md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: "Primary" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { lg: 6, md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: "Secondary" }) })
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { lg: 6, md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Primary" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { lg: 6, md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Secondary" }) })
       ] }),
       renderGroup("radio", "primary", false, true, "segmented", 1, "start", true),
       renderGroup("radio", "secondary", true, true, "segmented", 2, "start", true)
     ] })
   };
   var CheckboxCardWithIcon = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { lg: 6, md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: "Primary" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { lg: 6, md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: "Secondary" }) })
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { lg: 6, md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Primary" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { lg: 6, md: 12, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Secondary" }) })
       ] }),
       renderGroup("checkbox", "primary", false, true, "separated", 5, "start", true),
       renderGroup("checkbox", "secondary", true, true, "separated", 6, "start", true)
@@ -526,12 +553,12 @@ var __dsPreview = (() => {
   };
   var WithError = {
     render: function Render(args) {
-      const [selectedValues, setSelectedValues] = (0, import_react.useState)([]);
+      const [selectedValues, setSelectedValues] = (0, import_react2.useState)([]);
       const hasError = Array.isArray(selectedValues) && selectedValues.length === 0;
       const handleChange = (value) => {
         setSelectedValues(value);
       };
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
         choice_group_default,
         {
           ...args,
@@ -609,9 +636,9 @@ var __dsPreview = (() => {
           label: "Enterprise plan",
           value: "enterprise",
           helper: {
-            text: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: 4, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(textfield_default, { id: "success-textfield-1", label: "Field 1" }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(textfield_default, { id: "success-textfield-2", label: "Field 2" })
+            text: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: 4, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(textfield_default, { id: "success-textfield-1", label: "Field 1" }),
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(textfield_default, { id: "success-textfield-2", label: "Field 2" })
             ] }) }) })
           }
         }
@@ -658,7 +685,7 @@ var __dsPreview = (() => {
     args: {
       inputType: "checkbox",
       direction: "row",
-      label: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: ["bold", "italic"], color: "brand", children: "Custom label" }),
+      label: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: ["bold", "italic"], color: "brand", children: "Custom label" }),
       id: "custom-label",
       name: "custom-label",
       items: generateItems({ index: 16 })
@@ -673,9 +700,9 @@ var __dsPreview = (() => {
       items: [
         {
           id: "radio-custom-item-labels-1",
-          label: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(text_exports.Text, { children: [
+          label: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(text_exports.Text, { children: [
             "Lorem ipsum dolor sit, amet",
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               separator_default,
               {
                 element: "span",
@@ -694,8 +721,8 @@ var __dsPreview = (() => {
         },
         {
           id: "radio-custom-item-labels-2",
-          label: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(text_exports.Text, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { display: "inline", name: "error", color: "danger", "aria-hidden": "true" }),
+          label: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(text_exports.Text, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { display: "inline", name: "error", color: "danger", "aria-hidden": "true" }),
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
           ] }),
           value: "radio-custom-item-labels-2",
@@ -703,8 +730,8 @@ var __dsPreview = (() => {
         },
         {
           id: "radio-custom-item-labels-3",
-          label: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(text_exports.Text, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { display: "inline", name: "check", color: "success", "aria-hidden": "true" }),
+          label: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(text_exports.Text, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { display: "inline", name: "check", color: "success", "aria-hidden": "true" }),
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
           ] }),
           value: "radio-custom-item-labels-3"
@@ -726,7 +753,7 @@ var __dsPreview = (() => {
       items: [
         {
           id: "checkbox-custom-item-labels-1",
-          label: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+          label: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
             "div",
             {
               style: {
@@ -742,9 +769,9 @@ var __dsPreview = (() => {
         },
         {
           id: "checkbox-custom-item-labels-2",
-          label: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "flex", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "check", color: "success", "aria-hidden": "true" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Lorem ipsum 2" })
+          label: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "flex", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "check", color: "success", "aria-hidden": "true" }),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Lorem ipsum 2" })
           ] }),
           value: "checkbox-custom-item-labels-2",
           defaultChecked: true
@@ -762,12 +789,65 @@ var __dsPreview = (() => {
       ]
     }
   };
+  var visualTestBlocks = [
+    { label: "Radio", content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Radio, component: choice_group_default }) },
+    { label: "Radio row", content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: RadioRow, component: choice_group_default }) },
+    { label: "Checkbox", content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Checkbox, component: choice_group_default }) },
+    { label: "Checkbox row", content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: CheckboxRow, component: choice_group_default }) },
+    { label: "Radio card segmented", content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: { render: RadioCardSegmented } }) },
+    { label: "Radio card separated", content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: { render: RadioCardSeparated } }) },
+    { label: "Checkbox card", content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: { render: CheckboxCard } }) },
+    { label: "Radio card with icon", content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: RadioCardWithIcon, component: choice_group_default }) },
+    {
+      label: "Checkbox card with icon",
+      content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: CheckboxCardWithIcon, component: choice_group_default })
+    },
+    { label: "With error", content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: WithError, component: choice_group_default }) },
+    {
+      label: "With default value",
+      content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+        VisualTestStory,
+        {
+          story: WithDefaultValue,
+          component: choice_group_default,
+          props: { id: "example-2-vt-default-value", name: "check-2-vt-default-value" }
+        }
+      )
+    },
+    {
+      label: "With indeterminate",
+      content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+        VisualTestStory,
+        {
+          story: WithIndeterminate,
+          component: choice_group_default,
+          props: { id: "example-2-vt-indeterminate", name: "check-2-vt-indeterminate" }
+        }
+      )
+    },
+    { label: "With extra content", content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: WithExtraContent, component: choice_group_default }) },
+    { label: "Custom label", content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: CustomLabel, component: choice_group_default }) },
+    { label: "Custom item labels", content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: CustomItemLabels, component: choice_group_default }) },
+    {
+      label: "Custom item HTML labels",
+      content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: CustomItemHTMLLabels, component: choice_group_default })
+    },
+    { label: "Responsive", content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Responsive, component: choice_group_default }) }
+  ];
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: visualTestBlocks.map(({ label, content }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: label }),
+      content
+    ] }, label)) })
+  };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -804,9 +884,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // ChoiceGroup.preview.tsx
@@ -829,5 +909,6 @@ var __dsPreview = (() => {
   var CustomLabel2 = compose(choice_group_stories_exports, "CustomLabel", G, B);
   var CustomItemLabels2 = compose(choice_group_stories_exports, "CustomItemLabels", G, B);
   var CustomItemHTMLLabels2 = compose(choice_group_stories_exports, "CustomItemHTMLLabels", G, B);
+  var VisualTest2 = compose(choice_group_stories_exports, "VisualTest", G, B);
   return __toCommonJS(ChoiceGroup_preview_exports);
 })();

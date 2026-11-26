@@ -64,25 +64,25 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      module.exports = window.Tedi;
-    }
-  });
-
   // react-global:react/jsx-runtime
   var require_jsx_runtime = __commonJS({
     "react-global:react/jsx-runtime"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
+    }
+  });
+
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      module.exports = window.Tedi;
     }
   });
 
@@ -95,6 +95,7 @@ var __dsPreview = (() => {
     ComplexCard: () => ComplexCard2,
     Default: () => Default2,
     States: () => States2,
+    VisualTest: () => VisualTest2,
     WithIconCard: () => WithIconCard2
   });
   init_define_import_meta_env();
@@ -109,19 +110,44 @@ var __dsPreview = (() => {
     ComplexCard: () => ComplexCard,
     Default: () => Default,
     States: () => States,
+    VisualTest: () => VisualTest,
     WithIconCard: () => WithIconCard,
     default: () => card_button_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
+  var import_react2 = __toESM(require_react(), 1);
+
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
   var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
 
   // src/tedi/helpers/index.ts
   var helpers_exports = {};
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-is-mounted.ts
+  // tedi:src/tedi/helpers/hooks/use-is-mounted.ts
   var use_is_mounted_exports = {};
   __export(use_is_mounted_exports, {
     default: () => use_is_mounted_default
@@ -135,7 +161,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_is_mounted_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-safe-id.ts
+  // tedi:src/tedi/helpers/hooks/use-safe-id.ts
   var use_safe_id_exports = {};
   __export(use_safe_id_exports, {
     default: () => use_safe_id_default
@@ -149,7 +175,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_safe_id_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-breakpoint.ts
+  // tedi:src/tedi/helpers/hooks/use-breakpoint.ts
   var use_breakpoint_exports = {};
   __export(use_breakpoint_exports, {
     default: () => use_breakpoint_default
@@ -163,7 +189,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_breakpoint_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-breakpoint-props.ts
+  // tedi:src/tedi/helpers/hooks/use-breakpoint-props.ts
   var use_breakpoint_props_exports = {};
   __export(use_breakpoint_props_exports, {
     default: () => use_breakpoint_props_default
@@ -177,7 +203,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_breakpoint_props_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-element-size.ts
+  // tedi:src/tedi/helpers/hooks/use-element-size.ts
   var use_element_size_exports = {};
   __export(use_element_size_exports, {
     default: () => use_element_size_default
@@ -191,7 +217,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_element_size_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-scroll.ts
+  // tedi:src/tedi/helpers/hooks/use-scroll.ts
   var use_scroll_exports = {};
   __export(use_scroll_exports, {
     default: () => use_scroll_default
@@ -205,7 +231,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_scroll_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-is-touch-device.ts
+  // tedi:src/tedi/helpers/hooks/use-is-touch-device.ts
   var use_is_touch_device_exports = {};
   __export(use_is_touch_device_exports, {
     default: () => use_is_touch_device_default
@@ -219,7 +245,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_is_touch_device_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-file-upload.ts
+  // tedi:src/tedi/helpers/hooks/use-file-upload.ts
   var use_file_upload_exports = {};
   __export(use_file_upload_exports, {
     default: () => use_file_upload_default
@@ -233,7 +259,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_file_upload_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-what-input.ts
+  // tedi:src/tedi/helpers/hooks/use-what-input.ts
   var use_what_input_exports = {};
   __export(use_what_input_exports, {
     default: () => use_what_input_default
@@ -247,7 +273,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_what_input_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-scroll-fade.ts
+  // tedi:src/tedi/helpers/hooks/use-scroll-fade.ts
   var use_scroll_fade_exports = {};
   __export(use_scroll_fade_exports, {
     default: () => use_scroll_fade_default
@@ -261,7 +287,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_scroll_fade_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/polymorphic/types.ts
+  // tedi:src/tedi/helpers/polymorphic/types.ts
   var types_exports = {};
   __export(types_exports, {
     default: () => types_default
@@ -275,7 +301,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, types_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/icon/icon.tsx
+  // tedi:src/tedi/components/base/icon/icon.tsx
   var icon_exports = {};
   __export(icon_exports, {
     default: () => icon_default
@@ -286,7 +312,7 @@ var __dsPreview = (() => {
   var ns12 = window.Tedi;
   var icon_default = ns12["Icon"] ?? ns12;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -297,7 +323,7 @@ var __dsPreview = (() => {
   var ns13 = window.Tedi;
   var text_default = ns13["Text"] ?? ns13;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/card/card.tsx
+  // tedi:src/tedi/components/content/card/card.tsx
   var card_exports = {};
   __export(card_exports, {
     default: () => card_default
@@ -308,7 +334,7 @@ var __dsPreview = (() => {
   var ns14 = window.Tedi;
   var card_default = ns14["Card"] ?? ns14;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/text-group/text-group.tsx
+  // tedi:src/tedi/components/content/text-group/text-group.tsx
   var text_group_exports = {};
   __export(text_group_exports, {
     default: () => text_group_default
@@ -324,7 +350,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -338,7 +364,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -352,7 +378,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -363,7 +389,7 @@ var __dsPreview = (() => {
   var ns18 = window.Tedi;
   var vertical_spacing_default = ns18["VerticalSpacing"] ?? ns18;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/separator/separator.tsx
+  // tedi:src/tedi/components/misc/separator/separator.tsx
   var separator_exports = {};
   __export(separator_exports, {
     default: () => separator_default
@@ -374,7 +400,7 @@ var __dsPreview = (() => {
   var ns19 = window.Tedi;
   var separator_default = ns19["Separator"] ?? ns19;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/stretch-content/stretch-content.tsx
+  // tedi:src/tedi/components/misc/stretch-content/stretch-content.tsx
   var stretch_content_exports = {};
   __export(stretch_content_exports, {
     default: () => stretch_content_default
@@ -385,7 +411,7 @@ var __dsPreview = (() => {
   var ns20 = window.Tedi;
   var stretch_content_default = ns20["StretchContent"] ?? ns20;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/tags/status-badge/status-badge.tsx
+  // tedi:src/tedi/components/tags/status-badge/status-badge.tsx
   var status_badge_exports = {};
   __export(status_badge_exports, {
     default: () => status_badge_default
@@ -396,7 +422,7 @@ var __dsPreview = (() => {
   var ns21 = window.Tedi;
   var status_badge_default = ns21["StatusBadge"] ?? ns21;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/card-button/card-button.tsx
+  // tedi:src/tedi/components/buttons/card-button/card-button.tsx
   var card_button_exports = {};
   __export(card_button_exports, {
     default: () => card_button_default
@@ -408,11 +434,12 @@ var __dsPreview = (() => {
   var card_button_default = ns22["CardButton"] ?? ns22;
 
   // src/tedi/components/buttons/card-button/card-button.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: card_button_exports.CardButton,
     title: "TEDI-Ready/Components/Buttons/CardButton",
     parameters: {
+      chromatic: { disableSnapshot: true },
       design: {
         type: "figma",
         url: "https://www.figma.com/design/jWiRIXhHRxwVdMSimKX2FF/TEDI-READY-2.54.76?node-id=4620-85618&m=dev"
@@ -421,22 +448,22 @@ var __dsPreview = (() => {
   };
   var card_button_stories_default = meta;
   var rowStyle = { display: "flex", alignItems: "center", justifyContent: "space-between", gap: "0.75rem" };
-  var ShortcutCard = ({ title, description }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: rowStyle, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", flexDirection: "column" }, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "bold", children: title }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: description })
+  var ShortcutCard = ({ title, description }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: rowStyle, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { display: "flex", flexDirection: "column" }, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "bold", children: title }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: description })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "arrow_right_alt", color: "secondary" })
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "arrow_right_alt", color: "secondary" })
   ] }) }) });
-  var IconCard = ({ icon, title, description }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { gutter: 0, style: { flex: "1 0 auto" }, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", style: { display: "flex" }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(stretch_content_exports.StretchContent, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card, { borderRadius: { right: false }, borderless: true, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card.Content, { background: "secondary", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: icon, color: "secondary" }) }) }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", style: { display: "flex" }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_exports.Separator, { axis: "vertical" }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { style: { display: "flex" }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(stretch_content_exports.StretchContent, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card, { borderRadius: { left: false }, borderless: true, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: rowStyle, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", flexDirection: "column" }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "bold", children: title }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: description })
+  var IconCard = ({ icon, title, description }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { gutter: 0, style: { flex: "1 0 auto" }, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", style: { display: "flex" }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(stretch_content_exports.StretchContent, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card, { borderRadius: { right: false }, borderless: true, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card.Content, { background: "secondary", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: icon, color: "secondary" }) }) }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", style: { display: "flex" }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_exports.Separator, { axis: "vertical" }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { style: { display: "flex" }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(stretch_content_exports.StretchContent, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card, { borderRadius: { left: false }, borderless: true, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: rowStyle, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { display: "flex", flexDirection: "column" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "bold", children: title }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: description })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "arrow_right_alt", color: "secondary" })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "arrow_right_alt", color: "secondary" })
     ] }) }) }) }) })
   ] }) });
   var BookingCard = ({
@@ -445,17 +472,17 @@ var __dsPreview = (() => {
     description,
     book,
     disabled
-  }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", alignItems: "center", gap: "0.75rem" }, children: [
+  }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { display: "flex", alignItems: "center", gap: "0.75rem" }, children: [
     lead,
-    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", flex: 1, flexDirection: "column" }, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "bold", children: title }),
-      description && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: description })
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { display: "flex", flex: 1, flexDirection: "column" }, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "bold", children: title }),
+      description && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: description })
     ] }),
     book ? (
       // The "Broneerima" call to action uses the neutral button-link colour
       // (brand in light mode, white in dark mode) — it can't be an actual `Button`,
       // since the whole card is already the clickable `CardButton`.
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
         "span",
         {
           style: {
@@ -465,103 +492,127 @@ var __dsPreview = (() => {
             color: disabled ? "var(--general-text-disabled)" : "var(--button-main-neutral-text-default)"
           },
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", children: "Broneerima" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "arrow_right_alt", color: "inherit" })
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", children: "Broneerima" }),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "arrow_right_alt", color: "inherit" })
           ]
         }
       )
-    ) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "arrow_right_alt", color: "secondary" })
+    ) : /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "arrow_right_alt", color: "secondary" })
   ] }) }) });
+  var DefaultTemplate = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(ShortcutCard, { title: "T\xF6\xF6v\xF5ime", description: "N\xE4iteks t\xF6\xF6v\xF5imetuslehed, t\xF6\xF6v\xF5ime hindamine" }) });
   var Default = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShortcutCard, { title: "T\xF6\xF6v\xF5ime", description: "N\xE4iteks t\xF6\xF6v\xF5imetuslehed, t\xF6\xF6v\xF5ime hindamine" }) })
+    render: DefaultTemplate
   };
+  var CardRowsTemplate = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+      BookingCard,
+      {
+        lead: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "bold", children: "8:30" }),
+        title: "Kardioloog",
+        description: "Valdkond",
+        book: true
+      }
+    ) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+      BookingCard,
+      {
+        lead: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "bold", children: "8:30" }),
+        title: "Kardioloog",
+        book: true
+      }
+    ) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+      BookingCard,
+      {
+        lead: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "monitor_heart", color: "secondary" }),
+        title: "Kardioloog",
+        description: "Valdkond",
+        book: true
+      }
+    ) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(BookingCard, { title: "Kardioloog", description: "Valdkond", book: true }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(IconCard, { icon: "monitor_heart", title: "Kardioloog", description: "Valdkond" }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { display: "flex", alignItems: "center", gap: "0.75rem" }, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+        "div",
+        {
+          style: { display: "flex", flex: 1, flexDirection: "column", alignItems: "flex-start", gap: "0.25rem" },
+          children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "bold", children: "Kardioloog" }),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_badge_exports.StatusBadge, { color: "success", children: "Kindlustatud | Tervisekassa" })
+          ]
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", color: "brand", children: "Broneerima" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "arrow_right_alt", color: "brand" })
+      ] })
+    ] }) }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { display: "flex", alignItems: "center", gap: "0.75rem" }, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "monitor_heart", color: "secondary" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { display: "flex", flex: 1, flexDirection: "column" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "bold", children: "Perearst" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: "Dr. Mari Maasikas" })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_badge_exports.StatusBadge, { color: "success", children: "Aktiivne" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "arrow_right_alt", color: "secondary" })
+    ] }) }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(BookingCard, { title: "\xDCldandmed" }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: rowStyle, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { display: "flex", flexDirection: "column" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "h4", color: "brand", children: "Minu andmed" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: "Isikuandmed ja sinu perearstiga seotud info." })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "arrow_right_alt", color: "secondary" })
+    ] }) }) }) })
+  ] });
   var CardRows = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-        BookingCard,
-        {
-          lead: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "bold", children: "8:30" }),
-          title: "Kardioloog",
-          description: "Valdkond",
-          book: true
-        }
-      ) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-        BookingCard,
-        {
-          lead: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "bold", children: "8:30" }),
-          title: "Kardioloog",
-          book: true
-        }
-      ) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-        BookingCard,
-        {
-          lead: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "monitor_heart", color: "secondary" }),
-          title: "Kardioloog",
-          description: "Valdkond",
-          book: true
-        }
-      ) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BookingCard, { title: "Kardioloog", description: "Valdkond", book: true }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(IconCard, { icon: "monitor_heart", title: "Kardioloog", description: "Valdkond" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", alignItems: "center", gap: "0.75rem" }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
-          "div",
-          {
-            style: { display: "flex", flex: 1, flexDirection: "column", alignItems: "flex-start", gap: "0.25rem" },
-            children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "bold", children: "Kardioloog" }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(status_badge_exports.StatusBadge, { color: "success", children: "Kindlustatud | Tervisekassa" })
-            ]
-          }
-        ),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem" }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", color: "brand", children: "Broneerima" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "arrow_right_alt", color: "brand" })
-        ] })
-      ] }) }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", alignItems: "center", gap: "0.75rem" }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "monitor_heart", color: "secondary" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", flex: 1, flexDirection: "column" }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "bold", children: "Perearst" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: "Dr. Mari Maasikas" })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(status_badge_exports.StatusBadge, { color: "success", children: "Aktiivne" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "arrow_right_alt", color: "secondary" })
-      ] }) }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BookingCard, { title: "\xDCldandmed" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: rowStyle, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", flexDirection: "column" }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "h4", color: "brand", children: "Minu andmed" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: "Isikuandmed ja sinu perearstiga seotud info." })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "arrow_right_alt", color: "secondary" })
-      ] }) }) }) })
-    ] })
+    render: CardRowsTemplate
   };
+  var CardShortcutTemplate = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { cols: 1, md: { cols: 2 }, gutter: 3, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(ShortcutCard, { title: "T\xF6\xF6v\xF5ime", description: "N\xE4iteks t\xF6\xF6v\xF5imetuslehed, t\xF6\xF6v\xF5ime hindamine" }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+      ShortcutCard,
+      {
+        title: "Esindus\xF5igus Terviseportaalis",
+        description: "V\xF5imaldab jagada ligip\xE4\xE4su sinu terviseandmetele"
+      }
+    ) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(ShortcutCard, { title: "Mootors\xF5iduki juhiloa t\xF5end", description: "Kehtib kuni 28.05.2024" }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(ShortcutCard, { title: "Minu hammaste tervis", description: "\xDClevaade sinu vastuv\xF5ttudest" }) }) })
+  ] });
   var CardShortcut = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { cols: 1, md: { cols: 2 }, gutter: 3, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShortcutCard, { title: "T\xF6\xF6v\xF5ime", description: "N\xE4iteks t\xF6\xF6v\xF5imetuslehed, t\xF6\xF6v\xF5ime hindamine" }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-        ShortcutCard,
-        {
-          title: "Esindus\xF5igus Terviseportaalis",
-          description: "V\xF5imaldab jagada ligip\xE4\xE4su sinu terviseandmetele"
-        }
-      ) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShortcutCard, { title: "Mootors\xF5iduki juhiloa t\xF5end", description: "Kehtib kuni 28.05.2024" }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShortcutCard, { title: "Minu hammaste tervis", description: "\xDClevaade sinu vastuv\xF5ttudest" }) }) })
-    ] })
+    render: CardShortcutTemplate
   };
+  var WithIconCardTemplate = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { cols: 1, lg: { cols: 3 }, gutter: 3, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(IconCard, { icon: "euro_symbol", title: "Isiku toetused", description: "Toetused mis on isikule ette n\xE4htud" }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(IconCard, { icon: "checklist", title: "Isiku hindamised", description: "Hindamised toetuste saamiseks" }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(IconCard, { icon: "contract", title: "Isiku teenused", description: "Teenused mis on v\xF5imaldatud peale hindamist" }) }) })
+  ] });
   var WithIconCard = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { cols: 1, lg: { cols: 3 }, gutter: 3, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(IconCard, { icon: "euro_symbol", title: "Isiku toetused", description: "Toetused mis on isikule ette n\xE4htud" }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(IconCard, { icon: "checklist", title: "Isiku hindamised", description: "Hindamised toetuste saamiseks" }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(IconCard, { icon: "contract", title: "Isiku teenused", description: "Teenused mis on v\xF5imaldatud peale hindamist" }) }) })
-    ] })
+    render: WithIconCardTemplate
   };
   var STATE_ROWS = ["Default", "Hover", "Active", "Focus", "Disabled"];
+  var StatesTemplate = () => {
+    const breakpoint = (0, helpers_exports.useBreakpoint)();
+    const isMobile = (0, helpers_exports.isBreakpointBelow)(breakpoint, "md");
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+      "div",
+      {
+        style: {
+          display: "grid",
+          gridTemplateColumns: isMobile ? "1fr" : "auto 1fr 1fr",
+          gap: isMobile ? "0.5rem" : "1rem",
+          alignItems: "center"
+        },
+        children: STATE_ROWS.map((state) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_react2.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", color: "primary", children: state }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { "data-pseudo": state, disabled: state === "Disabled", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(BookingCard, { title: "Kardioloog", description: "Valdkond", book: true, disabled: state === "Disabled" }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { "data-pseudo": state, disabled: state === "Disabled", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(IconCard, { icon: "monitor_heart", title: "Kardioloog", description: "Valdkond" }) })
+        ] }, state))
+      }
+    );
+  };
   var States = {
     parameters: {
       pseudo: {
@@ -570,61 +621,85 @@ var __dsPreview = (() => {
         focusVisible: '[data-pseudo="Focus"]'
       }
     },
-    render: () => {
-      const breakpoint = (0, helpers_exports.useBreakpoint)();
-      const isMobile = (0, helpers_exports.isBreakpointBelow)(breakpoint, "md");
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-        "div",
-        {
-          style: {
-            display: "grid",
-            gridTemplateColumns: isMobile ? "1fr" : "auto 1fr 1fr",
-            gap: isMobile ? "0.5rem" : "1rem",
-            alignItems: "center"
-          },
-          children: STATE_ROWS.map((state) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_react.Fragment, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", color: "primary", children: state }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { "data-pseudo": state, disabled: state === "Disabled", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BookingCard, { title: "Kardioloog", description: "Valdkond", book: true, disabled: state === "Disabled" }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { "data-pseudo": state, disabled: state === "Disabled", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(IconCard, { icon: "monitor_heart", title: "Kardioloog", description: "Valdkond" }) })
-          ] }, state))
-        }
-      );
-    }
+    render: StatesTemplate
   };
+  var AsLinkTemplate = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { as: "a", href: "#", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(ShortcutCard, { title: "T\xF6\xF6v\xF5ime", description: "N\xE4iteks t\xF6\xF6v\xF5imetuslehed, t\xF6\xF6v\xF5ime hindamine" }) });
   var AsLink = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { as: "a", href: "#", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShortcutCard, { title: "T\xF6\xF6v\xF5ime", description: "N\xE4iteks t\xF6\xF6v\xF5imetuslehed, t\xF6\xF6v\xF5ime hindamine" }) })
+    render: AsLinkTemplate
   };
-  var ComplexCard = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(card_exports.Card, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { gutter: 0, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", style: { display: "flex" }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(stretch_content_exports.StretchContent, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card, { borderRadius: { right: false, bottom: false }, borderless: true, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card.Content, { background: "secondary", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "prescriptions", color: "secondary" }) }) }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", style: { display: "flex" }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_exports.Separator, { axis: "vertical" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card, { borderRadius: { left: false, bottom: false }, borderless: true, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { ...rowStyle, flexWrap: "wrap" }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", flexDirection: "column" }, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "bold", children: "Amlodipiin 50mg" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: "Amlodipin-rathiopharm 50mg" })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", flexWrap: "wrap", alignItems: "center", gap: "0.75rem" }, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(status_badge_exports.StatusBadge, { color: "success", variant: "bordered", children: "Kehtiv" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: "Kehtiv kuni 12.05.2024" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "arrow_right_alt", color: "secondary" })
-          ] })
-        ] }) }) }) })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_exports.Separator, {}),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { cols: 1, md: { cols: 3 }, gutter: 2, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_group_exports.TextGroup, { type: "vertical", label: "Toimeaine", value: "Amlodipiin" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_group_exports.TextGroup, { type: "vertical", label: "Kogus", value: "30 tk" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_group_exports.TextGroup, { type: "vertical", label: "V\xE4lja ostmata", value: "5 / 6 retsepti" }) })
-      ] }) })
+  var ComplexCardTemplate = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_button_exports.CardButton, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(card_exports.Card, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { gutter: 0, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", style: { display: "flex" }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(stretch_content_exports.StretchContent, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card, { borderRadius: { right: false, bottom: false }, borderless: true, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card.Content, { background: "secondary", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "prescriptions", color: "secondary" }) }) }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", style: { display: "flex" }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_exports.Separator, { axis: "vertical" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card, { borderRadius: { left: false, bottom: false }, borderless: true, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { ...rowStyle, flexWrap: "wrap" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { display: "flex", flexDirection: "column" }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "bold", children: "Amlodipiin 50mg" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: "Amlodipin-rathiopharm 50mg" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { display: "flex", flexWrap: "wrap", alignItems: "center", gap: "0.75rem" }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_badge_exports.StatusBadge, { color: "success", variant: "bordered", children: "Kehtiv" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: "Kehtiv kuni 12.05.2024" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "arrow_right_alt", color: "secondary" })
+        ] })
+      ] }) }) }) })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_exports.Separator, {}),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { cols: 1, md: { cols: 3 }, gutter: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_group_exports.TextGroup, { type: "vertical", label: "Toimeaine", value: "Amlodipiin" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_group_exports.TextGroup, { type: "vertical", label: "Kogus", value: "30 tk" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_group_exports.TextGroup, { type: "vertical", label: "V\xE4lja ostmata", value: "5 / 6 retsepti" }) })
     ] }) })
+  ] }) });
+  var ComplexCard = {
+    render: ComplexCardTemplate
+  };
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: {
+      chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS },
+      pseudo: {
+        hover: '[data-pseudo="Hover"]',
+        active: '[data-pseudo="Active"]',
+        focusVisible: '[data-pseudo="Focus"]'
+      }
+    },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Card rows" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: CardRows })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Card shortcut" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: CardShortcut })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "With icon card" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: WithIconCard })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "States" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: States })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "As link" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: AsLink })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Complex card" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: ComplexCard })
+      ] })
+    ] })
   };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -661,9 +736,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // CardButton.preview.tsx
@@ -676,5 +751,6 @@ var __dsPreview = (() => {
   var States2 = compose(card_button_stories_exports, "States", G, B);
   var AsLink2 = compose(card_button_stories_exports, "AsLink", G, B);
   var ComplexCard2 = compose(card_button_stories_exports, "ComplexCard", G, B);
+  var VisualTest2 = compose(card_button_stories_exports, "VisualTest", G, B);
   return __toCommonJS(CardButton_preview_exports);
 })();

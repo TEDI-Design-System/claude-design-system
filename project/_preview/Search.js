@@ -173,7 +173,7 @@ var __dsPreview = (() => {
   var import_react = __toESM(require_react(), 1);
   var import_test = __toESM(require_test(), 1);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -184,7 +184,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var text_default = ns["Text"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -195,7 +195,7 @@ var __dsPreview = (() => {
   var ns2 = window.Tedi;
   var button_default = ns2["Button"] ?? ns2;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/card/index.ts
+  // tedi:src/tedi/components/content/card/index.ts
   var card_exports = {};
   __export(card_exports, {
     default: () => card_default
@@ -211,7 +211,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -225,7 +225,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -239,7 +239,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -250,7 +250,7 @@ var __dsPreview = (() => {
   var ns6 = window.Tedi;
   var vertical_spacing_default = ns6["VerticalSpacing"] ?? ns6;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/option-content/option-content.tsx
+  // tedi:src/tedi/components/misc/option-content/option-content.tsx
   var option_content_exports = {};
   __export(option_content_exports, {
     default: () => option_content_default
@@ -261,7 +261,7 @@ var __dsPreview = (() => {
   var ns7 = window.Tedi;
   var option_content_default = ns7["OptionContent"] ?? ns7;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/separator/separator.tsx
+  // tedi:src/tedi/components/misc/separator/separator.tsx
   var separator_exports = {};
   __export(separator_exports, {
     default: () => separator_default
@@ -272,7 +272,7 @@ var __dsPreview = (() => {
   var ns8 = window.Tedi;
   var separator_default = ns8["Separator"] ?? ns8;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/search/search.tsx
+  // tedi:src/tedi/components/form/search/search.tsx
   var search_exports = {};
   __export(search_exports, {
     default: () => search_default
@@ -311,8 +311,9 @@ var __dsPreview = (() => {
     const { array, property, id = "search", ...textFieldProps } = args;
     return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "example-list", children: array.map((value, key) => {
       const baseId = `${id}-${property}-${value}`;
+      const caption = value ? value.charAt(0).toUpperCase() + value.slice(1) : "";
       return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { className: `${key === array.length - 1 ? "" : "border-bottom"} padding-14-16`, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: 12, sm: 2, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: value ? value.charAt(0).toUpperCase() + value.slice(1) : "" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: 12, sm: 2, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: caption }) }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: 12, sm: 10, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
             search_exports.Search,
@@ -320,7 +321,7 @@ var __dsPreview = (() => {
               ...textFieldProps,
               ...{ [property]: value },
               id: `${baseId}-plain`,
-              ariaLabel: `Search \u2013 ${value} \u2013 plain`
+              ariaLabel: `${caption}, lihtne`
             }
           ),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
@@ -329,8 +330,8 @@ var __dsPreview = (() => {
               ...textFieldProps,
               ...{ [property]: value },
               id: `${baseId}-icon`,
-              ariaLabel: `Search \u2013 ${value} \u2013 icon button`,
-              button: { icon: "search", size: value, "aria-label": "Otsi" }
+              ariaLabel: `${caption}, ikooniga`,
+              button: { icon: "search", "aria-label": "Otsi" }
             }
           ),
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
@@ -339,8 +340,8 @@ var __dsPreview = (() => {
               ...textFieldProps,
               ...{ [property]: value },
               id: `${baseId}-button`,
-              ariaLabel: `Search \u2013 ${value} \u2013 button`,
-              button: { iconLeft: "search", children: "Otsi", size: value }
+              ariaLabel: `${caption}, tekstiga`,
+              button: { iconLeft: "search", children: "Otsi" }
             }
           )
         ] }) })
@@ -354,15 +355,7 @@ var __dsPreview = (() => {
         const stateId = `${id}-${state.toLowerCase()}`;
         return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { lg: 2, xs: 12, className: "flex align-items-center gap-3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: state }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-            search_exports.Search,
-            {
-              ...textFieldProps,
-              id: stateId,
-              disabled: state === "Disabled",
-              ariaLabel: `Search \u2013 ${state}`
-            }
-          ) })
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(search_exports.Search, { ...textFieldProps, id: stateId, ariaLabel: state, disabled: state === "Disabled" }) })
         ] }, index);
       }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
@@ -372,7 +365,7 @@ var __dsPreview = (() => {
           {
             ...textFieldProps,
             id: `${id}-success`,
-            ariaLabel: "Search \u2013 Success",
+            ariaLabel: "Success",
             helper: { text: "Tagasiside tekst", type: "valid" }
           }
         ) })
@@ -384,7 +377,7 @@ var __dsPreview = (() => {
           {
             ...textFieldProps,
             id: `${id}-error`,
-            ariaLabel: "Search \u2013 Error",
+            ariaLabel: "Error",
             helper: { text: "Tagasiside tekst", type: "error" }
           }
         ) })
@@ -510,15 +503,16 @@ var __dsPreview = (() => {
     args: {
       id: "search-accessible",
       placeholder: "Otsi tooteid v\xF5i teenuseid...",
-      ariaLabel: "Otsi tooteid v\xF5i teenuseid"
+      label: "Otsi tooteid v\xF5i teenuseid",
+      hideLabel: true
     },
     parameters: {
       docs: {
         description: {
           story: `
 Always prefer a native \`<label>\` element for form controls.
-If the label must not be visible in the UI, hide it visually using an \`sr-only\` (or equivalent) class rather than removing it. This preserves correct semantics and provides the most reliable experience for screen reader users.
-Use \`ariaLabel\` only as a fallback when a real \`<label>\` cannot be rendered. This follows WCAG 2.1 and EN 301 549 9.2.5.3.
+If the label must not be visible in the UI, hide it with \`hideLabel\` rather than removing it. This preserves correct semantics and provides the most reliable experience for screen reader users.
+\`ariaLabel\` names the search landmark, not the field. Set it only when the page has more than one search.
           `
         }
       }

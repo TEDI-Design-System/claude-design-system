@@ -2,7 +2,7 @@ VerticalStepper from @tedi-design-system/react. Use via `window.Tedi.VerticalSte
 
 Sub-components: `VerticalStepper.Item`, `VerticalStepper.SubItem`.
 
-Variants (see `preview.html`): Default, With Descriptions, With Status Badges, With Button, With Links, Compact, States, Responsive.
+Variants (see `preview.html`): Default, With Descriptions, With Status Badges, With Button, With Links, Compact, States, Responsive, Visual Test.
 
 ## Props
 
@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, With Descriptions, With Status Badges, W
 import * as React from 'react';
 
 /**
- * VerticalStepper from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/vertical-stepper/vertical-stepper.stories.tsx).
+ * VerticalStepper from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/navigation/vertical-stepper/vertical-stepper.stories.tsx).
  */
 export interface VerticalStepperProps {
   /** `VerticalStepper.Item` elements (and optional `Separator`s between them). Items are auto-numbered in source order. */
@@ -110,6 +110,11 @@ export const WithStatusBadges: Story = {
     </Frame>
   ),
 };
+
+/**
+ * `titleId` puts an id on the step title, so an action in `endSlot` can reference it with `aria-describedby`.
+ * Links also appear in a screen reader's links list, where descriptions are not read: give them the context in their text instead (see With Links).
+ */
 ```
 
 ### With Button
@@ -121,10 +126,11 @@ export const WithButton: Story = {
       <VerticalStepper aria-label="Andmete sisestus">
         <VerticalStepper.Item
           title="Isikuandmed"
+          titleId="step-personal-data-title"
           state="completed"
           href="#b1"
           endSlot={
-            <Button visualType="secondary" size="small" iconLeft="add">
+            <Button visualType="secondary" size="small" iconLeft="add" aria-describedby="step-personal-data-title">
               Lisa isik
             </Button>
           }
@@ -151,7 +157,7 @@ export const WithLinks: Story = {
           href="#l1"
           endSlot={
             <Link href="#read-1" iconRight="arrow_forward">
-              Loe rohkem
+              Loe rohkem<span className="visually-hidden">: Vaimne tervis</span>
             </Link>
           }
         />
@@ -161,7 +167,7 @@ export const WithLinks: Story = {
           href="#l2"
           endSlot={
             <Link href="#read-2" iconRight="arrow_forward">
-              Loe rohkem
+              Loe rohkem<span className="visually-hidden">: Füüsiline tervis</span>
             </Link>
           }
         />
@@ -177,23 +183,7 @@ export const WithLinks: Story = {
 
 ```tsx
 export const Compact: Story = {
-  render: () => (
-    <Frame>
-      <VerticalStepper aria-label="Hindamise edenemine" compact>
-        <VerticalStepper.Item title="Sotsiaalne võrgustik" current href="#c1" />
-        <VerticalStepper.Item title="Sotsiaalsed suhted" state="completed" defaultOpen>
-          <VerticalStepper.SubItem title="Sõbrad" state="completed" onClick={noop} />
-          <VerticalStepper.SubItem title="Pere" onClick={noop} />
-        </VerticalStepper.Item>
-        <VerticalStepper.Item title="Vaimne tervis" state="completed" href="#c3" />
-        <VerticalStepper.Item title="Füüsiline tervis" state="completed" href="#c4" />
-        <VerticalStepper.Item title="Elukeskkond" state="completed" href="#c5" />
-        <VerticalStepper.Item title="Hõivatus" state="error" href="#c6" />
-        <VerticalStepper.Item title="Vaba aeg ja huvitegevused" state="completed" href="#c7" />
-        <VerticalStepper.Item title="Igapäevaelu toimingud" href="#c8" />
-      </VerticalStepper>
-    </Frame>
-  ),
+  render: () => <CompactTemplate />,
 };
 ```
 

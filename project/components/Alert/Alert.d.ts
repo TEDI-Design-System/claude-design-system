@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Alert from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/notifications/alert/alert.stories.tsx).
+ * Alert from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/notifications/alert/alert.stories.tsx).
  */
 export interface AlertProps {
   /** The primary content displayed within the alert. This can include text, links, or other elements. */
@@ -16,7 +16,7 @@ export interface AlertProps {
   onClose?: () => void;
   /** Custom content for the right-side slot of the alert (e.g. a CTA button, a link, or a small icon stack). Replaces the default close button when provided. Use this instead of squeezing buttons into `children` so the layout slot is reserved and aligned consistently. */
   action?: React.ReactNode;
-  /** The ARIA role of the alert, informing screen readers about the alert's purpose. Options: - 'alert': For high-priority messages that demand immediate attention. - 'status': For less urgent messages providing feedback or updates. - 'none': Used when no ARIA role is needed. */
+  /** How screen readers announce the icon, title and message (buttons stay outside the announcement). - 'none': static content already on the page when it loads. Some screen readers read a role="alert" present at load immediately. - 'status': non-urgent message that appears later (saved, info). Announced politely. - 'alert': urgent message that appears later (error, needs action). Announced assertively. */
   role?: 'alert' | 'status' | 'none';
   /** Semantic heading level for alert titles to ensure WCAG compliance. */
   titleElement?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';

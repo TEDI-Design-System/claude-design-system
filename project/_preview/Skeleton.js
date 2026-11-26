@@ -64,6 +64,19 @@ var __dsPreview = (() => {
     }
   });
 
+  // react-global:react/jsx-runtime
+  var require_jsx_runtime = __commonJS({
+    "react-global:react/jsx-runtime"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      var R = window.React;
+      function jsx4(type, props, key) {
+        return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
+      }
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
+    }
+  });
+
   // tedi-namespace:tedi-namespace
   var require_tedi_namespace = __commonJS({
     "tedi-namespace:tedi-namespace"(exports, module) {
@@ -73,26 +86,14 @@ var __dsPreview = (() => {
     }
   });
 
-  // react-global:react/jsx-runtime
-  var require_jsx_runtime = __commonJS({
-    "react-global:react/jsx-runtime"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      var R = window.React;
-      function jsx3(type, props, key) {
-        return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
-      }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
-    }
-  });
-
   // Skeleton.preview.tsx
   var Skeleton_preview_exports = {};
   __export(Skeleton_preview_exports, {
     Accessibility: () => Accessibility2,
     Default: () => Default2,
     SkeletonHeight: () => SkeletonHeight2,
-    SkeletonWidth: () => SkeletonWidth2
+    SkeletonWidth: () => SkeletonWidth2,
+    VisualTest: () => VisualTest2
   });
   init_define_import_meta_env();
   init_define_process_env();
@@ -104,11 +105,12 @@ var __dsPreview = (() => {
     Default: () => Default,
     SkeletonHeight: () => SkeletonHeight,
     SkeletonWidth: () => SkeletonWidth,
+    VisualTest: () => VisualTest,
     default: () => skeleton_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
-  var import_react = __toESM(require_react(), 1);
+  var import_react2 = __toESM(require_react(), 1);
 
   // .storybook/subcomponent-controls.ts
   init_define_import_meta_env();
@@ -185,7 +187,42 @@ var __dsPreview = (() => {
     return props;
   };
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/typography/text/text.tsx
+  var text_exports = {};
+  __export(text_exports, {
+    default: () => text_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(text_exports, __toESM(require_tedi_namespace()));
+  var ns = window.Tedi;
+  var text_default = ns["Text"] ?? ns;
+
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -193,15 +230,15 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(button_exports, __toESM(require_tedi_namespace()));
-  var ns = window.Tedi;
-  var button_default = ns["Button"] ?? ns;
+  var ns2 = window.Tedi;
+  var button_default = ns2["Button"] ?? ns2;
 
   // src/tedi/components/layout/grid/index.ts
   var grid_exports = {};
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -209,13 +246,13 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(row_exports, __toESM(require_tedi_namespace()));
-  var ns2 = window.Tedi;
-  var row_default = ns2["Row"] ?? ns2;
+  var ns3 = window.Tedi;
+  var row_default = ns3["Row"] ?? ns3;
 
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -223,13 +260,13 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(col_exports, __toESM(require_tedi_namespace()));
-  var ns3 = window.Tedi;
-  var col_default = ns3["Col"] ?? ns3;
+  var ns4 = window.Tedi;
+  var col_default = ns4["Col"] ?? ns4;
 
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -237,15 +274,15 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(vertical_spacing_exports, __toESM(require_tedi_namespace()));
-  var ns4 = window.Tedi;
-  var vertical_spacing_default = ns4["VerticalSpacing"] ?? ns4;
+  var ns5 = window.Tedi;
+  var vertical_spacing_default = ns5["VerticalSpacing"] ?? ns5;
 
   // src/tedi/components/loaders/skeleton/index.tsx
   var skeleton_exports2 = {};
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/loaders/skeleton/skeleton.tsx
+  // tedi:src/tedi/components/loaders/skeleton/skeleton.tsx
   var skeleton_exports = {};
   __export(skeleton_exports, {
     default: () => skeleton_default
@@ -253,13 +290,13 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(skeleton_exports, __toESM(require_tedi_namespace()));
-  var ns5 = window.Tedi;
-  var skeleton_default = ns5["Skeleton"] ?? ns5;
+  var ns6 = window.Tedi;
+  var skeleton_default = ns6["Skeleton"] ?? ns6;
 
   // src/tedi/components/loaders/skeleton/index.tsx
   __reExport(skeleton_exports2, skeleton_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/loaders/skeleton/skeleton-block/skeleton-block.tsx
+  // tedi:src/tedi/components/loaders/skeleton/skeleton-block/skeleton-block.tsx
   var skeleton_block_exports = {};
   __export(skeleton_block_exports, {
     default: () => skeleton_block_default
@@ -267,14 +304,14 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(skeleton_block_exports, __toESM(require_tedi_namespace()));
-  var ns6 = window.Tedi;
-  var skeleton_block_default = ns6["SkeletonBlock"] ?? ns6;
+  var ns7 = window.Tedi;
+  var skeleton_block_default = ns7["SkeletonBlock"] ?? ns7;
 
   // src/tedi/components/loaders/skeleton/index.tsx
   __reExport(skeleton_exports2, skeleton_block_exports);
 
   // src/tedi/components/loaders/skeleton/skeleton.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: skeleton_exports2.Skeleton,
     title: "TEDI-Ready/Components/Loader/Skeleton",
@@ -298,22 +335,23 @@ var __dsPreview = (() => {
       design: {
         type: "figma",
         url: "https://www.figma.com/file/jWiRIXhHRxwVdMSimKX2FF/TEDI-Design-System-(draft)?type=design&node-id=2188-34298&m=dev"
-      }
+      },
+      chromatic: { disableSnapshot: true }
     }
   };
   var skeleton_stories_default = meta;
-  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton, { ...args, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton.Block, { height: "p" }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton.Block, { height: "h3" }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton.Block, { height: "h2" }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton.Block, { height: "h1" }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton.Block, { height: 100 })
+  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton, { ...args, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton.Block, { height: "p" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton.Block, { height: "h3" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton.Block, { height: "h2" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton.Block, { height: "h1" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton.Block, { height: 100 })
   ] }) });
-  var TemplateWidth = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton, { ...args, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton.Block, { width: 50, height: "p" }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton.Block, { width: 75, height: "h3" }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton.Block, { width: "36px", height: "h2" }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton.Block, { width: "auto", height: "h1" })
+  var TemplateWidth = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton, { ...args, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton.Block, { width: 50, height: "p" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton.Block, { width: 75, height: "h3" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton.Block, { width: "36px", height: "h2" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton.Block, { width: "auto", height: "h1" })
   ] }) });
   var Default = {
     argTypes: {
@@ -328,7 +366,7 @@ var __dsPreview = (() => {
       block__width: 50,
       block__height: "h2"
     },
-    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton, { ...getPrimaryComponentProps(args), children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton.Block, { ...getSubcomponentProps(args, "block") }) })
+    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton, { ...getPrimaryComponentProps(args), children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton.Block, { ...getSubcomponentProps(args, "block") }) })
   };
   var SkeletonHeight = {
     render: Template,
@@ -343,7 +381,7 @@ var __dsPreview = (() => {
     }
   };
   var AccessibilityTemplate = ({ style, id, remove, delay = 3e3, ...args }) => {
-    import_react.default.useEffect(() => {
+    import_react2.default.useEffect(() => {
       const timeout = setTimeout(() => {
         remove(id);
       }, delay);
@@ -351,23 +389,24 @@ var __dsPreview = (() => {
         clearTimeout(timeout);
       };
     }, [delay, id, remove]);
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton, { ...args, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton.Block, { width: 100, height: "p", style }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton.Block, { width: 75, height: 29, style }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton.Block, { width: 40, height: 50, style }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(skeleton_exports2.Skeleton.Block, { width: 80, style })
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton, { ...args, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton.Block, { width: 100, height: "p", style }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton.Block, { width: 75, height: 29, style }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton.Block, { width: 40, height: 50, style }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(skeleton_exports2.Skeleton.Block, { width: 80, style })
     ] }) });
   };
   var Accessibility = {
+    parameters: { visualTest: false },
     render: (args) => {
-      const [skeletons, setSkeletons] = import_react.default.useState([]);
+      const [skeletons, setSkeletons] = import_react2.default.useState([]);
       const removeSkeleton = (id) => setSkeletons((prevState) => prevState.filter((skeleton) => skeleton.id !== id));
       const addSkeleton = (skeleton) => {
         setSkeletons((prevState) => [...prevState, { ...skeleton, remove: removeSkeleton }]);
       };
-      const renderButton = (label, options) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { onClick: () => addSkeleton(options), children: label }) });
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { gutterX: 2, children: [
+      const renderButton = (label, options) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { onClick: () => addSkeleton(options), children: label }) });
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { gutterX: 2, children: [
           renderButton("Add a short loading block", { id: `skeleton-${skeletons.length}`, delay: 900 }),
           renderButton("Add a long loading block", {
             id: `skeleton-${skeletons.length}`,
@@ -380,16 +419,34 @@ var __dsPreview = (() => {
             completedLabel: "Custom block has finished loading"
           })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: skeletons?.length ? skeletons.map((skeleton) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { xs: 12, md: 3, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AccessibilityTemplate, { ...args, ...skeleton }) }, skeleton.id)) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: "No loaders" }) })
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: skeletons?.length ? skeletons.map((skeleton) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { xs: 12, md: 3, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(AccessibilityTemplate, { ...args, ...skeleton }) }, skeleton.id)) : /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: "No loaders" }) })
       ] });
     }
+  };
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Height" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: SkeletonHeight })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Width" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: SkeletonWidth })
+      ] })
+    ] })
   };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React2 = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -426,9 +483,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // Skeleton.preview.tsx
@@ -438,5 +495,6 @@ var __dsPreview = (() => {
   var SkeletonHeight2 = compose(skeleton_stories_exports, "SkeletonHeight", G, B);
   var SkeletonWidth2 = compose(skeleton_stories_exports, "SkeletonWidth", G, B);
   var Accessibility2 = compose(skeleton_stories_exports, "Accessibility", G, B);
+  var VisualTest2 = compose(skeleton_stories_exports, "VisualTest", G, B);
   return __toCommonJS(Skeleton_preview_exports);
 })();

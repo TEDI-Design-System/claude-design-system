@@ -2,7 +2,7 @@ TableOfContents from @tedi-design-system/react. Use via `window.Tedi.TableOfCont
 
 Sub-components: `TableOfContents.Item`, `TableOfContents.Collapsible`.
 
-Variants (see `preview.html`): Default, Item States, Transparent, With Slot, Numbered, With Icon, Headless, With Separator, Bordered, Sticky In Layout, Collapsible, Collapsible Hide On Scroll.
+Variants (see `preview.html`): Default, Item States, Transparent, With Slot, Numbered, With Icon, Headless, With Separator, Divided, In Popover, Sticky In Layout, Collapsible, Collapsible Hide On Scroll, Visual Test.
 
 ## Props
 
@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, Item States, Transparent, With Slot, Num
 import * as React from 'react';
 
 /**
- * TableOfContents from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/table-of-contents/table-of-contents.stories.tsx).
+ * TableOfContents from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/navigation/table-of-contents/table-of-contents.stories.tsx).
  */
 export interface TableOfContentsProps {
   /** `TableOfContents.Item` elements. An item's non-`Item` children are its link / label; nested `TableOfContents.Item` children become its sub-items. */
@@ -24,7 +24,7 @@ export interface TableOfContentsProps {
   /** Id of the currently active item. The active item gets the left accent bar and active link colour. When `defaultOpen` is `false`, the branch leading to it is the only one kept expanded. */
   activeId?: string;
   /** Draws a divider between items so the list reads as a set of separated rows. The last item has no divider — the card border closes the list. */
-  bordered?: boolean;
+  divided?: boolean;
   /** Whether every item's sub-items are expanded by default. Set `false` to make the list behave like an accordion: only the branch leading to `activeId` keeps its nested children visible. */
   defaultOpen?: boolean;
   /** Render the list as an ordered list with auto-generated hierarchical numbers (`1.`, `2.`, `2.1`, …) shown before each item. */
@@ -85,15 +85,15 @@ type TableOfContentsBreakpointProps = {
 export const Default: Story = {
   args: {
     heading: 'Sisukord',
-    activeId: 'section-3',
+    activeId: 'methods',
     variant: 'default',
     headingLevel: 'h3',
     sticky: false,
     numbered: false,
-    bordered: false,
+    divided: false,
     defaultOpen: true,
   },
-  render: (args) => <TableOfContents {...args}>{sectionItems()}</TableOfContents>,
+  render: (args) => <TableOfContents {...args}>{tocItems()}</TableOfContents>,
 };
 ```
 
@@ -130,14 +130,14 @@ export const ItemStates: Story = {
     const columns: {
       header: string;
       numbered?: boolean;
-      bordered?: boolean;
+      divided?: boolean;
       options?: { icon?: boolean; separator?: boolean };
     }[] = [
       { header: 'Default' },
       { header: 'With number', numbered: true },
       { header: 'With icon', options: { icon: true } },
       { header: 'With separator', options: { separator: true } },
-      { header: 'With border', bordered: true },
+      { header: 'Divided', divided: true },
     ];
 
 // …
@@ -147,9 +147,10 @@ export const ItemStates: Story = {
 
 ```tsx
 export const Transparent: Story = {
+  parameters: renderedSource,
   render: () => (
-    <TableOfContents heading="Sisukord" variant="transparent" sticky={false} activeId="section-3">
-      {sectionItems()}
+    <TableOfContents heading="Sisukord" variant="transparent" sticky={false} activeId="methods">
+      {tocItems()}
     </TableOfContents>
   ),
 };
@@ -165,31 +166,10 @@ export const Transparent: Story = {
 
 ```tsx
 export const WithSlot: Story = {
+  parameters: renderedSource,
   render: () => (
-    <TableOfContents heading="Sisukord" sticky={false} activeId="section-3">
-      {sections.map((label, index) => (
-        <TableOfContents.Item
-          key={label}
-          id={`section-${index + 1}`}
-          slot={index === sections.length - 1 ? <Tag color="primary">43 tulemust</Tag> : undefined}
-        >
-          <Link href={`#section-${index + 1}`} underline={false}>
-            {label}
-          </Link>
-          {index === 2 && [
-            <TableOfContents.Item key="collection" id="section-3-1" slot={<Tag color="primary">12</Tag>}>
-              <Link href="#section-3-1" underline={false}>
-                Andmete kogumine
-              </Link>
-            </TableOfContents.Item>,
-            <TableOfContents.Item key="analysis" id="section-3-2">
-              <Link href="#section-3-2" underline={false}>
-                Analüüs
-              </Link>
-            </TableOfContents.Item>,
-          ]}
-        </TableOfContents.Item>
-      ))}
+    <TableOfContents heading="Sisukord" sticky={false} activeId="methods">
+      {tocItems({ slot: true })}
     </TableOfContents>
   ),
 };
@@ -199,33 +179,10 @@ export const WithSlot: Story = {
 
 ```tsx
 export const Numbered: Story = {
+  parameters: renderedSource,
   render: () => (
     <TableOfContents heading="Sisukord" sticky={false} numbered activeId="methods">
-      <TableOfContents.Item id="intro">
-        <Link href="#intro" underline={false}>
-          Sissejuhatus
-        </Link>
-      </TableOfContents.Item>
-      <TableOfContents.Item id="methods">
-        <Link href="#methods" underline={false}>
-          Meetodid
-        </Link>
-        <TableOfContents.Item id="methods-1">
-          <Link href="#methods-1" underline={false}>
-            Andmete kogumine
-          </Link>
-        </TableOfContents.Item>
-        <TableOfContents.Item id="methods-2">
-          <Link href="#methods-2" underline={false}>
-            Analüüs
-          </Link>
-        </TableOfContents.Item>
-      </TableOfContents.Item>
-      <TableOfContents.Item id="results">
-        <Link href="#results" underline={false}>
-          Tulemused
-        </Link>
-      </TableOfContents.Item>
+      {tocItems()}
     </TableOfContents>
   ),
 };
@@ -235,38 +192,10 @@ export const Numbered: Story = {
 
 ```tsx
 export const WithIcon: Story = {
+  parameters: renderedSource,
   render: () => (
-    <TableOfContents heading="Sisukord" sticky={false} activeId="section-3">
-      <TableOfContents.Item id="section-1">
-        <Link href="#section-1" underline={false}>
-          Sissejuhatus
-        </Link>
-      </TableOfContents.Item>
-      <TableOfContents.Item id="section-2">
-        <Link href="#section-2" underline={false}>
-          Taust
-        </Link>
-      </TableOfContents.Item>
-      <TableOfContents.Item id="section-3">
-        <Link href="#section-3" underline={false}>
-          Meetodid
-        </Link>
-        <TableOfContents.Item id="section-3-1">
-          <Link href="#section-3-1" underline={false}>
-            Andmete kogumine
-          </Link>
-        </TableOfContents.Item>
-        <TableOfContents.Item id="section-3-2">
-          <Link href="#section-3-2" underline={false}>
-            Analüüs
-          </Link>
-        </TableOfContents.Item>
-      </TableOfContents.Item>
-      <TableOfContents.Item id="section-6">
-        <Link href="#section-6" underline={false} iconLeft="description" iconStandalone>
-          Kokkuvõte
-        </Link>
-      </TableOfContents.Item>
+    <TableOfContents heading="Sisukord" sticky={false} activeId="methods">
+      {tocItems({ icon: true })}
     </TableOfContents>
   ),
 };
@@ -276,4 +205,4 @@ Full story source: `src/tedi/components/navigation/table-of-contents/table-of-co
 
 ## Related
 
-`Heading`, `Text`, `Col`, `Row`, `HideAt`, `ShowAt`, `VerticalSpacing`, `Tag`, `Link`
+`Heading`, `Text`, `Button`, `Col`, `Row`, `HideAt`, `ShowAt`, `VerticalSpacing`, `Popover`, `Tag`, `Link`

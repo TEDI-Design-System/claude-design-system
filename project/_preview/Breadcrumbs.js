@@ -55,12 +55,12 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
+  // react-global:react
+  var require_react = __commonJS({
+    "react-global:react"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.Tedi;
+      module.exports = window.React;
     }
   });
 
@@ -70,19 +70,19 @@ var __dsPreview = (() => {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
     }
   });
 
-  // react-global:react
-  var require_react = __commonJS({
-    "react-global:react"(exports, module) {
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.React;
+      module.exports = window.Tedi;
     }
   });
 
@@ -95,7 +95,8 @@ var __dsPreview = (() => {
     Default: () => Default2,
     Long: () => Long2,
     ResponsiveVariant: () => ResponsiveVariant2,
-    Short: () => Short2
+    Short: () => Short2,
+    VisualTest: () => VisualTest2
   });
   init_define_import_meta_env();
   init_define_process_env();
@@ -110,12 +111,37 @@ var __dsPreview = (() => {
     Long: () => Long,
     ResponsiveVariant: () => ResponsiveVariant,
     Short: () => Short,
+    VisualTest: () => VisualTest,
     default: () => breadcrumbs_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/icon/icon.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/icon/icon.tsx
   var icon_exports = {};
   __export(icon_exports, {
     default: () => icon_default
@@ -126,7 +152,18 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var icon_default = ns["Icon"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/base/typography/text/text.tsx
+  var text_exports = {};
+  __export(text_exports, {
+    default: () => text_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(text_exports, __toESM(require_tedi_namespace()));
+  var ns2 = window.Tedi;
+  var text_default = ns2["Text"] ?? ns2;
+
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -134,10 +171,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(vertical_spacing_exports, __toESM(require_tedi_namespace()));
-  var ns2 = window.Tedi;
-  var vertical_spacing_default = ns2["VerticalSpacing"] ?? ns2;
+  var ns3 = window.Tedi;
+  var vertical_spacing_default = ns3["VerticalSpacing"] ?? ns3;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/link/link.tsx
+  // tedi:src/tedi/components/navigation/link/link.tsx
   var link_exports = {};
   __export(link_exports, {
     default: () => link_default
@@ -145,10 +182,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(link_exports, __toESM(require_tedi_namespace()));
-  var ns3 = window.Tedi;
-  var link_default = ns3["Link"] ?? ns3;
+  var ns4 = window.Tedi;
+  var link_default = ns4["Link"] ?? ns4;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/breadcrumbs/breadcrumbs.tsx
+  // tedi:src/tedi/components/navigation/breadcrumbs/breadcrumbs.tsx
   var breadcrumbs_exports = {};
   __export(breadcrumbs_exports, {
     default: () => breadcrumbs_default
@@ -156,15 +193,15 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(breadcrumbs_exports, __toESM(require_tedi_namespace()));
-  var ns4 = window.Tedi;
-  var breadcrumbs_default = ns4["Breadcrumbs"] ?? ns4;
+  var ns5 = window.Tedi;
+  var breadcrumbs_default = ns5["Breadcrumbs"] ?? ns5;
 
   // src/tedi/components/navigation/breadcrumbs/breadcrumbs.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var separatorOptions = {
     Chevron: void 0,
     Slash: "/",
-    Arrow: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "arrow_forward", color: "inherit", size: 16, "aria-hidden": true }),
+    Arrow: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "arrow_forward", color: "inherit", size: 16, "aria-hidden": true }),
     Dash: "\u2014",
     Dot: "\xB7"
   };
@@ -193,37 +230,38 @@ var __dsPreview = (() => {
       design: {
         type: "figma",
         url: "https://www.figma.com/design/jWiRIXhHRxwVdMSimKX2FF/TEDI-READY-2.45.70?node-id=2409-21799&m=dev"
-      }
+      },
+      chromatic: { disableSnapshot: true }
     }
   };
-  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(breadcrumbs_default, { ...args });
+  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(breadcrumbs_default, { ...args });
   var Default = {
     render: Template,
     args: {
-      children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Applications" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { "aria-current": "page", children: "Application nr 506" })
+      children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Applications" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { "aria-current": "page", children: "Application nr 506" })
       ] })
     }
   };
   var Long = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(breadcrumbs_default, { ariaLabel: "Applications trail", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Applications" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { "aria-current": "page", children: "Application nr 506" })
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(breadcrumbs_default, { ariaLabel: "Applications trail", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Applications" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { "aria-current": "page", children: "Application nr 506" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(breadcrumbs_default, { ariaLabel: "Documents trail", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Documents" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "My documents" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Application nr 506" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { "aria-current": "page", children: "Restrictions" })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(breadcrumbs_default, { ariaLabel: "Documents trail", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Documents" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "My documents" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Application nr 506" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { "aria-current": "page", children: "Restrictions" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(breadcrumbs_default, { ariaLabel: "Medications trail", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Medications" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { "aria-current": "page", children: "Ibuprofen" })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(breadcrumbs_default, { ariaLabel: "Medications trail", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Medications" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { "aria-current": "page", children: "Ibuprofen" })
       ] })
     ] })
   };
@@ -231,20 +269,21 @@ var __dsPreview = (() => {
     render: Template,
     args: {
       variant: "short",
-      children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { "aria-current": "page", children: "Current page" })
+      children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { "aria-current": "page", children: "Current page" })
       ] })
     }
   };
   var CustomAriaLabel = {
+    parameters: { visualTest: false },
     render: Template,
     args: {
       ariaLabel: "Site path",
-      children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Documents" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { "aria-current": "page", children: "Restrictions" })
+      children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Documents" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { "aria-current": "page", children: "Restrictions" })
       ] })
     }
   };
@@ -254,13 +293,13 @@ var __dsPreview = (() => {
       maxItems: 4,
       itemsBeforeCollapse: 1,
       itemsAfterCollapse: 2,
-      children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Patients" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Anna Tamm" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Visits" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "2024-05-12" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { "aria-current": "page", children: "Restrictions" })
+      children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Patients" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Anna Tamm" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Visits" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "2024-05-12" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { "aria-current": "page", children: "Restrictions" })
       ] })
     }
   };
@@ -269,39 +308,69 @@ var __dsPreview = (() => {
     args: {
       variant: "short",
       md: { variant: "long" },
-      children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Documents" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "My documents" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Application nr 506" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { "aria-current": "page", children: "Restrictions" })
+      children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Documents" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "My documents" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Application nr 506" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { "aria-current": "page", children: "Restrictions" })
       ] })
     }
   };
   var CustomSeparator = {
     // Distinct `ariaLabel`s keep the three `<nav>` landmarks unique (axe `landmark-unique`).
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(breadcrumbs_default, { separator: "/", ariaLabel: "Slash separator", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Documents" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { "aria-current": "page", children: "Restrictions" })
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(breadcrumbs_default, { separator: "/", ariaLabel: "Slash separator", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Documents" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { "aria-current": "page", children: "Restrictions" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
         breadcrumbs_default,
         {
-          separator: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "arrow_forward", color: "inherit", size: 16, "aria-hidden": true }),
+          separator: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "arrow_forward", color: "inherit", size: 16, "aria-hidden": true }),
           ariaLabel: "Arrow separator",
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Documents" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { "aria-current": "page", children: "Restrictions" })
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Documents" }),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { "aria-current": "page", children: "Restrictions" })
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(breadcrumbs_default, { separator: "\u2014", ariaLabel: "Dash separator", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Documents" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { "aria-current": "page", children: "Restrictions" })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(breadcrumbs_default, { separator: "\u2014", ariaLabel: "Dash separator", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Dashboard" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Documents" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { "aria-current": "page", children: "Restrictions" })
+      ] })
+    ] })
+  };
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Default, props: { ariaLabel: "Default trail" } })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Long" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Long })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Short" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Short, props: { ariaLabel: "Short trail" } })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Condensed" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Condensed, props: { ariaLabel: "Condensed trail" } })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Custom separator" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: CustomSeparator })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Responsive variant" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: ResponsiveVariant, props: { ariaLabel: "Responsive trail" } })
       ] })
     ] })
   };
@@ -310,7 +379,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta = stories.default ?? {};
     const story = stories[key];
@@ -347,9 +416,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // Breadcrumbs.preview.tsx
@@ -362,5 +431,6 @@ var __dsPreview = (() => {
   var Condensed2 = compose(breadcrumbs_stories_exports, "Condensed", G, B);
   var ResponsiveVariant2 = compose(breadcrumbs_stories_exports, "ResponsiveVariant", G, B);
   var CustomSeparator2 = compose(breadcrumbs_stories_exports, "CustomSeparator", G, B);
+  var VisualTest2 = compose(breadcrumbs_stories_exports, "VisualTest", G, B);
   return __toCommonJS(Breadcrumbs_preview_exports);
 })();

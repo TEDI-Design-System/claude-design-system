@@ -2,7 +2,7 @@ List from @tedi-design-system/react. Use via `window.Tedi.List` (the bundle is `
 
 Sub-components: `List.Item`.
 
-Variants (see `preview.html`): Default, Unordered List, Ordered List, Ordered List With Start, Reversed Ordered List, No Style List.
+Variants (see `preview.html`): Default, Unordered List, Ordered List, Ordered List With Start, Reversed Ordered List, No Style List, Visual Test.
 
 ## Props
 
@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, Unordered List, Ordered List, Ordered Li
 import * as React from 'react';
 
 /**
- * List from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/list/list.stories.tsx).
+ * List from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/content/list/list.stories.tsx).
  */
 export interface ListProps {
   /** List children should be ListItem components */
@@ -118,14 +118,6 @@ export const OrderedList: Story = {
     style: 'styled',
   },
 };
-
-/**
- * `start` begins the numbering at a given value, and a single `List.Item` can
- * override its own number with `value` (following items continue from there).
- * This example starts at **5** and jumps the third item to **10**, so it renders
- * `5, 6, 10, 11`. The numbers are drawn with a CSS counter, so `List` seeds that
- * counter from `start` / `value` (the native attributes are also forwarded).
- */
 ```
 
 ### Ordered List With Start
@@ -133,24 +125,11 @@ export const OrderedList: Story = {
 ```tsx
 export const OrderedListWithStart: Story = {
   name: 'Ordered list with start / value',
-  render: (args) => (
-    <List {...args} element="ol" start={5}>
-      <List.Item>Starts at five</List.Item>
-      <List.Item>Six</List.Item>
-      <List.Item value={10}>Jumps to ten</List.Item>
-      <List.Item>Eleven</List.Item>
-    </List>
-  ),
+  render: TemplateOrderedListWithStart,
   args: {
     style: 'styled',
   },
 };
-
-/**
- * `reversed` counts the list down. With no `start` it begins at the item count
- * (here `3, 2, 1`); pass `start` to begin elsewhere. The numbers are a CSS
- * counter, so `List` applies a descending increment and seeds the first value.
- */
 ```
 
 ### Reversed Ordered List
@@ -158,13 +137,7 @@ export const OrderedListWithStart: Story = {
 ```tsx
 export const ReversedOrderedList: Story = {
   name: 'Reversed ordered list',
-  render: (args) => (
-    <List {...args} element="ol" reversed>
-      <List.Item>Third</List.Item>
-      <List.Item>Second</List.Item>
-      <List.Item>First</List.Item>
-    </List>
-  ),
+  render: TemplateReversedOrderedList,
   args: {
     style: 'styled',
   },
@@ -180,6 +153,12 @@ export const NoStyleList: Story = {
     style: 'none',
   },
 };
+
+/** Chromatic snapshot for List: add every new visual variant here too. */
 ```
 
 Full story source: `src/tedi/components/content/list/list.stories.tsx`.
+
+## Related
+
+`Text`, `VerticalSpacing`

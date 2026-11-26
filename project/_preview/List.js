@@ -55,12 +55,12 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
+  // react-global:react
+  var require_react = __commonJS({
+    "react-global:react"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.Tedi;
+      module.exports = window.React;
     }
   });
 
@@ -70,19 +70,19 @@ var __dsPreview = (() => {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
     }
   });
 
-  // react-global:react
-  var require_react = __commonJS({
-    "react-global:react"(exports, module) {
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.React;
+      module.exports = window.Tedi;
     }
   });
 
@@ -94,7 +94,8 @@ var __dsPreview = (() => {
     OrderedList: () => OrderedList2,
     OrderedListWithStart: () => OrderedListWithStart2,
     ReversedOrderedList: () => ReversedOrderedList2,
-    UnorderedList: () => UnorderedList2
+    UnorderedList: () => UnorderedList2,
+    VisualTest: () => VisualTest2
   });
   init_define_import_meta_env();
   init_define_process_env();
@@ -108,12 +109,59 @@ var __dsPreview = (() => {
     OrderedListWithStart: () => OrderedListWithStart,
     ReversedOrderedList: () => ReversedOrderedList,
     UnorderedList: () => UnorderedList,
+    VisualTest: () => VisualTest,
     default: () => list_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/list/list.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/typography/text/text.tsx
+  var text_exports = {};
+  __export(text_exports, {
+    default: () => text_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(text_exports, __toESM(require_tedi_namespace()));
+  var ns = window.Tedi;
+  var text_default = ns["Text"] ?? ns;
+
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
+  var vertical_spacing_exports = {};
+  __export(vertical_spacing_exports, {
+    default: () => vertical_spacing_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(vertical_spacing_exports, __toESM(require_tedi_namespace()));
+  var ns2 = window.Tedi;
+  var vertical_spacing_default = ns2["VerticalSpacing"] ?? ns2;
+
+  // tedi:src/tedi/components/content/list/list.tsx
   var list_exports = {};
   __export(list_exports, {
     default: () => list_default
@@ -121,16 +169,17 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(list_exports, __toESM(require_tedi_namespace()));
-  var ns = window.Tedi;
-  var list_default = ns["List"] ?? ns;
+  var ns3 = window.Tedi;
+  var list_default = ns3["List"] ?? ns3;
 
   // src/tedi/components/content/list/list.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: list_default,
     title: "Tedi-Ready/Content/List",
     subcomponents: { "List.Item": list_default.Item },
     parameters: {
+      chromatic: { disableSnapshot: true },
       status: {
         type: [{ name: "breakpointSupport", url: "?path=/docs/helpers-usebreakpointprops--usebreakpointprops" }]
       },
@@ -151,65 +200,65 @@ var __dsPreview = (() => {
     }
   };
   var list_stories_default = meta;
-  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default, { ...args, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Caesar salad" }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default.Item, { children: [
+  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default, { ...args, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Caesar salad" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default.Item, { children: [
       "Caesar salad",
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default, { ...args, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Dressing" }) })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default, { ...args, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Dressing" }) })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default.Item, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default.Item, { children: [
       "Caesar salad",
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default, { ...args, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default.Item, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default, { ...args, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default.Item, { children: [
         "Dressing",
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default, { ...args, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Lemon juice" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Anchovies" })
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default, { ...args, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Lemon juice" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Anchovies" })
         ] })
       ] }) })
     ] })
   ] });
-  var TemplateUnorderedList = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default, { ...args, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Potato" }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Caesar salad" }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default.Item, { children: [
+  var TemplateUnorderedList = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default, { ...args, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Potato" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Caesar salad" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default.Item, { children: [
       "Caesar salad",
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default, { ...args, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default.Item, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default, { ...args, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default.Item, { children: [
         "Dressing",
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default, { ...args, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Lemon juice" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Anchovies" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Parmesan cheese" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Worcestershire sauce" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Mustard" })
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default, { ...args, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Lemon juice" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Anchovies" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Parmesan cheese" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Worcestershire sauce" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Mustard" })
         ] })
       ] }) })
     ] })
   ] });
-  var TemplateOrderedList = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default, { ...args, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "School homework" }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default.Item, { children: [
+  var TemplateOrderedList = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default, { ...args, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "School homework" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default.Item, { children: [
       "Chores",
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default, { ...args, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Wash dishes" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default.Item, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default, { ...args, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Wash dishes" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default.Item, { children: [
           "Fold laundry",
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default, { ...args, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Iron the sheets" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Hang dresses" })
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default, { ...args, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Iron the sheets" }),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Hang dresses" })
           ] })
         ] })
       ] })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Walk the dog" }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Water the flowers" })
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Walk the dog" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Water the flowers" })
   ] });
-  var TemplateNoStyleList = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default, { ...args, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default.Item, { children: [
+  var TemplateNoStyleList = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default, { ...args, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default.Item, { children: [
     "Caesar salad",
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default, { ...args, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default.Item, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default, { ...args, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default.Item, { children: [
       "Dressing",
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default, { ...args, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Lemon juice" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Anchovies" })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default, { ...args, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Lemon juice" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Anchovies" })
       ] })
     ] }) })
   ] }) });
@@ -233,25 +282,27 @@ var __dsPreview = (() => {
       style: "styled"
     }
   };
+  var TemplateOrderedListWithStart = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default, { ...args, element: "ol", start: 5, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Starts at five" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Six" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { value: 10, children: "Jumps to ten" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Eleven" })
+  ] });
   var OrderedListWithStart = {
     name: "Ordered list with start / value",
-    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default, { ...args, element: "ol", start: 5, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Starts at five" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Six" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { value: 10, children: "Jumps to ten" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Eleven" })
-    ] }),
+    render: TemplateOrderedListWithStart,
     args: {
       style: "styled"
     }
   };
+  var TemplateReversedOrderedList = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(list_default, { ...args, element: "ol", reversed: true, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Third" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "Second" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(list_default.Item, { children: "First" })
+  ] });
   var ReversedOrderedList = {
     name: "Reversed ordered list",
-    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(list_default, { ...args, element: "ol", reversed: true, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Third" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "Second" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(list_default.Item, { children: "First" })
-    ] }),
+    render: TemplateReversedOrderedList,
     args: {
       style: "styled"
     }
@@ -262,12 +313,42 @@ var __dsPreview = (() => {
       style: "none"
     }
   };
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Unordered list" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: UnorderedList })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Ordered list" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: OrderedList })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Ordered list with start / value" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: OrderedListWithStart })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Reversed ordered list" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: ReversedOrderedList })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "No style list" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: NoStyleList })
+      ] })
+    ] })
+  };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -304,9 +385,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // List.preview.tsx
@@ -318,5 +399,6 @@ var __dsPreview = (() => {
   var OrderedListWithStart2 = compose(list_stories_exports, "OrderedListWithStart", G, B);
   var ReversedOrderedList2 = compose(list_stories_exports, "ReversedOrderedList", G, B);
   var NoStyleList2 = compose(list_stories_exports, "NoStyleList", G, B);
+  var VisualTest2 = compose(list_stories_exports, "VisualTest", G, B);
   return __toCommonJS(List_preview_exports);
 })();

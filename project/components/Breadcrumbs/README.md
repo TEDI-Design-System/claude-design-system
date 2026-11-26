@@ -1,6 +1,6 @@
 Breadcrumbs from @tedi-design-system/react. Use via `window.Tedi.Breadcrumbs` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Long, Short, Custom Aria Label, Condensed, Responsive Variant, Custom Separator.
+Variants (see `preview.html`): Default, Long, Short, Custom Aria Label, Condensed, Responsive Variant, Custom Separator, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Long, Short, Custom Aria Label, Condense
 import * as React from 'react';
 
 /**
- * Breadcrumbs from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/navigation/breadcrumbs/breadcrumbs.stories.tsx).
+ * Breadcrumbs from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/navigation/breadcrumbs/breadcrumbs.stories.tsx).
  */
 export interface BreadcrumbsProps {
   /** Crumbs in order from the root page to the current page. Each child becomes one crumb; chevron separators are inserted between them. Use a `Link` (or any anchor) for navigable crumbs and a plain element (e.g. `<span>`) for the current page — add `aria-current="page"` to it yourself. */
@@ -137,6 +137,7 @@ export const Short: Story = {
 
 ```tsx
 export const CustomAriaLabel: Story = {
+  parameters: { visualTest: false },
   render: Template,
   args: {
     ariaLabel: 'Site path',
@@ -216,4 +217,4 @@ Full story source: `src/tedi/components/navigation/breadcrumbs/breadcrumbs.stori
 
 ## Related
 
-`Icon`, `VerticalSpacing`, `Link`
+`Icon`, `Text`, `VerticalSpacing`, `Link`

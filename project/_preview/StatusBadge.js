@@ -61,19 +61,10 @@ var __dsPreview = (() => {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
-    }
-  });
-
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      module.exports = window.Tedi;
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
     }
   });
 
@@ -86,6 +77,15 @@ var __dsPreview = (() => {
     }
   });
 
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      module.exports = window.Tedi;
+    }
+  });
+
   // StatusBadge.preview.tsx
   var StatusBadge_preview_exports = {};
   __export(StatusBadge_preview_exports, {
@@ -93,6 +93,7 @@ var __dsPreview = (() => {
     Default: () => Default2,
     Sizes: () => Sizes2,
     StatusIndicator: () => StatusIndicator2,
+    VisualTest: () => VisualTest2,
     WithTooltip: () => WithTooltip2
   });
   init_define_import_meta_env();
@@ -105,14 +106,39 @@ var __dsPreview = (() => {
     Default: () => Default,
     Sizes: () => Sizes,
     StatusIndicator: () => StatusIndicator,
+    VisualTest: () => VisualTest,
     WithTooltip: () => WithTooltip,
     default: () => status_badge_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -128,7 +154,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -142,7 +168,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -156,7 +182,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -167,7 +193,7 @@ var __dsPreview = (() => {
   var ns4 = window.Tedi;
   var vertical_spacing_default = ns4["VerticalSpacing"] ?? ns4;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/overlays/tooltip/index.ts
+  // tedi:src/tedi/components/overlays/tooltip/index.ts
   var tooltip_exports = {};
   __export(tooltip_exports, {
     default: () => tooltip_default
@@ -178,7 +204,7 @@ var __dsPreview = (() => {
   var ns5 = window.Tedi;
   var tooltip_default = ns5["Tooltip"] ?? ns5;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/tags/status-badge/status-badge.tsx
+  // tedi:src/tedi/components/tags/status-badge/status-badge.tsx
   var status_badge_exports = {};
   __export(status_badge_exports, {
     default: () => status_badge_default
@@ -190,7 +216,7 @@ var __dsPreview = (() => {
   var status_badge_default = ns6["StatusBadge"] ?? ns6;
 
   // src/tedi/components/tags/status-badge/status-badge.stories.tsx
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: status_badge_exports.StatusBadge,
     title: "Tedi-Ready/Components/Tag/StatusBadge",
@@ -204,7 +230,8 @@ var __dsPreview = (() => {
       design: {
         type: "figma",
         url: "https://www.figma.com/file/jWiRIXhHRxwVdMSimKX2FF/TEDI-Design-System-(draft)?type=design&node-id=2385-24154&m=dev"
-      }
+      },
+      chromatic: { disableSnapshot: true }
     }
   };
   var status_badge_stories_default = meta;
@@ -227,7 +254,7 @@ var __dsPreview = (() => {
     warning: "sync",
     danger: "error"
   };
-  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_badge_exports.StatusBadge, { ...args });
+  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(status_badge_exports.StatusBadge, { ...args });
   var Default = {
     render: Template,
     args: {
@@ -237,21 +264,21 @@ var __dsPreview = (() => {
     }
   };
   var TemplateAllCombos = (args) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "badge-grid", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: colors.map((color) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { className: "mb-2", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { md: 2, className: "d-flex align-items-center", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: color.charAt(0).toUpperCase() + color.slice(1) }) }),
-      variants.map((variant) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_badge_exports.StatusBadge, { ...args, color, variant, children: "Text" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_badge_exports.StatusBadge, { ...args, color, variant, icon: colorToIconMap[color], children: "Text" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_badge_exports.StatusBadge, { ...args, color, variant, icon: colorToIconMap[color] }) })
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "badge-grid", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: colors.map((color) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(grid_exports.Row, { className: "mb-2", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(grid_exports.Col, { md: 2, className: "d-flex align-items-center", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("strong", { children: color.charAt(0).toUpperCase() + color.slice(1) }) }),
+      variants.map((variant) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime2.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(status_badge_exports.StatusBadge, { ...args, color, variant, children: "Text" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(status_badge_exports.StatusBadge, { ...args, color, variant, icon: colorToIconMap[color], children: "Text" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(status_badge_exports.StatusBadge, { ...args, color, variant, icon: colorToIconMap[color] }) })
       ] }, variant))
     ] }, color)) }) });
   };
   var TemplateStatusGrid = (args) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "badge-grid", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: statuses.map((status) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { className: "mb-2", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { md: 2, className: "d-flex align-items-center", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: status?.charAt(0).toUpperCase() + status.slice(1) }) }),
-      variants.map((variant) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_badge_exports.StatusBadge, { ...args, color: "neutral", variant, status, children: "Text" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "badge-grid", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: statuses.map((status) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(grid_exports.Row, { className: "mb-2", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(grid_exports.Col, { md: 2, className: "d-flex align-items-center", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("strong", { children: status?.charAt(0).toUpperCase() + status.slice(1) }) }),
+      variants.map((variant) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime2.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(status_badge_exports.StatusBadge, { ...args, color: "neutral", variant, status, children: "Text" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
           status_badge_exports.StatusBadge,
           {
             ...args,
@@ -262,7 +289,7 @@ var __dsPreview = (() => {
             children: "Text"
           }
         ) }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(grid_exports.Col, { width: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
           status_badge_exports.StatusBadge,
           {
             ...args,
@@ -277,11 +304,11 @@ var __dsPreview = (() => {
   };
   var TemplateColumn = (args) => {
     const { array } = args;
-    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "example-list", children: array.map((value, key) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { className: `${key === array.length - 1 ? "" : "border-bottom"} padding-14-16`, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: 6, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: value ? value.charAt(0).toUpperCase() + value.slice(1) : "" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Col, { className: "flex gap-2", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_badge_exports.StatusBadge, { ...args, color: "neutral", size: array[key] }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_badge_exports.StatusBadge, { ...args, color: "neutral", size: array[key], status: "success" })
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: "example-list", children: array.map((value, key) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(grid_exports.Row, { className: `${key === array.length - 1 ? "" : "border-bottom"} padding-14-16`, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(grid_exports.Col, { width: 6, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(text_exports.Text, { modifiers: "bold", children: value ? value.charAt(0).toUpperCase() + value.slice(1) : "" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(grid_exports.Col, { className: "flex gap-2", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(status_badge_exports.StatusBadge, { ...args, color: "neutral", size: array[key] }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(status_badge_exports.StatusBadge, { ...args, color: "neutral", size: array[key], status: "success" })
       ] })
     ] }, key)) });
   };
@@ -303,17 +330,32 @@ var __dsPreview = (() => {
     }
   };
   var WithTooltip = () => {
-    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tooltip_exports.Tooltip, { placement: "top", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tooltip_exports.Tooltip.Trigger, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_badge_exports.StatusBadge, { color: "warning", icon: "warning" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tooltip_exports.Tooltip.Content, { children: "Icon-only badges should always have a tooltip to provide context and ensure accessibility." })
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(tooltip_exports.Tooltip, { placement: "top", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(tooltip_exports.Tooltip.Trigger, { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(status_badge_exports.StatusBadge, { color: "warning", icon: "warning" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(tooltip_exports.Tooltip.Content, { children: "Icon-only badges should always have a tooltip to provide context and ensure accessibility." })
     ] });
+  };
+  var visualTestStories = [
+    { label: "Default", story: Default },
+    { label: "Sizes", story: Sizes },
+    { label: "Colors", story: Colors },
+    { label: "Status indicator", story: StatusIndicator },
+    { label: "With tooltip", story: { render: WithTooltip } }
+  ];
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: visualTestStories.map(({ label, story }) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(text_exports.Text, { modifiers: "bold", children: label }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(VisualTestStory, { story })
+    ] }, label)) })
   };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime4 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -350,9 +392,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_jsx_runtime4.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Story, {}) });
   }
 
   // StatusBadge.preview.tsx
@@ -363,5 +405,6 @@ var __dsPreview = (() => {
   var Colors2 = compose(status_badge_stories_exports, "Colors", G, B);
   var StatusIndicator2 = compose(status_badge_stories_exports, "StatusIndicator", G, B);
   var WithTooltip2 = compose(status_badge_stories_exports, "WithTooltip", G, B);
+  var VisualTest2 = compose(status_badge_stories_exports, "VisualTest", G, B);
   return __toCommonJS(StatusBadge_preview_exports);
 })();

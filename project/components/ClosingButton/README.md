@@ -1,6 +1,6 @@
 ClosingButton from @tedi-design-system/react. Use via `window.Tedi.ClosingButton` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Size, Icon Sizes, States, Color Brand, Color Inverted.
+Variants (see `preview.html`): Default, Size, Icon Sizes, States, Color Brand, Color Inverted, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Size, Icon Sizes, States, Color Brand, C
 import * as React from 'react';
 
 /**
- * ClosingButton from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/closing-button/closing-button.stories.tsx).
+ * ClosingButton from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/buttons/closing-button/closing-button.stories.tsx).
  */
 export interface ClosingButtonProps {
   /** Additional classes to apply custom styles to the ClosingButton. */
@@ -17,6 +17,7 @@ export interface ClosingButtonProps {
   size?: ClosingButtonSize;
   /** Event handler for the button click event. Triggered when the user clicks on the close button. */
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  /** Accessible name and hover tooltip. Not rendered when `aria-label` is passed, so that label is the name. */
   title?: string;
   color?: ClosingButtonColor;
   iconSize?: ClosingButtonIconSize;
@@ -116,10 +117,12 @@ export const ColorInverted: Story = {
   },
   globals: { backgrounds: { value: 'brand' } },
 };
+
+/** Chromatic snapshot for ClosingButton: add every new visual variant here too. */
 ```
 
 Full story source: `src/tedi/components/buttons/closing-button/closing-button.stories.tsx`.
 
 ## Related
 
-`Text`, `Col`, `Row`
+`Text`, `Card`, `Col`, `Row`, `VerticalSpacing`

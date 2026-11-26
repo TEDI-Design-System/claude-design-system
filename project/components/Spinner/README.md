@@ -1,6 +1,6 @@
 Spinner from @tedi-design-system/react. Use via `window.Tedi.Spinner` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Size, Color.
+Variants (see `preview.html`): Default, Size, Color, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Size, Color.
 import * as React from 'react';
 
 /**
- * Spinner from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/loaders/spinner/spinner.stories.tsx).
+ * Spinner from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/loaders/spinner/spinner.stories.tsx).
  */
 export interface SpinnerProps {
   /** Adds a custom CSS class to the spinner element for additional styling or theming purposes. */
@@ -98,10 +98,37 @@ export const Size: StoryObj<TemplateMultipleProps> = {
 export const Color: StoryObj<TemplateMultipleProps> = {
   render: TemplateColors,
 };
+
+/** Chromatic snapshot for Spinner: add every new visual variant here too. */
+```
+
+### Visual Test
+
+```tsx
+export const VisualTest: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+  render: () => (
+    <VerticalSpacing size={2}>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Default</Text>
+        <VisualTestStory story={Default} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Size</Text>
+        <VisualTestStory story={Size} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Color</Text>
+        <VisualTestStory story={Color} />
+      </VerticalSpacing>
+    </VerticalSpacing>
+  ),
+};
 ```
 
 Full story source: `src/tedi/components/loaders/spinner/spinner.stories.tsx`.
 
 ## Related
 
-`Col`, `Row`
+`Text`, `Col`, `Row`, `VerticalSpacing`

@@ -55,28 +55,6 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      module.exports = window.Tedi;
-    }
-  });
-
-  // react-global:react/jsx-runtime
-  var require_jsx_runtime = __commonJS({
-    "react-global:react/jsx-runtime"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      var R = window.React;
-      function jsx3(type, props, key) {
-        return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
-      }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
-    }
-  });
-
   // react-global:react
   var require_react = __commonJS({
     "react-global:react"(exports, module) {
@@ -86,13 +64,36 @@ var __dsPreview = (() => {
     }
   });
 
+  // react-global:react/jsx-runtime
+  var require_jsx_runtime = __commonJS({
+    "react-global:react/jsx-runtime"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      var R = window.React;
+      function jsx4(type, props, key) {
+        return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
+      }
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
+    }
+  });
+
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      module.exports = window.Tedi;
+    }
+  });
+
   // Heading.preview.tsx
   var Heading_preview_exports = {};
   __export(Heading_preview_exports, {
     CustomModifier: () => CustomModifier2,
     Default: () => Default2,
     Headings: () => Headings2,
-    SemanticHeadings: () => SemanticHeadings2
+    SemanticHeadings: () => SemanticHeadings2,
+    VisualTest: () => VisualTest2
   });
   init_define_import_meta_env();
   init_define_process_env();
@@ -104,17 +105,42 @@ var __dsPreview = (() => {
     Default: () => Default,
     Headings: () => Headings,
     SemanticHeadings: () => SemanticHeadings,
+    VisualTest: () => VisualTest,
     default: () => heading_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
+
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
 
   // src/tedi/components/layout/grid/index.ts
   var grid_exports = {};
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -128,7 +154,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -142,7 +168,18 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
+  var vertical_spacing_exports = {};
+  __export(vertical_spacing_exports, {
+    default: () => vertical_spacing_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(vertical_spacing_exports, __toESM(require_tedi_namespace()));
+  var ns3 = window.Tedi;
+  var vertical_spacing_default = ns3["VerticalSpacing"] ?? ns3;
+
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -150,10 +187,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(text_exports, __toESM(require_tedi_namespace()));
-  var ns3 = window.Tedi;
-  var text_default = ns3["Text"] ?? ns3;
+  var ns4 = window.Tedi;
+  var text_default = ns4["Text"] ?? ns4;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/heading/heading.tsx
+  // tedi:src/tedi/components/base/typography/heading/heading.tsx
   var heading_exports = {};
   __export(heading_exports, {
     default: () => heading_default
@@ -161,15 +198,16 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(heading_exports, __toESM(require_tedi_namespace()));
-  var ns4 = window.Tedi;
-  var heading_default = ns4["Heading"] ?? ns4;
+  var ns5 = window.Tedi;
+  var heading_default = ns5["Heading"] ?? ns5;
 
   // src/tedi/components/base/typography/heading/heading.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     title: "Tedi-Ready/Base/Typography/Heading",
     component: heading_exports.Heading,
     parameters: {
+      chromatic: { disableSnapshot: true },
       design: {
         type: "figma",
         url: "https://www.figma.com/design/jWiRIXhHRxwVdMSimKX2FF/TEDI-Design-System-(draft)?node-id=115-11630&m=dev"
@@ -181,7 +219,7 @@ var __dsPreview = (() => {
   };
   var heading_stories_default = meta;
   var headings = ["h1", "h2", "h3", "h4", "h5", "h6"];
-  var TemplateHeadings = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "example-list w-100", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: headings.map((heading, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+  var TemplateHeadings = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "example-list w-100", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: headings.map((heading, index) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
     text_exports.Text,
     {
       element: heading,
@@ -202,38 +240,61 @@ var __dsPreview = (() => {
   var Headings = {
     render: TemplateHeadings
   };
+  var CustomModifierTemplate = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_exports.Heading, { element: "h4", modifiers: ["h1", "bold"], color: "warning", children: "H4 heading with H1 styles and warning color" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_exports.Heading, { element: "h2", modifiers: ["normal", "bold"], color: "brand", children: "H2 heading with normal bold text and brand color" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_exports.Heading, { element: "h1", modifiers: ["normal"], children: "H1 element with normal text styles" })
+  ] });
   var CustomModifier = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(heading_exports.Heading, { element: "h4", modifiers: ["h1", "bold"], color: "warning", children: "H4 heading with H1 styles and warning color" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(heading_exports.Heading, { element: "h2", modifiers: ["normal", "bold"], color: "brand", children: "H2 heading with normal bold text and brand color" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(heading_exports.Heading, { element: "h1", modifiers: ["normal"], children: "H1 element with normal text styles" })
-    ] })
+    render: CustomModifierTemplate
   };
   var SemanticHeadings = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", { children: "Heading 1" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(heading_exports.Heading, { element: "h1", children: "Heading 1" }) })
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h1", { children: "Heading 1" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_exports.Heading, { element: "h1", children: "Heading 1" }) })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "Heading 2" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(heading_exports.Heading, { element: "h2", children: "Heading 2" }) })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h2", { children: "Heading 2" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_exports.Heading, { element: "h2", children: "Heading 2" }) })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "Heading 3" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(heading_exports.Heading, { element: "h3", children: "Heading 3" }) })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h3", { children: "Heading 3" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_exports.Heading, { element: "h3", children: "Heading 3" }) })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", { children: "Heading 4" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(heading_exports.Heading, { element: "h4", children: "Heading 4" }) })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h4", { children: "Heading 4" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_exports.Heading, { element: "h4", children: "Heading 4" }) })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h5", { children: "Heading 5" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(heading_exports.Heading, { element: "h5", children: "Heading 5" }) })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h5", { children: "Heading 5" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_exports.Heading, { element: "h5", children: "Heading 5" }) })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h6", { children: "Heading 6" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(heading_exports.Heading, { element: "h6", children: "Heading 6" }) })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h6", { children: "Heading 6" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_exports.Heading, { element: "h6", children: "Heading 6" }) })
+      ] })
+    ] })
+  };
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Default, component: heading_exports.Heading })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Headings" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Headings })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Custom modifier" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: CustomModifier })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Semantic headings" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: SemanticHeadings })
       ] })
     ] })
   };
@@ -242,7 +303,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -279,9 +340,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // Heading.preview.tsx
@@ -291,5 +352,6 @@ var __dsPreview = (() => {
   var Headings2 = compose(heading_stories_exports, "Headings", G, B);
   var CustomModifier2 = compose(heading_stories_exports, "CustomModifier", G, B);
   var SemanticHeadings2 = compose(heading_stories_exports, "SemanticHeadings", G, B);
+  var VisualTest2 = compose(heading_stories_exports, "VisualTest", G, B);
   return __toCommonJS(Heading_preview_exports);
 })();

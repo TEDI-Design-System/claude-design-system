@@ -55,28 +55,6 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      module.exports = window.Tedi;
-    }
-  });
-
-  // react-global:react/jsx-runtime
-  var require_jsx_runtime = __commonJS({
-    "react-global:react/jsx-runtime"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      var R = window.React;
-      function jsx3(type, props, key) {
-        return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
-      }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
-    }
-  });
-
   // react-global:react
   var require_react = __commonJS({
     "react-global:react"(exports, module) {
@@ -86,12 +64,35 @@ var __dsPreview = (() => {
     }
   });
 
+  // react-global:react/jsx-runtime
+  var require_jsx_runtime = __commonJS({
+    "react-global:react/jsx-runtime"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      var R = window.React;
+      function jsx4(type, props, key) {
+        return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
+      }
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
+    }
+  });
+
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      module.exports = window.Tedi;
+    }
+  });
+
   // StatusIndicator.preview.tsx
   var StatusIndicator_preview_exports = {};
   __export(StatusIndicator_preview_exports, {
     AllVariants: () => AllVariants2,
     Default: () => Default2,
-    Examples: () => Examples2
+    Examples: () => Examples2,
+    VisualTest: () => VisualTest2
   });
   init_define_import_meta_env();
   init_define_process_env();
@@ -102,12 +103,37 @@ var __dsPreview = (() => {
     AllVariants: () => AllVariants,
     Default: () => Default,
     Examples: () => Examples,
+    VisualTest: () => VisualTest,
     default: () => status_indicator_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -123,7 +149,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -137,7 +163,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -151,7 +177,18 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/tags/status-indicator/status-indicator.tsx
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
+  var vertical_spacing_exports = {};
+  __export(vertical_spacing_exports, {
+    default: () => vertical_spacing_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(vertical_spacing_exports, __toESM(require_tedi_namespace()));
+  var ns4 = window.Tedi;
+  var vertical_spacing_default = ns4["VerticalSpacing"] ?? ns4;
+
+  // tedi:src/tedi/components/tags/status-indicator/status-indicator.tsx
   var status_indicator_exports = {};
   __export(status_indicator_exports, {
     default: () => status_indicator_default
@@ -159,11 +196,11 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(status_indicator_exports, __toESM(require_tedi_namespace()));
-  var ns4 = window.Tedi;
-  var status_indicator_default = ns4["StatusIndicator"] ?? ns4;
+  var ns5 = window.Tedi;
+  var status_indicator_default = ns5["StatusIndicator"] ?? ns5;
 
   // src/tedi/components/tags/status-indicator/status-indicator.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: status_indicator_exports.StatusIndicator,
     title: "TEDI-Ready/Components/Helpers/StatusIndicator",
@@ -171,7 +208,8 @@ var __dsPreview = (() => {
       design: {
         type: "figma",
         url: "https://www.figma.com/design/jWiRIXhHRxwVdMSimKX2FF/TEDI-READY-2.38.59?node-id=2405-53326&m=dev"
-      }
+      },
+      chromatic: { disableSnapshot: true }
     }
   };
   var status_indicator_stories_default = meta;
@@ -185,21 +223,39 @@ var __dsPreview = (() => {
   var types = ["success", "danger", "warning", "inactive"];
   var sizes = ["sm", "lg"];
   var AllVariants = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
-      sizes.map((size) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { className: "padding-14-16", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: 2, className: "flex align-items-center", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: size === "sm" ? "Small" : "Large" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { className: "flex align-items-center gap-3", children: types.map((type) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(status_indicator_exports.StatusIndicator, { type, size }, type)) })
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { children: [
+      sizes.map((size) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { className: "padding-14-16", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: 2, className: "flex align-items-center", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: size === "sm" ? "Small" : "Large" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { className: "flex align-items-center gap-3", children: types.map((type) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_indicator_exports.StatusIndicator, { type, size }, type)) })
       ] }, size)),
-      sizes.map((size) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { className: "padding-14-16", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: 2, className: "flex align-items-center", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: size === "sm" ? "Small bordered" : "Large bordered" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { className: "flex align-items-center gap-3", children: types.map((type) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(status_indicator_exports.StatusIndicator, { type, size, hasBorder: true }, type)) })
+      sizes.map((size) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { className: "padding-14-16", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: 2, className: "flex align-items-center", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: size === "sm" ? "Small bordered" : "Large bordered" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { className: "flex align-items-center gap-3", children: types.map((type) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_indicator_exports.StatusIndicator, { type, size, hasBorder: true }, type)) })
       ] }, `${size}-bordered`))
     ] })
   };
   var Examples = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { style: { position: "relative" }, children: [
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("span", { style: { position: "relative" }, children: [
       "Lugemata teated\xA0",
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(status_indicator_exports.StatusIndicator, { type: "danger", position: "top-right" })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_indicator_exports.StatusIndicator, { type: "danger", position: "top-right" })
+    ] })
+  };
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Default, component: status_indicator_exports.StatusIndicator })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "All variants" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: AllVariants })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Examples" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Examples }) })
+      ] })
     ] })
   };
 
@@ -207,7 +263,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -244,9 +300,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // StatusIndicator.preview.tsx
@@ -255,5 +311,6 @@ var __dsPreview = (() => {
   var Default2 = compose(status_indicator_stories_exports, "Default", G, B);
   var AllVariants2 = compose(status_indicator_stories_exports, "AllVariants", G, B);
   var Examples2 = compose(status_indicator_stories_exports, "Examples", G, B);
+  var VisualTest2 = compose(status_indicator_stories_exports, "VisualTest", G, B);
   return __toCommonJS(StatusIndicator_preview_exports);
 })();

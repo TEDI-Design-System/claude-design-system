@@ -105,6 +105,7 @@ var __dsPreview = (() => {
     Custom: () => Custom3,
     Default: () => Default3,
     EditableValues: () => EditableValues3,
+    FilterActions: () => FilterActions3,
     Filters: () => Filters3,
     GroupedRows: () => GroupedRows3,
     LongTexts: () => LongTexts3,
@@ -123,6 +124,7 @@ var __dsPreview = (() => {
     SingleSelectRows: () => SingleSelectRows2,
     Sizes: () => Sizes3,
     Sortable: () => Sortable3,
+    SortableCustomHeader: () => SortableCustomHeader3,
     StickyFirstColumn: () => StickyFirstColumn2,
     StickyHeader: () => StickyHeader2,
     StickyHeaderAndFirstColumn: () => StickyHeaderAndFirstColumn2,
@@ -146,6 +148,7 @@ var __dsPreview = (() => {
     Custom: () => Custom,
     Default: () => Default,
     EditableValues: () => EditableValues,
+    FilterActions: () => FilterActions,
     Filters: () => Filters,
     GroupedRows: () => GroupedRows,
     LongTexts: () => LongTexts,
@@ -164,6 +167,7 @@ var __dsPreview = (() => {
     SingleSelectRows: () => SingleSelectRows,
     Sizes: () => Sizes,
     Sortable: () => Sortable,
+    SortableCustomHeader: () => SortableCustomHeader,
     StickyFirstColumn: () => StickyFirstColumn,
     StickyHeader: () => StickyHeader,
     StickyHeaderAndFirstColumn: () => StickyHeaderAndFirstColumn,
@@ -1266,7 +1270,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-is-mounted.ts
+  // tedi:src/tedi/helpers/hooks/use-is-mounted.ts
   var use_is_mounted_exports = {};
   __export(use_is_mounted_exports, {
     default: () => use_is_mounted_default
@@ -1280,7 +1284,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_is_mounted_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-safe-id.ts
+  // tedi:src/tedi/helpers/hooks/use-safe-id.ts
   var use_safe_id_exports = {};
   __export(use_safe_id_exports, {
     default: () => use_safe_id_default
@@ -1294,7 +1298,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_safe_id_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-breakpoint.ts
+  // tedi:src/tedi/helpers/hooks/use-breakpoint.ts
   var use_breakpoint_exports = {};
   __export(use_breakpoint_exports, {
     default: () => use_breakpoint_default
@@ -1308,7 +1312,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_breakpoint_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-breakpoint-props.ts
+  // tedi:src/tedi/helpers/hooks/use-breakpoint-props.ts
   var use_breakpoint_props_exports = {};
   __export(use_breakpoint_props_exports, {
     default: () => use_breakpoint_props_default
@@ -1322,7 +1326,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_breakpoint_props_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-element-size.ts
+  // tedi:src/tedi/helpers/hooks/use-element-size.ts
   var use_element_size_exports = {};
   __export(use_element_size_exports, {
     default: () => use_element_size_default
@@ -1336,7 +1340,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_element_size_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-scroll.ts
+  // tedi:src/tedi/helpers/hooks/use-scroll.ts
   var use_scroll_exports = {};
   __export(use_scroll_exports, {
     default: () => use_scroll_default
@@ -1350,7 +1354,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_scroll_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-is-touch-device.ts
+  // tedi:src/tedi/helpers/hooks/use-is-touch-device.ts
   var use_is_touch_device_exports = {};
   __export(use_is_touch_device_exports, {
     default: () => use_is_touch_device_default
@@ -1364,7 +1368,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_is_touch_device_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-file-upload.ts
+  // tedi:src/tedi/helpers/hooks/use-file-upload.ts
   var use_file_upload_exports = {};
   __export(use_file_upload_exports, {
     default: () => use_file_upload_default
@@ -1378,7 +1382,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_file_upload_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-what-input.ts
+  // tedi:src/tedi/helpers/hooks/use-what-input.ts
   var use_what_input_exports = {};
   __export(use_what_input_exports, {
     default: () => use_what_input_default
@@ -1392,7 +1396,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_what_input_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-scroll-fade.ts
+  // tedi:src/tedi/helpers/hooks/use-scroll-fade.ts
   var use_scroll_fade_exports = {};
   __export(use_scroll_fade_exports, {
     default: () => use_scroll_fade_default
@@ -1406,7 +1410,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_scroll_fade_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/polymorphic/types.ts
+  // tedi:src/tedi/helpers/polymorphic/types.ts
   var types_exports = {};
   __export(types_exports, {
     default: () => types_default
@@ -1420,7 +1424,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, types_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/heading/heading.tsx
+  // tedi:src/tedi/components/base/typography/heading/heading.tsx
   var heading_exports = {};
   __export(heading_exports, {
     default: () => heading_default
@@ -1431,7 +1435,7 @@ var __dsPreview = (() => {
   var ns12 = window.Tedi;
   var heading_default = ns12["Heading"] ?? ns12;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -1442,7 +1446,7 @@ var __dsPreview = (() => {
   var ns13 = window.Tedi;
   var text_default = ns13["Text"] ?? ns13;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -1453,7 +1457,7 @@ var __dsPreview = (() => {
   var ns14 = window.Tedi;
   var button_default = ns14["Button"] ?? ns14;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/closing-button/closing-button.tsx
+  // tedi:src/tedi/components/buttons/closing-button/closing-button.tsx
   var closing_button_exports = {};
   __export(closing_button_exports, {
     default: () => closing_button_default
@@ -1464,7 +1468,7 @@ var __dsPreview = (() => {
   var ns15 = window.Tedi;
   var closing_button_default = ns15["ClosingButton"] ?? ns15;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/info-button/info-button.tsx
+  // tedi:src/tedi/components/buttons/info-button/info-button.tsx
   var info_button_exports = {};
   __export(info_button_exports, {
     default: () => info_button_default
@@ -1475,7 +1479,7 @@ var __dsPreview = (() => {
   var ns16 = window.Tedi;
   var info_button_default = ns16["InfoButton"] ?? ns16;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/empty-state/index.ts
+  // tedi:src/tedi/components/content/empty-state/index.ts
   var empty_state_exports = {};
   __export(empty_state_exports, {
     default: () => empty_state_default
@@ -1486,7 +1490,7 @@ var __dsPreview = (() => {
   var ns17 = window.Tedi;
   var empty_state_default = ns17["EmptyState"] ?? ns17;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/checkbox/checkbox.tsx
+  // tedi:src/tedi/components/form/checkbox/checkbox.tsx
   var checkbox_exports = {};
   __export(checkbox_exports, {
     default: () => checkbox_default
@@ -1497,7 +1501,7 @@ var __dsPreview = (() => {
   var ns18 = window.Tedi;
   var checkbox_default = ns18["Checkbox"] ?? ns18;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/date-field/date-field.tsx
+  // tedi:src/tedi/components/form/date-field/date-field.tsx
   var date_field_exports = {};
   __export(date_field_exports, {
     default: () => date_field_default
@@ -1508,7 +1512,7 @@ var __dsPreview = (() => {
   var ns19 = window.Tedi;
   var date_field_default = ns19["DateField"] ?? ns19;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/textfield/textfield.tsx
+  // tedi:src/tedi/components/form/textfield/textfield.tsx
   var textfield_exports = {};
   __export(textfield_exports, {
     default: () => textfield_default
@@ -1519,7 +1523,7 @@ var __dsPreview = (() => {
   var ns20 = window.Tedi;
   var textfield_default = ns20["TextField"] ?? ns20;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/time-field/time-field.tsx
+  // tedi:src/tedi/components/form/time-field/time-field.tsx
   var time_field_exports = {};
   __export(time_field_exports, {
     default: () => time_field_default
@@ -1530,7 +1534,7 @@ var __dsPreview = (() => {
   var ns21 = window.Tedi;
   var time_field_default = ns21["TimeField"] ?? ns21;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/hide-at/hide-at.tsx
+  // tedi:src/tedi/components/layout/hide-at/hide-at.tsx
   var hide_at_exports = {};
   __export(hide_at_exports, {
     default: () => hide_at_default
@@ -1541,7 +1545,7 @@ var __dsPreview = (() => {
   var ns22 = window.Tedi;
   var hide_at_default = ns22["HideAt"] ?? ns22;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/show-at/show-at.tsx
+  // tedi:src/tedi/components/layout/show-at/show-at.tsx
   var show_at_exports = {};
   __export(show_at_exports, {
     default: () => show_at_default
@@ -1552,7 +1556,7 @@ var __dsPreview = (() => {
   var ns23 = window.Tedi;
   var show_at_default = ns23["ShowAt"] ?? ns23;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -1563,7 +1567,7 @@ var __dsPreview = (() => {
   var ns24 = window.Tedi;
   var vertical_spacing_default = ns24["VerticalSpacing"] ?? ns24;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/separator/separator.tsx
+  // tedi:src/tedi/components/misc/separator/separator.tsx
   var separator_exports = {};
   __export(separator_exports, {
     default: () => separator_default
@@ -1574,7 +1578,7 @@ var __dsPreview = (() => {
   var ns25 = window.Tedi;
   var separator_default = ns25["Separator"] ?? ns25;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/notifications/alert/alert.tsx
+  // tedi:src/tedi/components/notifications/alert/alert.tsx
   var alert_exports = {};
   __export(alert_exports, {
     default: () => alert_default
@@ -1585,7 +1589,7 @@ var __dsPreview = (() => {
   var ns26 = window.Tedi;
   var alert_default = ns26["Alert"] ?? ns26;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/overlays/dropdown/index.ts
+  // tedi:src/tedi/components/overlays/dropdown/index.ts
   var dropdown_exports = {};
   __export(dropdown_exports, {
     default: () => dropdown_default
@@ -1596,7 +1600,7 @@ var __dsPreview = (() => {
   var ns27 = window.Tedi;
   var dropdown_default = ns27["Dropdown"] ?? ns27;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/overlays/popover/index.ts
+  // tedi:src/tedi/components/overlays/popover/index.ts
   var popover_exports = {};
   __export(popover_exports, {
     default: () => popover_default
@@ -1607,7 +1611,7 @@ var __dsPreview = (() => {
   var ns28 = window.Tedi;
   var popover_default = ns28["Popover"] ?? ns28;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/overlays/tooltip/index.ts
+  // tedi:src/tedi/components/overlays/tooltip/index.ts
   var tooltip_exports = {};
   __export(tooltip_exports, {
     default: () => tooltip_default
@@ -1618,7 +1622,7 @@ var __dsPreview = (() => {
   var ns29 = window.Tedi;
   var tooltip_default = ns29["Tooltip"] ?? ns29;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/tags/status-badge/status-badge.tsx
+  // tedi:src/tedi/components/tags/status-badge/status-badge.tsx
   var status_badge_exports = {};
   __export(status_badge_exports, {
     default: () => status_badge_default
@@ -1629,7 +1633,7 @@ var __dsPreview = (() => {
   var ns30 = window.Tedi;
   var status_badge_default = ns30["StatusBadge"] ?? ns30;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/table-card/table-card.tsx
+  // tedi:src/tedi/components/content/table-card/table-card.tsx
   var table_card_exports = {};
   __export(table_card_exports, {
     default: () => table_card_default
@@ -1640,7 +1644,7 @@ var __dsPreview = (() => {
   var ns31 = window.Tedi;
   var table_card_default = ns31["TableCard"] ?? ns31;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/text-group/text-group.tsx
+  // tedi:src/tedi/components/content/text-group/text-group.tsx
   var text_group_exports = {};
   __export(text_group_exports, {
     default: () => text_group_default
@@ -1651,7 +1655,7 @@ var __dsPreview = (() => {
   var ns32 = window.Tedi;
   var text_group_default = ns32["TextGroup"] ?? ns32;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/truncate/truncate.tsx
+  // tedi:src/tedi/components/content/truncate/truncate.tsx
   var truncate_exports = {};
   __export(truncate_exports, {
     default: () => truncate_default
@@ -1662,7 +1666,7 @@ var __dsPreview = (() => {
   var ns33 = window.Tedi;
   var truncate_default = ns33["Truncate"] ?? ns33;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/table/table.tsx
+  // tedi:src/tedi/components/content/table/table.tsx
   var table_exports = {};
   __export(table_exports, {
     default: () => table_default
@@ -1755,13 +1759,13 @@ var __dsPreview = (() => {
     { id: "role", header: "Role", accessorKey: "role" },
     { id: "location", header: "Location", accessorKey: "location" }
   ];
-  var bookingDateRange = {
-    from: new Date(2029, 2, 22),
-    to: new Date(2029, 2, 29)
-  };
+  var bookingDateRange = (index) => ({
+    from: new Date(2029, 2, 22 + index),
+    to: new Date(2029, 2, 29 + index)
+  });
   var bookings = Array.from({ length: 28 }, (_, index) => ({
     id: String(index + 1),
-    dateRange: bookingDateRange,
+    dateRange: bookingDateRange(index),
     hour: "11:14",
     duration: "6 min",
     location: "Harjumaa"
@@ -1824,15 +1828,27 @@ var __dsPreview = (() => {
     }, [draft]);
     return { rows, editingId, draft, setDraft, beginEdit, cancelEdit, commitEdit };
   }
-  function EditActionsCell({ row }) {
+  function EditActionsCell({ row, rowLabel }) {
     const editor = useEditor();
     if (row.id === editor.editingId) {
       return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { style: editRowActionsStyle, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(closing_button_exports.ClosingButton, { title: "T\xFChista", onClick: editor.cancelEdit }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_default, { visualType: "primary", size: "small", icon: "check", onClick: editor.commitEdit, children: "Kinnita" })
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(closing_button_exports.ClosingButton, { title: `T\xFChista ${rowLabel}`, onClick: editor.cancelEdit }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(button_default, { visualType: "primary", size: "small", icon: "check", onClick: editor.commitEdit, children: [
+          "Kinnita",
+          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { className: "sr-only", children: [
+            " ",
+            rowLabel
+          ] })
+        ] })
       ] });
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { style: editRowActionsStyle, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_default, { visualType: "link", iconLeft: "edit", onClick: () => editor.beginEdit(row), children: "Muuda" }) });
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { style: editRowActionsStyle, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(button_default, { visualType: "link", iconLeft: "edit", onClick: () => editor.beginEdit(row), children: [
+      "Muuda",
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { className: "sr-only", children: [
+        " ",
+        rowLabel
+      ] })
+    ] }) });
   }
   function EditableTextCell({
     row,
@@ -1908,6 +1924,7 @@ var __dsPreview = (() => {
   var bookingShowcaseColumns = [
     {
       id: "dateRange",
+      meta: { rowHeader: true },
       header: "Kuup\xE4ev",
       accessorKey: "dateRange",
       cell: ({ row }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(EditableDateRangeCell, { row: row.original, field: "dateRange", label: "Kuup\xE4ev" })
@@ -1933,8 +1950,9 @@ var __dsPreview = (() => {
     {
       id: "actions",
       header: "",
+      meta: { label: "Tegevused" },
       size: 1,
-      cell: ({ row }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(EditActionsCell, { row: row.original })
+      cell: ({ row }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(EditActionsCell, { row: row.original, rowLabel: formatDateRange(row.original.dateRange) })
     }
   ];
   var Default = {
@@ -2008,6 +2026,7 @@ var __dsPreview = (() => {
   var simpleDoctorColumns = [
     {
       id: "name",
+      meta: { rowHeader: true },
       header: "Arst",
       cell: ({ row }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: row.original.name }),
@@ -2029,8 +2048,9 @@ var __dsPreview = (() => {
     {
       id: "actions",
       header: "",
+      meta: { label: "Tegevused" },
       size: 1,
-      cell: ({ row }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(EditActionsCell, { row: row.original })
+      cell: ({ row }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(EditActionsCell, { row: row.original, rowLabel: row.original.name })
     }
   ];
   var Simple = {
@@ -2084,6 +2104,7 @@ var __dsPreview = (() => {
   var baseDoctorWithDescriptionColumns = [
     {
       id: "name",
+      meta: { rowHeader: true },
       header: "Arst",
       cell: ({ row }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: row.original.name }),
@@ -2099,8 +2120,9 @@ var __dsPreview = (() => {
     {
       id: "actions",
       header: "",
+      meta: { label: "Tegevused" },
       size: 1,
-      cell: ({ row }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(EditActionsCell, { row: row.original })
+      cell: ({ row }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(EditActionsCell, { row: row.original, rowLabel: row.original.name })
     }
   ];
   var baseDoctorActionsColumns = () => [
@@ -2166,24 +2188,10 @@ var __dsPreview = (() => {
   var mergedCellsColumns = [
     {
       id: "dateRange",
+      meta: { rowHeader: true, sortable: true },
       accessorKey: "dateRange",
       size: 240,
-      header: ({ column }) => {
-        const sorted = column.getIsSorted();
-        const iconName = sorted === "asc" ? "arrow_upward" : sorted === "desc" ? "arrow_downward" : "unfold_more";
-        return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { style: { display: "inline-flex", alignItems: "center", gap: 4 }, children: [
-          "Kuup\xE4ev",
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-            table_exports.Table.HeaderButton,
-            {
-              icon: iconName,
-              selected: !!sorted,
-              "aria-label": "Sort by Kuup\xE4ev",
-              onClick: column.getToggleSortingHandler()
-            }
-          )
-        ] });
-      },
+      header: "Kuup\xE4ev",
       cell: ({ row }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(EditableDateRangeCell, { row: row.original, field: "dateRange", label: "Kuup\xE4ev" })
     },
     {
@@ -2213,8 +2221,9 @@ var __dsPreview = (() => {
     {
       id: "actions",
       header: "",
+      meta: { label: "Tegevused" },
       size: 1,
-      cell: ({ row }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(EditActionsCell, { row: row.original })
+      cell: ({ row }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(EditActionsCell, { row: row.original, rowLabel: formatDateRange(row.original.dateRange) })
     }
   ];
   var MergedCells = {
@@ -2303,22 +2312,8 @@ var __dsPreview = (() => {
         {
           id: "service",
           accessorKey: "service",
-          header: ({ column }) => {
-            const sorted = column.getIsSorted();
-            const iconName = sorted === "asc" ? "arrow_upward" : sorted === "desc" ? "arrow_downward" : "unfold_more";
-            return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { style: { display: "inline-flex", alignItems: "center", gap: 4 }, children: [
-              "Teenus",
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-                table_exports.Table.HeaderButton,
-                {
-                  icon: iconName,
-                  selected: !!sorted,
-                  "aria-label": "Sorteeri Teenus j\xE4rgi",
-                  onClick: column.getToggleSortingHandler()
-                }
-              )
-            ] });
-          }
+          header: "Teenus",
+          meta: { sortable: true }
         },
         {
           id: "doctor",
@@ -2381,31 +2376,32 @@ var __dsPreview = (() => {
     render: function Sortable2() {
       const columns = (0, import_react5.useMemo)(
         () => [
-          { id: "name", header: "Name", accessorKey: "name" },
-          { id: "role", header: "Role", accessorKey: "role" },
-          { id: "location", header: "Location", accessorKey: "location" },
-          { id: "salary", header: "Salary", accessorKey: "salary" }
-        ].map((col) => ({
-          ...col,
-          meta: { label: col.header },
-          header: ({ column }) => {
-            const sorted = column.getIsSorted();
-            const iconName = sorted === "asc" ? "arrow_upward" : sorted === "desc" ? "arrow_downward" : "unfold_more";
-            return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-              table_exports.Table.HeaderButton,
-              {
-                icon: iconName,
-                selected: !!sorted,
-                "aria-label": `Sort by ${col.header}`,
-                onClick: column.getToggleSortingHandler(),
-                children: col.header
-              }
-            );
-          }
-        })),
+          { id: "name", header: "Name", accessorKey: "name", meta: { sortable: true } },
+          { id: "role", header: "Role", accessorKey: "role", meta: { sortable: true } },
+          { id: "location", header: "Location", accessorKey: "location", meta: { sortable: true } },
+          { id: "salary", header: "Salary", accessorKey: "salary", meta: { sortable: true } }
+        ],
         []
       );
       return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(table_exports.Table, { id: "tedi-table-sortable", data: people, columns, pagination: DEFAULT_PAGINATION });
+    }
+  };
+  var SortableCustomHeader = {
+    render: function SortableCustomHeader2() {
+      const columns = (0, import_react5.useMemo)(
+        () => [
+          { id: "name", header: "Name", accessorKey: "name", meta: { sortable: true } },
+          {
+            id: "role",
+            accessorKey: "role",
+            header: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeaderWithInfo, { label: "Role", info: "The person's job title." }),
+            meta: { sortable: true, label: "Role" }
+          },
+          { id: "location", header: "Location", accessorKey: "location" }
+        ],
+        []
+      );
+      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(table_exports.Table, { id: "tedi-table-sortable-custom", data: people, columns, pagination: DEFAULT_PAGINATION });
     }
   };
   var certStatusColor = {
@@ -2432,75 +2428,6 @@ var __dsPreview = (() => {
       name: round === 0 ? seed.name : `${seed.name} ${round + 1}`
     };
   });
-  var SortLabel = ({
-    column,
-    children,
-    ariaLabel
-  }) => {
-    const sorted = column.getIsSorted();
-    const iconName = sorted === "asc" ? "arrow_upward" : sorted === "desc" ? "arrow_downward" : "unfold_more";
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-      table_exports.Table.HeaderButton,
-      {
-        icon: iconName,
-        selected: !!sorted,
-        "aria-label": ariaLabel,
-        onClick: column.getToggleSortingHandler(),
-        children
-      }
-    );
-  };
-  var TextFilterPopover = ({
-    value,
-    onApply,
-    label
-  }) => {
-    const [draft, setDraft] = (0, import_react5.useState)(value);
-    const [open, setOpen] = (0, import_react5.useState)(false);
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(popover_exports.Popover, { open, onToggle: setOpen, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(popover_exports.PopoverTrigger, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(table_exports.Table.HeaderButton, { icon: "filter_alt", selected: !!value, filled: !!value, "aria-label": `Filtreeri ${label}` }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(popover_exports.PopoverContent, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-          textfield_exports.TextField,
-          {
-            id: `filter-${label}`,
-            name: `filter-${label}`,
-            label,
-            hideLabel: true,
-            value: draft,
-            onChange: setDraft
-          }
-        ),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", gap: 8, justifyContent: "flex-end" }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-            button_default,
-            {
-              visualType: "secondary",
-              size: "small",
-              onClick: () => {
-                setDraft("");
-                onApply(void 0);
-                setOpen(false);
-              },
-              children: "T\xFChista"
-            }
-          ),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-            button_default,
-            {
-              visualType: "primary",
-              size: "small",
-              onClick: () => {
-                onApply(draft || void 0);
-                setOpen(false);
-              },
-              children: "Filtreeri"
-            }
-          )
-        ] })
-      ] }) })
-    ] });
-  };
   var dateRangeStringToDate = (value) => {
     if (!value) return void 0;
     const match = /^(\d{2})\.(\d{2})\.(\d{4})$/.exec(value);
@@ -2513,117 +2440,6 @@ var __dsPreview = (() => {
     const dd = String(date.getDate()).padStart(2, "0");
     const mm = String(date.getMonth() + 1).padStart(2, "0");
     return `${dd}.${mm}.${date.getFullYear()}`;
-  };
-  var DateRangeFilterPopover = ({
-    value,
-    onApply,
-    label
-  }) => {
-    const [range, setRange] = (0, import_react5.useState)(() => {
-      const from = dateRangeStringToDate(value?.from);
-      const to = dateRangeStringToDate(value?.to);
-      return from || to ? { from, to } : void 0;
-    });
-    const [open, setOpen] = (0, import_react5.useState)(false);
-    const active = Boolean(value?.from || value?.to);
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(popover_exports.Popover, { open, onToggle: setOpen, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(popover_exports.PopoverTrigger, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(table_exports.Table.HeaderButton, { icon: "filter_alt", selected: active, filled: active, "aria-label": `Filtreeri ${label}` }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(popover_exports.PopoverContent, { width: "medium", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-          date_field_exports.DateField,
-          {
-            id: "filter-date-range",
-            mode: "range",
-            label,
-            selected: range,
-            placeholder: "pp.kk.aaaa - pp.kk.aaaa",
-            onSelect: (next) => setRange(next)
-          }
-        ),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", gap: 8, justifyContent: "flex-end" }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-            button_default,
-            {
-              visualType: "secondary",
-              size: "small",
-              onClick: () => {
-                setRange(void 0);
-                onApply(void 0);
-                setOpen(false);
-              },
-              children: "T\xFChista"
-            }
-          ),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-            button_default,
-            {
-              visualType: "primary",
-              size: "small",
-              onClick: () => {
-                const fromStr = dateToDateRangeString(range?.from);
-                const toStr = dateToDateRangeString(range?.to);
-                onApply(fromStr || toStr ? { from: fromStr, to: toStr } : void 0);
-                setOpen(false);
-              },
-              children: "Filtreeri"
-            }
-          )
-        ] })
-      ] }) })
-    ] });
-  };
-  var MultiSelectFilterPopover = ({
-    value,
-    onApply,
-    label
-  }) => {
-    const [draft, setDraft] = (0, import_react5.useState)(value ?? []);
-    const [open, setOpen] = (0, import_react5.useState)(false);
-    const active = (value?.length ?? 0) > 0;
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(popover_exports.Popover, { open, onToggle: setOpen, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(popover_exports.PopoverTrigger, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(table_exports.Table.HeaderButton, { icon: "filter_alt", selected: active, filled: active, "aria-label": `Filtreeri ${label}` }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(popover_exports.PopoverContent, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
-        CERT_STATUSES.map((option) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-          checkbox_exports.Checkbox,
-          {
-            id: `filter-status-${option}`,
-            name: "filter-status",
-            value: option,
-            label: option,
-            checked: draft.includes(option),
-            onChange: (_val, checked) => setDraft((prev) => checked ? [...prev, option] : prev.filter((v) => v !== option))
-          },
-          option
-        )),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", gap: 8, justifyContent: "flex-end" }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-            button_default,
-            {
-              visualType: "secondary",
-              size: "small",
-              onClick: () => {
-                setDraft([]);
-                onApply(void 0);
-                setOpen(false);
-              },
-              children: "T\xFChista"
-            }
-          ),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-            button_default,
-            {
-              visualType: "primary",
-              size: "small",
-              onClick: () => {
-                onApply(draft.length ? draft : void 0);
-                setOpen(false);
-              },
-              children: "Filtreeri"
-            }
-          )
-        ] })
-      ] }) })
-    ] });
   };
   var parseDate = (value) => {
     const match = /^(\d{2})\.(\d{2})\.(\d{4})$/.exec(value);
@@ -2638,22 +2454,14 @@ var __dsPreview = (() => {
           {
             id: "name",
             accessorKey: "name",
+            header: "Nimi",
             filterFn: "includesString",
-            header: ({ column }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { style: { display: "inline-flex", alignItems: "center", gap: 4 }, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SortLabel, { column, ariaLabel: "Sorteeri Nimi", children: "Nimi" }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-                TextFilterPopover,
-                {
-                  value: column.getFilterValue() ?? "",
-                  onApply: (next) => column.setFilterValue(next),
-                  label: "Nimi"
-                }
-              )
-            ] })
+            meta: { sortable: true, filterable: true }
           },
           {
             id: "jobStart",
             accessorKey: "jobStart",
+            header: "T\xF6\xF6 algus",
             filterFn: (row, id, value) => {
               if (!value?.from && !value?.to) return true;
               const cell = parseDate(row.getValue(id));
@@ -2664,44 +2472,62 @@ var __dsPreview = (() => {
               if (toTs !== null && cell > toTs) return false;
               return true;
             },
-            header: ({ column }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { style: { display: "inline-flex", alignItems: "center", gap: 4 }, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SortLabel, { column, ariaLabel: "Sorteeri T\xF6\xF6 algus", children: "T\xF6\xF6 algus" }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-                DateRangeFilterPopover,
-                {
-                  value: column.getFilterValue(),
-                  onApply: (next) => column.setFilterValue(next),
-                  label: "T\xF6\xF6 algus"
-                }
-              )
-            ] })
+            meta: {
+              sortable: true,
+              filterable: { popoverWidth: "medium" },
+              filterContent: ({ value, setValue, label }) => {
+                const current = value;
+                const from = dateRangeStringToDate(current?.from);
+                const to = dateRangeStringToDate(current?.to);
+                return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+                  date_field_exports.DateField,
+                  {
+                    id: "filter-date-range",
+                    mode: "range",
+                    label,
+                    selected: from || to ? { from, to } : void 0,
+                    placeholder: "pp.kk.aaaa - pp.kk.aaaa",
+                    onSelect: (next) => {
+                      const range = next;
+                      const fromStr = dateToDateRangeString(range?.from);
+                      const toStr = dateToDateRangeString(range?.to);
+                      setValue(fromStr || toStr ? { from: fromStr, to: toStr } : void 0);
+                    }
+                  }
+                );
+              }
+            }
           },
-          {
-            id: "age",
-            accessorKey: "age",
-            header: ({ column }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SortLabel, { column, ariaLabel: "Sorteeri Vanus", children: "Vanus" })
-          },
-          {
-            id: "visits",
-            accessorKey: "visits",
-            header: ({ column }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SortLabel, { column, ariaLabel: "Sorteeri K\xFClastuste arv", children: "K\xFClastuste arv" })
-          },
+          { id: "age", accessorKey: "age", header: "Vanus", meta: { sortable: true } },
+          { id: "visits", accessorKey: "visits", header: "K\xFClastuste arv", meta: { sortable: true } },
           {
             id: "status",
             accessorKey: "status",
+            header: "T\xF5endi staatus",
             filterFn: (row, id, value) => !value?.length || value.includes(row.getValue(id)),
-            header: ({ column }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { style: { display: "inline-flex", alignItems: "center", gap: 4 }, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SortLabel, { column, ariaLabel: "Sorteeri T\xF5endi staatus", children: "T\xF5endi staatus" }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-                MultiSelectFilterPopover,
-                {
-                  value: column.getFilterValue(),
-                  onApply: (next) => column.setFilterValue(next),
-                  label: "T\xF5endi staatus"
-                }
-              )
-            ] }),
-            cell: ({ row }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(status_badge_exports.StatusBadge, { color: certStatusColor[row.original.status], children: row.original.status })
+            cell: ({ row }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(status_badge_exports.StatusBadge, { color: certStatusColor[row.original.status], children: row.original.status }),
+            meta: {
+              sortable: true,
+              filterable: true,
+              filterContent: ({ value, setValue }) => {
+                const selected = value ?? [];
+                return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: CERT_STATUSES.map((option) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+                  checkbox_exports.Checkbox,
+                  {
+                    id: `filter-status-${option}`,
+                    name: "filter-status",
+                    value: option,
+                    label: option,
+                    checked: selected.includes(option),
+                    onChange: (_val, checked) => {
+                      const next = checked ? [...selected, option] : selected.filter((v) => v !== option);
+                      setValue(next.length ? next : void 0);
+                    }
+                  },
+                  option
+                )) });
+              }
+            }
           }
         ],
         []
@@ -2712,6 +2538,57 @@ var __dsPreview = (() => {
           id: "tedi-table-filters",
           data: filterablePeople,
           columns,
+          pagination: DEFAULT_PAGINATION
+        }
+      );
+    }
+  };
+  var FilterActions = {
+    render: function FilterActions2() {
+      const columns = (0, import_react5.useMemo)(
+        () => [
+          { id: "name", accessorKey: "name", header: "Nimi", filterFn: "includesString", meta: { filterable: true } },
+          {
+            id: "age",
+            accessorKey: "age",
+            header: "Vanus",
+            meta: { filterable: { actions: ["clear", "cancel", "apply"], popoverWidth: "medium" } }
+          },
+          {
+            id: "status",
+            accessorKey: "status",
+            header: "T\xF5endi staatus",
+            filterFn: "equals",
+            meta: {
+              filterable: { actions: [] },
+              filterContent: ({ value, apply, setValue, clear }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+                CERT_STATUSES.map((option) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+                  button_default,
+                  {
+                    size: "small",
+                    visualType: value === option ? "primary" : "secondary",
+                    onClick: () => {
+                      setValue(option);
+                      apply();
+                    },
+                    children: option
+                  },
+                  option
+                )),
+                /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_default, { size: "small", visualType: "secondary", onClick: clear, children: "T\xFChjenda" })
+              ] })
+            }
+          }
+        ],
+        []
+      );
+      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+        table_exports.Table,
+        {
+          id: "tedi-table-filter-actions",
+          data: filterablePeople,
+          columns,
+          filterActions: ["cancel", "apply"],
           pagination: DEFAULT_PAGINATION
         }
       );
@@ -2835,6 +2712,7 @@ var __dsPreview = (() => {
         data: people,
         columns: personColumns,
         enableRowSelection: true,
+        rowSelectionLabel: (row) => `Vali ${row.original.name}`,
         pagination: DEFAULT_PAGINATION
       }
     )
@@ -2913,6 +2791,7 @@ var __dsPreview = (() => {
   var stickyDoctorColumns = [
     {
       id: "name",
+      meta: { rowHeader: true },
       header: "Arst",
       accessorKey: "name",
       size: 280,
@@ -2927,8 +2806,15 @@ var __dsPreview = (() => {
     {
       id: "actions",
       header: "",
+      meta: { label: "Tegevused" },
       size: 1,
-      cell: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { style: rowActionsCellStyle, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_default, { visualType: "link", iconLeft: "edit", children: "Muuda" }) })
+      cell: ({ row }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { style: rowActionsCellStyle, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(button_default, { visualType: "link", iconLeft: "edit", children: [
+        "Muuda",
+        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { className: "sr-only", children: [
+          " ",
+          row.original.name
+        ] })
+      ] }) })
     }
   ];
   var StickyFirstColumn = {
@@ -3016,6 +2902,7 @@ var __dsPreview = (() => {
           {
             id: "actions",
             header: "",
+            meta: { label: "Tegevused" },
             size: 1,
             cell: ({ row }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { style: rowActionsCellStyle, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(dropdown_exports.Dropdown, { placement: "bottom-end", children: [
               /* @__PURE__ */ (0, import_jsx_runtime.jsx)(dropdown_exports.DropdownTrigger, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
@@ -3061,12 +2948,14 @@ var __dsPreview = (() => {
           {
             id: "note",
             header: "",
+            meta: { label: "M\xE4rkus" },
             cell: ({ row }) => row.original.note && row.original.noteColor ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(alert_exports.Alert, { type: row.original.noteColor, size: "small", role: "status", children: row.original.note }) : null
           },
           { id: "location", header: "Asukoht", accessorKey: "location" },
           {
             id: "actions",
             header: "",
+            meta: { label: "Tegevused" },
             size: 1,
             cell: ({ row }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { style: rowActionsCellStyle, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(popover_exports.Popover, { children: [
               /* @__PURE__ */ (0, import_jsx_runtime.jsx)(popover_exports.PopoverTrigger, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(info_button_default, { isSmall: true, "aria-label": `${row.original.name} eelvaade` }) }),
@@ -3523,7 +3412,9 @@ const { data: page, total } = useServerQuery({ pagination, sorting });
   var NoOutsideBorder2 = compose(table_stories_exports, "NoOutsideBorder", G, B);
   var EditableValues3 = compose(table_stories_exports, "EditableValues", G, B);
   var Sortable3 = compose(table_stories_exports, "Sortable", G, B);
+  var SortableCustomHeader3 = compose(table_stories_exports, "SortableCustomHeader", G, B);
   var Filters3 = compose(table_stories_exports, "Filters", G, B);
+  var FilterActions3 = compose(table_stories_exports, "FilterActions", G, B);
   var CollapsibleRows2 = compose(table_stories_exports, "CollapsibleRows", G, B);
   var CollapsibleRowsRowTrigger2 = compose(table_stories_exports, "CollapsibleRowsRowTrigger", G, B);
   var NestedTable2 = compose(table_stories_exports, "NestedTable", G, B);

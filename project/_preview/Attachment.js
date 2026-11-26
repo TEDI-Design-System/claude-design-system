@@ -55,12 +55,12 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
+  // react-global:react
+  var require_react = __commonJS({
+    "react-global:react"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.Tedi;
+      module.exports = window.React;
     }
   });
 
@@ -70,19 +70,19 @@ var __dsPreview = (() => {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
     }
   });
 
-  // react-global:react
-  var require_react = __commonJS({
-    "react-global:react"(exports, module) {
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.React;
+      module.exports = window.Tedi;
     }
   });
 
@@ -93,6 +93,7 @@ var __dsPreview = (() => {
     LabeledActions: () => LabeledActions2,
     ReadOnly: () => ReadOnly2,
     Vertical: () => Vertical2,
+    VisualTest: () => VisualTest2,
     WithDifferentActions: () => WithDifferentActions2,
     WithError: () => WithError2,
     WithFileSize: () => WithFileSize2,
@@ -110,6 +111,7 @@ var __dsPreview = (() => {
     LabeledActions: () => LabeledActions,
     ReadOnly: () => ReadOnly,
     Vertical: () => Vertical,
+    VisualTest: () => VisualTest,
     WithDifferentActions: () => WithDifferentActions,
     WithError: () => WithError,
     WithFileSize: () => WithFileSize,
@@ -121,7 +123,42 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/typography/text/text.tsx
+  var text_exports = {};
+  __export(text_exports, {
+    default: () => text_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(text_exports, __toESM(require_tedi_namespace()));
+  var ns = window.Tedi;
+  var text_default = ns["Text"] ?? ns;
+
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -129,10 +166,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(button_exports, __toESM(require_tedi_namespace()));
-  var ns = window.Tedi;
-  var button_default = ns["Button"] ?? ns;
+  var ns2 = window.Tedi;
+  var button_default = ns2["Button"] ?? ns2;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/hide-at/hide-at.tsx
+  // tedi:src/tedi/components/layout/hide-at/hide-at.tsx
   var hide_at_exports = {};
   __export(hide_at_exports, {
     default: () => hide_at_default
@@ -140,10 +177,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(hide_at_exports, __toESM(require_tedi_namespace()));
-  var ns2 = window.Tedi;
-  var hide_at_default = ns2["HideAt"] ?? ns2;
+  var ns3 = window.Tedi;
+  var hide_at_default = ns3["HideAt"] ?? ns3;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/show-at/show-at.tsx
+  // tedi:src/tedi/components/layout/show-at/show-at.tsx
   var show_at_exports = {};
   __export(show_at_exports, {
     default: () => show_at_default
@@ -151,10 +188,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(show_at_exports, __toESM(require_tedi_namespace()));
-  var ns3 = window.Tedi;
-  var show_at_default = ns3["ShowAt"] ?? ns3;
+  var ns4 = window.Tedi;
+  var show_at_default = ns4["ShowAt"] ?? ns4;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -162,10 +199,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(vertical_spacing_exports, __toESM(require_tedi_namespace()));
-  var ns4 = window.Tedi;
-  var vertical_spacing_default = ns4["VerticalSpacing"] ?? ns4;
+  var ns5 = window.Tedi;
+  var vertical_spacing_default = ns5["VerticalSpacing"] ?? ns5;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/overlays/dropdown/index.ts
+  // tedi:src/tedi/components/overlays/dropdown/index.ts
   var dropdown_exports = {};
   __export(dropdown_exports, {
     default: () => dropdown_default
@@ -173,10 +210,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(dropdown_exports, __toESM(require_tedi_namespace()));
-  var ns5 = window.Tedi;
-  var dropdown_default = ns5["Dropdown"] ?? ns5;
+  var ns6 = window.Tedi;
+  var dropdown_default = ns6["Dropdown"] ?? ns6;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/overlays/tooltip/index.ts
+  // tedi:src/tedi/components/overlays/tooltip/index.ts
   var tooltip_exports = {};
   __export(tooltip_exports, {
     default: () => tooltip_default
@@ -184,10 +221,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(tooltip_exports, __toESM(require_tedi_namespace()));
-  var ns6 = window.Tedi;
-  var tooltip_default = ns6["Tooltip"] ?? ns6;
+  var ns7 = window.Tedi;
+  var tooltip_default = ns7["Tooltip"] ?? ns7;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/attachment/attachment.tsx
+  // tedi:src/tedi/components/misc/attachment/attachment.tsx
   var attachment_exports = {};
   __export(attachment_exports, {
     default: () => attachment_default
@@ -195,11 +232,11 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(attachment_exports, __toESM(require_tedi_namespace()));
-  var ns7 = window.Tedi;
-  var attachment_default = ns7["Attachment"] ?? ns7;
+  var ns8 = window.Tedi;
+  var attachment_default = ns8["Attachment"] ?? ns8;
 
   // src/tedi/components/misc/attachment/attachment.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: attachment_exports.Attachment,
     title: "TEDI-Ready/Components/Helpers/Attachment",
@@ -213,27 +250,28 @@ var __dsPreview = (() => {
       design: {
         type: "figma",
         url: "https://www.figma.com/design/jWiRIXhHRxwVdMSimKX2FF/TEDI-READY-2.59.78?node-id=30427-154342&m=dev"
-      }
+      },
+      chromatic: { disableSnapshot: true }
     }
   };
   var attachment_stories_default = meta;
-  var action = (icon, label) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tooltip_exports.Tooltip, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tooltip_exports.Tooltip.Trigger, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { visualType: "neutral", icon: { name: icon, size: 18 }, children: label }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tooltip_exports.Tooltip.Content, { children: label })
+  var action = (icon, label) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tooltip_exports.Tooltip, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tooltip_exports.Tooltip.Trigger, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { visualType: "neutral", icon: { name: icon, size: 18 }, children: label }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tooltip_exports.Tooltip.Content, { children: label })
   ] });
   var deleteAction = action("delete", "Kustuta");
   var downloadAction = action("download", "Laadi alla");
-  var renderWithDelete = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(attachment_exports.Attachment, { ...args, actions: deleteAction }) });
+  var renderWithDelete = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(attachment_exports.Attachment, { ...args, actions: deleteAction }) });
   var Default = {
     render: renderWithDelete
   };
-  var ReadOnly = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", actions: downloadAction }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(attachment_exports.Attachment, { name: "Lisa_5.pdf", actions: downloadAction }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(attachment_exports.Attachment, { name: "Graafik_2025.pdf", actions: downloadAction })
+  var ReadOnly = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", actions: downloadAction }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(attachment_exports.Attachment, { name: "Lisa_5.pdf", actions: downloadAction }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(attachment_exports.Attachment, { name: "Graafik_2025.pdf", actions: downloadAction })
   ] }) });
-  var WithProgress = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+  var WithProgress = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       attachment_exports.Attachment,
       {
         name: "Koduk\xFClastusakt_Triin.pdf",
@@ -243,8 +281,8 @@ var __dsPreview = (() => {
         actions: deleteAction
       }
     ),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", fileSize: "0,9 MB", isLoading: true, progress: 34, actions: deleteAction }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", fileSize: "0,9 MB", isLoading: true, progress: 34, actions: deleteAction }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       attachment_exports.Attachment,
       {
         name: "Koduk\xFClastusakt_Triin.pdf",
@@ -252,7 +290,7 @@ var __dsPreview = (() => {
         isLoading: true,
         progress: 34,
         progressLabel: "\xDCleslaadimine",
-        actions: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+        actions: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
           downloadAction,
           deleteAction
         ] })
@@ -265,56 +303,56 @@ var __dsPreview = (() => {
       fileSize: "0,9 MB"
     }
   };
-  var WithIcon = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", fileSize: "0,9 MB", icon: "description", actions: deleteAction }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", fileSize: "0,9 MB", icon: "imagesmode", actions: deleteAction }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", fileSize: "0,9 MB", icon: "audio_file", actions: deleteAction }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", fileSize: "0,9 MB", icon: "picture_as_pdf", actions: deleteAction })
+  var WithIcon = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", fileSize: "0,9 MB", icon: "description", actions: deleteAction }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", fileSize: "0,9 MB", icon: "imagesmode", actions: deleteAction }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", fileSize: "0,9 MB", icon: "audio_file", actions: deleteAction }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", fileSize: "0,9 MB", icon: "picture_as_pdf", actions: deleteAction })
   ] }) });
-  var WithoutDeleteButton = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", fileSize: "0,9 MB" }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", fileSize: "0,9 MB" })
+  var WithoutDeleteButton = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", fileSize: "0,9 MB" }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", fileSize: "0,9 MB" })
   ] }) });
-  var WithDifferentActions = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+  var WithDifferentActions = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       attachment_exports.Attachment,
       {
         name: "Koduk\xFClastusakt_Triin.pdf",
-        actions: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+        actions: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
           action("visibility", "Vaata"),
           downloadAction,
           deleteAction
         ] })
       }
     ),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       attachment_exports.Attachment,
       {
         name: "Koduk\xFClastusakt_Triin.pdf",
-        actions: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+        actions: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
           downloadAction,
           deleteAction
         ] })
       }
     ),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", actions: downloadAction }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", fileSize: "0,9 MB", actions: deleteAction }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", actions: downloadAction }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", fileSize: "0,9 MB", actions: deleteAction }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       attachment_exports.Attachment,
       {
         name: "Koduk\xFClastusakt_Triin.pdf",
         fileSize: "0,9 MB",
         isLoading: true,
         progress: 34,
-        actions: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+        actions: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
           downloadAction,
           deleteAction
         ] })
       }
     )
   ] }) });
-  var Vertical = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { maxWidth: 350 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.75, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+  var Vertical = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { maxWidth: 350 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.75, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       attachment_exports.Attachment,
       {
         direction: "vertical",
@@ -325,7 +363,7 @@ var __dsPreview = (() => {
         actions: deleteAction
       }
     ),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       attachment_exports.Attachment,
       {
         direction: "vertical",
@@ -334,29 +372,29 @@ var __dsPreview = (() => {
         actions: deleteAction
       }
     ),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(attachment_exports.Attachment, { direction: "vertical", name: "Koduk\xFClastusakt.pdf", fileSize: "0,9 MB", actions: downloadAction }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(attachment_exports.Attachment, { direction: "vertical", name: "Koduk\xFClastusakt.pdf", fileSize: "0,9 MB", actions: downloadAction }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       attachment_exports.Attachment,
       {
         direction: "vertical",
         name: "Koduk\xFClastusakt.pdf",
         fileSize: "0,9 MB",
-        actions: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+        actions: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
           downloadAction,
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(dropdown_exports.Dropdown, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(dropdown_exports.Dropdown.Trigger, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { visualType: "neutral", icon: { name: "more_vert", size: 18 }, children: "Rohkem valikuid" }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(dropdown_exports.Dropdown.Content, { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(dropdown_exports.Dropdown.Item, { index: 0, children: "Nimeta \xFCmber" }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(dropdown_exports.Dropdown.Item, { index: 1, children: "Kustuta" })
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(dropdown_exports.Dropdown, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(dropdown_exports.Dropdown.Trigger, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { visualType: "neutral", icon: { name: "more_vert", size: 18 }, children: "Rohkem valikuid" }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(dropdown_exports.Dropdown.Content, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(dropdown_exports.Dropdown.Item, { index: 0, children: "Nimeta \xFCmber" }),
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(dropdown_exports.Dropdown.Item, { index: 1, children: "Kustuta" })
             ] })
           ] })
         ] })
       }
     )
   ] }) });
-  var WithError = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.75, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", actions: deleteAction }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+  var WithError = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.75, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(attachment_exports.Attachment, { name: "Koduk\xFClastusakt_Triin.pdf", actions: deleteAction }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       attachment_exports.Attachment,
       {
         name: "Koduk\xFClastusakt_Triin.pdf",
@@ -366,28 +404,49 @@ var __dsPreview = (() => {
       }
     )
   ] }) });
-  var LabeledActions = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+  var LabeledActions = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
     attachment_exports.Attachment,
     {
       name: "Koduk\xFClastusakt_Triin.pdf",
-      actions: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(show_at_exports.ShowAt, { sm: true, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { style: { display: "inline-flex", gap: "0.5rem", paddingInline: "0.5rem" }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { visualType: "neutral", iconLeft: { name: "download", size: 18 }, children: "Laadi alla" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { visualType: "neutral", iconLeft: { name: "delete", size: 18 }, children: "Kustuta" })
+      actions: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(show_at_exports.ShowAt, { sm: true, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("span", { style: { display: "inline-flex", gap: "0.5rem", paddingInline: "0.5rem" }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { visualType: "neutral", iconLeft: { name: "download", size: 18 }, children: "Laadi alla" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { visualType: "neutral", iconLeft: { name: "delete", size: 18 }, children: "Kustuta" })
         ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(hide_at_exports.HideAt, { sm: true, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(hide_at_exports.HideAt, { sm: true, children: [
           downloadAction,
           deleteAction
         ] })
       ] })
     }
   ) });
+  var withMetaArgs = (story) => ({ ...story, args: { ...meta.args, ...story.args } });
+  var visualTestBlocks = [
+    { label: "Default", story: withMetaArgs(Default) },
+    { label: "Read only", story: { render: ReadOnly } },
+    { label: "With progress", story: { render: WithProgress } },
+    { label: "With file size", story: withMetaArgs(WithFileSize) },
+    { label: "With icon", story: { render: WithIcon } },
+    { label: "Without delete button", story: { render: WithoutDeleteButton } },
+    { label: "With different actions", story: { render: WithDifferentActions } },
+    { label: "Vertical", story: { render: Vertical } },
+    { label: "With error", story: { render: WithError } },
+    { label: "Labeled actions", story: { render: LabeledActions } }
+  ];
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: visualTestBlocks.map(({ label, story }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: label }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story })
+    ] }, label)) })
+  };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -424,9 +483,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // Attachment.preview.tsx
@@ -442,5 +501,6 @@ var __dsPreview = (() => {
   var Vertical2 = compose(attachment_stories_exports, "Vertical", G, B);
   var WithError2 = compose(attachment_stories_exports, "WithError", G, B);
   var LabeledActions2 = compose(attachment_stories_exports, "LabeledActions", G, B);
+  var VisualTest2 = compose(attachment_stories_exports, "VisualTest", G, B);
   return __toCommonJS(Attachment_preview_exports);
 })();

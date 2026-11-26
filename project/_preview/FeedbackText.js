@@ -55,15 +55,6 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      module.exports = window.Tedi;
-    }
-  });
-
   // react-global:react
   var require_react = __commonJS({
     "react-global:react"(exports, module) {
@@ -79,10 +70,19 @@ var __dsPreview = (() => {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx2(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx2, jsxs: jsx2, jsxDEV: jsx2, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
+    }
+  });
+
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      module.exports = window.Tedi;
     }
   });
 
@@ -93,7 +93,8 @@ var __dsPreview = (() => {
     Helper: () => Helper2,
     PositionLeft: () => PositionLeft2,
     PositionRight: () => PositionRight2,
-    Valid: () => Valid2
+    Valid: () => Valid2,
+    VisualTest: () => VisualTest2
   });
   init_define_import_meta_env();
   init_define_process_env();
@@ -106,12 +107,92 @@ var __dsPreview = (() => {
     PositionLeft: () => PositionLeft,
     PositionRight: () => PositionRight,
     Valid: () => Valid,
+    VisualTest: () => VisualTest,
     default: () => feedback_text_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/form/feedback-text/feedback-text.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/typography/text/text.tsx
+  var text_exports = {};
+  __export(text_exports, {
+    default: () => text_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(text_exports, __toESM(require_tedi_namespace()));
+  var ns = window.Tedi;
+  var text_default = ns["Text"] ?? ns;
+
+  // src/tedi/components/layout/grid/index.ts
+  var grid_exports = {};
+  init_define_import_meta_env();
+  init_define_process_env();
+
+  // tedi:src/tedi/components/layout/grid/row.tsx
+  var row_exports = {};
+  __export(row_exports, {
+    default: () => row_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(row_exports, __toESM(require_tedi_namespace()));
+  var ns2 = window.Tedi;
+  var row_default = ns2["Row"] ?? ns2;
+
+  // src/tedi/components/layout/grid/index.ts
+  __reExport(grid_exports, row_exports);
+
+  // tedi:src/tedi/components/layout/grid/col.tsx
+  var col_exports = {};
+  __export(col_exports, {
+    default: () => col_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(col_exports, __toESM(require_tedi_namespace()));
+  var ns3 = window.Tedi;
+  var col_default = ns3["Col"] ?? ns3;
+
+  // src/tedi/components/layout/grid/index.ts
+  __reExport(grid_exports, col_exports);
+
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
+  var vertical_spacing_exports = {};
+  __export(vertical_spacing_exports, {
+    default: () => vertical_spacing_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(vertical_spacing_exports, __toESM(require_tedi_namespace()));
+  var ns4 = window.Tedi;
+  var vertical_spacing_default = ns4["VerticalSpacing"] ?? ns4;
+
+  // tedi:src/tedi/components/form/feedback-text/feedback-text.tsx
   var feedback_text_exports = {};
   __export(feedback_text_exports, {
     default: () => feedback_text_default
@@ -119,17 +200,19 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(feedback_text_exports, __toESM(require_tedi_namespace()));
-  var ns = window.Tedi;
-  var feedback_text_default = ns["FeedbackText"] ?? ns;
+  var ns5 = window.Tedi;
+  var feedback_text_default = ns5["FeedbackText"] ?? ns5;
 
   // src/tedi/components/form/feedback-text/feedback-text.stories.tsx
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: feedback_text_exports.FeedbackText,
     title: "TEDI-Ready/Components/Form/FeedbackText",
     parameters: {
       status: {
         type: ["devComponent"]
-      }
+      },
+      chromatic: { disableSnapshot: true }
     }
   };
   var feedback_text_stories_default = meta;
@@ -163,12 +246,27 @@ var __dsPreview = (() => {
       position: "right"
     }
   };
+  var visualTestVariants = [
+    { label: "Helper", story: Helper },
+    { label: "Error", story: Error2 },
+    { label: "Valid", story: Valid },
+    { label: "Position left", story: PositionLeft },
+    { label: "Position right", story: PositionRight }
+  ];
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { children: visualTestVariants.map(({ label, story }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { lg: 2, xs: 12, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: label }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story, component: feedback_text_exports.FeedbackText }) })
+    ] }, label)) })
+  };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -205,9 +303,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // FeedbackText.preview.tsx
@@ -218,5 +316,6 @@ var __dsPreview = (() => {
   var Valid2 = compose(feedback_text_stories_exports, "Valid", G, B);
   var PositionLeft2 = compose(feedback_text_stories_exports, "PositionLeft", G, B);
   var PositionRight2 = compose(feedback_text_stories_exports, "PositionRight", G, B);
+  var VisualTest2 = compose(feedback_text_stories_exports, "VisualTest", G, B);
   return __toCommonJS(FeedbackText_preview_exports);
 })();

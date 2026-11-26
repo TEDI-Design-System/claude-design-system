@@ -1,6 +1,6 @@
 NumberField from @tedi-design-system/react. Use via `window.Tedi.NumberField` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Sizes, States, With Hint, Decimal, With Unit, Full Width, Controlled.
+Variants (see `preview.html`): Default, Sizes, States, With Hint, Decimal, With Unit, Full Width, Controlled, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Sizes, States, With Hint, Decimal, With 
 import * as React from 'react';
 
 /**
- * NumberField from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/number-field/number-field.stories.tsx).
+ * NumberField from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/form/number-field/number-field.stories.tsx).
  */
 export interface NumberFieldProps {
   /** Initial value of the input field. */

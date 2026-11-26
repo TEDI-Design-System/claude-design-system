@@ -55,12 +55,12 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
+  // react-global:react
+  var require_react = __commonJS({
+    "react-global:react"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.Tedi;
+      module.exports = window.React;
     }
   });
 
@@ -70,19 +70,19 @@ var __dsPreview = (() => {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
     }
   });
 
-  // react-global:react
-  var require_react = __commonJS({
-    "react-global:react"(exports, module) {
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.React;
+      module.exports = window.Tedi;
     }
   });
 
@@ -98,6 +98,7 @@ var __dsPreview = (() => {
     Responsive: () => Responsive2,
     TextWeight: () => TextWeight2,
     Types: () => Types2,
+    VisualTest: () => VisualTest2,
     WithList: () => WithList2
   });
   init_define_import_meta_env();
@@ -115,13 +116,38 @@ var __dsPreview = (() => {
     Responsive: () => Responsive,
     TextWeight: () => TextWeight,
     Types: () => Types,
+    VisualTest: () => VisualTest,
     WithList: () => WithList,
     default: () => text_group_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/icon/icon.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/icon/icon.tsx
   var icon_exports = {};
   __export(icon_exports, {
     default: () => icon_default
@@ -132,7 +158,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var icon_default = ns["Icon"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -143,7 +169,7 @@ var __dsPreview = (() => {
   var ns2 = window.Tedi;
   var text_default = ns2["Text"] ?? ns2;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/info-button/info-button.tsx
+  // tedi:src/tedi/components/buttons/info-button/info-button.tsx
   var info_button_exports = {};
   __export(info_button_exports, {
     default: () => info_button_default
@@ -159,7 +185,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -173,7 +199,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -187,7 +213,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -198,7 +224,7 @@ var __dsPreview = (() => {
   var ns6 = window.Tedi;
   var vertical_spacing_default = ns6["VerticalSpacing"] ?? ns6;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/link/link.tsx
+  // tedi:src/tedi/components/navigation/link/link.tsx
   var link_exports = {};
   __export(link_exports, {
     default: () => link_default
@@ -209,7 +235,7 @@ var __dsPreview = (() => {
   var ns7 = window.Tedi;
   var link_default = ns7["Link"] ?? ns7;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/tags/status-badge/status-badge.tsx
+  // tedi:src/tedi/components/tags/status-badge/status-badge.tsx
   var status_badge_exports = {};
   __export(status_badge_exports, {
     default: () => status_badge_default
@@ -220,7 +246,7 @@ var __dsPreview = (() => {
   var ns8 = window.Tedi;
   var status_badge_default = ns8["StatusBadge"] ?? ns8;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/label/label.tsx
+  // tedi:src/tedi/components/content/label/label.tsx
   var label_exports = {};
   __export(label_exports, {
     default: () => label_default
@@ -231,7 +257,7 @@ var __dsPreview = (() => {
   var ns9 = window.Tedi;
   var label_default = ns9["Label"] ?? ns9;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/text-group/text-group.tsx
+  // tedi:src/tedi/components/content/text-group/text-group.tsx
   var text_group_exports = {};
   __export(text_group_exports, {
     default: () => text_group_default
@@ -243,7 +269,7 @@ var __dsPreview = (() => {
   var text_group_default = ns10["TextGroup"] ?? ns10;
 
   // src/tedi/components/content/text-group/text-group.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: text_group_exports.TextGroup,
     title: "Tedi-Ready/Content/TextGroup",
@@ -260,7 +286,8 @@ var __dsPreview = (() => {
       design: {
         type: "figma",
         url: "https://www.figma.com/file/jWiRIXhHRxwVdMSimKX2FF/TEDI-Design-System-(draft)?type=design&node-id=45-30752&mode=dev"
-      }
+      },
+      chromatic: { disableSnapshot: true }
     },
     argTypes: {
       labelAlign: {
@@ -279,10 +306,10 @@ var __dsPreview = (() => {
   };
   var text_group_stories_default = meta;
   var TemplateWithLayouts = (args) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1.5, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_group_exports.TextGroup, { ...args, type: "vertical", labelAlign: "left" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_group_exports.TextGroup, { ...args, type: "horizontal", labelWidth: "150px" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_group_exports.TextGroup, { ...args, type: "horizontal", labelWidth: "150px", labelAlign: "right" })
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1.5, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_group_exports.TextGroup, { ...args, type: "vertical", labelAlign: "left" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_group_exports.TextGroup, { ...args, type: "horizontal", labelWidth: "150px" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_group_exports.TextGroup, { ...args, type: "horizontal", labelWidth: "150px", labelAlign: "right" })
     ] });
   };
   var MultipleTextGroupsTemplate = (args) => {
@@ -292,16 +319,16 @@ var __dsPreview = (() => {
         items: [
           {
             label: "Patsient",
-            value: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "person", size: 18, color: "secondary" }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Mari Maasikas" })
+            value: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "person", size: 18, color: "secondary" }),
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Mari Maasikas" })
             ] })
           },
           {
             label: "Aadress",
-            value: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "location_on", size: 16, color: "secondary" }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Tulbi tn 4, Tallinn, 23562, Eesti" })
+            value: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "location_on", size: 16, color: "secondary" }),
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Tulbi tn 4, Tallinn, 23562, Eesti" })
             ] })
           }
         ]
@@ -311,11 +338,11 @@ var __dsPreview = (() => {
         items: [
           {
             label: "Vaktsiin",
-            value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Mari Maasikas" })
+            value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Mari Maasikas" })
           },
           {
             label: "J\xE4rgmine vaktsineerimine",
-            value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Vaktsineerimine l\xF5petatud" })
+            value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Vaktsineerimine l\xF5petatud" })
           }
         ]
       },
@@ -324,63 +351,63 @@ var __dsPreview = (() => {
         items: [
           {
             label: "Tervishoiuteenuse osutaja",
-            value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "SA P\xF5hja-Eesti Regionaalhaigla" })
+            value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "SA P\xF5hja-Eesti Regionaalhaigla" })
           },
           {
             label: "Tervishoiut\xF6\xF6taja",
-            value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Mart Mets" })
+            value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Mart Mets" })
           },
           {
             label: "Dokumendi loomise aeg",
-            value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "16.08.2023 14:51:48" })
+            value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "16.08.2023 14:51:48" })
           }
         ]
       }
     ];
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: groups.map((group, groupIndex) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: group.items.map((item, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_group_exports.TextGroup, { ...args, label: item.label, labelWidth: group.labelWidth, value: item.value }, index)) }) }, groupIndex)) });
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: groups.map((group, groupIndex) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: group.items.map((item, index) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_group_exports.TextGroup, { ...args, label: item.label, labelWidth: group.labelWidth, value: item.value }, index)) }) }, groupIndex)) });
   };
-  var ExampleRows = ({ rows }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { className: "example-list", children: rows.map((row, key) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { className: `${key === rows.length - 1 ? "" : "border-bottom"} padding-14-16`, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: 12, md: 3, className: "flex align-items-center", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: row.title }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: 12, md: 9, children: row.content })
+  var ExampleRows = ({ rows }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { className: "example-list", children: rows.map((row, key) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { className: `${key === rows.length - 1 ? "" : "border-bottom"} padding-14-16`, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: 12, md: 3, className: "flex align-items-center", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: row.title }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: 12, md: 9, children: row.content })
   ] }, key)) }) });
   var Default = {
     args: {
       label: "Ligip\xE4\xE4setavus",
-      value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Arstile ja esindajale n\xE4htav" })
+      value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Arstile ja esindajale n\xE4htav" })
     }
   };
   var PositionType = {
     name: "Position",
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       ExampleRows,
       {
         rows: [
           {
             title: "Vertical",
-            content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_group_exports.TextGroup, { type: "vertical", label: "Ligip\xE4\xE4setavus", value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Arstile ja esindajale n\xE4htav" }) })
+            content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_group_exports.TextGroup, { type: "vertical", label: "Ligip\xE4\xE4setavus", value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Arstile ja esindajale n\xE4htav" }) })
           },
           {
             title: "Horizontal, label left",
-            content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               text_group_exports.TextGroup,
               {
                 type: "horizontal",
                 labelWidth: "150px",
                 label: "Ligip\xE4\xE4setavus",
-                value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Arstile ja esindajale n\xE4htav" })
+                value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Arstile ja esindajale n\xE4htav" })
               }
             )
           },
           {
             title: "Horizontal, label right",
-            content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               text_group_exports.TextGroup,
               {
                 type: "horizontal",
                 labelWidth: "150px",
                 labelAlign: "right",
                 label: "Ligip\xE4\xE4setavus",
-                value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Arstile ja esindajale n\xE4htav" })
+                value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Arstile ja esindajale n\xE4htav" })
               }
             )
           }
@@ -390,25 +417,25 @@ var __dsPreview = (() => {
   };
   var TextWeight = {
     name: "Text weight",
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       ExampleRows,
       {
         rows: [
           {
             title: "Regular label",
-            content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_group_exports.TextGroup, { label: "Ligip\xE4\xE4setavus", value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Arstile ja esindajale n\xE4htav" }) })
+            content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_group_exports.TextGroup, { label: "Ligip\xE4\xE4setavus", value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Arstile ja esindajale n\xE4htav" }) })
           },
           {
             title: "Bold label",
-            content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_group_exports.TextGroup, { label: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(label_exports.Label, { isBold: true, children: "Ligip\xE4\xE4setavus" }), value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "N\xE4htav arstile ja esindajale" }) })
+            content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_group_exports.TextGroup, { label: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(label_exports.Label, { isBold: true, children: "Ligip\xE4\xE4setavus" }), value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "N\xE4htav arstile ja esindajale" }) })
           },
           {
             title: "Regular value",
-            content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_group_exports.TextGroup, { label: "Ligip\xE4\xE4setavus", value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "N\xE4htav arstile ja esindajale" }) })
+            content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_group_exports.TextGroup, { label: "Ligip\xE4\xE4setavus", value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "N\xE4htav arstile ja esindajale" }) })
           },
           {
             title: "Bold value",
-            content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_group_exports.TextGroup, { label: "Ligip\xE4\xE4setavus", value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: "N\xE4htav arstile ja esindajale" }) })
+            content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_group_exports.TextGroup, { label: "Ligip\xE4\xE4setavus", value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "N\xE4htav arstile ja esindajale" }) })
           }
         ]
       }
@@ -416,31 +443,31 @@ var __dsPreview = (() => {
   };
   var Types = {
     name: "Type",
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       ExampleRows,
       {
         rows: [
           {
             title: "Has link",
-            content: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_group_exports.TextGroup, { label: "Ligip\xE4\xE4setavus", value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "N\xE4htav arstile ja esindajale" }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            content: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_group_exports.TextGroup, { label: "Ligip\xE4\xE4setavus", value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "N\xE4htav arstile ja esindajale" }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
                 text_group_exports.TextGroup,
                 {
                   label: "Ligip\xE4\xE4setavus",
                   value: [
-                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "N\xE4htav arstile ja esindajale" }, "v"),
-                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "Vaata dokumenti" }, "l")
+                    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "N\xE4htav arstile ja esindajale" }, "v"),
+                    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "Vaata dokumenti" }, "l")
                   ]
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
                 text_group_exports.TextGroup,
                 {
                   label: "Ligip\xE4\xE4setavus",
                   value: [
-                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "N\xE4htav arstile ja esindajale" }, "v"),
-                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", children: "dokument nr 4534" }, "l")
+                    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "N\xE4htav arstile ja esindajale" }, "v"),
+                    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", children: "dokument nr 4534" }, "l")
                   ]
                 }
               )
@@ -448,24 +475,24 @@ var __dsPreview = (() => {
           },
           {
             title: "Has icon",
-            content: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            content: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
                 text_group_exports.TextGroup,
                 {
                   label: "Ligip\xE4\xE4setavus",
-                  value: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "lock", size: 16, color: "secondary" }),
-                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "N\xE4htav arstile ja esindajale" })
+                  value: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "lock", size: 16, color: "secondary" }),
+                    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "N\xE4htav arstile ja esindajale" })
                   ] })
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
                 text_group_exports.TextGroup,
                 {
                   label: "Patsient",
-                  value: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "person", size: 18, color: "secondary" }),
-                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Mari Maasikas" })
+                  value: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "person", size: 18, color: "secondary" }),
+                    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Mari Maasikas" })
                   ] })
                 }
               )
@@ -473,13 +500,13 @@ var __dsPreview = (() => {
           },
           {
             title: "Has status",
-            content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               text_group_exports.TextGroup,
               {
                 label: "Ligip\xE4\xE4s",
-                value: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.25, children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Arstile ja esindajale n\xE4htav" }),
-                  /* @__PURE__ */ (0, import_jsx_runtime.jsx)(status_badge_exports.StatusBadge, { color: "brand", children: "Esitatud" })
+                value: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.25, children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Arstile ja esindajale n\xE4htav" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_badge_exports.StatusBadge, { color: "brand", children: "Esitatud" })
                 ] })
               }
             )
@@ -490,24 +517,24 @@ var __dsPreview = (() => {
   };
   var HasSlot = {
     name: "Has slot",
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
         text_group_exports.TextGroup,
         {
           label: "Ligip\xE4\xE4s",
           value: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Arstile ja esindajale n\xE4htav" }, "v"),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(info_button_default, { "aria-label": "Lisainfo ligip\xE4\xE4su kohta" }, "s")
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Arstile ja esindajale n\xE4htav" }, "v"),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(info_button_default, { "aria-label": "Lisainfo ligip\xE4\xE4su kohta" }, "s")
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
         text_group_exports.TextGroup,
         {
           label: "Nimi",
           value: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Mari Maasikas" }, "v"),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(status_badge_exports.StatusBadge, { color: "success", children: "Ligip\xE4\xE4s lubatud" }, "s")
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Mari Maasikas" }, "v"),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_badge_exports.StatusBadge, { color: "success", children: "Ligip\xE4\xE4s lubatud" }, "s")
           ]
         }
       )
@@ -524,7 +551,7 @@ var __dsPreview = (() => {
     args: {
       label: "Accessibility",
       labelWidth: "150px",
-      value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pulvinar malesuada tellus, nec efficitur orci interdum vitae. Proin semper venenatis est, vel malesuada sapien ornare at. Vestibulum egestas in lectus non finibus. Donec rhoncus sapien vel justo elementum vestibulum. Vivamus euismod dui vel erat semper luctus. Nulla egestas purus elit, non fermentum sapien sagittis nec. Pellentesque ac sapien non justo vehicula porta." })
+      value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pulvinar malesuada tellus, nec efficitur orci interdum vitae. Proin semper venenatis est, vel malesuada sapien ornare at. Vestibulum egestas in lectus non finibus. Donec rhoncus sapien vel justo elementum vestibulum. Vivamus euismod dui vel erat semper luctus. Nulla egestas purus elit, non fermentum sapien sagittis nec. Pellentesque ac sapien non justo vehicula porta." })
     }
   };
   var Responsive = {
@@ -538,7 +565,7 @@ var __dsPreview = (() => {
         { label: "Tervishoiut\xF6\xF6taja", value: "Mart Mets" },
         { label: "Dokumendi loomise aeg", value: "16.08.2023 14:51:48" }
       ];
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 0.25, children: rows.map((row, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 0.25, children: rows.map((row, index) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
         text_group_exports.TextGroup,
         {
           type: "vertical",
@@ -546,7 +573,7 @@ var __dsPreview = (() => {
           md: { labelWidth: "200px" },
           lg: { labelWidth: "25%" },
           label: row.label,
-          value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: row.value })
+          value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: row.value })
         },
         index
       )) });
@@ -554,35 +581,35 @@ var __dsPreview = (() => {
   };
   var CustomLabel = {
     name: "Custom label",
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       ExampleRows,
       {
         rows: [
           {
             title: "With info button",
-            content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               text_group_exports.TextGroup,
               {
-                label: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(text_exports.Text, { modifiers: "bold", color: "secondary", children: [
+                label: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(text_exports.Text, { modifiers: "bold", color: "secondary", children: [
                   "Volitused ",
-                  /* @__PURE__ */ (0, import_jsx_runtime.jsx)(info_button_default, { "aria-label": "Rohkem infot" })
+                  /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(info_button_default, { "aria-label": "Rohkem infot" })
                 ] }),
-                value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Arstile ja esindajale n\xE4htav" })
+                value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Arstile ja esindajale n\xE4htav" })
               }
             )
           },
           {
             title: "With status badge",
-            content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               text_group_exports.TextGroup,
               {
                 type: "horizontal",
                 labelWidth: "150px",
-                label: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "flex align-items-center gap-2", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "bold", color: "secondary", children: "Olek" }),
-                  /* @__PURE__ */ (0, import_jsx_runtime.jsx)(status_badge_exports.StatusBadge, { color: "success", children: "Aktiivne" })
+                label: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "flex align-items-center gap-2", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "bold", color: "secondary", children: "Olek" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_badge_exports.StatusBadge, { color: "success", children: "Aktiivne" })
                 ] }),
-                value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Olekuga seotud tekst" })
+                value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Olekuga seotud tekst" })
               }
             )
           }
@@ -591,27 +618,27 @@ var __dsPreview = (() => {
     )
   };
   var WithList = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       ExampleRows,
       {
         rows: [
           {
             title: "Vertical list (default)",
-            content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               text_group_exports.TextGroup.List,
               {
                 items: [
-                  { label: "Patsient", value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Mari Maasikas" }) },
-                  { label: "Aadress", value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Tulbi tn 4, Tallinn, 23562, Eesti" }) },
-                  { label: "Vaktsiin", value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "COVID-19 mRNA" }) },
-                  { label: "J\xE4rgmine vaktsineerimine", value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Immuniseerimine l\xF5petatud" }) }
+                  { label: "Patsient", value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Mari Maasikas" }) },
+                  { label: "Aadress", value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Tulbi tn 4, Tallinn, 23562, Eesti" }) },
+                  { label: "Vaktsiin", value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "COVID-19 mRNA" }) },
+                  { label: "J\xE4rgmine vaktsineerimine", value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Immuniseerimine l\xF5petatud" }) }
                 ]
               }
             )
           },
           {
             title: "Horizontal list with shared label column",
-            content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               text_group_exports.TextGroup.List,
               {
                 type: "horizontal",
@@ -619,39 +646,39 @@ var __dsPreview = (() => {
                 items: [
                   {
                     label: "Patsient",
-                    value: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "person", size: 18, color: "secondary" }),
-                      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Mari Maasikas" })
+                    value: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "person", size: 18, color: "secondary" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Mari Maasikas" })
                     ] })
                   },
                   {
                     label: "Aadress",
-                    value: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(icon_exports.Icon, { name: "location_on", size: 16, color: "secondary" }),
-                      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Tulbi tn 4, Tallinn, 23562, Eesti" })
+                    value: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(icon_exports.Icon, { name: "location_on", size: 16, color: "secondary" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Tulbi tn 4, Tallinn, 23562, Eesti" })
                     ] })
                   },
-                  { label: "Tervishoiuteenuse osutaja", value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "SA P\xF5hja-Eesti Regionaalhaigla" }) },
-                  { label: "Tervishoiut\xF6\xF6taja", value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Mart Mets" }) },
-                  { label: "Dokumendi loomise aeg", value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "16.08.2023 14:51:48" }) }
+                  { label: "Tervishoiuteenuse osutaja", value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "SA P\xF5hja-Eesti Regionaalhaigla" }) },
+                  { label: "Tervishoiut\xF6\xF6taja", value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Mart Mets" }) },
+                  { label: "Dokumendi loomise aeg", value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "16.08.2023 14:51:48" }) }
                 ]
               }
             )
           },
           {
             title: "Per-row labelAlign / labelWidth overrides",
-            content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
               text_group_exports.TextGroup.List,
               {
                 type: "horizontal",
                 labelWidth: "160px",
                 items: [
-                  { label: "Toode", value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "USB-C laadimiskaabel" }) },
-                  { label: "Kogus", value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "2" }) },
-                  { label: "\xDChiku hind", value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "12.50 \u20AC" }), labelAlign: "right", labelWidth: "220px" },
+                  { label: "Toode", value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "USB-C laadimiskaabel" }) },
+                  { label: "Kogus", value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "2" }) },
+                  { label: "\xDChiku hind", value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "12.50 \u20AC" }), labelAlign: "right", labelWidth: "220px" },
                   {
                     label: "Kokku",
-                    value: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: "25.00 \u20AC" }),
+                    value: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "25.00 \u20AC" }),
                     labelAlign: "right",
                     labelWidth: "220px"
                   }
@@ -663,12 +690,34 @@ var __dsPreview = (() => {
       }
     )
   };
+  var visualTestBlocks = [
+    { label: "Default", content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Default, component: text_group_exports.TextGroup }) },
+    ...[
+      { label: "Position", story: PositionType },
+      { label: "Text weight", story: TextWeight },
+      { label: "Type", story: Types },
+      { label: "Has slot", story: HasSlot },
+      { label: "Horizontal label length", story: HorizontalLabelLength },
+      { label: "Long text values", story: LongTextValues },
+      { label: "Custom label", story: CustomLabel },
+      { label: "With list", story: WithList },
+      { label: "Responsive", story: Responsive }
+    ].map(({ label, story }) => ({ label, content: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story }) }))
+  ];
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: visualTestBlocks.map(({ label, content }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: label }),
+      content
+    ] }, label)) })
+  };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -705,9 +754,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // TextGroup.preview.tsx
@@ -723,5 +772,6 @@ var __dsPreview = (() => {
   var Responsive2 = compose(text_group_stories_exports, "Responsive", G, B);
   var CustomLabel2 = compose(text_group_stories_exports, "CustomLabel", G, B);
   var WithList2 = compose(text_group_stories_exports, "WithList", G, B);
+  var VisualTest2 = compose(text_group_stories_exports, "VisualTest", G, B);
   return __toCommonJS(TextGroup_preview_exports);
 })();

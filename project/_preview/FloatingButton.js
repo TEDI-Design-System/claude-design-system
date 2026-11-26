@@ -55,12 +55,12 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
+  // react-global:react
+  var require_react = __commonJS({
+    "react-global:react"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.Tedi;
+      module.exports = window.React;
     }
   });
 
@@ -70,19 +70,19 @@ var __dsPreview = (() => {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
     }
   });
 
-  // react-global:react
-  var require_react = __commonJS({
-    "react-global:react"(exports, module) {
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.React;
+      module.exports = window.Tedi;
     }
   });
 
@@ -93,7 +93,8 @@ var __dsPreview = (() => {
     PrimaryHorizontal: () => PrimaryHorizontal2,
     PrimaryVertical: () => PrimaryVertical2,
     SecondaryHorizontal: () => SecondaryHorizontal2,
-    SecondaryVertical: () => SecondaryVertical2
+    SecondaryVertical: () => SecondaryVertical2,
+    VisualTest: () => VisualTest2
   });
   init_define_import_meta_env();
   init_define_process_env();
@@ -106,12 +107,37 @@ var __dsPreview = (() => {
     PrimaryVertical: () => PrimaryVertical,
     SecondaryHorizontal: () => SecondaryHorizontal,
     SecondaryVertical: () => SecondaryVertical,
+    VisualTest: () => VisualTest,
     default: () => floating_button_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -127,7 +153,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -141,7 +167,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -155,7 +181,18 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/floating-button/floating-button.tsx
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
+  var vertical_spacing_exports = {};
+  __export(vertical_spacing_exports, {
+    default: () => vertical_spacing_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(vertical_spacing_exports, __toESM(require_tedi_namespace()));
+  var ns4 = window.Tedi;
+  var vertical_spacing_default = ns4["VerticalSpacing"] ?? ns4;
+
+  // tedi:src/tedi/components/buttons/floating-button/floating-button.tsx
   var floating_button_exports = {};
   __export(floating_button_exports, {
     default: () => floating_button_default
@@ -163,15 +200,16 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(floating_button_exports, __toESM(require_tedi_namespace()));
-  var ns4 = window.Tedi;
-  var floating_button_default = ns4["FloatingButton"] ?? ns4;
+  var ns5 = window.Tedi;
+  var floating_button_default = ns5["FloatingButton"] ?? ns5;
 
   // src/tedi/components/buttons/floating-button/floating-button.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: floating_button_default,
     title: "Tedi-ready/Components/Buttons/FloatingButton",
     parameters: {
+      chromatic: { disableSnapshot: true },
       design: {
         type: "figma",
         url: "https://www.figma.com/design/jWiRIXhHRxwVdMSimKX2FF/TEDI-READY-(work-in-progress)?node-id=4514-73451&m=dev"
@@ -182,37 +220,46 @@ var __dsPreview = (() => {
   var buttonSizeArray = ["Default", "Large"];
   var buttonStateArray = ["Default", "Hover", "Active", "Focus"];
   var TemplateColumn = (args) => {
-    const { array, ...buttonProps } = args;
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { style: { gap: buttonProps.axis === "vertical" ? 100 : 0 }, children: buttonSizeArray.map((size) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Col, { md: 12, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { style: { paddingBottom: 16 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { md: 12, lg: 6, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: size }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { style: { gap: buttonProps.axis === "vertical" ? 100 : 16, paddingBottom: 16 }, children: array.map((value, key) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Col, { xs: 12, style: { display: buttonProps.axis === "vertical" ? "flex" : void 0 }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { xs: 2, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: value }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Col, { className: "flex align-items-center gap-3", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(floating_button_default, { id: value, size: size === "Large" ? "large" : "medium", ...buttonProps, children: "Scroll up" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    const { array, idPrefix, ...buttonProps } = args;
+    const getId = (size, value, index) => idPrefix ? `${idPrefix}${size}-${value}-${index}` : value;
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { style: { gap: buttonProps.axis === "vertical" ? 100 : 0 }, children: buttonSizeArray.map((size) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Col, { md: 12, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { style: { paddingBottom: 16 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { md: 12, lg: 6, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: size }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { style: { gap: buttonProps.axis === "vertical" ? 100 : 16, paddingBottom: 16 }, children: array.map((value, key) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Col, { xs: 12, style: { display: buttonProps.axis === "vertical" ? "flex" : void 0 }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { xs: 2, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: value }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Col, { className: "flex align-items-center gap-3", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
             floating_button_default,
             {
-              id: value,
+              id: getId(size, value, 1),
+              size: size === "Large" ? "large" : "medium",
+              ...buttonProps,
+              children: "Scroll up"
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+            floating_button_default,
+            {
+              id: getId(size, value, 2),
               size: size === "Large" ? "large" : "medium",
               ...buttonProps,
               iconRight: "arrow_upward",
               children: "Scroll up"
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
             floating_button_default,
             {
-              id: value,
+              id: getId(size, value, 3),
               size: size === "Large" ? "large" : "medium",
               ...buttonProps,
               iconLeft: "arrow_upward",
               children: "Scroll up"
             }
           ),
-          buttonProps.axis === "horizontal" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+          buttonProps.axis === "horizontal" && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
             floating_button_default,
             {
-              id: value,
+              id: getId(size, value, 4),
               size: size === "Large" ? "large" : "medium",
               ...buttonProps,
               icon: "arrow_upward",
@@ -293,12 +340,68 @@ var __dsPreview = (() => {
       }
     }
   };
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: {
+      chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS },
+      pseudo: {
+        hover: '[id^="vt-"][id*="-Hover-"]',
+        active: '[id^="vt-"][id*="-Active-"]',
+        focusVisible: '[id^="vt-"][id*="-Focus-"]'
+      }
+    },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Default, component: floating_button_default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Primary horizontal" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+          VisualTestStory,
+          {
+            story: { ...PrimaryHorizontal, args: { ...PrimaryHorizontal.args, idPrefix: "vt-primary-horizontal-" } }
+          }
+        )
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Primary vertical" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+          VisualTestStory,
+          {
+            story: { ...PrimaryVertical, args: { ...PrimaryVertical.args, idPrefix: "vt-primary-vertical-" } }
+          }
+        )
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Secondary horizontal" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+          VisualTestStory,
+          {
+            story: {
+              ...SecondaryHorizontal,
+              args: { ...SecondaryHorizontal.args, idPrefix: "vt-secondary-horizontal-" }
+            }
+          }
+        )
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Secondary vertical" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+          VisualTestStory,
+          {
+            story: { ...SecondaryVertical, args: { ...SecondaryVertical.args, idPrefix: "vt-secondary-vertical-" } }
+          }
+        )
+      ] })
+    ] })
+  };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -335,9 +438,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // FloatingButton.preview.tsx
@@ -348,5 +451,6 @@ var __dsPreview = (() => {
   var PrimaryVertical2 = compose(floating_button_stories_exports, "PrimaryVertical", G, B);
   var SecondaryHorizontal2 = compose(floating_button_stories_exports, "SecondaryHorizontal", G, B);
   var SecondaryVertical2 = compose(floating_button_stories_exports, "SecondaryVertical", G, B);
+  var VisualTest2 = compose(floating_button_stories_exports, "VisualTest", G, B);
   return __toCommonJS(FloatingButton_preview_exports);
 })();

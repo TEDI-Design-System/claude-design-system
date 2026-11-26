@@ -55,12 +55,12 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
+  // react-global:react
+  var require_react = __commonJS({
+    "react-global:react"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.Tedi;
+      module.exports = window.React;
     }
   });
 
@@ -70,19 +70,19 @@ var __dsPreview = (() => {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
     }
   });
 
-  // react-global:react
-  var require_react = __commonJS({
-    "react-global:react"(exports, module) {
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.React;
+      module.exports = window.Tedi;
     }
   });
 
@@ -95,7 +95,8 @@ var __dsPreview = (() => {
     DefaultSmallBold: () => DefaultSmallBold2,
     InfoButtonStory: () => InfoButtonStory2,
     Required: () => Required2,
-    RequiredBold: () => RequiredBold2
+    RequiredBold: () => RequiredBold2,
+    VisualTest: () => VisualTest2
   });
   init_define_import_meta_env();
   init_define_process_env();
@@ -110,12 +111,59 @@ var __dsPreview = (() => {
     InfoButtonStory: () => InfoButtonStory,
     Required: () => Required,
     RequiredBold: () => RequiredBold,
+    VisualTest: () => VisualTest,
     default: () => label_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/label/label.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/typography/text/text.tsx
+  var text_exports = {};
+  __export(text_exports, {
+    default: () => text_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(text_exports, __toESM(require_tedi_namespace()));
+  var ns = window.Tedi;
+  var text_default = ns["Text"] ?? ns;
+
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
+  var vertical_spacing_exports = {};
+  __export(vertical_spacing_exports, {
+    default: () => vertical_spacing_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(vertical_spacing_exports, __toESM(require_tedi_namespace()));
+  var ns2 = window.Tedi;
+  var vertical_spacing_default = ns2["VerticalSpacing"] ?? ns2;
+
+  // tedi:src/tedi/components/content/label/label.tsx
   var label_exports = {};
   __export(label_exports, {
     default: () => label_default
@@ -123,11 +171,11 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(label_exports, __toESM(require_tedi_namespace()));
-  var ns = window.Tedi;
-  var label_default = ns["Label"] ?? ns;
+  var ns3 = window.Tedi;
+  var label_default = ns3["Label"] ?? ns3;
 
   // src/tedi/components/content/label/label.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: label_exports.Label,
     title: "TEDI-Ready/Content/Label",
@@ -135,6 +183,7 @@ var __dsPreview = (() => {
       tooltip: { control: false }
     },
     parameters: {
+      chromatic: { disableSnapshot: true },
       status: {
         type: [{ name: "breakpointSupport", url: "?path=/docs/helpers-usebreakpointprops--usebreakpointprops" }]
       },
@@ -148,7 +197,7 @@ var __dsPreview = (() => {
     }
   };
   var label_stories_default = meta;
-  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(label_exports.Label, { ...args });
+  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(label_exports.Label, { ...args });
   var Default = {
     render: Template,
     args: {
@@ -203,12 +252,29 @@ var __dsPreview = (() => {
       isSmall: true
     }
   };
+  var visualTestVariants = [
+    { label: "Default", story: Default },
+    { label: "Required field", story: Required },
+    { label: "Bold", story: DefaultBold },
+    { label: "Bold required field", story: RequiredBold },
+    { label: "Info button", story: InfoButtonStory },
+    { label: "Small", story: DefaultSmall },
+    { label: "Small bold", story: DefaultSmallBold }
+  ];
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: visualTestVariants.map(({ label, story }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.25, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: label }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story })
+    ] }, label)) })
+  };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -245,9 +311,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // Label.preview.tsx
@@ -260,5 +326,6 @@ var __dsPreview = (() => {
   var InfoButtonStory2 = compose(label_stories_exports, "InfoButtonStory", G, B);
   var DefaultSmall2 = compose(label_stories_exports, "DefaultSmall", G, B);
   var DefaultSmallBold2 = compose(label_stories_exports, "DefaultSmallBold", G, B);
+  var VisualTest2 = compose(label_stories_exports, "VisualTest", G, B);
   return __toCommonJS(Label_preview_exports);
 })();

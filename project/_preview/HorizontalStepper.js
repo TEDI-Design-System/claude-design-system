@@ -64,25 +64,25 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      module.exports = window.Tedi;
-    }
-  });
-
   // react-global:react/jsx-runtime
   var require_jsx_runtime = __commonJS({
     "react-global:react/jsx-runtime"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
+    }
+  });
+
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      module.exports = window.Tedi;
     }
   });
 
@@ -98,6 +98,7 @@ var __dsPreview = (() => {
     States: () => States2,
     ThirdStep: () => ThirdStep2,
     TransparentBackground: () => TransparentBackground2,
+    VisualTest: () => VisualTest2,
     WithDescriptions: () => WithDescriptions2,
     WithErrors: () => WithErrors2
   });
@@ -116,13 +117,14 @@ var __dsPreview = (() => {
     States: () => States,
     ThirdStep: () => ThirdStep,
     TransparentBackground: () => TransparentBackground,
+    VisualTest: () => VisualTest,
     WithDescriptions: () => WithDescriptions,
     WithErrors: () => WithErrors,
     default: () => horizontal_stepper_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
-  var import_react = __toESM(require_react(), 1);
+  var import_react2 = __toESM(require_react(), 1);
 
   // .storybook/subcomponent-controls.ts
   init_define_import_meta_env();
@@ -199,12 +201,36 @@ var __dsPreview = (() => {
     return props;
   };
 
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
   // src/tedi/helpers/index.ts
   var helpers_exports = {};
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-is-mounted.ts
+  // tedi:src/tedi/helpers/hooks/use-is-mounted.ts
   var use_is_mounted_exports = {};
   __export(use_is_mounted_exports, {
     default: () => use_is_mounted_default
@@ -218,7 +244,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_is_mounted_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-safe-id.ts
+  // tedi:src/tedi/helpers/hooks/use-safe-id.ts
   var use_safe_id_exports = {};
   __export(use_safe_id_exports, {
     default: () => use_safe_id_default
@@ -232,7 +258,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_safe_id_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-breakpoint.ts
+  // tedi:src/tedi/helpers/hooks/use-breakpoint.ts
   var use_breakpoint_exports = {};
   __export(use_breakpoint_exports, {
     default: () => use_breakpoint_default
@@ -246,7 +272,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_breakpoint_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-breakpoint-props.ts
+  // tedi:src/tedi/helpers/hooks/use-breakpoint-props.ts
   var use_breakpoint_props_exports = {};
   __export(use_breakpoint_props_exports, {
     default: () => use_breakpoint_props_default
@@ -260,7 +286,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_breakpoint_props_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-element-size.ts
+  // tedi:src/tedi/helpers/hooks/use-element-size.ts
   var use_element_size_exports = {};
   __export(use_element_size_exports, {
     default: () => use_element_size_default
@@ -274,7 +300,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_element_size_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-scroll.ts
+  // tedi:src/tedi/helpers/hooks/use-scroll.ts
   var use_scroll_exports = {};
   __export(use_scroll_exports, {
     default: () => use_scroll_default
@@ -288,7 +314,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_scroll_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-is-touch-device.ts
+  // tedi:src/tedi/helpers/hooks/use-is-touch-device.ts
   var use_is_touch_device_exports = {};
   __export(use_is_touch_device_exports, {
     default: () => use_is_touch_device_default
@@ -302,7 +328,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_is_touch_device_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-file-upload.ts
+  // tedi:src/tedi/helpers/hooks/use-file-upload.ts
   var use_file_upload_exports = {};
   __export(use_file_upload_exports, {
     default: () => use_file_upload_default
@@ -316,7 +342,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_file_upload_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-what-input.ts
+  // tedi:src/tedi/helpers/hooks/use-what-input.ts
   var use_what_input_exports = {};
   __export(use_what_input_exports, {
     default: () => use_what_input_default
@@ -330,7 +356,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_what_input_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/hooks/use-scroll-fade.ts
+  // tedi:src/tedi/helpers/hooks/use-scroll-fade.ts
   var use_scroll_fade_exports = {};
   __export(use_scroll_fade_exports, {
     default: () => use_scroll_fade_default
@@ -344,7 +370,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, use_scroll_fade_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/helpers/polymorphic/types.ts
+  // tedi:src/tedi/helpers/polymorphic/types.ts
   var types_exports = {};
   __export(types_exports, {
     default: () => types_default
@@ -358,7 +384,7 @@ var __dsPreview = (() => {
   // src/tedi/helpers/index.ts
   __reExport(helpers_exports, types_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -369,7 +395,7 @@ var __dsPreview = (() => {
   var ns12 = window.Tedi;
   var text_default = ns12["Text"] ?? ns12;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -380,7 +406,7 @@ var __dsPreview = (() => {
   var ns13 = window.Tedi;
   var button_default = ns13["Button"] ?? ns13;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -391,7 +417,7 @@ var __dsPreview = (() => {
   var ns14 = window.Tedi;
   var vertical_spacing_default = ns14["VerticalSpacing"] ?? ns14;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/horizontal-stepper/horizontal-stepper.tsx
+  // tedi:src/tedi/components/navigation/horizontal-stepper/horizontal-stepper.tsx
   var horizontal_stepper_exports = {};
   __export(horizontal_stepper_exports, {
     default: () => horizontal_stepper_default
@@ -402,7 +428,7 @@ var __dsPreview = (() => {
   var ns15 = window.Tedi;
   var horizontal_stepper_default = ns15["HorizontalStepper"] ?? ns15;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/horizontal-stepper/horizontal-stepper-item.tsx
+  // tedi:src/tedi/components/navigation/horizontal-stepper/horizontal-stepper-item.tsx
   var horizontal_stepper_item_exports = {};
   __export(horizontal_stepper_item_exports, {
     default: () => horizontal_stepper_item_default
@@ -414,7 +440,7 @@ var __dsPreview = (() => {
   var horizontal_stepper_item_default = ns16["HorizontalStepperItem"] ?? ns16;
 
   // src/tedi/components/navigation/horizontal-stepper/horizontal-stepper.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var STEPS = ["Kutse", "Tahteavaldus", "Geenianal\xFC\xFCs", "Vastus"];
   var meta = {
     component: horizontal_stepper_exports.HorizontalStepper,
@@ -426,7 +452,8 @@ var __dsPreview = (() => {
       design: {
         type: "figma",
         url: "https://www.figma.com/design/jWiRIXhHRxwVdMSimKX2FF/TEDI-READY-2.51.75?node-id=11201-120696&m=dev"
-      }
+      },
+      chromatic: { disableSnapshot: true }
     }
   };
   var horizontal_stepper_stories_default = meta;
@@ -444,11 +471,11 @@ var __dsPreview = (() => {
       compact: "sm",
       item__selected: true
     },
-    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(horizontal_stepper_exports.HorizontalStepper, { ...getPrimaryComponentProps(args), children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { ...getSubcomponentProps(args, "item"), label: "Kutse" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus" })
+    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(horizontal_stepper_exports.HorizontalStepper, { ...getPrimaryComponentProps(args), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { ...getSubcomponentProps(args, "item"), label: "Kutse" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus" })
     ] })
   };
   var STATE_ROWS = [
@@ -463,26 +490,26 @@ var __dsPreview = (() => {
     { key: "default", label: "Default", props: {}, rows: ["default", "hover", "active"] },
     { key: "selected", label: "Selected", props: { selected: true }, rows: ["default"] }
   ];
-  var StatesMatrix = ({ compact }) => {
+  var StatesMatrix = ({ compact, labelPrefix = "" }) => {
     const breakpoint = (0, helpers_exports.useBreakpoint)();
     const isMobile = (0, helpers_exports.isBreakpointBelow)(breakpoint, "md");
     if (isMobile) {
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 1.5, children: TYPE_COLS.map((col) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: col.label }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { display: "flex", flexDirection: "column", gap: "0.5rem", marginTop: "0.5rem" }, children: STATE_ROWS.filter((row) => col.rows.includes(row.key)).map((row) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 1.5, children: TYPE_COLS.map((col) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: col.label }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { display: "flex", flexDirection: "column", gap: "0.5rem", marginTop: "0.5rem" }, children: STATE_ROWS.filter((row) => col.rows.includes(row.key)).map((row) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
           "div",
           {
             "data-stepper-state": row.key,
             style: { display: "flex", alignItems: "center", gap: "1rem" },
             children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { minWidth: "4rem" }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "small", color: "secondary", element: "span", children: row.label }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { width: "fit-content", maxWidth: "100%" }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { minWidth: "4rem" }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "small", color: "secondary", element: "span", children: row.label }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { width: "fit-content", maxWidth: "100%" }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
                 horizontal_stepper_exports.HorizontalStepper,
                 {
-                  "aria-label": `${col.label} \u2013 ${row.label}`,
+                  "aria-label": `${labelPrefix}${col.label} \u2013 ${row.label}`,
                   background: "transparent",
                   compact,
-                  children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Step", ...col.props })
+                  children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Step", ...col.props })
                 }
               ) })
             ]
@@ -491,7 +518,7 @@ var __dsPreview = (() => {
         )) })
       ] }, col.key)) });
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
       "div",
       {
         style: {
@@ -502,20 +529,20 @@ var __dsPreview = (() => {
           justifyContent: "start"
         },
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}),
-          TYPE_COLS.map((col) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: col.label }, col.key)),
-          STATE_ROWS.map((row) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_react.Fragment, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: row.label }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", {}),
+          TYPE_COLS.map((col) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: col.label }, col.key)),
+          STATE_ROWS.map((row) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_react2.Fragment, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: row.label }),
             TYPE_COLS.map(
-              (col) => col.rows.includes(row.key) ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { "data-stepper-state": row.key, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+              (col) => col.rows.includes(row.key) ? /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { "data-stepper-state": row.key, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
                 horizontal_stepper_exports.HorizontalStepper,
                 {
-                  "aria-label": `${col.label} \u2013 ${row.label}`,
+                  "aria-label": `${labelPrefix}${col.label} \u2013 ${row.label}`,
                   background: "transparent",
                   compact,
-                  children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Step", ...col.props })
+                  children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Step", ...col.props })
                 }
-              ) }, col.key) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {}, col.key)
+              ) }, col.key) : /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", {}, col.key)
             )
           ] }, row.key))
         ]
@@ -530,78 +557,78 @@ var __dsPreview = (() => {
     }
   };
   var SecondStep = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Protsessi sammud", compact: "lg", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", completed: true }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus", selected: true }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus" })
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Protsessi sammud", compact: "lg", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", completed: true }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus", selected: true }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus" })
     ] })
   };
   var ThirdStep = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Protsessi sammud", compact: "lg", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", completed: true }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus", completed: true }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs", selected: true }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus" })
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Protsessi sammud", compact: "lg", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", completed: true }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus", completed: true }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs", selected: true }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus" })
     ] })
   };
   var WithErrors = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Vorm vigadega", compact: "lg", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", error: true }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus", selected: true }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus" })
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Vorm vigadega", compact: "lg", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", error: true }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus", selected: true }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Vorm vea kirjeldusega", compact: "lg", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", completed: true }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus", error: true, description: "Sammus esinevad vead" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs", selected: true }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus" })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Vorm vea kirjeldusega", compact: "lg", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", completed: true }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus", error: true, description: "Sammus esinevad vead" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs", selected: true }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus" })
       ] })
     ] })
   };
   var WithDescriptions = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Sammud kirjeldustega \u2013 Kutse aktiivne", compact: "lg", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", selected: true }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs", description: "Ametnik t\xE4idab" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus", description: "Ametnik t\xE4idab" })
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Sammud kirjeldustega (samm 1)", compact: "lg", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", selected: true }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs", description: "Ametnik t\xE4idab" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus", description: "Ametnik t\xE4idab" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Sammud kirjeldustega \u2013 Tahteavaldus aktiivne", compact: "lg", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", completed: true }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus", selected: true }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs", description: "Ametnik t\xE4idab" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus", description: "Ametnik t\xE4idab" })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Sammud kirjeldustega (samm 2)", compact: "lg", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", completed: true }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus", selected: true }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs", description: "Ametnik t\xE4idab" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus", description: "Ametnik t\xE4idab" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Sammud kirjeldustega \u2013 Geenianal\xFC\xFCs aktiivne", compact: "lg", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", completed: true }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus", completed: true }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs", selected: true, description: "Ametnik t\xE4idab" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus", description: "Ametnik t\xE4idab" })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Sammud kirjeldustega (samm 3)", compact: "lg", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", completed: true }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus", completed: true }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs", selected: true, description: "Ametnik t\xE4idab" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus", description: "Ametnik t\xE4idab" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Sammud kirjeldustega \u2013 Vastus aktiivne", compact: "lg", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", completed: true }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus", completed: true }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs", completed: true, description: "Ametnik t\xE4idab" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus", selected: true, description: "Ametnik t\xE4idab" })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Sammud kirjeldustega (samm 4)", compact: "lg", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", completed: true }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus", completed: true }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs", completed: true, description: "Ametnik t\xE4idab" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus", selected: true, description: "Ametnik t\xE4idab" })
       ] })
     ] })
   };
   var TransparentBackground = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Protsessi sammud", background: "transparent", compact: "lg", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", completed: true }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus", selected: true }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus" })
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Protsessi sammud", background: "transparent", compact: "lg", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Kutse", completed: true }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Tahteavaldus", selected: true }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Geenianal\xFC\xFCs" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper.Item, { label: "Vastus" })
     ] })
   };
   var Compact = {
     render: () => {
       const Demo = () => {
-        const [current, setCurrent] = (0, import_react.useState)(1);
-        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Protsessi sammud", compact: true, children: STEPS.map((label, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+        const [current, setCurrent] = (0, import_react2.useState)(1);
+        return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { maxWidth: 480 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Protsessi sammud", compact: true, children: STEPS.map((label, index) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
           horizontal_stepper_exports.HorizontalStepper.Item,
           {
             label,
@@ -613,14 +640,15 @@ var __dsPreview = (() => {
           label
         )) }) });
       };
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Demo, {});
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Demo, {});
     }
   };
   var ClickToNavigate = {
+    parameters: { visualTest: false },
     render: () => {
       const Demo = () => {
-        const [current, setCurrent] = (0, import_react.useState)(1);
-        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Protsessi sammud", compact: "lg", children: STEPS.map((label, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+        const [current, setCurrent] = (0, import_react2.useState)(1);
+        return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Protsessi sammud", compact: "lg", children: STEPS.map((label, index) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
           horizontal_stepper_exports.HorizontalStepper.Item,
           {
             label,
@@ -631,63 +659,107 @@ var __dsPreview = (() => {
           label
         )) });
       };
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Demo, {});
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Demo, {});
     }
   };
+  var ExternalNavigationTemplate = ({ ariaLabel = "Protsessi sammud" }) => {
+    const [current, setCurrent] = (0, import_react2.useState)(0);
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1.5, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": ariaLabel, compact: "lg", children: STEPS.map((label, index) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+        horizontal_stepper_exports.HorizontalStepper.Item,
+        {
+          label,
+          completed: index < current,
+          selected: index === current,
+          disabled: index > current,
+          onSelect: () => setCurrent(index)
+        },
+        label
+      )) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { display: "flex", gap: "0.5rem" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+          button_exports.Button,
+          {
+            visualType: "secondary",
+            disabled: current === 0,
+            onClick: () => setCurrent((step) => Math.max(0, step - 1)),
+            children: "Tagasi"
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+          button_exports.Button,
+          {
+            disabled: current === STEPS.length - 1,
+            onClick: () => setCurrent((step) => Math.min(STEPS.length - 1, step + 1)),
+            children: "Edasi"
+          }
+        )
+      ] })
+    ] });
+  };
   var ExternalNavigation = {
-    render: () => {
-      const Demo = () => {
-        const [current, setCurrent] = (0, import_react.useState)(0);
-        return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1.5, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(horizontal_stepper_exports.HorizontalStepper, { "aria-label": "Protsessi sammud", compact: "lg", children: STEPS.map((label, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-            horizontal_stepper_exports.HorizontalStepper.Item,
-            {
-              label,
-              completed: index < current,
-              selected: index === current,
-              disabled: index > current,
-              onSelect: () => setCurrent(index)
-            },
-            label
-          )) }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", gap: "0.5rem" }, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-              button_exports.Button,
-              {
-                visualType: "secondary",
-                disabled: current === 0,
-                onClick: () => setCurrent((step) => Math.max(0, step - 1)),
-                children: "Tagasi"
-              }
-            ),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-              button_exports.Button,
-              {
-                disabled: current === STEPS.length - 1,
-                onClick: () => setCurrent((step) => Math.min(STEPS.length - 1, step + 1)),
-                children: "Edasi"
-              }
-            )
-          ] })
-        ] });
-      };
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Demo, {});
-    }
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(ExternalNavigationTemplate, {})
   };
   var States = {
     parameters: statesPseudo,
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(StatesMatrix, { compact: false })
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(StatesMatrix, { compact: false })
   };
   var CompactStates = {
     parameters: statesPseudo,
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(StatesMatrix, { compact: true })
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(StatesMatrix, { compact: true })
+  };
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS }, ...statesPseudo },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Second step" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: SecondStep, props: { "aria-label": "Second step" } })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Third step" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: ThirdStep, props: { "aria-label": "Third step" } })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "With errors" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: WithErrors })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "With descriptions" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: WithDescriptions })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Transparent background" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: TransparentBackground, props: { "aria-label": "Transparent background" } })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Compact" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Compact })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "External navigation" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(ExternalNavigationTemplate, { ariaLabel: "External navigation" })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "States" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: States })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Compact states" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: CompactStates, props: { labelPrefix: "Compact: " } })
+      ] })
+    ] })
   };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -724,9 +796,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // HorizontalStepper.preview.tsx
@@ -743,5 +815,6 @@ var __dsPreview = (() => {
   var ExternalNavigation2 = compose(horizontal_stepper_stories_exports, "ExternalNavigation", G, B);
   var States2 = compose(horizontal_stepper_stories_exports, "States", G, B);
   var CompactStates2 = compose(horizontal_stepper_stories_exports, "CompactStates", G, B);
+  var VisualTest2 = compose(horizontal_stepper_stories_exports, "VisualTest", G, B);
   return __toCommonJS(HorizontalStepper_preview_exports);
 })();

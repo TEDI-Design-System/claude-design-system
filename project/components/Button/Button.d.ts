@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Button from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/button/button.stories.tsx).
+ * Button from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/buttons/button/button.stories.tsx).
  */
 export interface ButtonProps<C extends React.ElementType = 'button'> {
   /** Button children */
@@ -14,8 +14,8 @@ export interface ButtonProps<C extends React.ElementType = 'button'> {
   fullWidth?: boolean;
   /** Color scheme of the button. The 'text' value is only supported when visualType is 'link'. */
   color?: ButtonColor;
-  /** Button size */
-  size?: 'default' | 'small' | 'large';
+  /** Button size. The 'extra-small' size is only intended for icon-only buttons (use with the `icon` prop). */
+  size?: 'default' | 'small' | 'extra-small';
   /** Name of the icon when button only has an icon in it. */
   icon?: string | IconWithoutBackgroundProps;
   /** Name of the icon we want to show on the left. */
@@ -90,9 +90,9 @@ type ButtonContentProps<C extends React.ElementType, P extends Record<string, Un
      */
     color?: ButtonColor;
     /**
-     * Button size
+     * Button size. The 'extra-small' size is only intended for icon-only buttons (use with the `icon` prop).
      */
-    size?: 'default' | 'small' | 'large';
+    size?: 'default' | 'small' | 'extra-small';
     /**
      * Name of the icon when button only has an icon in it.
      */

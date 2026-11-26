@@ -55,12 +55,12 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
+  // react-global:react
+  var require_react = __commonJS({
+    "react-global:react"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.Tedi;
+      module.exports = window.React;
     }
   });
 
@@ -70,19 +70,19 @@ var __dsPreview = (() => {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
     }
   });
 
-  // react-global:react
-  var require_react = __commonJS({
-    "react-global:react"(exports, module) {
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.React;
+      module.exports = window.Tedi;
     }
   });
 
@@ -93,7 +93,8 @@ var __dsPreview = (() => {
     Default: () => Default2,
     GeneralText: () => GeneralText2,
     StatusText: () => StatusText2,
-    Subtitles: () => Subtitles2
+    Subtitles: () => Subtitles2,
+    VisualTest: () => VisualTest2
   });
   init_define_import_meta_env();
   init_define_process_env();
@@ -106,17 +107,42 @@ var __dsPreview = (() => {
     GeneralText: () => GeneralText,
     StatusText: () => StatusText,
     Subtitles: () => Subtitles,
+    VisualTest: () => VisualTest,
     default: () => text_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
+
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
 
   // src/tedi/components/layout/grid/index.ts
   var grid_exports = {};
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -130,7 +156,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -144,7 +170,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -155,7 +181,7 @@ var __dsPreview = (() => {
   var ns3 = window.Tedi;
   var vertical_spacing_default = ns3["VerticalSpacing"] ?? ns3;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -167,11 +193,12 @@ var __dsPreview = (() => {
   var text_default = ns4["Text"] ?? ns4;
 
   // src/tedi/components/base/typography/text/text.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: text_exports.Text,
     title: "Tedi-Ready/Base/Typography/Text",
     parameters: {
+      chromatic: { disableSnapshot: true },
       design: {
         type: "figma",
         url: "https://www.figma.com/design/jWiRIXhHRxwVdMSimKX2FF/TEDI-Design-System-(draft)?node-id=115-11630&m=dev"
@@ -182,35 +209,35 @@ var __dsPreview = (() => {
     }
   };
   var text_stories_default = meta;
-  var TemplateSubtitles = () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "example-list w-100", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { color: "primary", modifiers: "subtitle", children: "Subtitle" }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { color: "primary", modifiers: ["subtitle", "small"], children: "Subtitle Small" }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { color: "secondary", element: "label", children: "Label" }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { className: "padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "label", modifiers: "bold", children: "Label bold" }) }) })
+  var TemplateSubtitles = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "example-list w-100", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "primary", modifiers: "subtitle", children: "Subtitle" }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "primary", modifiers: ["subtitle", "small"], children: "Subtitle Small" }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "secondary", element: "label", children: "Label" }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { className: "padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "label", modifiers: "bold", children: "Label bold" }) }) })
   ] });
-  var TemplateBodyText = () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "example-list w-100", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Body Regular" }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: "Body bold" }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "italic", children: "Body italic" }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "small", children: "Small" }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: ["small", "bold"], children: "Small bold" }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: ["small", "italic"], children: "Small italic" }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: ["extra-small"], children: "Extra small" }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { className: "padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: ["extra-small", "bold"], children: "Small bold" }) }) })
+  var TemplateBodyText = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "example-list w-100", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Body Regular" }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Body bold" }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "italic", children: "Body italic" }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "small", children: "Small" }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: ["small", "bold"], children: "Small bold" }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: ["small", "italic"], children: "Small italic" }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { className: "border-bottom padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: ["extra-small"], children: "Extra small" }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { className: "padding-14-16", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: ["extra-small", "bold"], children: "Small bold" }) }) })
   ] });
-  var TemplateGeneralText = () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { color: "primary", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { color: "secondary", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { color: "tertiary", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { color: "brand", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { className: "bg bg-primary", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { color: "white", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) })
+  var TemplateGeneralText = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "primary", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "secondary", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "tertiary", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "brand", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { className: "bg bg-primary", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "white", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) })
   ] });
-  var TemplateStatusText = () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { color: "success", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { color: "warning", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { color: "danger", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { color: "info", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { color: "neutral", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) })
+  var TemplateStatusText = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "success", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "warning", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "danger", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "info", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "neutral", children: "Rebane on v\xE4ikese koera suurune ja pika koheva sabaga. Joostes hoiab ta saba horisontaalselt. Tema selja karvad on oran\u017Eid. Eestis eelistab ta elupaigana metsatukkasid." }) }) })
   ] });
   var Default = {
     args: {
@@ -232,12 +259,38 @@ var __dsPreview = (() => {
     render: TemplateStatusText,
     name: "Status text colors"
   };
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Default, component: text_exports.Text })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Body" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: BodyText })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Subtitles" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Subtitles })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "General text colors" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: GeneralText })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Status text colors" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: StatusText })
+      ] })
+    ] })
+  };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -274,9 +327,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // Text.preview.tsx
@@ -287,5 +340,6 @@ var __dsPreview = (() => {
   var Subtitles2 = compose(text_stories_exports, "Subtitles", G, B);
   var GeneralText2 = compose(text_stories_exports, "GeneralText", G, B);
   var StatusText2 = compose(text_stories_exports, "StatusText", G, B);
+  var VisualTest2 = compose(text_stories_exports, "VisualTest", G, B);
   return __toCommonJS(Text_preview_exports);
 })();

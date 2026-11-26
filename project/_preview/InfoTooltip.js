@@ -105,7 +105,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/label/label.tsx
+  // tedi:src/tedi/components/content/label/label.tsx
   var label_exports = {};
   __export(label_exports, {
     default: () => label_default
@@ -116,7 +116,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var label_default = ns["Label"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/overlays/tooltip/info-tooltip.tsx
+  // tedi:src/tedi/components/overlays/tooltip/info-tooltip.tsx
   var info_tooltip_exports = {};
   __export(info_tooltip_exports, {
     default: () => info_tooltip_default

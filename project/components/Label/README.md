@@ -1,6 +1,6 @@
 Label from @tedi-design-system/react. Use via `window.Tedi.Label` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Required, Default Bold, Required Bold, Info Button Story, Default Small, Default Small Bold.
+Variants (see `preview.html`): Default, Required, Default Bold, Required Bold, Info Button Story, Default Small, Default Small Bold, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Required, Default Bold, Required Bold, I
 import * as React from 'react';
 
 /**
- * Label from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/label/label.stories.tsx).
+ * Label from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/content/label/label.stories.tsx).
  */
 export interface LabelProps {
   /** The element type to render. This can be any valid HTML element, allowing flexibility in how the label is used. Defaults to 'label'. */
@@ -142,3 +142,7 @@ export const DefaultSmall: Story = {
 ```
 
 Full story source: `src/tedi/components/content/label/label.stories.tsx`.
+
+## Related
+
+`Text`, `VerticalSpacing`

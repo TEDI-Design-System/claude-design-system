@@ -1,6 +1,6 @@
 FeedbackText from @tedi-design-system/react. Use via `window.Tedi.FeedbackText` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Helper, Error, Valid, Position Left, Position Right.
+Variants (see `preview.html`): Helper, Error, Valid, Position Left, Position Right, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Helper, Error, Valid, Position Left, Position Rig
 import * as React from 'react';
 
 /**
- * FeedbackText from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/feedback-text/feedback-text.stories.tsx).
+ * FeedbackText from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/form/feedback-text/feedback-text.stories.tsx).
  */
 export interface FeedbackTextProps {
   /** Helper text */
@@ -85,4 +85,31 @@ export const PositionRight: Story = {
 };
 ```
 
+### Visual Test
+
+```tsx
+export const VisualTest: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+  render: () => (
+    <VerticalSpacing>
+      {visualTestVariants.map(({ label, story }) => (
+        <Row key={label}>
+          <Col lg={2} xs={12}>
+            <Text modifiers="bold">{label}</Text>
+          </Col>
+          <Col>
+            <VisualTestStory story={story} component={FeedbackText} />
+          </Col>
+        </Row>
+      ))}
+    </VerticalSpacing>
+  ),
+};
+```
+
 Full story source: `src/tedi/components/form/feedback-text/feedback-text.stories.tsx`.
+
+## Related
+
+`Text`, `Col`, `Row`, `VerticalSpacing`

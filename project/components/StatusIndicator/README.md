@@ -1,6 +1,6 @@
 StatusIndicator from @tedi-design-system/react. Use via `window.Tedi.StatusIndicator` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, All Variants, Examples.
+Variants (see `preview.html`): Default, All Variants, Examples, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, All Variants, Examples.
 import * as React from 'react';
 
 /**
- * StatusIndicator from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/tags/status-indicator/status-indicator.stories.tsx).
+ * StatusIndicator from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/tags/status-indicator/status-indicator.stories.tsx).
  */
 export interface StatusIndicatorProps {
   /** The status type, which determines the indicator color. */
@@ -89,10 +89,39 @@ export const Examples: Story = {
     </span>
   ),
 };
+
+/** Chromatic snapshot for StatusIndicator: add every new visual variant here too. */
+```
+
+### Visual Test
+
+```tsx
+export const VisualTest: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+  render: () => (
+    <VerticalSpacing size={2}>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Default</Text>
+        <VisualTestStory story={Default} component={StatusIndicator} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">All variants</Text>
+        <VisualTestStory story={AllVariants} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Examples</Text>
+        <div>
+          <VisualTestStory story={Examples} />
+        </div>
+      </VerticalSpacing>
+    </VerticalSpacing>
+  ),
+};
 ```
 
 Full story source: `src/tedi/components/tags/status-indicator/status-indicator.stories.tsx`.
 
 ## Related
 
-`Text`, `Col`, `Row`
+`Text`, `Col`, `Row`, `VerticalSpacing`

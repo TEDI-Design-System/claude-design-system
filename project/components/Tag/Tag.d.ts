@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Tag from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/tags/tag/tag.stories.tsx).
+ * Tag from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/tags/tag/tag.stories.tsx).
  */
 export interface TagProps {
   /** The content inside the Tag. Typically this will be text or any JSX elements to be displayed. */
@@ -44,6 +44,10 @@ interface ClosingButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
      * Event handler for the button click event. Triggered when the user clicks on the close button.
      */
     onClick?: MouseEventHandler<HTMLButtonElement>;
+    /**
+     * Accessible name and hover tooltip. Not rendered when `aria-label` is passed, so that label is the name.
+     * @default label provider's 'close' label
+     */
     title?: string;
     color?: ClosingButtonColor;
     iconSize?: ClosingButtonIconSize;

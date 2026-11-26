@@ -55,28 +55,6 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      module.exports = window.Tedi;
-    }
-  });
-
-  // react-global:react/jsx-runtime
-  var require_jsx_runtime = __commonJS({
-    "react-global:react/jsx-runtime"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      var R = window.React;
-      function jsx3(type, props, key) {
-        return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
-      }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
-    }
-  });
-
   // react-global:react
   var require_react = __commonJS({
     "react-global:react"(exports, module) {
@@ -86,13 +64,36 @@ var __dsPreview = (() => {
     }
   });
 
+  // react-global:react/jsx-runtime
+  var require_jsx_runtime = __commonJS({
+    "react-global:react/jsx-runtime"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      var R = window.React;
+      function jsx4(type, props, key) {
+        return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
+      }
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
+    }
+  });
+
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      module.exports = window.Tedi;
+    }
+  });
+
   // InfoButton.preview.tsx
   var InfoButton_preview_exports = {};
   __export(InfoButton_preview_exports, {
     Default: () => Default2,
     Inverted: () => Inverted2,
     States: () => States2,
-    UsageWithTooltipAndPopover: () => UsageWithTooltipAndPopover2
+    UsageWithTooltipAndPopover: () => UsageWithTooltipAndPopover2,
+    VisualTest: () => VisualTest2
   });
   init_define_import_meta_env();
   init_define_process_env();
@@ -104,12 +105,37 @@ var __dsPreview = (() => {
     Inverted: () => Inverted,
     States: () => States,
     UsageWithTooltipAndPopover: () => UsageWithTooltipAndPopover,
+    VisualTest: () => VisualTest,
     default: () => info_button_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -120,7 +146,18 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var text_default = ns["Text"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/label/label.tsx
+  // tedi:src/tedi/components/content/card/index.ts
+  var card_exports = {};
+  __export(card_exports, {
+    default: () => card_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(card_exports, __toESM(require_tedi_namespace()));
+  var ns2 = window.Tedi;
+  var card_default = ns2["Card"] ?? ns2;
+
+  // tedi:src/tedi/components/content/label/label.tsx
   var label_exports = {};
   __export(label_exports, {
     default: () => label_default
@@ -128,10 +165,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(label_exports, __toESM(require_tedi_namespace()));
-  var ns2 = window.Tedi;
-  var label_default = ns2["Label"] ?? ns2;
+  var ns3 = window.Tedi;
+  var label_default = ns3["Label"] ?? ns3;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/text-group/text-group.tsx
+  // tedi:src/tedi/components/content/text-group/text-group.tsx
   var text_group_exports = {};
   __export(text_group_exports, {
     default: () => text_group_default
@@ -139,15 +176,15 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(text_group_exports, __toESM(require_tedi_namespace()));
-  var ns3 = window.Tedi;
-  var text_group_default = ns3["TextGroup"] ?? ns3;
+  var ns4 = window.Tedi;
+  var text_group_default = ns4["TextGroup"] ?? ns4;
 
   // src/tedi/components/layout/grid/index.ts
   var grid_exports = {};
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -155,13 +192,13 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(row_exports, __toESM(require_tedi_namespace()));
-  var ns4 = window.Tedi;
-  var row_default = ns4["Row"] ?? ns4;
+  var ns5 = window.Tedi;
+  var row_default = ns5["Row"] ?? ns5;
 
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -169,13 +206,13 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(col_exports, __toESM(require_tedi_namespace()));
-  var ns5 = window.Tedi;
-  var col_default = ns5["Col"] ?? ns5;
+  var ns6 = window.Tedi;
+  var col_default = ns6["Col"] ?? ns6;
 
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/hide-at/hide-at.tsx
+  // tedi:src/tedi/components/layout/hide-at/hide-at.tsx
   var hide_at_exports = {};
   __export(hide_at_exports, {
     default: () => hide_at_default
@@ -183,10 +220,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(hide_at_exports, __toESM(require_tedi_namespace()));
-  var ns6 = window.Tedi;
-  var hide_at_default = ns6["HideAt"] ?? ns6;
+  var ns7 = window.Tedi;
+  var hide_at_default = ns7["HideAt"] ?? ns7;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/show-at/show-at.tsx
+  // tedi:src/tedi/components/layout/show-at/show-at.tsx
   var show_at_exports = {};
   __export(show_at_exports, {
     default: () => show_at_default
@@ -194,10 +231,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(show_at_exports, __toESM(require_tedi_namespace()));
-  var ns7 = window.Tedi;
-  var show_at_default = ns7["ShowAt"] ?? ns7;
+  var ns8 = window.Tedi;
+  var show_at_default = ns8["ShowAt"] ?? ns8;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -205,10 +242,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(vertical_spacing_exports, __toESM(require_tedi_namespace()));
-  var ns8 = window.Tedi;
-  var vertical_spacing_default = ns8["VerticalSpacing"] ?? ns8;
+  var ns9 = window.Tedi;
+  var vertical_spacing_default = ns9["VerticalSpacing"] ?? ns9;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/separator/separator.tsx
+  // tedi:src/tedi/components/misc/separator/separator.tsx
   var separator_exports = {};
   __export(separator_exports, {
     default: () => separator_default
@@ -216,10 +253,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(separator_exports, __toESM(require_tedi_namespace()));
-  var ns9 = window.Tedi;
-  var separator_default = ns9["Separator"] ?? ns9;
+  var ns10 = window.Tedi;
+  var separator_default = ns10["Separator"] ?? ns10;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/link/link.tsx
+  // tedi:src/tedi/components/navigation/link/link.tsx
   var link_exports = {};
   __export(link_exports, {
     default: () => link_default
@@ -227,10 +264,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(link_exports, __toESM(require_tedi_namespace()));
-  var ns10 = window.Tedi;
-  var link_default = ns10["Link"] ?? ns10;
+  var ns11 = window.Tedi;
+  var link_default = ns11["Link"] ?? ns11;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/overlays/popover/popover.tsx
+  // tedi:src/tedi/components/overlays/popover/popover.tsx
   var popover_exports = {};
   __export(popover_exports, {
     default: () => popover_default
@@ -238,10 +275,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(popover_exports, __toESM(require_tedi_namespace()));
-  var ns11 = window.Tedi;
-  var popover_default = ns11["Popover"] ?? ns11;
+  var ns12 = window.Tedi;
+  var popover_default = ns12["Popover"] ?? ns12;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/overlays/tooltip/tooltip.tsx
+  // tedi:src/tedi/components/overlays/tooltip/tooltip.tsx
   var tooltip_exports = {};
   __export(tooltip_exports, {
     default: () => tooltip_default
@@ -249,10 +286,10 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(tooltip_exports, __toESM(require_tedi_namespace()));
-  var ns12 = window.Tedi;
-  var tooltip_default = ns12["Tooltip"] ?? ns12;
+  var ns13 = window.Tedi;
+  var tooltip_default = ns13["Tooltip"] ?? ns13;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/info-button/info-button.tsx
+  // tedi:src/tedi/components/buttons/info-button/info-button.tsx
   var info_button_exports = {};
   __export(info_button_exports, {
     default: () => info_button_default
@@ -260,15 +297,16 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(info_button_exports, __toESM(require_tedi_namespace()));
-  var ns13 = window.Tedi;
-  var info_button_default = ns13["InfoButton"] ?? ns13;
+  var ns14 = window.Tedi;
+  var info_button_default = ns14["InfoButton"] ?? ns14;
 
   // src/tedi/components/buttons/info-button/info-button.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: info_button_default,
     title: "Tedi-Ready/Components/Buttons/InfoButton",
     parameters: {
+      chromatic: { disableSnapshot: true },
       design: {
         type: "figma",
         url: "https://www.figma.com/design/jWiRIXhHRxwVdMSimKX2FF/TEDI-READY-(work-in-progress)?node-id=4514-72997&m=dev"
@@ -282,10 +320,10 @@ var __dsPreview = (() => {
   var info_button_stories_default = meta;
   var buttonStateArray = ["Default", "Hover", "Active", "Focus"];
   var TemplateColumn = (args) => {
-    const { array, color = "default", ...buttonProps } = args;
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(vertical_spacing_exports.VerticalSpacing, { children: array.map((state, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { xs: 4, md: 1, className: "flex align-items-center", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", color: color === "inverted" ? "white" : "primary", children: state }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { xs: 2, md: 1, className: "text-center", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(info_button_default, { color, ...buttonProps, "aria-label": `Info button ${state}`, id: state }) })
+    const { array, color = "default", idPrefix = "", ...buttonProps } = args;
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { children: array.map((state, index) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { xs: 4, md: 1, className: "flex align-items-center", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", color: color === "inverted" ? "white" : "primary", children: state }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { xs: 2, md: 1, className: "text-center", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(info_button_default, { color, ...buttonProps, "aria-label": "Lisainfo", id: `${idPrefix}${state}` }) })
     ] }, index)) });
   };
   var Default = {};
@@ -322,60 +360,90 @@ var __dsPreview = (() => {
     alignItems: "center",
     gap: "var(--layout-grid-gutters-04)"
   };
+  var UsageTemplate = () => {
+    const bloodGroup = /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+      text_group_exports.TextGroup,
+      {
+        type: "vertical",
+        label: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("span", { style: labelStyle, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(label_exports.Label, { children: "Veregrupp" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tooltip_default, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tooltip_default.Trigger, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(info_button_default, { "aria-label": "Rohkem infot veregrupi kohta" }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tooltip_default.Content, { children: "Veregrupp m\xE4\xE4ratakse vereanal\xFC\xFCsiga ning see ei muutu elu jooksul." })
+          ] })
+        ] }),
+        value: "AB-"
+      }
+    );
+    const dentalBenefit = /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+      text_group_exports.TextGroup,
+      {
+        type: "vertical",
+        label: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("span", { style: labelStyle, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(label_exports.Label, { children: "Hambaravih\xFCvitise j\xE4\xE4k" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(popover_default, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(popover_default.Trigger, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(info_button_default, { "aria-label": "Rohkem infot h\xFCvitise kohta" }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(popover_default.Content, { width: "medium", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Hambaravih\xFCvitist saab kasutada jooksva kalendriaasta jooksul. Kasutamata j\xE4\xE4k j\xE4rgmisesse aastasse ei kandu." }),
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { textAlign: "right" }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_exports.Link, { href: "#", underline: false, iconRight: "arrow_forward", children: "Loe rohkem" }) })
+            ] }) })
+          ] })
+        ] }),
+        value: "24\u20AC"
+      }
+    );
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(show_at_exports.ShowAt, { md: true, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { display: "flex", gap: "1.5rem" }, children: [
+        bloodGroup,
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { axis: "vertical", isStretched: true }),
+        dentalBenefit
+      ] }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(hide_at_exports.HideAt, { md: true, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
+        bloodGroup,
+        dentalBenefit
+      ] }) })
+    ] });
+  };
   var UsageWithTooltipAndPopover = {
     name: "Usage with tooltip and popover",
     parameters: { controls: { disable: true } },
-    render: () => {
-      const bloodGroup = /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-        text_group_exports.TextGroup,
-        {
-          type: "vertical",
-          label: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { style: labelStyle, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(label_exports.Label, { children: "Veregrupp" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tooltip_default, { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tooltip_default.Trigger, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(info_button_default, { "aria-label": "Rohkem infot veregrupi kohta" }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tooltip_default.Content, { children: "Veregrupp m\xE4\xE4ratakse vereanal\xFC\xFCsiga ning see ei muutu elu jooksul." })
-            ] })
-          ] }),
-          value: "AB-"
-        }
-      );
-      const dentalBenefit = /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-        text_group_exports.TextGroup,
-        {
-          type: "vertical",
-          label: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { style: labelStyle, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(label_exports.Label, { children: "Hambaravih\xFCvitise j\xE4\xE4k" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(popover_default, { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(popover_default.Trigger, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(info_button_default, { "aria-label": "Rohkem infot h\xFCvitise kohta" }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(popover_default.Content, { width: "medium", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
-                /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Hambaravih\xFCvitist saab kasutada jooksva kalendriaasta jooksul. Kasutamata j\xE4\xE4k j\xE4rgmisesse aastasse ei kandu." }),
-                /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { textAlign: "right" }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_exports.Link, { href: "#", underline: false, iconRight: "arrow_forward", children: "Loe rohkem" }) })
-              ] }) })
-            ] })
-          ] }),
-          value: "24\u20AC"
-        }
-      );
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(show_at_exports.ShowAt, { md: true, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", gap: "1.5rem" }, children: [
-          bloodGroup,
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { axis: "vertical", isStretched: true }),
-          dentalBenefit
-        ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(hide_at_exports.HideAt, { md: true, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
-          bloodGroup,
-          dentalBenefit
-        ] }) })
-      ] });
-    }
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(UsageTemplate, {})
+  };
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: {
+      chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS },
+      pseudo: {
+        hover: ["#vt-states-Hover", "#vt-inverted-Hover"],
+        active: ["#vt-states-Active", "#vt-inverted-Active"],
+        focusVisible: ["#vt-states-Focus", "#vt-inverted-Focus"]
+      }
+    },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: { args: { ...meta.args, ...Default.args } }, component: info_button_default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "States" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: { ...States, args: { ...States.args, idPrefix: "vt-states-" } } })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card, { background: "brand-primary", borderless: true, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", color: "white", children: "Inverted" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: { ...Inverted, args: { ...Inverted.args, idPrefix: "vt-inverted-" } } })
+      ] }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Usage with tooltip and popover" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: UsageWithTooltipAndPopover })
+      ] })
+    ] })
   };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -412,9 +480,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // InfoButton.preview.tsx
@@ -424,5 +492,6 @@ var __dsPreview = (() => {
   var States2 = compose(info_button_stories_exports, "States", G, B);
   var Inverted2 = compose(info_button_stories_exports, "Inverted", G, B);
   var UsageWithTooltipAndPopover2 = compose(info_button_stories_exports, "UsageWithTooltipAndPopover", G, B);
+  var VisualTest2 = compose(info_button_stories_exports, "VisualTest", G, B);
   return __toCommonJS(InfoButton_preview_exports);
 })();

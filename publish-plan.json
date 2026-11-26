@@ -41,6 +41,7 @@
    "project/_preview/Icon.js": "project/_preview/Icon.js",
    "project/_preview/InfoButton.js": "project/_preview/InfoButton.js",
    "project/_preview/InfoTooltip.js": "project/_preview/InfoTooltip.js",
+   "project/_preview/InlineEdit.js": "project/_preview/InlineEdit.js",
    "project/_preview/InputGroup.js": "project/_preview/InputGroup.js",
    "project/_preview/Label.js": "project/_preview/Label.js",
    "project/_preview/LabelProvider.js": "project/_preview/LabelProvider.js",
@@ -54,6 +55,7 @@
    "project/_preview/Print.js": "project/_preview/Print.js",
    "project/_preview/ProgressBar.js": "project/_preview/ProgressBar.js",
    "project/_preview/Radio.js": "project/_preview/Radio.js",
+   "project/_preview/Rating.js": "project/_preview/Rating.js",
    "project/_preview/Row.js": "project/_preview/Row.js",
    "project/_preview/ScrollFade.js": "project/_preview/ScrollFade.js",
    "project/_preview/ScrollVisibility.js": "project/_preview/ScrollVisibility.js",
@@ -65,6 +67,7 @@
    "project/_preview/ShowAt.js": "project/_preview/ShowAt.js",
    "project/_preview/SideNav.js": "project/_preview/SideNav.js",
    "project/_preview/Skeleton.js": "project/_preview/Skeleton.js",
+   "project/_preview/SkipLinks.js": "project/_preview/SkipLinks.js",
    "project/_preview/Slider.js": "project/_preview/Slider.js",
    "project/_preview/Spinner.js": "project/_preview/Spinner.js",
    "project/_preview/StatusBadge.js": "project/_preview/StatusBadge.js",
@@ -324,6 +327,12 @@
    },
    "project/components/InfoTooltip/README.md": "project/components/InfoTooltip/README.md",
    "project/components/InfoTooltip/preview.html": "project/components/InfoTooltip/preview.html",
+   "project/components/InlineEdit/InlineEdit.d.ts": {
+    "from": "project/components/InlineEdit/InlineEdit.d.ts",
+    "contentType": "text/plain"
+   },
+   "project/components/InlineEdit/README.md": "project/components/InlineEdit/README.md",
+   "project/components/InlineEdit/preview.html": "project/components/InlineEdit/preview.html",
    "project/components/InputGroup/InputGroup.d.ts": {
     "from": "project/components/InputGroup/InputGroup.d.ts",
     "contentType": "text/plain"
@@ -400,8 +409,18 @@
    "project/components/Radio/Radio.d.ts": {
     "from": "project/components/Radio/Radio.d.ts",
     "contentType": "text/plain"
-   },
+   }
+  }
+ },
+ {
+  "file_path": "project/components/Rating/README.md",
+  "files": {
    "project/components/Radio/preview.html": "project/components/Radio/preview.html",
+   "project/components/Rating/Rating.d.ts": {
+    "from": "project/components/Rating/Rating.d.ts",
+    "contentType": "text/plain"
+   },
+   "project/components/Rating/preview.html": "project/components/Rating/preview.html",
    "project/components/Row/README.md": "project/components/Row/README.md",
    "project/components/Row/Row.d.ts": {
     "from": "project/components/Row/Row.d.ts",
@@ -412,13 +431,9 @@
    "project/components/ScrollFade/ScrollFade.d.ts": {
     "from": "project/components/ScrollFade/ScrollFade.d.ts",
     "contentType": "text/plain"
-   }
-  }
- },
- {
-  "file_path": "project/components/ScrollVisibility/README.md",
-  "files": {
+   },
    "project/components/ScrollFade/preview.html": "project/components/ScrollFade/preview.html",
+   "project/components/ScrollVisibility/README.md": "project/components/ScrollVisibility/README.md",
    "project/components/ScrollVisibility/ScrollVisibility.d.ts": {
     "from": "project/components/ScrollVisibility/ScrollVisibility.d.ts",
     "contentType": "text/plain"
@@ -472,6 +487,12 @@
     "contentType": "text/plain"
    },
    "project/components/Skeleton/preview.html": "project/components/Skeleton/preview.html",
+   "project/components/SkipLinks/README.md": "project/components/SkipLinks/README.md",
+   "project/components/SkipLinks/SkipLinks.d.ts": {
+    "from": "project/components/SkipLinks/SkipLinks.d.ts",
+    "contentType": "text/plain"
+   },
+   "project/components/SkipLinks/preview.html": "project/components/SkipLinks/preview.html",
    "project/components/Slider/README.md": "project/components/Slider/README.md",
    "project/components/Slider/Slider.d.ts": {
     "from": "project/components/Slider/Slider.d.ts",

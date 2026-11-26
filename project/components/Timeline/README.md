@@ -2,7 +2,7 @@ Timeline from @tedi-design-system/react. Use via `window.Tedi.Timeline` (the bun
 
 Sub-components: `Timeline.Item`, `Timeline.Title`, `Timeline.Description`.
 
-Variants (see `preview.html`): Default, Position, Title Only, With Description, Custom Text Color, With Info Tooltip, Without Title, With Action, With Date, With Date Description, Example, Timeline Card.
+Variants (see `preview.html`): Default, Position, Title Only, With Description, Custom Text Color, With Info Tooltip, Without Title, With Action, With Date, With Date Description, Example, Timeline Card, Visual Test.
 
 ## Props
 
@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, Position, Title Only, With Description, 
 import * as React from 'react';
 
 /**
- * Timeline from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/timeline/timeline.stories.tsx).
+ * Timeline from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/misc/timeline/timeline.stories.tsx).
  */
 export interface TimelineProps {
   /** `Timeline.Item` elements. */

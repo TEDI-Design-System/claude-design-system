@@ -1,6 +1,6 @@
 Icon from @tedi-design-system/react. Use via `window.Tedi.Icon` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Sizes, Sizes With Background, Colors, Backgrounds, Used Inside Text.
+Variants (see `preview.html`): Default, Sizes, Sizes With Background, Colors, Backgrounds, Used Inside Text, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Sizes, Sizes With Background, Colors, Ba
 import * as React from 'react';
 
 /**
- * Icon from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/base/icon/icon.stories.tsx).
+ * Icon from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/base/icon/icon.stories.tsx).
  */
 export interface IconProps {
   /** Name of material icon https://fonts.google.com/icons */
@@ -124,50 +124,17 @@ export const Backgrounds: Story = {
 
 ```tsx
 export const UsedInsideText: Story = {
-  render: (args: { name: IconProps['name'] }) => {
-    return (
-      <VerticalSpacing size={0.25}>
-        <Heading element="h1">
-          <Icon name={args.name} display="inline" />
-          This is level 1 heading with inline <Icon color="brand" name={args.name} display="inline" /> icon
-        </Heading>
-        <Heading element="h2">
-          <Icon name={args.name} display="inline" />
-          This is level 2 heading with inline <Icon color="brand" name={args.name} display="inline" /> icon
-        </Heading>
-        <Heading element="h3">
-          <Icon name={args.name} display="inline" />
-          This is level 3 heading with inline <Icon color="brand" name={args.name} display="inline" /> icon
-        </Heading>
-        <Heading element="h4">
-          <Icon name={args.name} display="inline" />
-          This is level 4 heading with inline <Icon color="brand" name={args.name} display="inline" /> icon
-        </Heading>
-        <Heading element="h5">
-          <Icon name={args.name} display="inline" />
-          This is level 5 heading with inline <Icon color="brand" name={args.name} display="inline" /> icon
-        </Heading>
-        <Heading element="h6">
-          <Icon name={args.name} display="inline" />
-          This is level 6 heading with inline <Icon color="brand" name={args.name} display="inline" /> icon
-        </Heading>
-        <p>
-          <Icon name={args.name} display="inline" />
-          This is paragraph text with inline <Icon color="brand" name={args.name} display="inline" /> icon
-        </p>
-        <small>
-          <Icon name={args.name} display="inline" />
-          This is small text with inline <Icon color="brand" name={args.name} display="inline" /> icon
-        </small>
-      </VerticalSpacing>
-    );
-  },
+  render: UsedInsideTextTemplate,
   args: {
-// …
+    name: 'account_circle',
+  },
+};
+
+/** Chromatic snapshot for Icon: add every new visual variant here too. */
 ```
 
 Full story source: `src/tedi/components/base/icon/icon.stories.tsx`.
 
 ## Related
 
-`Col`, `Row`, `VerticalSpacing`, `Heading`
+`Col`, `Row`, `VerticalSpacing`, `Heading`, `Text`

@@ -2,7 +2,7 @@ Sheet from @tedi-design-system/react. Use via `window.Tedi.Sheet` (the bundle is
 
 Sub-components: `Sheet.Trigger`, `Sheet.Content`, `Sheet.Header`, `Sheet.Body`, `Sheet.Footer`, `Sheet.Closer`.
 
-Variants (see `preview.html`): Default, Actions Slot, Corner Radius, Header Variant, Header Type, Padding, Footer Alignment, Docked Peek, Snap Points, Keep Mounted, Controlled, Controlled Collapse, Content Navigation, Scrollable Content, Open For Visual Test, Open Brand For Visual Test, Open Small For Visual Test, Open Without Handle For Visual Test, Collapsed For Visual Test, Open Snap Point For Visual Test, Open Scrollable For Visual Test.
+Variants (see `preview.html`): Default, Actions Slot, Corner Radius, Header Variant, Header Type, Docked Peek, Snap Points, Keep Mounted, Controlled, Controlled Collapse, Content Navigation, Scrollable Content, Padding, Footer Alignment, Open For Visual Test, Open Brand For Visual Test, Open Small For Visual Test, Open Without Handle For Visual Test, Collapsed For Visual Test, Open Snap Point For Visual Test, Open Scrollable For Visual Test.
 
 ## Props
 
@@ -10,7 +10,7 @@ Variants (see `preview.html`): Default, Actions Slot, Corner Radius, Header Vari
 import * as React from 'react';
 
 /**
- * Sheet from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/overlays/sheet/sheet.stories.tsx).
+ * Sheet from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/overlays/sheet/sheet.stories.tsx).
  */
 export interface SheetProps {
   /** `Sheet.Trigger`, `Sheet.Content` and any other content. */
@@ -98,7 +98,7 @@ export const ActionsSlot: Story = {
         caption: 'With footer',
         content: (
           <Sheet.Content>
-            <Sheet.Header title="Seaded" variant="default" />
+            <Sheet.Header closeButton title="Seaded" variant="default" />
             <Sheet.Body>{settingsBody('sheet-actions-footer')}</Sheet.Body>
             <ApplyFooter more />
           </Sheet.Content>
@@ -107,10 +107,10 @@ export const ActionsSlot: Story = {
       {
         caption: 'Without footer',
         label: 'Loe lähemalt',
-        icon: 'menu_book',
+        icon: 'info',
         content: (
           <Sheet.Content>
-            <Sheet.Header title="Loe lähemalt" variant="default" />
+            <Sheet.Header closeButton title="Loe lähemalt" variant="default" />
             <Sheet.Body>
               <Text>
                 Orav ehk harilik orav ehk punaorav on oravlaste sugukonda kuuluv näriline. See on ainus Eestis
@@ -144,7 +144,7 @@ export const CornerRadius: Story = {
         caption,
         content: (
           <Sheet.Content radius={radius}>
-            <Sheet.Header title="Seaded" variant="default" />
+            <Sheet.Header closeButton title="Seaded" variant="default" />
             <Sheet.Body>{settingsBody(`sheet-radius-${radius}`)}</Sheet.Body>
           </Sheet.Content>
         ),
@@ -153,7 +153,7 @@ export const CornerRadius: Story = {
         caption: '0px → 4px from md',
         content: (
           <Sheet.Content radius="none" md={{ radius: 'card' }}>
-            <Sheet.Header title="Seaded" variant="default" />
+            <Sheet.Header closeButton title="Seaded" variant="default" />
             <Sheet.Body>{settingsBody('sheet-radius-responsive')}</Sheet.Body>
           </Sheet.Content>
         ),
@@ -173,7 +173,7 @@ export const HeaderVariant: Story = {
         caption: 'Default',
         content: (
           <Sheet.Content>
-            <Sheet.Header title="Seaded" variant="default" />
+            <Sheet.Header closeButton title="Seaded" variant="default" />
             <Sheet.Body>{settingsBody('sheet-variant-default')}</Sheet.Body>
           </Sheet.Content>
         ),
@@ -183,7 +183,7 @@ export const HeaderVariant: Story = {
         visualType: 'primary',
         content: (
           <Sheet.Content>
-            <Sheet.Header title="Seaded" variant="brand" />
+            <Sheet.Header closeButton title="Seaded" variant="brand" />
             <Sheet.Body>{settingsBody('sheet-variant-brand')}</Sheet.Body>
           </Sheet.Content>
         ),
@@ -202,7 +202,7 @@ export const HeaderType: Story = {
       {exampleGroup('Default', [
         {
           caption: 'Default',
-          content: headerExample('sheet-type-default', <Sheet.Header title="Seaded" variant="default" />),
+          content: headerExample('sheet-type-default', <Sheet.Header closeButton title="Seaded" variant="default" />),
         },
       ])}
       {exampleGroup('Collapsible', [
@@ -210,14 +210,14 @@ export const HeaderType: Story = {
           caption: 'Heading left',
           content: headerExample(
             'sheet-type-collapsible',
-            <Sheet.Header title="Seaded" variant="default" collapsible />
+            <Sheet.Header closeButton title="Seaded" variant="default" collapsible />
           ),
         },
         {
           caption: 'Heading center',
           content: headerExample(
             'sheet-type-collapsible-center',
-            <Sheet.Header title="Seaded" variant="default" titlePosition="center" collapsible />
+            <Sheet.Header closeButton title="Seaded" variant="default" titlePosition="center" collapsible />
           ),
         },
       ])}
@@ -226,39 +226,44 @@ export const HeaderType: Story = {
           caption: 'Heading center',
           content: headerExample(
             'sheet-type-center',
-            <Sheet.Header title="Seaded" variant="default" titlePosition="center" />
+            <Sheet.Header closeButton title="Seaded" variant="default" titlePosition="center" />
           ),
         },
       ])}
       {exampleGroup('Without closing button', [
         {
           caption: 'Heading left',
-          content: headerExample(
-            'sheet-type-no-close',
+          content: headerExample('sheet-type-no-close', <Sheet.Header title="Seaded" variant="default" />),
+        },
 // …
 ```
 
-### Padding
+### Docked Peek
 
 ```tsx
-export const Padding: Story = {
+export const DockedPeek: Story = {
+  name: 'Docked peek',
   render: () => (
-    <ExampleRow>
-      {(['default', 'small'] as const).map((padding) =>
-        labeledTrigger(
-          `padding="${padding}"`,
-          <Sheet.Content padding={padding}>
-            <Sheet.Header title="Seaded" variant="default" />
-            <Sheet.Body>{settingsBody(`sheet-padding-${padding}`)}</Sheet.Body>
-            <ApplyFooter more />
-          </Sheet.Content>
-        )
-      )}
-    </ExampleRow>
+    <Sheet {...dockedSheetProps}>
+      <Sheet.Trigger>
+        <Button iconLeft="calendar_month">Vali aeg</Button>
+      </Sheet.Trigger>
+      <Sheet.Content {...dockedContentProps}>
+        <Sheet.Header closeButton title="Vali aeg" variant="brand" collapsible />
+        <Sheet.Body>{dateTimeBody('sheet-docked')}</Sheet.Body>
+        <ApplyFooter />
+      </Sheet.Content>
+    </Sheet>
   ),
 };
 
-/** `align` places the actions; `fullWidth` stretches them, with or without `right`. */
+/**
+ * Set `snapPoints={[0.4, 0.9]}` on `Sheet.Content` to let the sheet settle at 40% or 90% of the viewport height.
+ *
+ * - Drag the handle and release to snap to the nearest height.
+ * - Drag far enough below the lowest point to close the sheet.
+ * - Collapse the sheet to show only its header; expanding restores the previous snap point.
+ */
 ```
 
 Full story source: `src/tedi/components/overlays/sheet/sheet.stories.tsx`.

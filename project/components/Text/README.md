@@ -1,6 +1,6 @@
 Text from @tedi-design-system/react. Use via `window.Tedi.Text` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Body Text, Subtitles, General Text, Status Text.
+Variants (see `preview.html`): Default, Body Text, Subtitles, General Text, Status Text, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Body Text, Subtitles, General Text, Stat
 import * as React from 'react';
 
 /**
- * Text from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/base/typography/text/text.stories.tsx).
+ * Text from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/base/typography/text/text.stories.tsx).
  */
 export interface TextProps {
   /** Children of the text */
@@ -106,6 +106,41 @@ export const GeneralText: Story = {
 export const StatusText: Story = {
   render: TemplateStatusText,
   name: 'Status text colors',
+};
+
+/** Chromatic snapshot for Text: add every new visual variant here too. */
+```
+
+### Visual Test
+
+```tsx
+export const VisualTest: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+  render: () => (
+    <VerticalSpacing size={2}>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Default</Text>
+        <VisualTestStory story={Default} component={Text} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Body</Text>
+        <VisualTestStory story={BodyText} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Subtitles</Text>
+        <VisualTestStory story={Subtitles} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">General text colors</Text>
+        <VisualTestStory story={GeneralText} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Status text colors</Text>
+        <VisualTestStory story={StatusText} />
+      </VerticalSpacing>
+    </VerticalSpacing>
+  ),
 };
 ```
 

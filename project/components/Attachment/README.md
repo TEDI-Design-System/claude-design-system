@@ -1,6 +1,6 @@
 Attachment from @tedi-design-system/react. Use via `window.Tedi.Attachment` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Read Only, With Progress, With File Size, With Icon, Without Delete Button, With Different Actions, Vertical, With Error, Labeled Actions.
+Variants (see `preview.html`): Default, Read Only, With Progress, With File Size, With Icon, Without Delete Button, With Different Actions, Vertical, With Error, Labeled Actions, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Read Only, With Progress, With File Size
 import * as React from 'react';
 
 /**
- * Attachment from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/attachment/attachment.stories.tsx).
+ * Attachment from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/misc/attachment/attachment.stories.tsx).
  */
 export interface AttachmentProps {
   /** File name (required). */
@@ -172,4 +172,4 @@ Full story source: `src/tedi/components/misc/attachment/attachment.stories.tsx`.
 
 ## Related
 
-`Button`, `HideAt`, `ShowAt`, `VerticalSpacing`, `Dropdown`, `Tooltip`
+`Text`, `Button`, `HideAt`, `ShowAt`, `VerticalSpacing`, `Dropdown`, `Tooltip`

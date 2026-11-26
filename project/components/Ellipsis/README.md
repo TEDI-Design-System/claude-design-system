@@ -1,6 +1,6 @@
 Ellipsis from @tedi-design-system/react. Use via `window.Tedi.Ellipsis` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Responsive Example, Leading Start, Responsive With Custom Popover.
+Variants (see `preview.html`): Default, Responsive Example, Leading Start, Responsive With Custom Popover, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Responsive Example, Leading Start, Respo
 import * as React from 'react';
 
 /**
- * Ellipsis from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/ellipsis/ellipsis.stories.tsx).
+ * Ellipsis from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/misc/ellipsis/ellipsis.stories.tsx).
  */
 export interface EllipsisProps {
   /** The content to be displayed inside the ellipsis container. */
@@ -109,6 +109,41 @@ export const ResponsiveWithCustomPopover: Story = {
     ),
   },
 };
+
+/** Chromatic snapshot for Ellipsis: add every new visual variant here too. */
+```
+
+### Visual Test
+
+```tsx
+export const VisualTest: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+  render: () => (
+    <VerticalSpacing size={2}>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Default</Text>
+        <VisualTestStory story={Default} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Leading start</Text>
+        <VisualTestStory story={LeadingStart} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Responsive</Text>
+        <VisualTestStory story={ResponsiveExample} component={Ellipsis} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Responsive with custom popover</Text>
+        <VisualTestStory story={ResponsiveWithCustomPopover} component={Ellipsis} />
+      </VerticalSpacing>
+    </VerticalSpacing>
+  ),
+};
 ```
 
 Full story source: `src/tedi/components/misc/ellipsis/ellipsis.stories.tsx`.
+
+## Related
+
+`Text`, `VerticalSpacing`

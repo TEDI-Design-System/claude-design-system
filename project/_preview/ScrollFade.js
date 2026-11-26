@@ -55,6 +55,15 @@ var __dsPreview = (() => {
     }
   });
 
+  // react-global:react
+  var require_react = __commonJS({
+    "react-global:react"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      module.exports = window.React;
+    }
+  });
+
   // tedi-namespace:tedi-namespace
   var require_tedi_namespace = __commonJS({
     "tedi-namespace:tedi-namespace"(exports, module) {
@@ -77,19 +86,11 @@ var __dsPreview = (() => {
     }
   });
 
-  // react-global:react
-  var require_react = __commonJS({
-    "react-global:react"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      module.exports = window.React;
-    }
-  });
-
   // ScrollFade.preview.tsx
   var ScrollFade_preview_exports = {};
   __export(ScrollFade_preview_exports, {
     Default: () => Default2,
+    DynamicContent: () => DynamicContent2,
     FadePosition: () => FadePosition2,
     FadeSize: () => FadeSize2,
     NoFadeWithoutScrollbar: () => NoFadeWithoutScrollbar2,
@@ -102,6 +103,7 @@ var __dsPreview = (() => {
   var scroll_fade_stories_exports = {};
   __export(scroll_fade_stories_exports, {
     Default: () => Default,
+    DynamicContent: () => DynamicContent,
     FadePosition: () => FadePosition,
     FadeSize: () => FadeSize,
     NoFadeWithoutScrollbar: () => NoFadeWithoutScrollbar,
@@ -110,8 +112,9 @@ var __dsPreview = (() => {
   });
   init_define_import_meta_env();
   init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -122,12 +125,23 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var text_default = ns["Text"] ?? ns;
 
+  // tedi:src/tedi/components/buttons/button/button.tsx
+  var button_exports = {};
+  __export(button_exports, {
+    default: () => button_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(button_exports, __toESM(require_tedi_namespace()));
+  var ns2 = window.Tedi;
+  var button_default = ns2["Button"] ?? ns2;
+
   // src/tedi/components/layout/grid/index.ts
   var grid_exports = {};
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -135,13 +149,13 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(row_exports, __toESM(require_tedi_namespace()));
-  var ns2 = window.Tedi;
-  var row_default = ns2["Row"] ?? ns2;
+  var ns3 = window.Tedi;
+  var row_default = ns3["Row"] ?? ns3;
 
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -149,13 +163,13 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(col_exports, __toESM(require_tedi_namespace()));
-  var ns3 = window.Tedi;
-  var col_default = ns3["Col"] ?? ns3;
+  var ns4 = window.Tedi;
+  var col_default = ns4["Col"] ?? ns4;
 
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/scroll-fade/scroll-fade.tsx
+  // tedi:src/tedi/components/misc/scroll-fade/scroll-fade.tsx
   var scroll_fade_exports = {};
   __export(scroll_fade_exports, {
     default: () => scroll_fade_default
@@ -163,8 +177,8 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(scroll_fade_exports, __toESM(require_tedi_namespace()));
-  var ns4 = window.Tedi;
-  var scroll_fade_default = ns4["ScrollFade"] ?? ns4;
+  var ns5 = window.Tedi;
+  var scroll_fade_default = ns5["ScrollFade"] ?? ns5;
 
   // src/tedi/components/misc/scroll-fade/scroll-fade.stories.tsx
   var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
@@ -193,6 +207,19 @@ var __dsPreview = (() => {
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { marginTop: "16px", maxWidth: "200px", maxHeight: "200px" }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(scroll_fade_default, { ...args, scrollBar: "custom" }) })
     ] })
   ] });
+  var DynamicContentTemplate = (args) => {
+    const [items, setItems] = (0, import_react.useState)([1, 2, 3, 4, 5, 6]);
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "flex flex-column gap-3", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "flex gap-3", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { onClick: () => setItems((prev) => [...prev, prev.length + 1]), children: "Add item" }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { visualType: "secondary", onClick: () => setItems((prev) => prev.slice(0, -1)), children: "Remove item" })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { maxWidth: "200px", maxHeight: "150px" }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(scroll_fade_default, { ...args, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "flex flex-column gap-3", children: items.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
+        "Item ",
+        item
+      ] }, item)) }) }) })
+    ] });
+  };
   var FadeSizeTemplate = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { children: [
     /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Col, { xs: 3, children: [
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: "No Fade (0%)" }),
@@ -265,6 +292,15 @@ var __dsPreview = (() => {
       consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`
     }
   };
+  var DynamicContent = {
+    render: DynamicContentTemplate,
+    argTypes: {
+      children: { table: { disable: true } }
+    },
+    args: {
+      children: null
+    }
+  };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
@@ -320,5 +356,6 @@ var __dsPreview = (() => {
   var FadeSize2 = compose(scroll_fade_stories_exports, "FadeSize", G, B);
   var FadePosition2 = compose(scroll_fade_stories_exports, "FadePosition", G, B);
   var NoFadeWithoutScrollbar2 = compose(scroll_fade_stories_exports, "NoFadeWithoutScrollbar", G, B);
+  var DynamicContent2 = compose(scroll_fade_stories_exports, "DynamicContent", G, B);
   return __toCommonJS(ScrollFade_preview_exports);
 })();

@@ -55,12 +55,12 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
+  // react-global:react
+  var require_react = __commonJS({
+    "react-global:react"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.Tedi;
+      module.exports = window.React;
     }
   });
 
@@ -70,19 +70,19 @@ var __dsPreview = (() => {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
     }
   });
 
-  // react-global:react
-  var require_react = __commonJS({
-    "react-global:react"(exports, module) {
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.React;
+      module.exports = window.Tedi;
     }
   });
 
@@ -95,6 +95,7 @@ var __dsPreview = (() => {
     Position: () => Position2,
     TimelineCard: () => TimelineCard2,
     TitleOnly: () => TitleOnly2,
+    VisualTest: () => VisualTest2,
     WithAction: () => WithAction2,
     WithDate: () => WithDate2,
     WithDateDescription: () => WithDateDescription2,
@@ -114,6 +115,7 @@ var __dsPreview = (() => {
     Position: () => Position,
     TimelineCard: () => TimelineCard,
     TitleOnly: () => TitleOnly,
+    VisualTest: () => VisualTest,
     WithAction: () => WithAction,
     WithDate: () => WithDate,
     WithDateDescription: () => WithDateDescription,
@@ -125,7 +127,31 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -136,7 +162,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var text_default = ns["Text"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -147,7 +173,7 @@ var __dsPreview = (() => {
   var ns2 = window.Tedi;
   var button_default = ns2["Button"] ?? ns2;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/collapse/collapse.tsx
+  // tedi:src/tedi/components/content/collapse/collapse.tsx
   var collapse_exports = {};
   __export(collapse_exports, {
     default: () => collapse_default
@@ -163,7 +189,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -177,7 +203,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -191,7 +217,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -202,7 +228,7 @@ var __dsPreview = (() => {
   var ns6 = window.Tedi;
   var vertical_spacing_default = ns6["VerticalSpacing"] ?? ns6;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/overlays/tooltip/index.ts
+  // tedi:src/tedi/components/overlays/tooltip/index.ts
   var tooltip_exports = {};
   __export(tooltip_exports, {
     default: () => tooltip_default
@@ -213,7 +239,7 @@ var __dsPreview = (() => {
   var ns7 = window.Tedi;
   var tooltip_default = ns7["Tooltip"] ?? ns7;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/separator/separator.tsx
+  // tedi:src/tedi/components/misc/separator/separator.tsx
   var separator_exports = {};
   __export(separator_exports, {
     default: () => separator_default
@@ -224,7 +250,7 @@ var __dsPreview = (() => {
   var ns8 = window.Tedi;
   var separator_default = ns8["Separator"] ?? ns8;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/timeline/timeline.tsx
+  // tedi:src/tedi/components/misc/timeline/timeline.tsx
   var timeline_exports = {};
   __export(timeline_exports, {
     default: () => timeline_default
@@ -236,7 +262,7 @@ var __dsPreview = (() => {
   var timeline_default = ns9["Timeline"] ?? ns9;
 
   // src/tedi/components/misc/timeline/timeline.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: timeline_exports.Timeline,
     subcomponents: {
@@ -249,7 +275,8 @@ var __dsPreview = (() => {
       design: {
         type: "figma",
         url: "https://www.figma.com/design/jWiRIXhHRxwVdMSimKX2FF/TEDI-READY-2.60.78?node-id=11335-186480&m=dev"
-      }
+      },
+      chromatic: { disableSnapshot: true }
     },
     argTypes: {
       activeIndex: { control: "number" },
@@ -265,14 +292,14 @@ var __dsPreview = (() => {
   ];
   var STUB_HEIGHT = 1.5;
   var DOT_OFFSET = "calc((1.5rem - 9px) / 2)";
-  var renderTimings = (timings) => timings.map((timing, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { color: "tertiary", modifiers: index === 0 ? void 0 : "small", children: timing }, `${timing}-${index}`));
+  var renderTimings = (timings) => timings.map((timing, index) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "tertiary", modifiers: index === 0 ? void 0 : "small", children: timing }, `${timing}-${index}`));
   var PositionShowcase = ({
     renderContent,
     timings
-  }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Row, { children: positions.map(({ label, above, below }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { xs: 12, sm: 4, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: label }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", gap: "var(--layout-grid-gutters-12)" }, children: [
-      timings && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+  }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Row, { children: positions.map(({ label, above, below }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { xs: 12, sm: 4, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: label }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { display: "flex", gap: "var(--layout-grid-gutters-12)" }, children: [
+      timings && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
         "div",
         {
           style: {
@@ -287,7 +314,7 @@ var __dsPreview = (() => {
           children: renderTimings(timings)
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
         "div",
         {
           style: {
@@ -297,13 +324,13 @@ var __dsPreview = (() => {
             paddingTop: above ? 0 : DOT_OFFSET
           },
           children: [
-            above && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { axis: "vertical", color: "accent", height: STUB_HEIGHT }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { variant: "dot-only", color: "accent", dotSize: "medium", dotStyle: "filled" }),
-            below && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { display: "flex", flex: 1, minHeight: `${STUB_HEIGHT}rem` }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { axis: "vertical", color: "accent" }) })
+            above && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { axis: "vertical", color: "accent", height: STUB_HEIGHT }),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { variant: "dot-only", color: "accent", dotSize: "medium", dotStyle: "filled" }),
+            below && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { display: "flex", flex: 1, minHeight: `${STUB_HEIGHT}rem` }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { axis: "vertical", color: "accent" }) })
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
         "div",
         {
           style: {
@@ -317,26 +344,26 @@ var __dsPreview = (() => {
   ] }) }, label)) });
   var Default = {
     args: { activeIndex: 1 },
-    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(timeline_exports.Timeline, { ...args, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(timeline_exports.Timeline.Item, { timings: ["1990", "14. detsember"], children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Description, { children: "P\xE4rast taotluse esitamist v\xF5etakse see menetlusse." })
+    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(timeline_exports.Timeline, { ...args, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(timeline_exports.Timeline.Item, { timings: ["1990", "14. detsember"], children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Description, { children: "P\xE4rast taotluse esitamist v\xF5etakse see menetlusse." })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(timeline_exports.Timeline.Item, { timings: ["1990", "15. detsember"], children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Menetlemine" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p\xE4eva." })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(timeline_exports.Timeline.Item, { timings: ["1990", "15. detsember"], children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Menetlemine" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p\xE4eva." })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(timeline_exports.Timeline.Item, { timings: ["1991", "15. jaanuar"], children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Otsus" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Description, { children: "Otsus tehakse teatavaks." })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(timeline_exports.Timeline.Item, { timings: ["1991", "15. jaanuar"], children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Otsus" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Description, { children: "Otsus tehakse teatavaks." })
       ] })
     ] })
   };
   var Position = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 1.5, children: positions.map(({ label, above, below }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { gutterY: 1, className: "align-items-center", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { xs: 12, md: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { minWidth: "4rem" }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: label }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { xs: 12, md: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { display: "flex", gap: "var(--layout-grid-gutters-12)" }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 1.5, children: positions.map(({ label, above, below }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { gutterY: 1, className: "align-items-center", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { xs: 12, md: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { minWidth: "4rem" }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: label }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { xs: 12, md: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { display: "flex", gap: "var(--layout-grid-gutters-12)" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
           "div",
           {
             style: {
@@ -350,7 +377,7 @@ var __dsPreview = (() => {
             children: renderTimings(["1990", "14. detsember"])
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
           "div",
           {
             style: {
@@ -360,13 +387,13 @@ var __dsPreview = (() => {
               paddingTop: above ? 0 : DOT_OFFSET
             },
             children: [
-              above && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { axis: "vertical", color: "secondary", height: STUB_HEIGHT }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { variant: "dot-only", color: "secondary", dotSize: "medium", dotStyle: "outlined" }),
-              below && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { display: "flex", flex: 1, minHeight: `${STUB_HEIGHT}rem` }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(separator_default, { axis: "vertical", color: "secondary" }) })
+              above && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { axis: "vertical", color: "secondary", height: STUB_HEIGHT }),
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { variant: "dot-only", color: "secondary", dotSize: "medium", dotStyle: "outlined" }),
+              below && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { display: "flex", flex: 1, minHeight: `${STUB_HEIGHT}rem` }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(separator_default, { axis: "vertical", color: "secondary" }) })
             ]
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
           "div",
           {
             style: {
@@ -374,16 +401,16 @@ var __dsPreview = (() => {
               paddingTop: above ? `calc(${STUB_HEIGHT}rem - ${DOT_OFFSET})` : 0
             },
             children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" }),
-              label === "Start" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" }),
+              label === "Start" && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
                 collapse_exports.Collapse,
                 {
                   id: "timeline-position-collapse",
                   size: "small",
                   openText: "N\xE4ita rohkem",
                   closeText: "N\xE4ita v\xE4hem",
-                  children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: "P\xE4rast otsuse teatavaks tegemist saab seda vajadusel vaidlustada." })
+                  children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: "P\xE4rast otsuse teatavaks tegemist saab seda vajadusel vaidlustada." })
                 }
               )
             ]
@@ -393,155 +420,177 @@ var __dsPreview = (() => {
     ] }, label)) })
   };
   var TitleOnly = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(PositionShowcase, { renderContent: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }) })
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(PositionShowcase, { renderContent: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }) })
   };
   var WithDescription = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       PositionShowcase,
       {
-        renderContent: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" })
+        renderContent: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" })
         ] })
       }
     )
   };
   var CustomTextColor = {
     args: { activeIndex: 0 },
-    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(timeline_exports.Timeline, { ...args, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(timeline_exports.Timeline.Item, { timings: ["2024", "16. detsember"], children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { color: "primary", children: "Taotluse esitamine" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Description, { color: "brand", children: "P\xE4rast taotluse esitamist v\xF5etakse see menetlusse." })
+    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(timeline_exports.Timeline, { ...args, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(timeline_exports.Timeline.Item, { timings: ["2024", "16. detsember"], children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { color: "primary", children: "Taotluse esitamine" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Description, { color: "brand", children: "P\xE4rast taotluse esitamist v\xF5etakse see menetlusse." })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(timeline_exports.Timeline.Item, { timings: ["2025", "15. jaanuar"], children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Menetlemine" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p\xE4eva." })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(timeline_exports.Timeline.Item, { timings: ["2025", "15. jaanuar"], children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Menetlemine" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p\xE4eva." })
       ] })
     ] })
   };
   var WithInfoTooltip = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       PositionShowcase,
       {
-        renderContent: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(timeline_exports.Timeline.Title, { children: [
+        renderContent: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(timeline_exports.Timeline.Title, { children: [
             "Taotluse esitamine",
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tooltip_exports.InfoTooltip, { isSmall: true, ariaLabel: "Taotluse esitamine info", children: "Taotluse esitamise j\xE4rel v\xF5etakse see menetlusse." })
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tooltip_exports.InfoTooltip, { isSmall: true, ariaLabel: "Taotluse esitamine info", children: "Taotluse esitamise j\xE4rel v\xF5etakse see menetlusse." })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" })
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" })
         ] })
       }
     )
   };
   var WithoutTitle = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       PositionShowcase,
       {
-        renderContent: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" })
+        renderContent: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" })
       }
     )
   };
   var WithAction = {
     args: { activeIndex: 1 },
-    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(timeline_exports.Timeline, { ...args, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(timeline_exports.Timeline.Item, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(collapse_exports.Collapse, { id: "timeline-action-collapse", openText: "N\xE4ita rohkem", closeText: "N\xE4ita v\xE4hem", size: "small", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: "P\xE4rast otsuse teatavaks tegemist saab seda vajadusel vaidlustada." }) })
+    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(timeline_exports.Timeline, { ...args, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(timeline_exports.Timeline.Item, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(collapse_exports.Collapse, { id: "timeline-action-collapse", openText: "N\xE4ita rohkem", closeText: "N\xE4ita v\xE4hem", size: "small", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: "P\xE4rast otsuse teatavaks tegemist saab seda vajadusel vaidlustada." }) })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(timeline_exports.Timeline.Item, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { size: "small", style: { width: "fit-content" }, children: "Alusta taotlust" })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(timeline_exports.Timeline.Item, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { size: "small", style: { width: "fit-content" }, children: "Alusta taotlust" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(timeline_exports.Timeline.Item, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { size: "small", visualType: "secondary", iconLeft: "add", style: { width: "fit-content" }, children: "Lisa kaastaotleja" })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(timeline_exports.Timeline.Item, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { size: "small", visualType: "secondary", iconLeft: "add", style: { width: "fit-content" }, children: "Lisa kaastaotleja" })
       ] })
     ] })
   };
   var WithDate = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       PositionShowcase,
       {
         timings: ["1990"],
-        renderContent: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" })
+        renderContent: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" })
         ] })
       }
     )
   };
   var WithDateDescription = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       PositionShowcase,
       {
         timings: ["1990", "14. detsember"],
-        renderContent: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" })
+        renderContent: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" })
         ] })
       }
     )
   };
   var Example = {
     args: { activeIndex: 2 },
-    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(timeline_exports.Timeline, { ...args, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Item, { timings: ["1990", "14. detsember"], children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Staa\u017Ei kogumise algus (I sammas)" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(timeline_exports.Timeline.Item, { timings: ["2002", "04. oktoober"], children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "II sambaga liitumine" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Description, { children: "Aktiivne fond: LHV XL (loositud)" })
+    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(timeline_exports.Timeline, { ...args, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Item, { timings: ["1990", "14. detsember"], children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Staa\u017Ei kogumise algus (I sammas)" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(timeline_exports.Timeline.Item, { timings: ["2002", "04. oktoober"], children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "II sambaga liitumine" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Description, { children: "Aktiivne fond: LHV XL (loositud)" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Item, { timings: ["2007", "07. aprill"], children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Minimaalse staa\u017Ei t\xE4itumine (I sammas)" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Item, { timings: ["2021", "13. mai"], children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "III sambaga liitumine" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Item, { timings: ["2022", "14. juuni"], children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "II sambast lahkumine" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(timeline_exports.Timeline.Item, { timings: ["2024", "16. detsember"], children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { size: "small", style: { width: "fit-content" }, children: "Alusta taotlust" })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Item, { timings: ["2007", "07. aprill"], children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Minimaalse staa\u017Ei t\xE4itumine (I sammas)" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Item, { timings: ["2021", "13. mai"], children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "III sambaga liitumine" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Item, { timings: ["2022", "14. juuni"], children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "II sambast lahkumine" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(timeline_exports.Timeline.Item, { timings: ["2024", "16. detsember"], children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Taotluse esitamine" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Description, { children: "Menetlemine v\xF5ib v\xF5tta kuni 30 p" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { size: "small", style: { width: "fit-content" }, children: "Alusta taotlust" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Item, { timings: ["2032"], children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "II sambaga uuesti liitumise v\xF5imalus" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Item, { timings: ["2035"], children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Vanaduspensioniiga" }) })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Item, { timings: ["2032"], children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "II sambaga uuesti liitumise v\xF5imalus" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Item, { timings: ["2035"], children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Vanaduspensioniiga" }) })
     ] })
   };
   var TimelineCard = {
     args: { activeIndex: 1, variant: "card" },
-    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(timeline_exports.Timeline, { ...args, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+    render: (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(timeline_exports.Timeline, { ...args, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
         timeline_exports.Timeline.Item,
         {
           timings: ["11.01.2024 12:23", "Kersti \xD6\xF6viul"],
-          timingsBottom: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: "Muudetud 08.02.2024 12:23" }),
+          timingsBottom: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: "Muudetud 08.02.2024 12:23" }),
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Suhtlus isikuga" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(collapse_exports.Collapse, { id: "timeline-card-collapse-1", openText: "N\xE4ita rohkem", closeText: "N\xE4ita v\xE4hem", defaultOpen: true, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "secondary", children: "Lisainfo: Lorem ipsum dolor sit amet, consectetur adipiscing elit." }) })
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Suhtlus isikuga" }),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(collapse_exports.Collapse, { id: "timeline-card-collapse-1", openText: "N\xE4ita rohkem", closeText: "N\xE4ita v\xE4hem", defaultOpen: true, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "secondary", children: "Lisainfo: Lorem ipsum dolor sit amet, consectetur adipiscing elit." }) })
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
         timeline_exports.Timeline.Item,
         {
           timings: ["08.02.2024 12:23", "Kersti \xD6\xF6viul"],
-          timingsBottom: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: "Muudetud 12.03.2024 12:23" }),
+          timingsBottom: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "tertiary", children: "Muudetud 12.03.2024 12:23" }),
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Suhtlus isikuga" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(collapse_exports.Collapse, { id: "timeline-card-collapse-2", openText: "N\xE4ita rohkem", closeText: "N\xE4ita v\xE4hem", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "secondary", children: "Lisainfo: Lorem ipsum dolor sit amet, consectetur adipiscing elit." }) })
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Suhtlus isikuga" }),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(collapse_exports.Collapse, { id: "timeline-card-collapse-2", openText: "N\xE4ita rohkem", closeText: "N\xE4ita v\xE4hem", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "secondary", children: "Lisainfo: Lorem ipsum dolor sit amet, consectetur adipiscing elit." }) })
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(timeline_exports.Timeline.Item, { timings: ["12.05.2024 12:23", "Kersti \xD6\xF6viul"], children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(timeline_exports.Timeline.Title, { children: "Suhtlus isikuga" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(collapse_exports.Collapse, { id: "timeline-card-collapse-3", openText: "N\xE4ita rohkem", closeText: "N\xE4ita v\xE4hem", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "secondary", children: "Lisainfo: Lorem ipsum dolor sit amet, consectetur adipiscing elit." }) })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(timeline_exports.Timeline.Item, { timings: ["12.05.2024 12:23", "Kersti \xD6\xF6viul"], children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(timeline_exports.Timeline.Title, { children: "Suhtlus isikuga" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(collapse_exports.Collapse, { id: "timeline-card-collapse-3", openText: "N\xE4ita rohkem", closeText: "N\xE4ita v\xE4hem", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { element: "span", modifiers: "small", color: "secondary", children: "Lisainfo: Lorem ipsum dolor sit amet, consectetur adipiscing elit." }) })
       ] })
     ] })
+  };
+  var visualTestStories = [
+    { label: "Default", story: Default },
+    { label: "Position", story: Position },
+    { label: "Title only", story: TitleOnly },
+    { label: "With description", story: WithDescription },
+    { label: "Custom text color", story: CustomTextColor },
+    { label: "With info tooltip", story: WithInfoTooltip },
+    { label: "Without title", story: WithoutTitle },
+    { label: "With action", story: WithAction },
+    { label: "With date", story: WithDate },
+    { label: "With date description", story: WithDateDescription },
+    { label: "Example", story: Example },
+    { label: "Timeline card", story: TimelineCard }
+  ];
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: visualTestStories.map(({ label, story }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: label }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story, component: timeline_exports.Timeline })
+    ] }, label)) })
   };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -578,9 +627,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // Timeline.preview.tsx
@@ -598,5 +647,6 @@ var __dsPreview = (() => {
   var WithDateDescription2 = compose(timeline_stories_exports, "WithDateDescription", G, B);
   var Example2 = compose(timeline_stories_exports, "Example", G, B);
   var TimelineCard2 = compose(timeline_stories_exports, "TimelineCard", G, B);
+  var VisualTest2 = compose(timeline_stories_exports, "VisualTest", G, B);
   return __toCommonJS(Timeline_preview_exports);
 })();

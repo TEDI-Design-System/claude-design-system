@@ -55,12 +55,12 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
+  // react-global:react
+  var require_react = __commonJS({
+    "react-global:react"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.Tedi;
+      module.exports = window.React;
     }
   });
 
@@ -70,19 +70,19 @@ var __dsPreview = (() => {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
     }
   });
 
-  // react-global:react
-  var require_react = __commonJS({
-    "react-global:react"(exports, module) {
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.React;
+      module.exports = window.Tedi;
     }
   });
 
@@ -94,6 +94,7 @@ var __dsPreview = (() => {
     Global: () => Global2,
     Headless: () => Headless2,
     Sizes: () => Sizes2,
+    VisualTest: () => VisualTest2,
     WithActionButton: () => WithActionButton2,
     WithCloseButton: () => WithCloseButton2,
     WithIcon: () => WithIcon2,
@@ -113,6 +114,7 @@ var __dsPreview = (() => {
     Global: () => Global,
     Headless: () => Headless,
     Sizes: () => Sizes,
+    VisualTest: () => VisualTest,
     WithActionButton: () => WithActionButton,
     WithCloseButton: () => WithCloseButton,
     WithIcon: () => WithIcon,
@@ -125,7 +127,31 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -136,7 +162,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var text_default = ns["Text"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -152,7 +178,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -166,7 +192,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -180,7 +206,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -191,7 +217,7 @@ var __dsPreview = (() => {
   var ns5 = window.Tedi;
   var vertical_spacing_default = ns5["VerticalSpacing"] ?? ns5;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/link/link.tsx
+  // tedi:src/tedi/components/navigation/link/link.tsx
   var link_exports = {};
   __export(link_exports, {
     default: () => link_default
@@ -202,7 +228,7 @@ var __dsPreview = (() => {
   var ns6 = window.Tedi;
   var link_default = ns6["Link"] ?? ns6;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/notifications/alert/alert.tsx
+  // tedi:src/tedi/components/notifications/alert/alert.tsx
   var alert_exports = {};
   __export(alert_exports, {
     default: () => alert_default
@@ -214,7 +240,7 @@ var __dsPreview = (() => {
   var alert_default = ns7["Alert"] ?? ns7;
 
   // src/tedi/components/notifications/alert/alert.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: alert_default,
     title: "TEDI-Ready/Components/Notifications/Alert",
@@ -228,7 +254,8 @@ var __dsPreview = (() => {
       design: {
         type: "figma",
         url: "https://www.figma.com/design/jWiRIXhHRxwVdMSimKX2FF/TEDI-READY-(work-in-progress)?node-id=4263-61880&m=dev"
-      }
+      },
+      chromatic: { disableSnapshot: true }
     }
   };
   var alert_stories_default = meta;
@@ -239,32 +266,32 @@ var __dsPreview = (() => {
     { type: "danger", icon: "error" }
   ];
   var sizeArray = ["default", "small"];
-  var TypesTemplate = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: alertTypes.map(({ type, icon }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(alert_default, { type, icon, ...args, children: [
+  var TypesTemplate = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: alertTypes.map(({ type, icon }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(alert_default, { type, icon, ...args, children: [
     "This is a ",
     type,
     " alert."
   ] }, type)) });
   var TemplateColumn = (args) => {
     const { array, ...alertProps } = args;
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "example-list", children: array.map((value, key) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { className: `${key === array.length - 1 ? "" : "border-bottom"} padding-14-16`, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: 2, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: value ? value.charAt(0).toUpperCase() + value.slice(1) : "" }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { className: "d-flex", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(alert_default, { ...alertProps, size: array[key], children: "Content description" }, alertProps.type) })
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "example-list", children: array.map((value, key) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { className: `${key === array.length - 1 ? "" : "border-bottom"} padding-14-16`, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: 2, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: value ? value.charAt(0).toUpperCase() + value.slice(1) : "" }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { className: "d-flex", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(alert_default, { ...alertProps, size: array[key], children: "Content description" }, alertProps.type) })
     ] }, key)) });
   };
-  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(alert_default, { ...args });
+  var Template = (args) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(alert_default, { ...args });
   var Default = {
     args: {
       title: "Title",
-      children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+      children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
         "Content description. ",
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(link_default, { href: "#", children: "Inline link example" })
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(link_default, { href: "#", children: "Inline link example" })
       ] })
     }
   };
   var WithAndWithoutHeading = (args) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(alert_default, { title: "Title", ...args, children: args.children }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(alert_default, { ...args, children: args.children })
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(alert_default, { title: "Title", ...args, children: args.children }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(alert_default, { ...args, children: args.children })
     ] });
   };
   var Sizes = {
@@ -324,7 +351,7 @@ var __dsPreview = (() => {
       icon: "warning"
     },
     render: (args) => {
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(alert_default, { ...args });
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(alert_default, { ...args });
     }
   };
   var WithoutTitleLongTextAndClosingButton = {
@@ -335,7 +362,7 @@ var __dsPreview = (() => {
       onClose: () => null
     },
     render: (args) => {
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(alert_default, { ...args });
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(alert_default, { ...args });
     }
   };
   var WithTitleLongTextAndClosingButton = {
@@ -347,7 +374,7 @@ var __dsPreview = (() => {
       onClose: () => null
     },
     render: (args) => {
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(alert_default, { ...args });
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(alert_default, { ...args });
     }
   };
   var WithActionButton = {
@@ -355,15 +382,37 @@ var __dsPreview = (() => {
       type: "warning",
       icon: "warning",
       children: "Your account is missing a profile photo \u2014 add one so colleagues can recognise you in shared documents.",
-      action: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_default, { visualType: "secondary", iconRight: "arrow_forward", children: "Open profile" })
+      action: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_default, { visualType: "secondary", iconRight: "arrow_forward", children: "Open profile" })
     }
+  };
+  var visualTestStories = [
+    { label: "Default", story: Default },
+    { label: "Sizes", story: Sizes },
+    { label: "Headless", story: Headless },
+    { label: "Global", story: Global },
+    { label: "Without side borders", story: WithoutSideBorders },
+    { label: "With icon", story: WithIcon },
+    { label: "With close button", story: WithCloseButton },
+    { label: "Alert types", story: AlertTypes },
+    { label: "Without title, long text", story: WithoutTitleLongText },
+    { label: "Without title, long text and closing button", story: WithoutTitleLongTextAndClosingButton },
+    { label: "With title, long text and closing button", story: WithTitleLongTextAndClosingButton },
+    { label: "With action button", story: WithActionButton }
+  ];
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: visualTestStories.map(({ label, story }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: label }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story, component: alert_default })
+    ] }, label)) })
   };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -400,9 +449,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // Alert.preview.tsx
@@ -420,5 +469,6 @@ var __dsPreview = (() => {
   var WithoutTitleLongTextAndClosingButton2 = compose(alert_stories_exports, "WithoutTitleLongTextAndClosingButton", G, B);
   var WithTitleLongTextAndClosingButton2 = compose(alert_stories_exports, "WithTitleLongTextAndClosingButton", G, B);
   var WithActionButton2 = compose(alert_stories_exports, "WithActionButton", G, B);
+  var VisualTest2 = compose(alert_stories_exports, "VisualTest", G, B);
   return __toCommonJS(Alert_preview_exports);
 })();

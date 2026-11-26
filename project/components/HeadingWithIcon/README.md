@@ -1,6 +1,6 @@
 HeadingWithIcon from @tedi-design-system/react. Use via `window.Tedi.HeadingWithIcon` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Colors.
+Variants (see `preview.html`): Default, Colors, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Colors.
 import * as React from 'react';
 
 /**
- * HeadingWithIcon from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/heading-with-icon/heading-with-icon.stories.tsx).
+ * HeadingWithIcon from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/content/heading-with-icon/heading-with-icon.stories.tsx).
  */
 export interface HeadingWithIconProps {
   /** Heading text */
@@ -100,10 +100,33 @@ export const Colors: Story = {
     name: 'assignment_ind',
   },
 };
+
+/** Chromatic snapshot for HeadingWithIcon: add every new visual variant here too. */
+```
+
+### Visual Test
+
+```tsx
+export const VisualTest: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+  render: () => (
+    <VerticalSpacing size={2}>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Default</Text>
+        <VisualTestStory story={Default} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Colors</Text>
+        <VisualTestStory story={Colors} />
+      </VerticalSpacing>
+    </VerticalSpacing>
+  ),
+};
 ```
 
 Full story source: `src/tedi/components/content/heading-with-icon/heading-with-icon.stories.tsx`.
 
 ## Related
 
-`VerticalSpacing`
+`Text`, `VerticalSpacing`

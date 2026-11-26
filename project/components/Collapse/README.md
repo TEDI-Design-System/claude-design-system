@@ -1,6 +1,6 @@
 Collapse from @tedi-design-system/react. Use via `window.Tedi.Collapse` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Icon Only, Secondary Arrow, Inverted, Without Underline, Full Row Toggle, Nested.
+Variants (see `preview.html`): Default, Icon Only, Secondary Arrow, Inverted, Without Underline, Full Row Toggle, Nested, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Icon Only, Secondary Arrow, Inverted, Wi
 import * as React from 'react';
 
 /**
- * Collapse from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/content/collapse/collapse.stories.tsx).
+ * Collapse from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/content/collapse/collapse.stories.tsx).
  */
 export interface CollapseProps {
   /** Unique identifier for the collapse content. Used for ARIA attributes like `aria-controls`. */
@@ -275,4 +275,4 @@ Full story source: `src/tedi/components/content/collapse/collapse.stories.tsx`.
 
 ## Related
 
-`Heading`, `Text`, `VerticalSpacing`
+`Heading`, `Text`, `VerticalSpacing`, `Card`

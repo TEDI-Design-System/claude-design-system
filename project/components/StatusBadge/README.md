@@ -1,6 +1,6 @@
 StatusBadge from @tedi-design-system/react. Use via `window.Tedi.StatusBadge` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Sizes, Colors, Status Indicator, With Tooltip.
+Variants (see `preview.html`): Default, Sizes, Colors, Status Indicator, With Tooltip, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Sizes, Colors, Status Indicator, With To
 import * as React from 'react';
 
 /**
- * StatusBadge from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/tags/status-badge/status-badge.stories.tsx).
+ * StatusBadge from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/tags/status-badge/status-badge.stories.tsx).
  */
 export interface StatusBadgeProps {
   /** The content to be displayed inside the StatusBadge. If not provided and `icon` is set, the badge will display the icon only. */
@@ -134,6 +134,25 @@ export const WithTooltip: StoryFn<StatusBadgeProps> = () => {
       </Tooltip.Content>
     </Tooltip>
   );
+};
+```
+
+### Visual Test
+
+```tsx
+export const VisualTest: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+  render: () => (
+    <VerticalSpacing size={2}>
+      {visualTestStories.map(({ label, story }) => (
+        <VerticalSpacing size={0.5} key={label}>
+          <Text modifiers="bold">{label}</Text>
+          <VisualTestStory story={story} />
+        </VerticalSpacing>
+      ))}
+    </VerticalSpacing>
+  ),
 };
 ```
 

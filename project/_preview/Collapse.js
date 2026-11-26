@@ -55,12 +55,12 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
+  // react-global:react
+  var require_react = __commonJS({
+    "react-global:react"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.Tedi;
+      module.exports = window.React;
     }
   });
 
@@ -70,19 +70,19 @@ var __dsPreview = (() => {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
     }
   });
 
-  // react-global:react
-  var require_react = __commonJS({
-    "react-global:react"(exports, module) {
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
-      module.exports = window.React;
+      module.exports = window.Tedi;
     }
   });
 
@@ -95,6 +95,7 @@ var __dsPreview = (() => {
     Inverted: () => Inverted2,
     Nested: () => Nested2,
     SecondaryArrow: () => SecondaryArrow2,
+    VisualTest: () => VisualTest2,
     WithoutUnderline: () => WithoutUnderline2
   });
   init_define_import_meta_env();
@@ -109,13 +110,38 @@ var __dsPreview = (() => {
     Inverted: () => Inverted,
     Nested: () => Nested,
     SecondaryArrow: () => SecondaryArrow,
+    VisualTest: () => VisualTest,
     WithoutUnderline: () => WithoutUnderline,
     default: () => collapse_stories_default
   });
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/heading/heading.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/typography/heading/heading.tsx
   var heading_exports = {};
   __export(heading_exports, {
     default: () => heading_default
@@ -126,7 +152,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var heading_default = ns["Heading"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -137,7 +163,7 @@ var __dsPreview = (() => {
   var ns2 = window.Tedi;
   var text_default = ns2["Text"] ?? ns2;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -148,7 +174,18 @@ var __dsPreview = (() => {
   var ns3 = window.Tedi;
   var vertical_spacing_default = ns3["VerticalSpacing"] ?? ns3;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/collapse/collapse.tsx
+  // tedi:src/tedi/components/content/card/index.ts
+  var card_exports = {};
+  __export(card_exports, {
+    default: () => card_default
+  });
+  init_define_import_meta_env();
+  init_define_process_env();
+  __reExport(card_exports, __toESM(require_tedi_namespace()));
+  var ns4 = window.Tedi;
+  var card_default = ns4["Card"] ?? ns4;
+
+  // tedi:src/tedi/components/content/collapse/collapse.tsx
   var collapse_exports = {};
   __export(collapse_exports, {
     default: () => collapse_default
@@ -156,15 +193,16 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
   __reExport(collapse_exports, __toESM(require_tedi_namespace()));
-  var ns4 = window.Tedi;
-  var collapse_default = ns4["Collapse"] ?? ns4;
+  var ns5 = window.Tedi;
+  var collapse_default = ns5["Collapse"] ?? ns5;
 
   // src/tedi/components/content/collapse/collapse.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: collapse_default,
     title: "TEDI-Ready/Content/Collapse",
     parameters: {
+      chromatic: { disableSnapshot: true },
       status: {
         type: [
           "devComponent",
@@ -190,10 +228,10 @@ var __dsPreview = (() => {
       id: "collapse-default",
       openText: "N\xE4ita rohkem",
       closeText: "N\xE4ita v\xE4hem",
-      title: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(heading_exports.Heading, { element: "h5", color: "secondary", children: "Juhtumi \xFCldandmed" }),
-      children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { color: "secondary", children: "Laste osalus" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Peret\xFCli lapse osaluseta" })
+      title: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_exports.Heading, { element: "h5", color: "secondary", children: "Juhtumi \xFCldandmed" }),
+      children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "secondary", children: "Laste osalus" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Peret\xFCli lapse osaluseta" })
       ] })
     }
   };
@@ -202,7 +240,7 @@ var __dsPreview = (() => {
       id: "collapse-icon-only",
       iconOnly: true,
       toggleLabel: "N\xE4ita detaile",
-      children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Sisu ilma pealkirjata." })
+      children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Sisu ilma pealkirjata." })
     }
   };
   var SecondaryArrow = {
@@ -211,7 +249,7 @@ var __dsPreview = (() => {
       iconOnly: true,
       arrowType: "secondary",
       toggleLabel: "N\xE4ita detaile",
-      children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Sisu." })
+      children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Sisu." })
     }
   };
   var Inverted = {
@@ -221,7 +259,7 @@ var __dsPreview = (() => {
       inverted: true,
       openText: "N\xE4ita rohkem",
       closeText: "N\xE4ita v\xE4hem",
-      children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { color: "white", element: "span", children: "Sisu tumedal taustal." })
+      children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { color: "white", element: "span", children: "Sisu tumedal taustal." })
     }
   };
   var WithoutUnderline = {
@@ -241,26 +279,60 @@ var __dsPreview = (() => {
   var Nested = {
     args: {
       id: "parent-collapse",
-      title: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(heading_exports.Heading, { element: "h5", color: "secondary", children: "\xDClemine plokk" }),
-      children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "\xDClemise ploki sisu enne alamplokki." }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      title: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_exports.Heading, { element: "h5", color: "secondary", children: "\xDClemine plokk" }),
+      children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "\xDClemise ploki sisu enne alamplokki." }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
           collapse_default,
           {
             id: "child-collapse",
-            title: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(heading_exports.Heading, { element: "h6", color: "secondary", children: "Alamplokk" }),
-            children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: "Pesastatud alamploki sisu." })
+            title: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_exports.Heading, { element: "h6", color: "secondary", children: "Alamplokk" }),
+            children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: "Pesastatud alamploki sisu." })
           }
         )
       ] })
     }
+  };
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Default, component: collapse_default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Icon only" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: IconOnly, component: collapse_default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Secondary arrow" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: SecondaryArrow, component: collapse_default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Full row toggle" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: FullRowToggle, component: collapse_default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card, { background: "brand-primary", borderless: true, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_exports.Card.Content, { children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", color: "white", children: "Inverted" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Inverted, component: collapse_default })
+      ] }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Without underline" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: WithoutUnderline, component: collapse_default })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Nested" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Nested, component: collapse_default })
+      ] })
+    ] })
   };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -297,9 +369,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // Collapse.preview.tsx
@@ -312,5 +384,6 @@ var __dsPreview = (() => {
   var WithoutUnderline2 = compose(collapse_stories_exports, "WithoutUnderline", G, B);
   var FullRowToggle2 = compose(collapse_stories_exports, "FullRowToggle", G, B);
   var Nested2 = compose(collapse_stories_exports, "Nested", G, B);
+  var VisualTest2 = compose(collapse_stories_exports, "VisualTest", G, B);
   return __toCommonJS(Collapse_preview_exports);
 })();

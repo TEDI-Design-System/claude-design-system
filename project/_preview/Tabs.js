@@ -64,25 +64,25 @@ var __dsPreview = (() => {
     }
   });
 
-  // tedi-namespace:tedi-namespace
-  var require_tedi_namespace = __commonJS({
-    "tedi-namespace:tedi-namespace"(exports, module) {
-      init_define_import_meta_env();
-      init_define_process_env();
-      module.exports = window.Tedi;
-    }
-  });
-
   // react-global:react/jsx-runtime
   var require_jsx_runtime = __commonJS({
     "react-global:react/jsx-runtime"(exports, module) {
       init_define_import_meta_env();
       init_define_process_env();
       var R = window.React;
-      function jsx3(type, props, key) {
+      function jsx4(type, props, key) {
         return R.createElement(type, key === void 0 ? props : Object.assign({}, props, { key }));
       }
-      module.exports = { jsx: jsx3, jsxs: jsx3, jsxDEV: jsx3, Fragment: R.Fragment };
+      module.exports = { jsx: jsx4, jsxs: jsx4, jsxDEV: jsx4, Fragment: R.Fragment };
+    }
+  });
+
+  // tedi-namespace:tedi-namespace
+  var require_tedi_namespace = __commonJS({
+    "tedi-namespace:tedi-namespace"(exports, module) {
+      init_define_import_meta_env();
+      init_define_process_env();
+      module.exports = window.Tedi;
     }
   });
 
@@ -93,6 +93,7 @@ var __dsPreview = (() => {
     Default: () => Default2,
     OverflowBehavior: () => OverflowBehavior2,
     States: () => States2,
+    VisualTest: () => VisualTest2,
     WithDisabledTab: () => WithDisabledTab2,
     WithIcons: () => WithIcons2,
     WithStatusBadge: () => WithStatusBadge2,
@@ -108,6 +109,7 @@ var __dsPreview = (() => {
     Default: () => Default,
     OverflowBehavior: () => OverflowBehavior,
     States: () => States,
+    VisualTest: () => VisualTest,
     WithDisabledTab: () => WithDisabledTab,
     WithIcons: () => WithIcons,
     WithStatusBadge: () => WithStatusBadge,
@@ -116,9 +118,33 @@ var __dsPreview = (() => {
   });
   init_define_import_meta_env();
   init_define_process_env();
-  var import_react = __toESM(require_react(), 1);
+  var import_react2 = __toESM(require_react(), 1);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/heading/heading.tsx
+  // .storybook/visual-test-story.tsx
+  init_define_import_meta_env();
+  init_define_process_env();
+  var import_react = __toESM(require_react(), 1);
+  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var VISUAL_TEST_VIEWPORTS = [375, 1200];
+  var VisualTestStory = ({ story, component, props }) => {
+    const args = { ...story.args };
+    if (story.render) {
+      const node = story.render(args, {});
+      if (!props) {
+        return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: node });
+      }
+      if (!(0, import_react.isValidElement)(node)) {
+        throw new Error("VisualTestStory: `props` needs a story whose `render` returns a single element.");
+      }
+      return (0, import_react.cloneElement)(node, props);
+    }
+    if (component) {
+      return (0, import_react.createElement)(component, { ...args, ...props });
+    }
+    throw new Error("VisualTestStory: the story has no `render`; pass the `component` to render its args with.");
+  };
+
+  // tedi:src/tedi/components/base/typography/heading/heading.tsx
   var heading_exports = {};
   __export(heading_exports, {
     default: () => heading_default
@@ -129,7 +155,7 @@ var __dsPreview = (() => {
   var ns = window.Tedi;
   var heading_default = ns["Heading"] ?? ns;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/base/typography/text/text.tsx
+  // tedi:src/tedi/components/base/typography/text/text.tsx
   var text_exports = {};
   __export(text_exports, {
     default: () => text_default
@@ -140,7 +166,7 @@ var __dsPreview = (() => {
   var ns2 = window.Tedi;
   var text_default = ns2["Text"] ?? ns2;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button/button.tsx
+  // tedi:src/tedi/components/buttons/button/button.tsx
   var button_exports = {};
   __export(button_exports, {
     default: () => button_default
@@ -151,7 +177,7 @@ var __dsPreview = (() => {
   var ns3 = window.Tedi;
   var button_default = ns3["Button"] ?? ns3;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/buttons/button-group/button-group.tsx
+  // tedi:src/tedi/components/buttons/button-group/button-group.tsx
   var button_group_exports = {};
   __export(button_group_exports, {
     default: () => button_group_default
@@ -162,7 +188,7 @@ var __dsPreview = (() => {
   var ns4 = window.Tedi;
   var button_group_default = ns4["ButtonGroup"] ?? ns4;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/content/card/card-content/card-content.tsx
+  // tedi:src/tedi/components/content/card/card-content/card-content.tsx
   var card_content_exports = {};
   __export(card_content_exports, {
     default: () => card_content_default
@@ -178,7 +204,7 @@ var __dsPreview = (() => {
   init_define_import_meta_env();
   init_define_process_env();
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/row.tsx
+  // tedi:src/tedi/components/layout/grid/row.tsx
   var row_exports = {};
   __export(row_exports, {
     default: () => row_default
@@ -192,7 +218,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, row_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/grid/col.tsx
+  // tedi:src/tedi/components/layout/grid/col.tsx
   var col_exports = {};
   __export(col_exports, {
     default: () => col_default
@@ -206,7 +232,7 @@ var __dsPreview = (() => {
   // src/tedi/components/layout/grid/index.ts
   __reExport(grid_exports, col_exports);
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/layout/vertical-spacing/index.ts
+  // tedi:src/tedi/components/layout/vertical-spacing/index.ts
   var vertical_spacing_exports = {};
   __export(vertical_spacing_exports, {
     default: () => vertical_spacing_default
@@ -217,7 +243,7 @@ var __dsPreview = (() => {
   var ns8 = window.Tedi;
   var vertical_spacing_default = ns8["VerticalSpacing"] ?? ns8;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/misc/ellipsis/ellipsis.tsx
+  // tedi:src/tedi/components/misc/ellipsis/ellipsis.tsx
   var ellipsis_exports = {};
   __export(ellipsis_exports, {
     default: () => ellipsis_default
@@ -228,7 +254,7 @@ var __dsPreview = (() => {
   var ns9 = window.Tedi;
   var ellipsis_default = ns9["Ellipsis"] ?? ns9;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/tags/status-badge/status-badge.tsx
+  // tedi:src/tedi/components/tags/status-badge/status-badge.tsx
   var status_badge_exports = {};
   __export(status_badge_exports, {
     default: () => status_badge_default
@@ -239,7 +265,7 @@ var __dsPreview = (() => {
   var ns10 = window.Tedi;
   var status_badge_default = ns10["StatusBadge"] ?? ns10;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/tags/status-indicator/status-indicator.tsx
+  // tedi:src/tedi/components/tags/status-indicator/status-indicator.tsx
   var status_indicator_exports = {};
   __export(status_indicator_exports, {
     default: () => status_indicator_default
@@ -250,7 +276,7 @@ var __dsPreview = (() => {
   var ns11 = window.Tedi;
   var status_indicator_default = ns11["StatusIndicator"] ?? ns11;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/tabs/tabs.tsx
+  // tedi:src/tedi/components/navigation/tabs/tabs.tsx
   var tabs_exports = {};
   __export(tabs_exports, {
     default: () => tabs_default
@@ -261,7 +287,7 @@ var __dsPreview = (() => {
   var ns12 = window.Tedi;
   var tabs_default = ns12["Tabs"] ?? ns12;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/tabs/tabs-context.tsx
+  // tedi:src/tedi/components/navigation/tabs/tabs-context.tsx
   var tabs_context_exports = {};
   __export(tabs_context_exports, {
     default: () => tabs_context_default
@@ -272,7 +298,7 @@ var __dsPreview = (() => {
   var ns13 = window.Tedi;
   var tabs_context_default = ns13["TabsContext"] ?? ns13;
 
-  // tedi:/home/runner/work/claude-design-system/claude-design-system/react/src/tedi/components/navigation/tabs/tabs-trigger/tabs-trigger.tsx
+  // tedi:src/tedi/components/navigation/tabs/tabs-trigger/tabs-trigger.tsx
   var tabs_trigger_exports = {};
   __export(tabs_trigger_exports, {
     default: () => tabs_trigger_default
@@ -284,7 +310,7 @@ var __dsPreview = (() => {
   var tabs_trigger_default = ns14["TabsTrigger"] ?? ns14;
 
   // src/tedi/components/navigation/tabs/tabs.stories.tsx
-  var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
   var meta = {
     component: tabs_exports.Tabs,
     title: "TEDI-Ready/Components/Navigation/Tabs",
@@ -297,7 +323,8 @@ var __dsPreview = (() => {
       design: {
         type: "figma",
         url: "https://www.figma.com/design/jWiRIXhHRxwVdMSimKX2FF/TEDI-READY-2.38.59?node-id=3419-38773&m=dev"
-      }
+      },
+      chromatic: { disableSnapshot: true }
     }
   };
   var tabs_stories_default = meta;
@@ -317,55 +344,58 @@ var __dsPreview = (() => {
   var noop = () => null;
   var TemplateColumnWithStates = (args) => {
     const { array } = args;
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "state-example", children: array.map((state, index) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: "state-example", children: array.map((state, index) => {
       const triggerId = state === "Selected" ? "state-tab" : `${state}-tab`;
       const currentTab = state === "Selected" ? "state-tab" : "";
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(grid_exports.Row, { className: "padding-14-16", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { width: 2, className: "flex align-items-center", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: state }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(grid_exports.Col, { className: "flex align-items-center", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_context_exports.TabsContext.Provider, { value: { currentTab, setCurrentTab: noop }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_trigger_exports.TabsTrigger, { id: triggerId, children: "Terviseteekond" }) }) })
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(grid_exports.Row, { className: "padding-14-16", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { width: 2, className: "flex align-items-center", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: state }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(grid_exports.Col, { className: "flex align-items-center", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_context_exports.TabsContext.Provider, { value: { currentTab, setCurrentTab: noop }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_trigger_exports.TabsTrigger, { id: triggerId, children: "Terviseteekond" }) }) })
       ] }, index);
     }) });
   };
+  var DefaultTemplate = ({ idPrefix = "" }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tabs_exports.Tabs, { defaultValue: `${idPrefix}tab-1`, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tabs_exports.Tabs.List, { "aria-label": "Terviseandmed", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: `${idPrefix}tab-1`, children: "Terviseteekond" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: `${idPrefix}tab-2`, children: "Haiguste kulg" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: `${idPrefix}tab-3`, children: "Ravimite ajalugu" })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: `${idPrefix}tab-1`, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.healthTimeline }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: `${idPrefix}tab-2`, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.diseaseCourse }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: `${idPrefix}tab-3`, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.medication }) }) })
+  ] });
   var Default = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tabs_exports.Tabs, { defaultValue: "tab-1", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tabs_exports.Tabs.List, { "aria-label": "Tervise sakid", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-1", children: "Terviseteekond" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-2", children: "Haiguste kulg" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-3", children: "Ravimite ajalugu" })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-1", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.healthTimeline }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-2", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.diseaseCourse }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.medication }) }) })
-    ] })
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(DefaultTemplate, {})
   };
+  var WithIconsTemplate = ({ idPrefix = "" }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tabs_exports.Tabs, { defaultValue: `${idPrefix}tab-1`, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tabs_exports.Tabs.List, { "aria-label": "Vaade", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: `${idPrefix}tab-1`, icon: "table_chart", children: "Tabel" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: `${idPrefix}tab-2`, icon: "grid_on", children: "Ruudustik" })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: `${idPrefix}tab-1`, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.table }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: `${idPrefix}tab-2`, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.grid }) }) })
+  ] });
   var WithIcons = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tabs_exports.Tabs, { defaultValue: "tab-1", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tabs_exports.Tabs.List, { "aria-label": "Ikoonidega sakid", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-1", icon: "table_chart", children: "Tabel" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-2", icon: "grid_on", children: "Ruudustik" })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-1", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.table }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-2", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.grid }) }) })
-    ] })
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(WithIconsTemplate, {})
   };
-  var WithStatusBadge = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tabs_exports.Tabs, { defaultValue: "tab-1", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tabs_exports.Tabs.List, { "aria-label": "Olekum\xE4rgisega sakid", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tabs_exports.Tabs.Trigger, { id: "tab-1", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ellipsis_exports.Ellipsis, { lineClamp: 1, popover: true, children: "Terviseteekond" }),
-          " ",
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(status_badge_exports.StatusBadge, { color: "brand", children: "Esitatud" })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-2", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { style: { position: "relative" }, children: [
-          "Lugemata teated\xA0",
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(status_indicator_exports.StatusIndicator, { type: "danger", position: "top-right" })
-        ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-3", children: "Ravimite ajalugu" })
+  var WithStatusBadgeTemplate = ({ idPrefix = "" }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tabs_exports.Tabs, { defaultValue: `${idPrefix}tab-1`, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tabs_exports.Tabs.List, { "aria-label": "Terviseandmed", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tabs_exports.Tabs.Trigger, { id: `${idPrefix}tab-1`, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(ellipsis_exports.Ellipsis, { lineClamp: 1, popover: true, children: "Terviseteekond" }),
+        " ",
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_badge_exports.StatusBadge, { color: "brand", children: "Esitatud" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-1", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.healthTimeline }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-2", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.unreadMessages }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.medication }) }) })
-    ] })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: `${idPrefix}tab-2`, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("span", { style: { position: "relative" }, children: [
+        "Lugemata teated\xA0",
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(status_indicator_exports.StatusIndicator, { type: "danger", position: "top-right" })
+      ] }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: `${idPrefix}tab-3`, children: "Ravimite ajalugu" })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: `${idPrefix}tab-1`, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.healthTimeline }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: `${idPrefix}tab-2`, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.unreadMessages }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: `${idPrefix}tab-3`, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.medication }) }) })
+  ] });
+  var WithStatusBadge = {
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(WithStatusBadgeTemplate, {})
   };
   var States = {
     render: TemplateColumnWithStates,
@@ -382,119 +412,167 @@ var __dsPreview = (() => {
     }
   };
   var Controlled = {
-    parameters: { chromatic: { disableSnapshot: true } },
+    parameters: { visualTest: false },
     render: () => {
-      const [currentTab, setCurrentTab] = (0, import_react.useState)("tab-1");
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
+      const [currentTab, setCurrentTab] = (0, import_react2.useState)("tab-1");
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("p", { children: [
           "Current tab: ",
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: currentTab })
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: currentTab })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tabs_exports.Tabs, { value: currentTab, onChange: setCurrentTab, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tabs_exports.Tabs.List, { "aria-label": "Juhitavad sakid", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-1", children: "Terviseteekond" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-2", children: "Haiguste kulg" }),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-3", children: "Ravimite ajalugu" })
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tabs_exports.Tabs, { value: currentTab, onChange: setCurrentTab, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tabs_exports.Tabs.List, { "aria-label": "Terviseandmed", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-1", children: "Terviseteekond" }),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-2", children: "Haiguste kulg" }),
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-3", children: "Ravimite ajalugu" })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-1", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.healthTimeline }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-2", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.diseaseCourse }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.medication }) })
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: "tab-1", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.healthTimeline }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: "tab-2", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.diseaseCourse }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: "tab-3", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.medication }) })
         ] })
       ] });
     }
   };
+  var WithDisabledTabTemplate = ({ idPrefix = "" }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tabs_exports.Tabs, { defaultValue: `${idPrefix}tab-1`, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tabs_exports.Tabs.List, { "aria-label": "Terviseandmed", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: `${idPrefix}tab-1`, children: "Terviseteekond" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: `${idPrefix}tab-2`, children: "Haiguste kulg" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: `${idPrefix}tab-3`, disabled: true, children: "Ravimite ajalugu" })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: `${idPrefix}tab-1`, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.healthTimeline }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: `${idPrefix}tab-2`, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.diseaseCourse }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: `${idPrefix}tab-3`, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.medication }) }) })
+  ] });
   var WithDisabledTab = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tabs_exports.Tabs, { defaultValue: "tab-1", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tabs_exports.Tabs.List, { "aria-label": "Keelatud sakiga sakid", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-1", children: "Terviseteekond" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-2", children: "Haiguste kulg" }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-3", disabled: true, children: "Ravimite ajalugu" })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-1", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.healthTimeline }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-2", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.diseaseCourse }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.medication }) }) })
-    ] })
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(WithDisabledTabTemplate, {})
   };
   var OverflowBehavior = {
-    render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: "Dropdown (default)" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { maxWidth: 400 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tabs_exports.Tabs, { defaultValue: "more-1", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tabs_exports.Tabs.List, { "aria-label": "\xDClet\xE4ituvad sakid rippmen\xFC\xFCga", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "more-1", children: "Terviseteekond" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "more-2", children: "Haiguste kulg" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "more-3", children: "Ravimite ajalugu" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "more-4", children: "Tahteavaldused" })
+    parameters: { chromatic: { disableSnapshot: false } },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Dropdown (default)" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { maxWidth: 400 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tabs_exports.Tabs, { defaultValue: "more-1", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tabs_exports.Tabs.List, { "aria-label": "Terviseandmed", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: "more-1", children: "Terviseteekond" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: "more-2", children: "Haiguste kulg" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: "more-3", children: "Ravimite ajalugu" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: "more-4", children: "Tahteavaldused" })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "more-1", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.healthTimeline }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "more-2", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.diseaseCourse }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "more-3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.medication }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "more-4", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.declarations }) }) })
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: "more-1", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.healthTimeline }) }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: "more-2", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.diseaseCourse }) }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: "more-3", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.medication }) }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: "more-4", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.declarations }) }) })
       ] }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { modifiers: "bold", children: "Horizontal scroll" }),
-      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { maxWidth: 400 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tabs_exports.Tabs, { defaultValue: "scroll-1", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tabs_exports.Tabs.List, { "aria-label": "\xDClet\xE4ituvad sakid kerimisega", overflowMode: "scroll", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "scroll-1", children: "Terviseteekond" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "scroll-2", children: "Haiguste kulg" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "scroll-3", children: "Ravimite ajalugu" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "scroll-4", children: "Tahteavaldused" })
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Horizontal scroll" }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { maxWidth: 400 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tabs_exports.Tabs, { defaultValue: "scroll-1", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tabs_exports.Tabs.List, { "aria-label": "Terviseandmed", overflowMode: "scroll", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: "scroll-1", children: "Terviseteekond" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: "scroll-2", children: "Haiguste kulg" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: "scroll-3", children: "Ravimite ajalugu" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: "scroll-4", children: "Tahteavaldused" })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "scroll-1", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.healthTimeline }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "scroll-2", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.diseaseCourse }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "scroll-3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.medication }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "scroll-4", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.declarations }) }) })
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: "scroll-1", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.healthTimeline }) }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: "scroll-2", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.diseaseCourse }) }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: "scroll-3", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.medication }) }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: "scroll-4", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.declarations }) }) })
       ] }) })
     ] })
   };
+  var WithSubTabsTemplate = ({ idPrefix = "" }) => {
+    const [activeSubTab, setActiveSubTab] = (0, import_react2.useState)("work-accidents");
+    const subTabLabels = {
+      "work-accidents": "T\xF6\xF6\xF5nnetused",
+      "occupational-diseases": "Kutsehaigused",
+      "work-related-illnesses": "T\xF6\xF6ga seotud haigused"
+    };
+    const subTabContent = {
+      "work-accidents": "T\xF6\xF6\xF5nnetuste juhtumid ja nende menetluse seis.",
+      "occupational-diseases": "Kutsehaiguste kirjed ja diagnoosid.",
+      "work-related-illnesses": "T\xF6\xF6ga seotud haiguste teated ja tulemused."
+    };
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tabs_exports.Tabs, { defaultValue: `${idPrefix}tab-3`, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(tabs_exports.Tabs.List, { "aria-label": "T\xF6\xF6tervishoid ja -ohutus", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: `${idPrefix}tab-1`, children: "K\xE4imasolevad menetlused" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: `${idPrefix}tab-2`, children: "Planeeritavad menetlused" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: `${idPrefix}tab-3`, children: "\xD5nnetused ja haigused" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Trigger, { id: `${idPrefix}tab-4`, children: "Kalender" })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: `${idPrefix}tab-1`, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.proceduresInProgress }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: `${idPrefix}tab-2`, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.proceduresInPlanning }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: `${idPrefix}tab-3`, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+          button_group_exports.ButtonGroup,
+          {
+            type: "secondary",
+            ariaLabel: "\xD5nnetused ja haigused",
+            enableMobileDropdown: true,
+            onSelectionChange: (id) => setActiveSubTab(id.slice(idPrefix.length)),
+            children: [
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}work-accidents`, isActive: activeSubTab === "work-accidents", children: "T\xF6\xF6\xF5nnetused" }),
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}occupational-diseases`, isActive: activeSubTab === "occupational-diseases", children: "Kutsehaigused" }),
+              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(button_exports.Button, { id: `${idPrefix}work-related-illnesses`, isActive: activeSubTab === "work-related-illnesses", children: "T\xF6\xF6ga seotud haigused" })
+            ]
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(heading_exports.Heading, { element: "h2", children: subTabLabels[activeSubTab] }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: subTabContent[activeSubTab] })
+      ] }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(tabs_exports.Tabs.Content, { id: `${idPrefix}tab-4`, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { children: content.calendar }) }) })
+    ] });
+  };
   var WithSubTabs = {
-    render: () => {
-      const [activeSubTab, setActiveSubTab] = (0, import_react.useState)("work-accidents");
-      const subTabLabels = {
-        "work-accidents": "T\xF6\xF6\xF5nnetused",
-        "occupational-diseases": "Kutsehaigused",
-        "work-related-illnesses": "T\xF6\xF6ga seotud haigused"
-      };
-      const subTabContent = {
-        "work-accidents": "T\xF6\xF6\xF5nnetuste juhtumid ja nende menetluse seis.",
-        "occupational-diseases": "Kutsehaiguste kirjed ja diagnoosid.",
-        "work-related-illnesses": "T\xF6\xF6ga seotud haiguste teated ja tulemused."
-      };
-      return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tabs_exports.Tabs, { defaultValue: "tab-3", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(tabs_exports.Tabs.List, { "aria-label": "T\xF6\xF6tervishoiu ja -ohutuse sakid", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-1", children: "K\xE4imasolevad menetlused" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-2", children: "Planeeritavad menetlused" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-3", children: "\xD5nnetused ja haigused" }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Trigger, { id: "tab-4", children: "Kalender" })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-1", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.proceduresInProgress }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-2", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.proceduresInPlanning }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 1.5, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
-            button_group_exports.ButtonGroup,
-            {
-              type: "secondary",
-              ariaLabel: "\xD5nnetuste ja haiguste alamnavigatsioon",
-              enableMobileDropdown: true,
-              onSelectionChange: setActiveSubTab,
-              children: [
-                /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "work-accidents", isActive: activeSubTab === "work-accidents", children: "T\xF6\xF6\xF5nnetused" }),
-                /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "occupational-diseases", isActive: activeSubTab === "occupational-diseases", children: "Kutsehaigused" }),
-                /* @__PURE__ */ (0, import_jsx_runtime.jsx)(button_exports.Button, { id: "work-related-illnesses", isActive: activeSubTab === "work-related-illnesses", children: "T\xF6\xF6ga seotud haigused" })
-              ]
-            }
-          ),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(heading_exports.Heading, { element: "h2", children: subTabLabels[activeSubTab] }),
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: subTabContent[activeSubTab] })
-        ] }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(tabs_exports.Tabs.Content, { id: "tab-4", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(card_content_exports.CardContent, { padding: { vertical: 1.5, horizontal: 1 }, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(text_exports.Text, { children: content.calendar }) }) })
-      ] });
-    }
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(WithSubTabsTemplate, {})
+  };
+  var VisualTest = {
+    tags: ["!dev", "!autodocs"],
+    parameters: {
+      chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS },
+      a11y: {
+        config: {
+          rules: [
+            { id: "aria-required-parent", enabled: false },
+            { id: "aria-valid-attr-value", enabled: false }
+          ]
+        }
+      },
+      pseudo: {
+        hover: "#Hover-tab",
+        active: "#Active-tab",
+        focusVisible: "#Focus-tab"
+      }
+    },
+    render: () => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 2, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "Default" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: Default, props: { idPrefix: "vt-1-" } })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "With icons" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: WithIcons, props: { idPrefix: "vt-2-" } })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "With status badge" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: WithStatusBadge, props: { idPrefix: "vt-3-" } })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "States" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: States })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "With disabled tab" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: WithDisabledTab, props: { idPrefix: "vt-4-" } })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(vertical_spacing_exports.VerticalSpacing, { size: 0.5, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(text_exports.Text, { modifiers: "bold", children: "With sub tabs" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(VisualTestStory, { story: WithSubTabs, props: { idPrefix: "vt-5-" } })
+      ] })
+    ] })
   };
 
   // tedi-compose:compose.tsx
   init_define_import_meta_env();
   init_define_process_env();
   var React = __toESM(require_react());
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   function compose(stories, key, globalDefaults, backgrounds) {
     const meta2 = stories.default ?? {};
     const story = stories[key];
@@ -531,9 +609,9 @@ var __dsPreview = (() => {
       render
     );
     const background = backgrounds[context.globals.backgrounds?.value];
-    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_jsx_runtime2.Fragment, { children: decorated() });
+    const Story = () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: decorated() });
     if (!background) return Story;
-    return () => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Story, {}) });
+    return () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { style: { background }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Story, {}) });
   }
 
   // Tabs.preview.tsx
@@ -547,5 +625,6 @@ var __dsPreview = (() => {
   var WithDisabledTab2 = compose(tabs_stories_exports, "WithDisabledTab", G, B);
   var OverflowBehavior2 = compose(tabs_stories_exports, "OverflowBehavior", G, B);
   var WithSubTabs2 = compose(tabs_stories_exports, "WithSubTabs", G, B);
+  var VisualTest2 = compose(tabs_stories_exports, "VisualTest", G, B);
   return __toCommonJS(Tabs_preview_exports);
 })();

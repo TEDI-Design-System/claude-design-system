@@ -1,6 +1,6 @@
 Textarea from @tedi-design-system/react. Use via `window.Tedi.Textarea` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Sizes, States, With Hint, Hint Text And Character Count, Only Character Count, Text Value, Placeholder, Default Value, Clear Button On Interaction, Height Examples.
+Variants (see `preview.html`): Default, Sizes, States, With Hint, Hint Text And Character Count, Only Character Count, Text Value, Placeholder, Default Value, Clear Button On Interaction, Height Examples, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Sizes, States, With Hint, Hint Text And 
 import * as React from 'react';
 
 /**
- * Textarea from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/textarea/textarea.stories.tsx).
+ * Textarea from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/form/textarea/textarea.stories.tsx).
  */
 export interface TextareaProps {
   /** Maximum number of characters allowed in the textarea. */

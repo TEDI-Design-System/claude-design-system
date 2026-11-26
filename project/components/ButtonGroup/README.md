@@ -1,6 +1,6 @@
 ButtonGroup from @tedi-design-system/react. Use via `window.Tedi.ButtonGroup` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Sizes, Types, With Icon, Icon Only, Primary, Secondary, Different Width Buttons, Stretched.
+Variants (see `preview.html`): Default, Sizes, Types, With Icon, Icon Only, Primary, Secondary, Different Width Buttons, Stretched, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Sizes, Types, With Icon, Icon Only, Prim
 import * as React from 'react';
 
 /**
- * ButtonGroup from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/buttons/button-group/button-group.stories.tsx).
+ * ButtonGroup from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/buttons/button-group/button-group.stories.tsx).
  */
 export interface ButtonGroupProps {
   /** The child components to render inside the ButtonGroup. Typically, these should be `<Button>` components. */

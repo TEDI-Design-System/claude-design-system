@@ -2,7 +2,7 @@ ChoiceGroup from @tedi-design-system/react. Use via `window.Tedi.ChoiceGroup` (t
 
 Sub-components: `ChoiceGroup.Item`.
 
-Variants (see `preview.html`): Radio, Radio Row, Checkbox, Checkbox Row, Radio Card Segmented, Radio Card Separated, Checkbox Card, Radio Card With Icon, Checkbox Card With Icon, With Error, With Default Value, With Indeterminate, With Extra Content, Responsive, Custom Label, Custom Item Labels, Custom Item HTMLLabels.
+Variants (see `preview.html`): Radio, Radio Row, Checkbox, Checkbox Row, Radio Card Segmented, Radio Card Separated, Checkbox Card, Radio Card With Icon, Checkbox Card With Icon, With Error, With Default Value, With Indeterminate, With Extra Content, Responsive, Custom Label, Custom Item Labels, Custom Item HTMLLabels, Visual Test.
 
 ## Props
 
@@ -10,7 +10,7 @@ Variants (see `preview.html`): Radio, Radio Row, Checkbox, Checkbox Row, Radio C
 import * as React from 'react';
 
 /**
- * ChoiceGroup from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/form/choice-group/choice-group.stories.tsx).
+ * ChoiceGroup from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/form/choice-group/choice-group.stories.tsx).
  */
 export interface ChoiceGroupProps {
   id: string;

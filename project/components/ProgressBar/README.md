@@ -1,6 +1,6 @@
 ProgressBar from @tedi-design-system/react. Use via `window.Tedi.ProgressBar` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Sizes, Position, With Label, Regular, With Hint, With Error, Value Hidden, Responsive, Animated.
+Variants (see `preview.html`): Default, Sizes, Position, With Label, Regular, With Hint, With Error, Value Hidden, Responsive, Animated, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Sizes, Position, With Label, Regular, Wi
 import * as React from 'react';
 
 /**
- * ProgressBar from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/loaders/progress-bar/progress-bar.stories.tsx).
+ * ProgressBar from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/loaders/progress-bar/progress-bar.stories.tsx).
  */
 export interface ProgressBarProps {
   /** Id forwarded to the bar element so external `<label htmlFor>` can target it. */
@@ -113,7 +113,7 @@ type ProgressBarBreakpointProps = {
 
 ```tsx
 export const Default: Story = {
-  args: { value: 60, ariaLabel: 'Edenemisriba pealkiri' },
+  args: { value: 60, ariaLabel: 'Faili üleslaadimine' },
 };
 ```
 
@@ -125,8 +125,8 @@ export const Sizes: Story = {
   parameters: {
     docs: {
       source: {
-        code: `<ProgressBar value={20} ariaLabel="Edenemisriba pealkiri" helper={{ text: 'Üleslaadimine', type: 'hint' }} />
-<ProgressBar value={20} small ariaLabel="Edenemisriba pealkiri" helper={{ text: 'Üleslaadimine', type: 'hint' }} />`,
+        code: `<ProgressBar value={20} ariaLabel="Faili üleslaadimine" helper={{ text: 'Üleslaadimine', type: 'hint' }} />
+<ProgressBar value={20} small ariaLabel="Faili üleslaadimine" helper={{ text: 'Üleslaadimine', type: 'hint' }} />`,
       },
     },
   },
@@ -141,10 +141,10 @@ export const Position: Story = {
   parameters: {
     docs: {
       source: {
-        code: `<ProgressBar value={20} label="Edenemisriba pealkiri" required labelPosition="top" valuePosition="horizontal" helper={{ text: 'Üleslaadimine', type: 'hint' }} />
-<ProgressBar value={20} label="Edenemisriba pealkiri" required labelPosition="top" valuePosition="bottom" helper={{ text: 'Üleslaadimine', type: 'hint' }} />
-<ProgressBar value={20} label="Edenemisriba pealkiri" required labelPosition="top" valuePosition="horizontal" helper={{ text: 'Üleslaadimine', type: 'hint' }} md={{ labelPosition: 'horizontal' }} />
-<ProgressBar value={20} label="Edenemisriba pealkiri" required labelPosition="top" valuePosition="bottom" helper={{ text: 'Üleslaadimine', type: 'hint' }} md={{ labelPosition: 'horizontal' }} />`,
+        code: `<ProgressBar value={20} label="Faili üleslaadimine" required labelPosition="top" valuePosition="horizontal" helper={{ text: 'Üleslaadimine', type: 'hint' }} />
+<ProgressBar value={20} label="Faili üleslaadimine" required labelPosition="top" valuePosition="bottom" helper={{ text: 'Üleslaadimine', type: 'hint' }} />
+<ProgressBar value={20} label="Faili üleslaadimine" required labelPosition="top" valuePosition="horizontal" helper={{ text: 'Üleslaadimine', type: 'hint' }} md={{ labelPosition: 'horizontal' }} />
+<ProgressBar value={20} label="Faili üleslaadimine" required labelPosition="top" valuePosition="bottom" helper={{ text: 'Üleslaadimine', type: 'hint' }} md={{ labelPosition: 'horizontal' }} />`,
       },
     },
   },
@@ -189,17 +189,17 @@ export const WithLabel: Story = {
 export const Regular: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '720px' }}>
-      <ProgressBar value={40} ariaLabel="Edenemisriba pealkiri" />
-      <ProgressBar value={40} ariaLabel="Edenemisriba pealkiri" valueLabel="1 / 5" />
-      <ProgressBar value={40} ariaLabel="Edenemisriba pealkiri" valuePosition="bottom" />
+      <ProgressBar value={40} ariaLabel="Faili üleslaadimine" />
+      <ProgressBar value={40} ariaLabel="Faili üleslaadimine" valueLabel="1 / 5" />
+      <ProgressBar value={40} ariaLabel="Faili üleslaadimine" valuePosition="bottom" />
     </div>
   ),
   parameters: {
     docs: {
       source: {
-        code: `<ProgressBar value={40} ariaLabel="Edenemisriba pealkiri" />
-<ProgressBar value={40} ariaLabel="Edenemisriba pealkiri" valueLabel="1 / 5" />
-<ProgressBar value={40} ariaLabel="Edenemisriba pealkiri" valuePosition="bottom" />`,
+        code: `<ProgressBar value={40} ariaLabel="Faili üleslaadimine" />
+<ProgressBar value={40} ariaLabel="Faili üleslaadimine" valueLabel="1 / 5" />
+<ProgressBar value={40} ariaLabel="Faili üleslaadimine" valuePosition="bottom" />`,
       },
     },
   },
@@ -212,7 +212,7 @@ export const Regular: Story = {
 export const WithHint: Story = {
   args: {
     value: 40,
-    ariaLabel: 'Edenemisriba pealkiri',
+    ariaLabel: 'Faili üleslaadimine',
     helper: HINT,
   },
 };
@@ -226,4 +226,4 @@ Full story source: `src/tedi/components/loaders/progress-bar/progress-bar.storie
 
 ## Related
 
-`Text`
+`Text`, `VerticalSpacing`

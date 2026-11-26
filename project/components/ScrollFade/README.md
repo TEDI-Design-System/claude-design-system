@@ -1,6 +1,6 @@
 ScrollFade from @tedi-design-system/react. Use via `window.Tedi.ScrollFade` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Scrollbar, Fade Size, Fade Position, No Fade Without Scrollbar.
+Variants (see `preview.html`): Default, Scrollbar, Fade Size, Fade Position, No Fade Without Scrollbar, Dynamic Content.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Scrollbar, Fade Size, Fade Position, No 
 import * as React from 'react';
 
 /**
- * ScrollFade from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/misc/scroll-fade/scroll-fade.stories.tsx).
+ * ScrollFade from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/misc/scroll-fade/scroll-fade.stories.tsx).
  */
 export interface ScrollFadeProps {
   /** ScrollFade content */
@@ -98,8 +98,22 @@ export const NoFadeWithoutScrollbar: Story = {
 };
 ```
 
+### Dynamic Content
+
+```tsx
+export const DynamicContent: Story = {
+  render: DynamicContentTemplate,
+  argTypes: {
+    children: { table: { disable: true } },
+  },
+  args: {
+    children: null,
+  },
+};
+```
+
 Full story source: `src/tedi/components/misc/scroll-fade/scroll-fade.stories.tsx`.
 
 ## Related
 
-`Text`, `Col`, `Row`
+`Text`, `Button`, `Col`, `Row`

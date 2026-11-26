@@ -1,6 +1,6 @@
 Tag from @tedi-design-system/react. Use via `window.Tedi.Tag` (the bundle is `components/bundle.js`). Wrap the tree in `<ThemeProvider>` (full provider chain in README.md: components read theme and i18n from that context).
 
-Variants (see `preview.html`): Default, Primary, Secondary, Danger, Ellipsis.
+Variants (see `preview.html`): Default, Primary, Secondary, Danger, Ellipsis, Visual Test.
 
 ## Props
 
@@ -8,7 +8,7 @@ Variants (see `preview.html`): Default, Primary, Secondary, Danger, Ellipsis.
 import * as React from 'react';
 
 /**
- * Tag from @tedi-design-system/react@21.0.0-rc.1 (stories: ./src/tedi/components/tags/tag/tag.stories.tsx).
+ * Tag from @tedi-design-system/react@21.0.0-rc.35 (stories: ./src/tedi/components/tags/tag/tag.stories.tsx).
  */
 export interface TagProps {
   /** The content inside the Tag. Typically this will be text or any JSX elements to be displayed. */
@@ -51,6 +51,10 @@ interface ClosingButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
      * Event handler for the button click event. Triggered when the user clicks on the close button.
      */
     onClick?: MouseEventHandler<HTMLButtonElement>;
+    /**
+     * Accessible name and hover tooltip. Not rendered when `aria-label` is passed, so that label is the name.
+     * @default label provider's 'close' label
+     */
     title?: string;
     color?: ClosingButtonColor;
     iconSize?: ClosingButtonIconSize;
@@ -158,10 +162,45 @@ export const Ellipsis: Story = {
     </div>
   ),
 };
+
+/** Chromatic snapshot for Tag: add every new visual variant here too. */
+```
+
+### Visual Test
+
+```tsx
+export const VisualTest: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: { chromatic: { disableSnapshot: false, viewports: VISUAL_TEST_VIEWPORTS } },
+  render: () => (
+    <VerticalSpacing size={2}>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Default</Text>
+        <VisualTestStory story={Default} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Primary</Text>
+        <VisualTestStory story={Primary} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Secondary</Text>
+        <VisualTestStory story={Secondary} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Danger</Text>
+        <VisualTestStory story={Danger} />
+      </VerticalSpacing>
+      <VerticalSpacing size={0.5}>
+        <Text modifiers="bold">Ellipsis</Text>
+        <VisualTestStory story={Ellipsis} />
+      </VerticalSpacing>
+    </VerticalSpacing>
+  ),
+};
 ```
 
 Full story source: `src/tedi/components/tags/tag/tag.stories.tsx`.
 
 ## Related
 
-`Col`, `Row`
+`Text`, `Col`, `Row`, `VerticalSpacing`
